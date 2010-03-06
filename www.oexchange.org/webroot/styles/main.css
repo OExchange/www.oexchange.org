@@ -1,0 +1,141 @@
+body {
+	background: #fff;
+	text-align: center;
+	font-family: arial,helvetica,lucida,tahoma,verdana,sans-serif;
+	font-size: 12px;
+	color: #464646;
+}
+a {
+	color: #005cd7;
+}
+a:hover {
+	color: #f00;
+}
+
+#mainpage {
+	width: 800px;
+	margin: 0 auto;
+	text-align: left;
+	line-height: 1.7em;
+}
+
+#page-header {
+	position: relative;
+	height: 94px;
+}
+#page-header h1 {
+	position: absolute;
+	top: 22px;
+	left: 0;
+	background: url(../images/bkg-page-logo2.jpg) no-repeat;
+	width: 196px;
+	height: 35px;
+	overflow: hidden;
+	text-indent: -9000px;
+	margin: 0;
+	color: #333;
+}
+#page-header ul {
+	position: absolute;
+	top: 16px;
+	right: 0;
+	height: 2.4em;
+}
+#page-header ul li {
+	list-style: none;
+	display: inline;
+}
+#page-header ul li a {
+	background: transparent;
+	padding: 8px 16px;
+	font-size: .9em;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 2.4em;
+	color: #464646;
+}
+#page-header ul li a:hover {
+	background: #6dd0f7;
+	color: #fff;
+}
+
+
+#page-content {
+	padding: 20px 0;
+}
+
+
+#mainfoot {
+	border-top: 1px dotted #ccc;
+	margin-top: 60px;
+}
+#mainfoot #footer {
+	width: 800px;
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: left;
+	color: #999;
+}
+
+
+/* Page Format */
+
+#logo { background: url(images/oexchange_logo.gif) no-repeat; width:275px; height:58px; line-height:58px; text-indent:-9000px; outline:none; overflow: hidden; margin: 21px 0; }
+#header { background: url(images/bkg-dot.gif) repeat-x bottom; margin-bottom: 50px; }
+#header h1 { margin: 0; padding: 0; line-height: 4em; }
+#header a { margin-left: 20px; line-height: 4em; float: right; }
+#footer { background: url(images/bkg-dot.gif) repeat-x top; margin: 50px 0; padding-top: 20px;  }
+#footer a { width:100px; text-align:right; float:right;}
+.container_12 { text-align: left; }
+
+
+/* Common Styles */
+
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+	color: #000;
+}
+h1 { font-size: 2em; font-family: georgia,"times new roman",mano,serif; }
+h2 { font-size: 1.7em; font-family: georgia,"times new roman",mano,serif; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+h5 { font-size: 1.1em; }
+
+strong { color: #000; }
+
+code {
+	background-color: #eee;
+	border: 1px solid #999;
+	padding: 0px 2px;
+}
+pre {
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	padding: 8px;
+	margin: 20px 0;
+	color: #000;
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.right { float: right; }
+.hide { 	display: none; }
+.gbox { background: #f5f5f5; border: 1px solid #ddd; padding: 10px 20px; }
+.gbox ol li { margin-left: 20px; }
+.gbox ol ol { margin-bottom: 0; }
+
+.red { color: #f00; }
+.blk { color: #000; }
+.org {color: #f30; }
+.gry { color: #ccc; }
+.dgry { color: #333; }
+
+ul.circle {list-style-type:circle}
+ul.square {list-style-type:square}
+ol.upper-roman {list-style-type:upper-roman}
+ol.lower-alpha {list-style-type:lower-alpha}
+ol.lower-roman {list-style-type:lower-roman}
+ol.none, ul.none { list-style-type: none; }

@@ -1,0 +1,467 @@
+<div class="grid_3 omega right">
+	<div class="gbox">
+		<h4>Table of Contents</h4>
+		<ol>
+			<li><a href="#1">Conventions</a></li>
+			<li><a href="#2">Definitions</a></li>
+			<li><a href="#3">Specification Flows</a>
+				<ol class="lower-roman">
+					<li><a href="#3-1">The share-link-to-site flow</a></li>
+					<li><a href="#3-2">The share-ctype-to-site flow</a></li>
+					<li><a href="#3-3">The share-link-with-discovery flow</a></li>
+				</ol>
+			</li>
+			<li><a href="#4">OExchange-Offer</a>
+				<ol class="lower-alpha">
+					<li><a href="#4-1">The Endpoint</a></li>
+					<li><a href="#4-2">Parameter Details</a>
+					<li><a href="#4-3">Supported ctype Values</a>
+						<ol class="lower-roman">
+							<li><a href="#4-3-1">The link Type</a></li>
+							<li><a href="#4-3-2">The rss Type</a></li>
+							<li><a href="#4-3-3">The oembed Type</a></li>
+							<li><a href="#4-3-4">The gadget-raw Type</a></li>
+							<li><a href="#4-3-5">The gadget-goog Type</a></li>
+							<li><a href="#4-3-6">The opensocial Type</a></li>
+							<li><a href="#4-3-7">The embed-raw Type</a></li>
+						</ol>
+					</li>						
+					<li><a href="#4-4">Handling Errors</a></li>
+				</ol>
+			</li>
+			<li><a href="#5">OExchange-Link</a>
+				<ol class="lower-alpha">
+					<li><a href="#5-1">Page-Level Tags</a></li>
+					<li><a href="#5-2">Other Scrapable Information and Multiple Items per Page</a></li>
+				</ol>
+			</li>
+			<li><a href="#6">OExchange-Discovery</a>
+				<ol class="lower-alpha">
+					<li><a href="#6-1">Target Metadata</a>
+						<ol class="lower-roman">
+							<li><a href="#6-1-1">The Target Metadata Format</a></li>
+							<li><a href="#6-1-2">Target Classifications</a></li>
+							<li><a href="#6-1-3">Allowed Sources</a></li>
+						</ol>
+					</li>
+					<li><a href="#6-2">Publishing Target Metadata</a>
+						<ol class="lower-roman">
+							<li><a href="#6-2-1">The Target Metadata XML Definition</a></li>
+						</ol>
+					</li>
+					<li><a href="#6-3">XRD-Based Discovery and User-Preference Discovery</a></li>
+				</ol>	
+			</li>
+			<li><a href="#7">Related &amp; Relevant Specifications</a></li>
+		</ol>
+	</div>
+</div>
+
+<div class="grid_8 suffix_1 alpha">
+
+<h1>Working Draft Specification</h1>
+
+<h2>Abstract</h2>
+OExchange standardizes the "share this link to {some social site}" use-case by providing:
+<ul>
+		<li>a standard content description method that content creators can use to provide a richer user experience of that content when its URL is shared</li>
+		<li>a standard sharing endpoint format and flow such that sites can receive shared content in a common way, and sites can send content without the need for per-site integration</li>
+		<li>extensibility points that can support the simple "share to" use-case for additional non-link types, and to "non-sharing" services over time</li>
+</ul>
+<p>
+	This specification simplifies the link-sharing process in order to bring its implementation costs down for sending and receiving sites (Sources and Targets in OExchange terms) and to 
+	increase the quality of the user experience when doing so.  Minimal work is required by current link-sharing participant sites to become compliant with this specification.  
+</p>
+<p>The specification consists of three parts:</p>
+<ul>
+	<li>OExchange-Offer: the share transaction between sites</li>
+	<li>OExchange-Link: the description of link metadata for use when sharing</li>
+	<li>OExchange-Discovery: the manner in which OExchange Targets can be discovered</li>
+</ul>	
+<br />
+
+<hr />
+
+<h2>Status and Versioning</h2>
+<p>
+	This is a <span style="color:red;">WORKING DRAFT</span>, versioned at 0.8 working draft 1.  See <a href="http://groups.google.com/group/oexchange/web/guide-to-oexchange"> this page</a> 
+	for discussion of current open items and latest revisions.  
+</p>
+<p>The specification is being developed at <a href="http://www.oexchange.org">oexchange.org</a>.</p>
+
+<h3>Document History</h3>
+<ul>
+	<li>2008-05-01: original draft created</li>
+	<li>2008-05-26: added gadget and opensocial types</li>
+	<li>2008-06-14: added embed-raw type</li>
+	<li>2008-12-07: second round review</li>
+	<li>2009-4-20: prepped for initial feedback</li>
+	<li>2009-6-12: major update per aggregated feedback</li>
+	<li>2009-9-1: pinned at 0.8 WD 1 for implementors</li>
+</ul>
+<br />
+
+<hr />
+
+<h2>License</h2>
+<p>TBD</p>
+<br />
+
+<hr />
+
+<a name="1"></a>
+<h2>1. Conventions</h2>
+<p>
+	The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, 
+	&#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>.Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
+</p>
+<br />
+
+<hr />
+
+<a name="2"></a>
+<h2>2. Definitions</h2>
+<blockquote>
+	<dl>
+		<dt>Source:</dt>
+		<dd>
+        A website or application that has content to be shared or offered to a Target.
+		</dd>
+		<dt>Target:</dt>
+		<dd>
+        A website or application that can receive content offered from a Source.
+		</dd>
+	</dl>
+</blockquote>		
+<br />
+
+<hr />
+
+<a name="3"></a>
+<h2>3. Specification Flows</h2>
+<p>This specification includes three related specifications:</p>
+<ul>
+	<li>OExchange-Offer defines the manner in which a Source offers content to a Target, and what the Target does in response</li>
+	<li>OExchange-Link defines a metadata description format for use when exchanging simple link types</li>
+	<li>OExchange-Discovery defines the manner in which OExchange Targets can be identified programmatically</li>
+</ul>
+<p>These specifications can be leveraged independently as follows:	OExchange-Discovery requires OExchange-Offer requires OExchange-Link.</p>
+<p>All three specifications together can combine to form several common flows:</p>
+
+<a name="3-1"></a>
+<h3>3.1 The share-link-to-site flow</h3>
+<p>The common link-sharing flow found online today would, in its OExchange variety, look like this:</p> 	
+<ol>
+	<li>A user encounters shareable content on a source site, on a specific URL</li>
+	<li>The site presents the user with options for various share Targets, which the source knows a-priori</li>
+	<li>The Target site presents the user with appropriate authentication steps as needed</li>
+	<li>The source site initiates the share for the user, popping a new tab to the OExchange-Offer endpoint on the Target site, passing the link</li>
+	<li>The Target site receives the link and scrapes the provided URL according to the OExchange-Link specification</li>
+	<li>The Target site presents the user with appropriate layout or other steps as needed, confirming the target location for the content</li>
+	<li>The target site ingests the content appropriately, then allows the user to close the window or continue interacting with that target</li>
+</ol>
+
+<a name="3-2"></a>
+<h3>3.2 The share-ctype-to-site flow</h3>
+<p>
+	Instead of sharing just a link, the Source offers a richer content type, specifies it via the ctype to the Offer call, and the Target parses the content appropriately 
+	without necessarily needing to page-scrape back to the source. 	
+</p>
+
+<a name="3-2"></a>
+<h3>3.3 The share-link-with-discovery flow</h3>
+<p>
+	Instead of the Source presenting the user with Targets known a-priori, it allows the user to specify the desired host to share with, and the Source uses OExchange-Discovery 
+	to identify the endpoint for the Offer, then uses that endpoint for shares from that point forward.
+</p>
+
+<hr />
+
+<a name="4"></a>
+<h2><a name="oexchange-offer"></a>4. OExchange-Offer</h2>
+
+<a name="4-1"></a>
+<h3>4.1 The Endpoint</h3>
+<p>The Offer verb is the core of the sharing transaction within OExchange.  A target must implement a simple URL endpoint of the form:</p>
+<pre>http://{host}/{arbitrary offer endpoint name}?ctype={type}&{type-specific arguments}</pre>
+<p>
+	The offer endpoint defines an initial parameter, which indicates the type of content to share, with additional parameters triggered off of this content type. 
+	The endpoint accepts requests <i>from a user's browser</i>, not from a backend, and in this way allows the target site and its users to participate in the sharing transaction. 
+	The requests MUST be either HTTP GET requests with URL parameters, or HTTP POSt requests with form-encoded body.     
+</p>
+<p>Note that the offer verb MAY be implemented at any URL the site chooses, as long as it is known to sources.  In the example above, the endpoint is:</p>
+<pre>http://www.example.com/services/oexchange/offer</pre>
+<p>Alternatively, a site could implement an endpoint at a url like this instead:</p>
+<pre>http://www.example.com/offer.php?ctype={type}&{type-specific arguments}</pre>
+<p>...or even something like...</p>
+<pre>http://www.example.com/offer/?ctype={type}&{type-specific arguments}</pre>
+<p>
+	This is allowed such that implementing Targets do not have substantial work to do to modify their web stacks to deal with different or missing file extensions, trailing slashes, 
+	or the like.  It is simply required that Sources MUST know (perhaps via OExchange-Discovery) the endpoint such that they can pass the arguments to it appropriately.
+</p>	
+
+<a name="4-2"></a>
+<h3>4.2  Parameter Details</h3>
+<p>Common parameters:</p>	 	
+<dl>
+	<dt><b><code>url</code></b> (required)</dt>
+	<dd>The URL of the content being offered.</dd>
+
+	<dt><b><code>ctype</code></b> (optional)</dt>
+	<dd>The type of content being shared.  See the list of <a href="#ctypes">supported ctypes</a>; <i>link</i> is the default type.</dd>
+
+	<dt><b><code>mode</code></b> (optional)</dt>
+	<dd>TBD popup or window mode.</dd>
+</dl>
+<p>
+	In general, an offer MUST include a URL that uniquely identifies the content to be shared.  It MAY include a type specification for that content.  If it does, then the offer 
+	call will have additional parameters dictated by that type, and the URL will take on a meaning specific to that type.  If it does not, then the type defaults to "link", in which 
+	case the link MAY conform to the OExchange-Link specification to allow further inspection of metadata.	
+</p>
+
+<a name="4-3"></a>
+<h3><a name="ctypes"></a>4.3 Supported <code>ctype</code> Values</h3>
+<p>
+	The <code>ctype</code> parameter tells the target the type of content being shared.  Different ctypes require different additional parameters.  The set of possible ctypes is finite, 
+	and defined by this specification.  The use of other ctypes is certainly possible, though it must be agreed upon independently between source and target, outside of this specification, 
+	and be identified with an "ex-" prefix.
+</p>
+<p>Defined ctypes, and their additional arguments, are:</p>
+
+<a name="4-3-1"></a>
+<h4>4.3.1 The <code>link</code> Type</h4>
+<p>
+	Represents a URL for bookmarking and link-sharing usage.  A Source and Target SHOULD use this type to represent links whose content conforms to the <a href="#oexchange-link">OExchange-Link</a> 
+	specification.  In this way, the URL of the offer represents the content to share, and the Target scrapes the page according to OExchange-Link.  This is the simplest and most robust case.  
+</p>
+<p>
+	However, in many cases it may be desirable for a Source and Target to exchange a common subset of the link metadata directly. The link type therefore allows several optional parameters which, 
+	if present, SHOULD be honored by the Target as being appropriate for that link, and MAY NOT scrape the link directly.  These parameters are a subset of OExchange-Link.		
+<p>The URL of the link will be the URL of the offer call.  In addition to the common parameters, this type supports the following specific parameters:</p>
+<dl>
+	<dt><b><code>title</code></b> (optional)</dt>
+	<dd>A title for the link, URL-encoded</dd>
+
+	<dt><b><code>desc</code></b> (optional)</dt>
+	<dd>A plain-text description of the link, URL-encoded</dd>
+
+	<dt><b><code>tags</code></b> (optional)</dt>
+	<dd>A set of ,-delimited tags to associate with the link.  Each tag must be URL-encoded</dd>
+</dl>
+
+<a name="4-3-2"></a>
+<h4>4.3.2 The <code>rss</code> Type</h4>
+<p>Represents an RSS feed URL for feed-management services.</p>	
+<p>The URL of the feed will be the URL of the offer call.  In addition to the common parameters, this type supports the following specific parameters:</p>
+<dl>
+	<dt><b><code>tags</code></b></dt>
+	<dd>A set of ,-delimited tags to associate with the link.  Each tag must be URL-encoded</dd>
+</dl>
+
+<a name="4-3-3"></a>
+<h4>4.3.3 The <code>oembed</code> Type</h4>
+<p>Represents an oEmbed endpoint, capable of returning content according to the oEmbed specification.</p>	
+<p>The URL of endpoint will be the URL of the offer call.  There are no additional parameters.</p>
+
+<a name="4-3-4"></a>
+<h4>4.3.4 The <code>gadget-raw</code> Type</h4>
+<p>
+	Represents a <code>gadget.xml</code> endpoint; a URL capable of returning an XML document following the <a href="http://code.google.com/apis/gadgets/docs/reference.html">Google Gadget</a> 
+	specification.  An offer of this type represents a request to share some embeddable content, and to describe it via the gadget.xml format.  It does NOT imply that the target can support 
+	the google gadget JS API but, rather, that the code embedded within the xml can be directly embedded with no additional JS support.
+</p>	
+<p><strong>Note:</strong>The <code>gadget-raw</code> type should NOT be used to share formal Google Gadgets or Open Social applications; see the other ctypes.</p>	
+<p>The URL of the gadget.xml file will be the URL of the offer call.  There are no additional parameters.</p>
+
+<a name="4-3-5"></a>
+<h4>4.3.5 The <code>gadget-goog</code> Type</h4>
+<p>
+	Represents a <code>gadget.xml</code> endpoint; a URL capable of returning an XML document following the <a href="http://code.google.com/apis/gadgets/docs/reference.html">Google Gadget</a> 
+	specification.  An offer of this type represents a request to share a formally-defined Google Gadget, with access to the Gadget API. Targets MUST NOT support this ctype if they do not 
+	actually support full-featured Google Gadgets.
+</p>	
+<p><strong>Note:</strong>The <code>gadget-goog</code> type should NOT be used to share Open Social applications; see the other ctypes.</p>	
+<p>The URL of the gadget.xml file will be the URL of the offer call.  There are no additional parameters.</p>
+
+<a name="4-3-6"></a>
+<h4>4.3.6 The <code>opensocial</code> Type</h4>
+<p>Represents a <code>gadget.xml</code> endpoint describing an Open Social application.  This type is used by Targets that MUST accept Open Social applications.</p>	
+<p>The URL of the gadget.xml file will be the URL of the offer call.  There are no additional parameters.</p>
+
+<a name="4-3-7"></a>
+<h4>4.3.7 The <code>embed-raw</code> Type</h4>
+<p>Represents an endpoint returning some raw web content, usually to be rendered in an iframe by the target site (though this is up to the target site).</p>	
+<p>The URL of the offer call will be treated as a source of raw content, that MAY for example be sourced directly into an iframe.  This type also supports the following specific parameters:</p>
+<dl>
+	<dt><b><code>height</code></b></dt>
+	<dd>The preferred height of the content (which the target can use to render an iframe)</dd>
+
+	<dt><b><code>width</code></b></dt>
+	<dd>The preferred width of the content (which the target can use to render an iframe)</dd>
+</dl>
+
+<a name="4-4"></a>
+<h4>4.4 Handling Errors</h4>
+<p>For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors in the target site must be handled gracefully in a way that the end user sees and understands.</p>
+<p>
+	Any errors resulting from a mismatch in the Target's support of the spec with the Source's expectations (for example, a Target discontinues support of a ctype which a Source depends upon) 
+	should be messaged to the user in a generic way.
+</p>
+
+<hr />
+
+<a name="5"></a>
+<h2><a name="oexchange-link"></a>5. OExchange-Link</h2>
+<p>
+	OExchange-Link defines a simple mechanism whereby a link can be, for the purposes of simple sharing-style exchanges with other sites, self-describing for the simplest of meta information. 
+	The mechanism takes the form of page-level meta and link tags, as follows:
+</p>
+
+<a name="5-1"></a>	
+<h3>5.1 Page-Level Tags</h3>
+<p>
+	The following tags are in widespread use on the web today, and are given special meaning in OExchange transactions as the definitive sources for the relevant information on the page. 
+	These tags MUST NOT contain HTML markup.
+</p>
+<ul>
+	<li>meta <code>title</code>: in a page-level meta tag, a text title that represents the content of the page</li>
+	<li>meta <code>description</code>: in a page-level meta tag, a text description of the content of the page</li>
+	<li>link <code>image_src</code>: in a page-level link tag, an absolute URL to an image that should be used to represent the content of the page.  This image can be any size, and can be sized by the Target as it deems appropriate.</li>
+	<li>link rel <code>canonical</code>: in a page-level link tag, the canonical URL for this page (as put forth by Google)</li> 		
+	<li>link rel <code>tracked</code>: in a page-level link tag, a URL for this content that MAY NOT be the same as the canonical URL, and may not even be shortened, but IS the URL that the publisher wishes be used for their content to honor trackback systems.</li> 		
+	<li>meta <code>publisher</code>: in a page-level meta tag, a text representation of the entity that published the content</li>
+</ul>
+
+<a name="5-2"></a>
+<h3>5.2 Other Scrapable Information and Multiple Items per Page</h3>
+<p>
+	Media-centric description is currently outside the scope of this document, given the large variety of ways to accomplish it and the fact that there are already numerous ill-adopted standards. 
+	This is an ongoing discussion. (RDFa, FB's params, Dublin Core on the mailing list)
+</p>
+
+<hr />
+
+<a name="6"></a>
+<h2><a name="oexchange-discovery"></a>6. OExchange-Discovery</h2>
+<p>
+	For OExchange to work efficiently across the web, OExchange targets and their capabilities should be knowable programmatically.  While it is possible for a source site to be hard-coded to a specific 
+	set of targets, and to know their capabilities a priori, dynamic discovery of available targets yields better results.  OExchange-Discovery defines a way in which Targets can represent their 
+	capabilities with respect to OExchange and be interrogated for them.
+</p>
+
+<a name="6-1"></a>
+<h3>6.1 Target Metadata</h3>
+<p>A target must provide the following pieces of information to potential sources:</p>
+<ul>
+	<li>The OExchange-Offer endpoint</li>
+	<li>The set of supported content types (<code>ctypes</code> in Offer terms), and any sub-details (such as oEmbed types)</li>
+	<li>A logical <i>classification</i> of the target:</li>
+	<li>A thumbnail resource representing the target to a user</li>
+	<li>A set of identifying information</li>
+</ul>	
+
+<a name="6-1-1"></a>
+<h4>6.1.1 The Target Metadata Format</h4>
+<p>The following quantity definition can represent a Target, in either XML, JSON, or other formats:</p>
+<dl>
+	<dt><b><code>id</code></b> (always)</dt>
+	<dd>A globally-unique ID for the target, immutable; this is a URL (such as the site's homepage)</dd>
+
+	<dt><b><code>homeUrl</code></b> (always)</dt>
+	<dd>A URL that serves as the logical home for that target, usually its homepage</dd>
+
+	<dt><b><code>vendor</code></b> (always)</dt>
+	<dd>A manufacturer/vendor name for the target</dd>
+
+	<dt><b><code>friendly</code></b> (always)</dt>
+	<dd>A friendly name for the target</dd>
+
+	<dt><b><code>offerpoint</code></b> (always)</dt>
+	<dd>The URL endpoint for the <code>offer</code> verb</dd>
+
+	<dt><b><code>types</code></b> (always)</dt>
+	<dd>A set of content types (<a href="#ctypes"><code>ctypes</code></a>supported by this target</dd>
+
+	<dt><b><code>class</code></b> (always)</dt>
+	<dd>The logical <a href="#target-classifications">class</a> of target site</dd>
+
+	<dt><b><code>thumbnail</code></b> (always)</dt>
+	<dd>The URL of a thumbnail image for the target, a 32x32 pixel png resource</dd>
+
+	<dt><b><code>allowed-sources</code></b> (always)</dt>
+	<dd>A wildcard pattern that identifies domains from which content can be accepted</dd>
+</dl>
+
+<a name="6-1-2"></a>
+<h4><a name="target-classifications"></a>6.1.2 Target Classifications</h4>
+<p>Targets are defined generally as belonging to one or more of the following classes.  The class allows the source to logically affect the user experience by offering access to different targets in different user scenarios:</p>
+<ol>
+	<li><code>socialnet</code>: Social Network</li>
+	<li><code>blog</code>: Blog</li>
+	<li><code>bookmark</code>: Bookmark</li>
+	<li><code>media</code>: Audio, Photo, Video site</li>
+</ol>	
+
+<a name="6-1-3"></a>
+<h4>6.1.3 Allowed Sources</h4>
+<p>
+	A simple URL pattern provides an ability for a target to define the domains from which share requests should be accepted.  Depending on the type, the target will enforce this differently, 
+	but generally this provides a way for a target to prevent content from only certain domains, subdomains, or from anywhere.  
+</p>
+<p>For example, a source can indicate it only allows content from a specific domain by using a pattern such as <code>*.mydomain.com</code>.  It can indicate all content is acceptable by using a pattern such as <code>*</code>.</p>
+
+<a name="6-2"></a>
+<h3>6.2 Publishing Target Metadata</h3>
+<p>
+	An OExchange Target can publish its metadata to the world by including a file in its document root at <code>http://www.mytarget.com/oexchange.xml</code>.  This file must be a Target Metadata 
+	definition, as described above.  The definition is expressed with an XML representation known as the <a href="#targetmetadatadef">Target Metadata XML Definition</a> format.
+</p>	
+<p>By publishing this file, the target can expose its OExchange capabilities to any potentially offering source.  This procedure is optional, and is only required if the Target wants to expose its capabilities across the web.</p>	 	
+
+<a name="6-2-1"></a>
+<h4><a name="targetmetadatadef"></a>6.2.1 The Target Metadata XML Definition</h4>
+<p>The XML format is as follows:</p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;oexchange&gt;
+
+	&lt;target id = &quot;http://www.mytarget.com&quot;&gt;
+
+		&lt;homeUrl&gt;http://www.mytarget.com&lt;/homeUrl&gt;
+
+		&lt;vendor&gt;Friendly Industries&lt;/vendor&gt;
+
+		&lt;friendly&gt;My Target&lt;/friendly&gt;
+
+		&lt;sharepoint&gt;http://www.mytarget.com/services/oexchange&lt;/sharepoint&gt;
+
+		&lt;types&gt;oembed, link&lt;/types&gt;
+
+		&lt;class&gt;socialnet&lt;/class&gt;
+
+		&lt;thumb-url&gt;&lt;/thumb-url&gt;
+
+		&lt;allowed-sources&gt;*&lt;/allowed-sources&gt;
+
+	&lt;/target&gt;
+
+&lt;/oexchange&gt;</pre>
+
+<a name="6-3"></a>
+<h3>6.3 XRD-Based Discovery and User-Preference Discovery</h3>
+<p>There is an ongoing discussion around using site-mate and XRD for Target discovery, and XRD for per-use preference discovery.  This is taking place in the group.</p>	
+
+<hr />
+
+<a name="7"></a>	
+<h2>7. Related & Relevant Specifications</h2>
+<ul>
+	<li><a href="http://openid.net">OpenID</a></li>
+	<li><a href="http://www.liveclipboard.org">Live Clipboard</a></li>
+	<li><a href="http://oauth.net">OAuth</a></li>
+	<li><a href="http://groups.google.com/group/activity-streams">Activity Streams</a></li>
+	<li><a href="http://en.wikipedia.org/wiki/XRDS">XRDS</a></li>
+	<li><a href="http://www.oembed.com">oEmbed</a></li>
+</ul>
+
+</div>

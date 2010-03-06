@@ -1,0 +1,606 @@
+<h1>OExchange Specification</h1>
+<h2 style="color: red;">WORKING DRAFT</h2>
+
+<p>OExchange is a very simple protocol that allows content and applications to be exchanged between web-aware applications or destination sites.
+Read more about it at <a href="http://www.oexchange.org">oexchange.org</a>.  
+</p>
+
+<p>There are four required software capabilities to make this type of exchange work:
+</p>
+<ul>
+	<li>A content site that supports representation of its content in a standard way (straight links, <a href="http://www.oembed.com">oEmbed</a> endpoints,  and others)</li>
+	<li>A target site that supports this content standard, as well as the OExchange method of accepting content (defined by the OExchange Exchange API in this specification)</li>
+	<li>A sharing interface for the user to initiate and control their sharing activity by choosing a target location and completing the share (can be implemented freely)</li>
+	<li>An optional registry of possible OExchange endpoints (defined by the OExchange Registry specification)</li>
+</ul>
+
+<p>
+This specification defines:
+</p>
+<ul>
+	<li>1. The fundamental <a href="#oexchange-api">OExchange Exchange API</a>, a requirement of OExchange targets</li>	
+	<li>2. The <a href="#oexchange-metadata">OExchange Target Metadata Format</a>, an optional format that targets can support to publish their capabilities</li>	
+	<li>3. The concept of an <a href="#oexchange-registry">OExchange Registry</a> and the OExchange Registry API that must be supported</li>	
+</ul>
+	
+<h2><a name="oexchange-api"></a>1. The OExchange Exchange API</h2>
+
+<p>
+The OExchange Exchange API is the core of OExchange, and enables the following flow between sites:
+<ul>
+	<li>A user encounters shareable content on a source site (a video, an image, a link, etc.) that supports oEmbed or another standard modular content type</li>
+	<li>The user initiates a content share, whereby the site redirects to an OExchange endpoint on the target site, passing information about the content resource</li>
+	<li>The target site presents the user with appropriate authentication and layout steps as needed, confirming the identity and target location for the content</li>
+	<li>The target site consumes the content, issuing appropriate content requests as necessary (as in the case of oEmbed) to the source site, and stores it appropriately for the end user</li>
+</ul>
+</p>
+
+<p>An OExchange <i>exchange</i> occurs between a <i>source</i> and a <i>target</i>. A source is where the content lives initially, and where the user encounters it.  A target is the site or application that can accept this content. The target implements the OExchange API for receiving content, and the source uses that API to send content to it.  
+</p>
+<p>	
+For example, in the case of an oEmbed-based exchange, the target would be an oEmbed <i>consumer</i>, capable of fetching and understanding content according to the oEmbed specification, and the source would be an oEmbed <i>provider</i>, implementing the oEmbed endpoint to provide representations of content when asked.  The target would expose an OExchange endpoint, and the source would call this endpoint.  When it receives the call, the target will call back to the oEmbed source to fetch the oEmbed resource.
+</p>
+
+<h3>1.2. Content Exchange and the <code>share</code> Verb</h3>
+
+<p>
+The core of the specification is the <code>share</code>verb.  A target must implement a simple URL endpoint of the form:
+</p>
+<pre>
+http://www.example.com/services/oexchange/share?ctype={type}&{type-specific arguments}
+</pre>
+<p>
+The share endpoint defines an initial parameter, which indicates the type of content to share, with additional parameters triggered off of this content type.  The endpoint accepts requests <i>from a user's browser</i>, not from a backend, and in this way allows the target site and its users to participate in the sharing transaction.     
+</p>
+<p>
+Note that the share verb can be implemented at any URL the site chooses, as long as it is known to sources.  In the example above, the share endpoint is: 
+</p>
+<pre>
+http://www.example.com/services/oexchange/share
+</pre>
+<p>
+Alternatively, a site could implement a share endpoint at a url like this instead:
+</p>
+<pre>
+http://www.example.com/share.php?ctype={type}&{type-specific arguments}
+</pre>
+<p>
+...or even something like...
+</p>
+<pre>
+http://www.example.com/share/?ctype={type}&{type-specific arguments}
+</pre>
+
+<h4>1.2.1 Some Simple Examples</h4>
+<h5>1.2.1.1 Link-Sharing</h5>
+<p>
+A bookmarking service can offer itself as an oExchange target to allow source sites and applications to post links to it.  The source simply needs to send the user's browser to:
+</p>
+<pre>
+http://www.example.com/oexchange/share?ctype=link&title=Cool%20Bookmark&url=http%3A%2F%2Fwww.oexchange.org
+    &return=http%3A%2F%2Fwww.oexchange.org%2Fsomepage
+</pre>
+<p>
+When the source site or application wishes to allow an end user to share this content to the target site, it will redirect to this target endpoint.  When the target receives requests on this URL, it will:
+<ol>
+	<li>Present the user with whatever steps are necessary in order to authenticate them</li>
+	<li>Present the user with whatever data-collection steps, if any, are necessary to store the bookmark</li>
+	<li>Store the bookmark for the user</li>
+	<li>Return the user's browser to the specified return page</li>
+</ol>	
+</p>
+<p>
+In OExchange, the <code><a href="#ctypes">ctype</a></code> parameter defaults to <code>url</code>.  This means that for the very basic case of sharing a URL, the ctype argument isn't actually required.
+</p>
+<p>
+<b>Note: </b>The source can specify additional url arguments for the target as-needed, though those are outside of the core specification	
+</p>
+
+<h5>1.2.2.1 oEmbed Transactions</h5>
+<p>
+oEmbed-aware applications can use OExchange so that source sites (oEmbed providers) can proactively share content with target sites (oEmbed consumers).  For example, assume a content source exposes the following URL, according to the oEmbed specification:
+</p>
+<pre>
+http://flickr.com/services/oembed?url=http://flickr.com/photos/bees/2362225867/
+</pre>
+<p>
+Let's refer to this URL as {oEmbed}.	
+</p>
+Further, assume that the user is on a specific page on the source site:
+<pre>
+http://flickr.com/photos/bees/2362225867/
+</pre>
+<p>
+Let's refer to this URL as {page}.	
+</p>
+
+<p>
+The target must implement an OExchange endpoint of the form:
+</p>
+<pre>
+http://www.mysocialnetwork.com/oexchange/share?ctype=oembed&curl={oEmbed}&return={page}
+</pre>
+
+<p>
+When the source site, which provides the {oEmbed} service (and the content referenced there) wishes to allow an end user to share this content to the target site, it will redirect to this target endpoint.  When the target receives requests on this URL, it is its responsibility to:
+<ol>
+	<li>Present the user with whatever steps are necessary in order to authenticate them</li>
+	<li>Present the user with whatever steps are necessary to determine an appropriate location for the content</li>
+	<li>Perform the oEmbed transaction to fetch the content from the source site</li>
+	<li>Insert the content into the appropriate location</li>
+	<li>Return the user's browser to the specified return page</li>
+</ol>	
+</p>
+
+<p>
+In this way, not only is the content itself specified, but so is the mechanism by which a source and a target communicate, with the end user as the intermediary, to perform the complete exchange.
+</p>
+<p>
+<b>Note: </b>The source can specify additional url arguments for the target as-needed, though those are outside of the core specification	
+</p>
+
+<h4>1.2.2. Parameter Details</h4>
+<p>
+Common parameters:
+</p>	 	
+<dl>
+	<dt><b><code>ctype</code></b> (required)</dt>
+
+	<dd>The type of content being shared.  See the list of <a href="#ctypes">supported ctypes</a> and the additional parameters indicated for each</dd>
+
+	<dt><b><code>return</code></b> (optional)</dt>
+
+	<dd>A URL that the user's browser should be direct to once the share is complete.  If a target receives this, it must honor it by giving the user a clear option of going to this page.</dd>
+</dl>
+
+<h4><a name="ctypes"></a>1.2.3. Supported <code>ctype</code> Values</h4>
+
+<p>
+The <code>ctype</code> parameter tells the target the type of content being shared.  Different ctypes require different additional parameters.  The set of possible ctypes is finite, and defined by this specification.  The use of other ctypes is certainly possible, though it must be agreed upon independently between source and target, outside of this specification.
+</p>
+<p>
+Defined ctypes, and their additional arguments, are:
+</p>
+
+
+<h5>1.2.3.1 The <code>link</code> Type</h5>
+
+<p>
+Represents a URL for bookmarking and link-management services.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The actual link, URL-encoded</dd>
+
+	<dt><b><code>title</code></b></dt>
+
+	<dd>A title for the link, URL-encoded</dd>
+
+	<dt><b><code>desc</code></b></dt>
+
+	<dd>A description of the link, URL-encoded</dd>
+
+	<dt><b><code>tags</code></b></dt>
+
+	<dd>A set of ,-delimited tags to associate with the link.  Each tag must be URL-encoded</dd>
+</dl>
+</p>
+<p>
+<b>Note:</b> The receiving site, if it implements any mechanism by which to get additional metadata from a URL for display purposes (like <a href="	http://www.facebook.com/share_partners.php">Facebook's "preview"</a> and <a href="http://ysearchblog.com/2009/03/12/embed-videos-games-and-docs-with-searchmonkey-2/">Yahoo's embeds in search results</a>), can certainly perform this work on the URL as appropriate. 	
+</p>
+
+<h5>1.2.3.2 The <code>feed</code> Type</h5>
+
+<p>
+Represents an RSS feed URL for feed-management services.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The actual RSS feed's URL, URL-encoded</dd>
+
+	<dt><b><code>tags</code></b></dt>
+
+	<dd>A set of ,-delimited tags to associate with the link.  Each tag must be URL-encoded</dd>
+</dl>
+</p>
+
+<h5>1.2.3.3 The <code>oembed</code> Type</h5>
+
+<p>
+Represents an oEmbed endpoint, capable of returning content according to the oEmbed specification.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The oEmbed endpoint URL, which the target will use to fetch the content.  Must be URL-encoded.</dd>
+
+</dl>
+</p>
+
+<h5>1.2.3.4 The <code>gadget-raw</code> Type</h5>
+
+<p>
+Represents a <code>gadget.xml</code> endpoint; a URL capable of returning an XML document following the <a href="http://code.google.com/apis/gadgets/docs/reference.html">Google Gadget</a> specification.  A share of this type represents a request to share some embeddable content, and to describe it via the gadget.xml format.  It does NOT imply that the target can support the google gadget JS API but, rather, that the code embedded within the xml can be directly embedded with no additional JS support.
+</p>	
+<p>
+<strong>Note:</strong>The <code>gadget-raw</code> type should NOT be used to share formal Google Gadgets or Open Social applications; see the other ctypes.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The gadget.xml document location, which the target will use to fetch the content</dd>
+
+</dl>
+</p>
+
+<h5>1.2.3.5 The <code>gadget-goog</code> Type</h5>
+
+<p>
+Represents a <code>gadget.xml</code> endpoint; a URL capable of returning an XML document following the <a href="http://code.google.com/apis/gadgets/docs/reference.html">Google Gadget</a> specification.  A share of this type represents a request to share a formally-defined Google Gadget, with access to the Gadget API.  Targets should not support this ctype if they do not actually support full-featured Google Gadgets.
+</p>	
+<p>
+<strong>Note:</strong>The <code>gadget-goog</code> type should NOT be used to share Open Social applications; see the other ctypes.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The gadget.xml document location, which the target will use to fetch the content</dd>
+
+</dl>
+</p>
+
+<h5>1.2.3.6 The <code>opensocial</code> Type</h5>
+
+<p>
+Represents a <code>gadget.xml</code> endpoint describing an Open Social application.  This type should be used by Targets that accept Open Social applications.
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The gadget.xml document location, which the target will use to fetch the content</dd>
+
+</dl>
+</p>
+
+<h5>1.2.3.7 The <code>embed-raw</code> Type</h5>
+
+<p>
+Represents an endpoint returning some raw web content, usually to be rendered in an iframe by the target site (though this is up to the target site).
+</p>	
+<p>
+In addition to the common parameters, this type supports the following specific parameters:	
+<dl>
+	<dt><b><code>url</code></b></dt>
+
+	<dd>The URL from which the target can fetch the content; the entire response body will be treated as the content</dd>
+
+	<dt><b><code>height</code></b></dt>
+
+	<dd>The preferred height of the content (which the target can use to render an iframe)</dd>
+
+	<dt><b><code>width</code></b></dt>
+
+	<dd>The preferred width of the content (which the target can use to render an iframe)</dd>
+
+</dl>
+</p>
+
+<h4>1.2.4. Handling Errors</h4>
+
+<p>
+For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors in the target site must be handled gracefully in a way that the end user sees and understands.  
+</p>
+<p>
+Any errors resulting from a mismatch in the Target's support of the spec with the Source's expectations (for example, a Target discontinues support of a ctype which a Source depends upon) should be messaged to the user in a generic way.
+
+<h2><a name="oexchange-metadata"></a>2. OExchange Target Metadata</h2>
+
+<p>For OExchange to work efficiently across the web, OExchange targets and their capabilities should be knowable programmatically.  While it is possible for a source site to be hard-coded to a specific set of targets, and to know their capabilities a priori, dynamic discovery of available targets yields better results:
+<ul>
+	<li>Target sites should have a well-defined way to represent their capabilities and be interrogated for them</li>	
+	<li>A central Registry should be able to provide information on many available targets, either across the web at large or within a specific realm</li>	
+</ul>
+</p>
+
+<h3>2.1 Target Metadata</h3>
+
+<p>
+A target must provide the following pieces of information to potential sources:
+<ul>
+	<li>The OExchange Exchange API endpoint</li>
+	<li>The set of supported content types (<code>ctypes</code> in Exchange API terms), and any sub-details (such as oEmbed types)</li>
+	<li>
+		A logical <i>classification</i> of the target:
+	</li>
+	<li>A set of icon resources representing the target to a user</li>
+	<li>A set of identifying information</li>
+</ul>	
+
+<h4>2.1.1 Target Metadata Format</h4>
+
+<p>The following metadata object can represent a Target, in either XML or JSON:
+	<dl>
+		<dt><b><code>id</code></b> (always)</dt>
+
+		<dd>A globally-unique ID for the target, immutable; this is a URI (such as the site's homepage)</dd>
+
+		<dt><b><code>homeUrl</code></b> (always)</dt>
+
+		<dd>A URL that serves as the logical home for that target, usually its homepage</dd>
+
+		<dt><b><code>vendor</code></b> (always)</dt>
+
+		<dd>A manufacturer/vendor name for the target</dd>
+
+		<dt><b><code>friendly</code></b> (always)</dt>
+
+		<dd>A friendly name for the target</dd>
+
+		<dt><b><code>sharepoint</code></b> (always)</dt>
+
+		<dd>The URL endpoint for the OExchange <code>share</code> verb</dd>
+
+		<dt><b><code>types</code></b> (always)</dt>
+
+		<dd>A set of content types (<a href="#ctypes"><code>ctypes</code></a>supported by this target, with relevant sub-detail</dd>
+
+		<dt><b><code>class</code></b> (always)</dt>
+
+		<dd>The logical <a href="#target-classifications">class</a> of target site</dd>
+
+		<dt><b><code>thumbnail</code></b> (always)</dt>
+
+		<dd>The URL of a thumbnail image for the target, a 32x32 pixel png resource</dd>
+
+		<dt><b><code>allowed-sources</code></b> (always)</dt>
+
+		<dd>A pattern that identifies domains from which content can be accepted</dd>
+	</dl>
+</p>	
+
+<h5><a name="target-classifications"></a>2.1.1.1 Target Classifications</h5>
+
+<p>
+Targets are defined generally as belonging to one or more of the following classes.  The class allows the source to logically affect the user experience by offering access to different targets in different user scenarios:
+</p>
+<ol>
+	<li><code>socialnet</code>: Social Network</li>
+	<li><code>blog</code>: Blog</li>
+	<li><code>bookmark</code>: Bookmark</li>
+	<li><code>media</code>: Audio, Photo, Video site</li>
+</ol>	
+
+<h5>2.1.1.2 Allowed Sources</h5>
+
+<p>
+A simple URL pattern provides an ability for a target to define the domains from which share requests should be accepted.  Depending on the type, the target will enforce this differently, but generally this provides a way for a target to prevent content from only certain domains, subdomains, or from anywhere.  
+</p>
+<p>
+For example, a source can indicate it only allows content from a specific domain by using a pattern such as <code>*.mydomain.com</code>.  It can indicate all content is acceptable by using a pattern such as <code>*</code>.
+</p>
+
+
+<h5>2.1.1.3 Target Content Type Detail</h5>
+
+<p>
+Different types of supported content entities (ctypes) require different metadata, as follows:
+</p>
+
+<h6>2.1.1.3.1 The <code>oembed</code> Type</h5>
+
+	<dl>
+		<dt><b><code>types</code></b> (always)</dt>
+		<dd>A ,-delimited set of oembed types supported by this target</dd>
+
+	</dl>
+
+<h6>2.1.1.3.2 The <code>link</code> Type</h5>
+
+<p>
+No additional metadata required
+</p>
+	
+<h3>2.2. Publishing Target Metadata</h3>
+
+<p>An OExchange Target can publish its metadata to the world by including a file in its document root at <code>http://www.mytarget.com/oexchange.xml</code>.  This file must be a Target Metadata definition, as described above.  The definition is expressed with an XML representation known as the <a href="#targetmetadatadef">Target Metadata Definition</a> format.
+</p>	
+<p>
+By publishing this file, the target can expose its OExchange capabilities to any potential sharing source.  This procedure is optional, and is only required if the Target wants to expose its capabilities across the web.
+</p>	 	
+
+<h3><a name="targetmetadatadef"></a>2.2.1 The Target Metadata Definition</h3>
+<p>
+ The XML format is as follows:
+</p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;oexchange&gt;
+
+	&lt;target id = &quot;http://www.mytarget.com&quot;&gt;
+
+		&lt;homeUrl&gt;http://www.mytarget.com&lt;/homeUrl&gt;
+
+		&lt;vendor&gt;Friendly Industries&lt;/vendor&gt;
+
+		&lt;friendly&gt;My Target&lt;/friendly&gt;
+
+		&lt;sharepoint&gt;http://www.mytarget.com/services/oexchange&lt;/sharepoint&gt;
+
+		&lt;types&gt;oembed, link&lt;/types&gt;
+
+		&lt;class&gt;socialnet&lt;/class&gt;
+
+		&lt;thumb-url&gt;&lt;/thumb-url&gt;
+
+		&lt;allowed-sources&gt;*&lt;/allowed-sources&gt;
+
+	&lt;/target&gt;
+
+&lt;/oexchange&gt;</pre>
+
+<h2><a name="oexchange-registry"></a>3. The OExchange Target Registry</h2>
+
+<p>
+The purpose of a <i>registry</i> for OExchange targets is to:
+<ul>
+	<li>Maintain a set of known-working OExchange targets, their associated endpoint URLs, and their supported types</li>
+	<li>Offer a programmatic way to fetch these endpoints such that dynamic sharing capabilities can be built on top of them</li>
+</ul>
+</p>
+<p>
+With an effective Registry, source sites or intermediaries can offer robust and flexible user interfaces for presenting end users with potential targets, without hard-coding them into their sites.  A registry offers:
+<ul>
+	<li>A storage location for information about OExchange targets</li>
+	<li>A way for target sites to request inclusion in the registry, and business processes around that request and the testing of the target</li>
+	<li>An open API for source sites to learn about available targets that support the capabilities they need or want</li>
+</ul>
+</p>
+
+<h3>3.1 The OExchange Registry API</h3>
+
+<h4>3.1.1 The General Form of Requests and Responses</h4>
+
+<p>
+An OExchange Registry supports the Registry API.  All requests are made as HTTP GET requests, with parameters passed as standard URL arguments.  The general form of an API endpoint is:
+<code>http://the registry.org/api/1.0/verb.format</code>
+</p>
+<p>
+The <code>format</code> portion of the endpoint is one of <code>json</code> or <code>xml</code>.  Upon receiving a request of either type, the server must support a well-defined and valid response, with an appropriately-set mime-type of either <code>application/json</code> or <code>text/xml</code>.	
+</p>
+<p>
+A JSON response is of the form:
+<pre>{
+	foo: 'bar',
+	baz: 1
+}</pre>
+</p>
+
+<p>An XML response is of the form:
+<pre>&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;
+&lt;oembed-urlx-reg&gt;
+	&lt;foo&gt;bar&lt;/foo&gt;
+	&lt;baz&gt;1&lt;/baz&gt;
+&lt;/oembed-urlx-reg&gt;</pre>
+</p>
+
+<h4>3.1.2 Fetching Targets</h4>
+
+<p>
+A registry supports one API endpoint, which allows clients to fetch available targets, filtered as necessary:
+</p>
+<p>
+	<code>http://{registry-server}/oexchange/reg/targets.{format}</code>
+</p>
+<p>
+With no arguments, the API returns all available targets.  It also takes optional arguments:
+</p>
+<dl>
+	<dt><b><code>ftype</code></b> (optional)</dt>
+
+	<dd>A set of ,-delimited <a href="#ctypes"><code>ctype</code></a> content types, such that only targets of these types will be returned</dd>
+
+	<dt><b><code>fclasses</code></b> (optional)</dt>
+
+	<dd>A set of ,-delimited <a href="#classes">class</a> types, such that only targets of these classes will be returned</dd>
+
+	<dt><b><code>fids</code></b> (optional)</dt>
+
+	<dd>A set of ,-delimited target ID URIs, such that only specific targets will be returned</dd>
+</dl>
+
+<h5>3.1.2.1 Response Format</h5>
+
+<p>
+The <code>targets</code> verb returns a set of <code>target</code> objects, enumerated in the appropriate output format and each expressed in the <a href="targetmetadatadef">Target Metadata Definition</a> format.
+</p>
+	
+<h2>4. Implementing Valid Targets and Sources</h2>
+
+<h3>4.1 Implementing a Valid Target</h3>
+<p>
+The requirements, in brief, for implementing a correct OExchange Target are:
+</p>
+<ul>
+	<li>Support the share verb, as defined in this specification</li>
+	<ul>
+		<li>Accept browser requests at this endpoint</li>
+		<li>Interpret the ctype and request parameters, and prompt the user for authentication as needed</li>
+		<li>Ingest the content, asking whatever additional questions of the user are required</li>
+		<li>Render a confirmation with an option to return to the URL provided with the original request</li>
+	</ul>
+	<li>Optionally provide an /oexchange.xml file that describes the capabilities of the target</li>
+	<li>Optionally provide the target information to a relevant OExchange Registry, either public or private</li>
+</ul>	
+	
+<h3>4.2 Implementing a Valid Source</h3>
+<p>
+The requirements, in brief, for implementing a correct OExchange Source are:
+</p>
+<ul>
+	<li>Support the share verb, as defined in this specification</li>
+	<ul>
+		<li>Identify the appropriate target and its sharepoint, either statically or dynamically by performing a registry lookup</li>
+		<li>On user request, open the browser to the correct Target's sharepoint</li>
+	</ul>
+</ul>	
+
+<h2>5. Reference Implementations and Testing Tools</h2>
+
+<p>
+	Coming soon...
+</p>
+<!--
+<p>
+<a target="_blank" href="http://www.oexchange.org/ref.oexchange.php">Ref.OExchange</a> is a reference implementation and testbed for OExchange development and testing.
+</p>
+-->
+
+<h2>6. Related & Relevant Specifications</h2>
+<ul>
+	<li><a href="http://www.oembed.com">oEmbed</a></li>
+	<li><a href="http://openid.net">OpenID</a></li>
+	<li><a href="http://www.liveclipboard.org">Live Clipboard</a></li>
+	<li><a href="http://oauth.net">OAuth</a></li>
+</ul>
+
+<h2>7. Open Items</h2>
+
+<ul>
+	<li>Delineation of sub-items in JSON and XML -- does csv work or should we really be using sub-elements</li>
+	<li>Do we need a mechanism for the Target to return a URL to the new content location back to the source?  Would be server-server api call, and could also be used for Targets to report errors to Sources.</li>
+	<li>How should we affect ordering of returned targets (by popularity etc?) from Registry calls</li>
+	<li>Should we have the share verb support POST as well as GET?</li>
+	<li>Should the return url be required to be honored, and should we be suggesting that sites post in new windows/tabs instead?</li>  
+	<li>Should we be reevaluating XRDS-Simple as opposed to /oexchange.xml for Targets?  </li>
+</ul>
+
+<h2>8. Future Directions</h2>
+
+<ul>
+	<li>Target specific users with the exchanges</li>
+	<li>Support a status update type</li>
+</ul>
+
+<h2>9. Document History</h2>
+
+<ul>
+	<li>2008-05-01: original draft created</li>
+	<li>2008-05-26: added gadget and opensocial types</li>
+	<li>2008-06-14: added embed-raw type</li>
+	<li>2008-12-07: second round review</li>
+	<li>2009-4-20: prepped for initial feedback</li>
+</ul>
