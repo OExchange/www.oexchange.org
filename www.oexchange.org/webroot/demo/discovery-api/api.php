@@ -101,9 +101,13 @@ if ($cmd == "getUserTargets") {
 		include ("../../header.php");
 		?>
 			<div id="contentpage">
-			<h2>Using the API</h2>
+			<h2>Demo Discovery API</h2>
 			<p>
-				All calls are made against the api.php endpoint.  All responses are JSON.  The common arguments are:
+				This is a simple GET/JSON-based API for performing various OExchange-Discovery operations.
+			</p>
+			<h3>Using the API</h3>
+			<p>
+				All calls are made against the api.php endpoint with HTTP GETs.  All responses are JSON.  Certain arguments are common to all calls.  They are:
 			</p>
 			<ul>
 				<li><code>cmd</code> The name of the method call to execute, described below.</li>
@@ -184,7 +188,7 @@ if ($cmd == "getUserTargets") {
 			</ul>
 			<h5>An example call</h5>
 			<p>
-				<a target="_blank" href="api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=will@willmeyer.com">api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=will@willmeyer.com</a>
+				<a target="_blank" href="api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com">api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com</a>
 			</p>
 
 			</div>	
