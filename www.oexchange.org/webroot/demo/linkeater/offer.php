@@ -32,18 +32,25 @@ if ($ctype == 'link') {
 	echo "tags: " . (isset($_GET["tags"]) ? $_GET["tags"] : "-not provided-") . "<br/>";
 } else if ($ctype == 'image') {
 	echo "imageurl: " . (isset($_GET["imageurl"]) ? $_GET["imageurl"] : "-not provided-") . "<br/>";
-
+	echo "height: " . (isset($_GET["height"]) ? $_GET["height"] : "-not provided-") . "<br/>";
+	echo "width: " . (isset($_GET["width"]) ? $_GET["width"] : "-not provided-") . "<br/>";
 } else if ($ctype == 'flash') {
 	echo "swfurl: " . (isset($_GET["swfurl"]) ? $_GET["swfurl"] : "-not provided-") . "<br/>";
+	echo "height: " . (isset($_GET["height"]) ? $_GET["height"] : "-not provided-") . "<br/>";
+	echo "width: " . (isset($_GET["width"]) ? $_GET["width"] : "-not provided-") . "<br/>";
+	echo "screenshot: " . (isset($_GET["screenshot"]) ? $_GET["screenshot"] : "-not provided-") . "<br/>";
 
 } else if ($ctype == 'iframe') {
 	echo "iframeurl: " . (isset($_GET["iframeurl"]) ? $_GET["iframeurl"] : "-not provided-") . "<br/>";
+	echo "height: " . (isset($_GET["height"]) ? $_GET["height"] : "-not provided-") . "<br/>";
+	echo "width: " . (isset($_GET["width"]) ? $_GET["width"] : "-not provided-") . "<br/>";
+	echo "screenshot: " . (isset($_GET["screenshot"]) ? $_GET["screenshot"] : "-not provided-") . "<br/>";
 }
 echo "</p>";
 ?>
 <h3>WTF?</h3>
 <p>
-	This is just an example <a href="http://www.oexchange.org/spec">Target</a> site, to which you can send a link.  You didn't expect me to do anything useful with it, did you?   
+	This is a simple example OExchange Target, to which you can send a link.  You didn't expect me to do anything useful with it, did you?  [<a href="index.php">read more</a>]   
 </p>	
 
 <?
