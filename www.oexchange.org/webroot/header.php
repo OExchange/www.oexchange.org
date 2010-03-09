@@ -30,7 +30,7 @@
 	<div id="header">
 		<div class="grid_9 alpha"><h1>OExchange</h1></div>
 		<div class="grid_3 omega right">			
-			<a href="http://groups.google.com/group/oexchange">Discuss</a>
+			<a href="http://groups.google.com/group/oexchange">Participate</a>
 			<a href="/test">Test</a>
 			<a href="/spec">Spec</a>
 		</div>	
