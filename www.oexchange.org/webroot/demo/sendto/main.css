@@ -1,0 +1,136 @@
+body {
+	background: #CCC;
+	color: #666;
+/*
+	background: #fff ;
+	color: #666;
+*/	text-align: center;
+	font-family: arial,helvetica,lucida,tahoma,verdana,sans-serif;
+	font-size: .8em;
+}
+a {
+	color: #444;
+}
+
+a:hover {
+	color: #444;
+}
+
+a:visited {
+	color: #444;
+}
+
+a:link {
+	color: #444;
+}
+
+/*
+ * The default for every page...just colors and fonts and such
+ */
+#outerpage {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	line-height: 1.7em;
+}
+
+/*
+ * The offer/send-to pages
+ */
+#offerpage {
+	width: 450px;
+	/* height: 90%; */
+	min-height: 420px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	padding-top: 0px;
+	text-align: left;
+	line-height: 1.7em;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	background: #F9F9F9;
+}
+
+/*
+ * A page of content, with framing/padding etc.  Designed to have std footer as well.
+ */
+#contentpage {
+	width: 800px;
+	min-height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;;
+	padding-top: 0px;;
+	text-align: left;
+	line-height: 1.7em;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	background: #F9F9F9;
+}
+
+.error_message {
+    padding: 0px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+
+#footer {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	color: #999;
+	margin-bottom: 0px;
+	font-size: .7em;
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: normal;
+	color: #444;
+}
+strong {
+	color: #333;
+}
+
+code {
+	background-color: #eee;
+	border: 1px solid #999;
+	padding: 0px 2px;
+}
+
+pre {
+	background-color: #eee;
+	border: 1px solid #999;
+	padding: 8px;
+	margin: 0px 20px;
+	/* font-family: courier,mono,serif; */
+	color: #790000;
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.clear {
+	clear: both;
+}
+.hide {
+	display: none;
+}
+
+.red { color: #f00; }
+.blk { color: #000; }
+.org {color: #f30; }
+.gry { color: #ccc; }
+.dgry { color: #333; }

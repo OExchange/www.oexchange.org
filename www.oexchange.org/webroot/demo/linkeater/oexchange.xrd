@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+    This XRD document describes the capabilities of a single OExchange Target.
+    It may be obtained directly or via a reference from a host's .well-known/host-meta.
+    
+    The "resource" that this XRD describes is the OExchange Target, which is an
+    implicit service being provided at a particular host.   
+-->
+<XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0">
+    
+    <!-- 
+        Every OExchange Target is uniquely identified by a URI.  
+        Typically, this is the primary URI of the service, which a user could
+        reasonably browse to.
+        This URI must be present as the Subject of this XRD document.
+    -->
+    <Subject>http://www.oexchange.org/demo/linkeater</Subject>
+    
+    <!-- 
+        A set of Property elements define OExchange-specific attributes of this Target.
+    -->
+    <Property type="http://www.oexchange.org/spec/0.8/prop/vendor">Will Meyer</Property>
+    <Property type="http://www.oexchange.org/spec/0.8/prop/title">A Service that Eats Links</Property>
+    <Property type="http://www.oexchange.org/spec/0.8/prop/name">LinkEater</Property>
+    <Property type="http://www.oexchange.org/spec/0.8/prop/prompt">Send to LinkEater</Property>
+
+    <!-- 
+        The Target's icon is expressed as a Link of a defined relation.
+    -->
+    <Link 
+        rel= "icon" 
+        href="http://www.willmeyer.com/favicon.ico"
+        type="image/vnd.microsoft.icon" 
+        />
+    
+    <!-- 
+        The individual OExchange protocol endpoints are expressed as Links of a
+        defined relation type.
+    -->
+    <Link 
+        rel= "http://www.oexchange.org/spec/0.8/rel/offer" 
+        href="http://www.oexchange.org/demo/linkeater/offer.php"
+        type="text/html" 
+        />
+</XRD>

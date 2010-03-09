@@ -4,7 +4,7 @@ include '../header.php';
 
 $dfltTarget = $_REQUEST["target"];
 if (empty($dfltTarget)) {
-    $dfltTarget = "http://www.willmeyer.com/oexchange/demo/linkeater/offer.php";
+    $dfltTarget = "http://www.oexchange.org/demo/linkeater/offer.php";
 }
 
 ?>

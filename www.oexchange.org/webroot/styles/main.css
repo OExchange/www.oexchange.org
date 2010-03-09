@@ -27,7 +27,7 @@ a:hover {
 	position: absolute;
 	top: 22px;
 	left: 0;
-	background: url(../images/bkg-page-logo2.jpg) no-repeat;
+	background: url(/images/bkg-page-logo2.jpg) no-repeat;
 	width: 196px;
 	height: 35px;
 	overflow: hidden;
@@ -80,11 +80,11 @@ a:hover {
 
 /* Page Format */
 
-#logo { background: url(images/oexchange_logo.gif) no-repeat; width:275px; height:58px; line-height:58px; text-indent:-9000px; outline:none; overflow: hidden; margin: 21px 0; }
-#header { background: url(images/bkg-dot.gif) repeat-x bottom; margin-bottom: 50px; }
+#logo { background: url(/images/oexchange_logo.gif) no-repeat; width:275px; height:58px; line-height:58px; text-indent:-9000px; outline:none; overflow: hidden; margin: 21px 0; }
+#header { background: url(/images/bkg-dot.gif) repeat-x bottom; margin-bottom: 50px; }
 #header h1 { margin: 0; padding: 0; line-height: 4em; }
 #header a { margin-left: 20px; line-height: 4em; float: right; }
-#footer { background: url(images/bkg-dot.gif) repeat-x top; margin: 50px 0; padding-top: 20px;  }
+#footer { background: url(/images/bkg-dot.gif) repeat-x top; margin: 50px 0; padding-top: 20px;  }
 #footer a { width:100px; text-align:right; float:right;}
 .container_12 { text-align: left; }
 

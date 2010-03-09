@@ -30,8 +30,9 @@
 	<div id="header">
 		<div class="grid_9 alpha"><h1>OExchange</h1></div>
 		<div class="grid_3 omega right">			
-			<!-- <a href="/spec/spec_printable.php">Print Version</a> -->
 			<a href="http://groups.google.com/group/oexchange">Discuss</a>
+			<a href="/test">Test</a>
+			<a href="/spec">Spec</a>
 		</div>	
 		<div class="clear"></div>
 	</div>

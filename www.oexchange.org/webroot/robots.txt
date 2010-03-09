@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /styles
+Disallow: /demo
