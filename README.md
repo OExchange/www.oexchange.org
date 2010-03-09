@@ -1,8 +1,5 @@
-[OExchange](http://www.oexchange.org/) Code
-===========================================
-
-What's Included?
-----------------
+What's Here?
+------------
 
 * The source for the [OExchange spec](http://github.com/willmeyer/OExchange/tree/master/www.oexchange.org/webroot/spec/) 
 
