@@ -4,8 +4,9 @@ $ctype = $_GET["ctype"];
 $title = $_GET["title"];
 $description = $_GET["description"];
 
-require_once("../../lib-oexchange/OExchangeDiscoverer.php");
+$page_title = "LinkEater Example OExchange Target";
 require_once("../../header.php");
+require_once("../../lib-oexchange/OExchangeDiscoverer.php");
 
 if (!isset($url)) {
 	error("Missing URL (the only required parameter).");

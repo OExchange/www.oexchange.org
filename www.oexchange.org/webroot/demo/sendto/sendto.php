@@ -102,7 +102,7 @@ if ($cmd == "share") {
 			foreach($explicitTargets as $target) {
 				echo buildTargetLinkForm2($target);
 			}
-			echo "<p>No thanks.  <a href=\"" . urlRemoveParam(currentUrl(), "targeturl") . "\">Let me try something else.</a></p>";
+			echo "<p>No thanks, <a href=\"" . urlRemoveParam(currentUrl(), "targeturl") . "\">try something else.</a></p>";
 		} else {
 			
 			// Do the normal choices
@@ -184,7 +184,7 @@ if ($cmd == "share") {
 		<!-- Direct URL entry -->
 		<br/>
 		<p>
-			<form id="targetEntry" action="<? echo copyContentParamsTo(currentUrl()); ?>" method="POST" style="">
+			<form id="targetEntry" action="<?= currentUrl(); ?>" method="GET" style="">
 				You can also try entering the URL of a site you're trying to send this to (the site has to support <a href="http://www.oexchange.org/spec">OExchange</a>).
 				<br/>
 				&nbsp;
@@ -194,6 +194,9 @@ if ($cmd == "share") {
 				<input type="text" name="targeturl" value=""/>
 					&nbsp;
 					&nbsp;
+				<?
+				echo getContentParamsToFormFields();
+				?>	
 				<input type="submit" value="Try this URL" />
 			</form>
 		</p>
@@ -204,7 +207,7 @@ if ($cmd == "share") {
 			// Do we know anything about the current user?
 			if (isset($me)) {
 				echo "<p>";
-				$clearUrl = copyContentParamsTo(urlAddOrReplaceParam(currentUrl(), "me", "clear"));
+				$clearUrl = copyContentParamsTo("?me=clear");
 				if (isset($userTargets) && sizeof($userTargets) > 0) {
 					echo "We WebFingered you to find your preferred services. ";
 				} else {
@@ -213,10 +216,9 @@ if ($cmd == "share") {
 				echo " (<a href=\"" . $clearUrl . "\">not " . $me . "?</a>)";
 				echo "</p>";
 			} else {
-				//echo "Form target: " . copyContentParamsTo(currentUrl()) . "<br/>";
 		?>		
 				<p style="font-style: italic;">
-					<form id="emailEntry" action="<? echo copyContentParamsTo(currentUrl()); ?>" method="POST" style="font-style: italic;">
+					<form id="emailEntry" action="<?= currentUrl(); ?>" method="GET" style="font-style: italic;">
 						Want personalization with that?  If you have service preferences set up with your email address and <a href="">WebFinger</a>, we can use your email to look them up.
 						<br/>
 						&nbsp;
@@ -226,6 +228,9 @@ if ($cmd == "share") {
 						<input type="text" name="me" value=""/>
 							&nbsp;
 							&nbsp;
+						<?
+						echo getContentParamsToFormFields();	
+						?>
 						<input type="submit" value="Lookup" />
 					</form>
 				</p>
@@ -242,7 +247,7 @@ if ($cmd == "share") {
 				if (isset($me) && isset($userTargets) && (sizeof($userTargets) > 0)) {
 					?>		
 					<p style="font-style: italic;">
-						<form id="emailEntry" action="<? echo copyContentParamsTo(currentUrl()); ?>" method="POST" style="font-style: italic;">
+						<form id="emailEntry" action="<?= currentUrl(); ?>" method="GET" style="font-style: italic;">
 							Are you trying to send this to somebody in particular?  Enter comma-separated email address, and we'll try to figure out how.
 							<br/>
 							&nbsp;
@@ -252,6 +257,9 @@ if ($cmd == "share") {
 							<input type="text" name="to" value=""/>
 								&nbsp;
 								&nbsp;
+							<?
+							echo getContentParamsToFormFields();	
+							?>
 							<input type="submit" value="Lookup Addresses" />
 						</form>
 					</p>
@@ -262,20 +270,11 @@ if ($cmd == "share") {
  			}
 		}
 		?>		
-
-
-
-
-
 		</div>
-
 	<?
 	require_once("footer.inc.php");
 	require_once("pageend.inc.php");
-} else if ($cmd == "sdasd") {
-	
-
-}
+} 
 
 function buildTargetLink($target) {
 	$offerUrl = copyContentParamsTo($target->endpoint);
@@ -288,16 +287,25 @@ function buildTargetLinkForm2($target) {
 }
 
 function currentUrl() {
-	$pageURL = "http://" . $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+	$pageUrl = "http://" . $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	return $pageUrl;
 }
 
 function urlRemoveParam($url, $paramName) {
 	$start = strpos($url, $paramName);
-	if ($start) {
-		$end = strpos($url, "&", $start);
-		if (!$end) $end = strlen($url);
-		$url = substr($url, $start, $end-$start);
+	if ($start > 0) {
+		
+		// param is present
+		if (strpos($url, "&", $start + 1) == -1) 
+			
+			// this is the last param 
+			$url = substr($url, 0, $start);
+		else { 
+			
+			// there are more params after this
+			$end = strpos($url, "&", $start + 1);
+			$url = substr($url, 0, $start) . substr($url, $end);
+		}
 	}
 	return $url;
 }
@@ -310,6 +318,17 @@ function urlAddOrReplaceParam($url, $paramName, $paramVal) {
 		$url = $url . "&" . $paramName . "=" . $paramVal;
 	}
 	return $url;
+}
+
+function getContentParamsToFormFields() {
+	$form = "";
+	if (isset($_REQUEST["title"])) 
+		$form .= ("<input type=\"hidden\" name=\"title\" value=\"" . $_REQUEST["title"] . "\"/>");
+	if (isset($_REQUEST["url"])) 
+		$form .= ("<input type=\"hidden\" name=\"url\" value=\"" . $_REQUEST["url"] . "\"/>");
+	if (isset($_REQUEST["description"])) 
+		$form .= ("<input type=\"hidden\" name=\"description\" value=\"" . $_REQUEST["description"] . "\"/>");
+	return $form;
 }
 
 /**
