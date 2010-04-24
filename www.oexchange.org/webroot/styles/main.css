@@ -2,7 +2,7 @@ body {
 	background: #fff;
 	text-align: center;
 	font-family: arial,helvetica,lucida,tahoma,verdana,sans-serif;
-	font-size: 12px;
+	font-size: 13px;
 	color: #464646;
 }
 a {
@@ -12,82 +12,23 @@ a:hover {
 	color: #f00;
 }
 
-#mainpage {
-	width: 800px;
-	margin: 0 auto;
-	text-align: left;
-	line-height: 1.7em;
-}
-
-#page-header {
-	position: relative;
-	height: 94px;
-}
-#page-header h1 {
-	position: absolute;
-	top: 22px;
-	left: 0;
-	background: url(/images/bkg-page-logo2.jpg) no-repeat;
-	width: 196px;
-	height: 35px;
-	overflow: hidden;
-	text-indent: -9000px;
-	margin: 0;
-	color: #333;
-}
-#page-header ul {
-	position: absolute;
-	top: 16px;
-	right: 0;
-	height: 2.4em;
-}
-#page-header ul li {
-	list-style: none;
-	display: inline;
-}
-#page-header ul li a {
-	background: transparent;
-	padding: 8px 16px;
-	font-size: .9em;
-	font-weight: bold;
-	text-decoration: none;
-	line-height: 2.4em;
-	color: #464646;
-}
-#page-header ul li a:hover {
-	background: #6dd0f7;
-	color: #fff;
-}
-
-
-#page-content {
-	padding: 20px 0;
-}
-
-
-#mainfoot {
-	border-top: 1px dotted #ccc;
-	margin-top: 60px;
-}
-#mainfoot #footer {
-	width: 800px;
-	margin: 0 auto;
-	padding: 30px 0;
-	text-align: left;
-	color: #999;
-}
-
 
 /* Page Format */
 
-#logo { background: url(/images/oexchange_logo.gif) no-repeat; width:275px; height:58px; line-height:58px; text-indent:-9000px; outline:none; overflow: hidden; margin: 21px 0; }
-#header { background: url(/images/bkg-dot.gif) repeat-x bottom; margin-bottom: 50px; }
-#header h1 { margin: 0; padding: 0; line-height: 4em; }
+#header { background: url(/images/bkg-dot.gif) repeat-x bottom; padding: 15px 0; margin-bottom: 50px; }
+#header h1 { width:408px; height:70px; margin: 0; padding: 0; }
+#header h1 a { display: block; background: url(/images/headerlogo_500x128.png) no-repeat; width:408px; height:70px; line-height:128px; text-indent:-9000px; outline:none; overflow: hidden; margin: 0; padding: 0; }
 #header a { margin-left: 20px; line-height: 4em; float: right; }
+#header .right { padding-top: 12px; }
 #footer { background: url(/images/bkg-dot.gif) repeat-x top; margin: 50px 0; padding-top: 20px;  }
 #footer a { width:100px; text-align:right; float:right;}
 .container_12 { text-align: left; }
 
+/* Banner */
+
+.banner { background: #dbe8f9; margin: -25px 0 25px; padding: 25px 40px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.banner h1 { font-size: 3em; }
+.banner h3 { margin-bottom: 5px; }
 
 /* Common Styles */
 
@@ -123,7 +64,7 @@ pre {
 
 .right { float: right; }
 .hide { 	display: none; }
-.gbox { background: #f5f5f5; border: 1px solid #ddd; padding: 10px 20px; }
+.gbox { background: #f5f5f5; border: 1px solid #ddd; padding: 10px 20px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .gbox ol li { margin-left: 20px; }
 .gbox ol ol { margin-bottom: 0; }
 
