@@ -4,13 +4,13 @@ include 'header.php';
 ?>
 
 <div class="banner">
-	<h1>Let your content roam the web.  Its a big place.</h1>
+	<h1>Any content, any service.  The web a big place.</h1>
 	<h3>OExchange is an <a href="/spec">open specification</a> for distributed content sharing on the web.</h3>
-	<p>Send content to any service on the web.  Locate new services automatically.  Personalize the services available to users.</p>
+	<p>Share URLs with any service on the web.  Locate new services automatically.  Personalize the services available to users.</p>
 </div>
 	
 <p>
-	Tweeting on Twitter?  Sharing on Facebook?  Sure thing.  But what posting to your favorite off-beat forum?  Or translating and printing?  What if your browser and your sharing tools could automatically figure out what options make sense for you, as you browse the web?
+	Tweeting on Twitter?  Sharing on Facebook?  Sure thing.  But what about posting to your favorite off-beat forum?  Or translating and printing?  What if your browser and your sharing tools could automatically figure out what options make sense for you, as you browse the web?
 </p>
 <p>OExchange is an open specification that defines:</p>
 <ul>
