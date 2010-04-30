@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:addthis="http://www.addthis.com/help/api-spec"> 
 
 <head>
-<title>My Blog</title>
+<title>OExchange Demo Blog</title>
 <link rel="stylesheet" type="text/css" href="blog.css" />
 </head>
 

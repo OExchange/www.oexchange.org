@@ -5,14 +5,16 @@ $title = $_GET["title"];
 $description = $_GET["description"];
 
 $page_title = "LinkEater Example OExchange Target";
-require_once("../../header.php");
+require_once("../../header-subdemo.php");
 require_once("../../lib-oexchange/OExchangeDiscoverer.php");
 
 if (!isset($url)) {
 	error("Missing URL (the only required parameter).");
 } else {
 ?>
-<h2>Hey, thanks for that!</h2>
+<div class="funny-monster right"></div>
+
+<h2>Yum!</h2>
 <h3>Here's what you gave me...</h3>
 <p>
 URL: <?= $url?><br/>
@@ -49,6 +51,9 @@ if ($ctype == 'link') {
 }
 echo "</p>";
 ?>
+
+<br/>
+
 <h3>WTF?</h3>
 <p>
 	This is a simple example OExchange Target, to which you can send a link.  You didn't expect me to do anything useful with it, did you?  [<a href="index.php">read more</a>]   
