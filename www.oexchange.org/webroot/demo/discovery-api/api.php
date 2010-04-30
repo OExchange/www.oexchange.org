@@ -37,11 +37,40 @@ function outputTargetsJson($callback, $targets) {
 	}
 }
 
+function outputTargetsAndXrdsJson($callback, $results) {
+	if (isset($callback)) {
+		echo $callback . "(";
+	}
+	echo "{";
+	echo "\"targets\": " . "[";
+	$num = sizeof($results);
+	for ($i = 0; $i < $num; $i++) {
+		$target = $results[$i]["target"];
+		$xrd = $results[$i]["xrd"];
+		echo "{";
+		echo "\"target\": ";
+		echo json_encode($target);
+		echo ", \"xrd\": ";
+		echo json_encode($xrd);
+		echo "}";
+		if ($i < ($num-1)) echo ", ";
+	}
+	echo "]";
+	echo "}";
+	if (isset($callback)) {
+		echo ")";
+	}
+}
+
 function outputTargetJson($callback, $target) {
 	if (isset($callback)) {
 		echo $callback . "(";
 	}
-	echo json_encode($target);
+	if ($target == null) {
+		echo "{}";
+	} else {
+		echo json_encode($target);
+	}
 	if (isset($callback)) {
 		echo ")";
 	}
@@ -65,10 +94,10 @@ if ($cmd == "getUserTargets") {
 		$callback = $_REQUEST["jsonpcb"];
 	}
 	$oex = new OExchangeDiscoverer();
-	$targets = $oex->getTargetsOnHost($host);
+	$results = $oex->getTargetsOnHost($host);
 	
 	// Output
-	outputTargetsJson($callback, $targets);
+	outputTargetsAndXrdsJson($callback, $results);
 } else if ($cmd == "getTargetDetail") {
 	header("Content-Type: application/json", true);
 	$xrdUrl = $_REQUEST["xrd"];

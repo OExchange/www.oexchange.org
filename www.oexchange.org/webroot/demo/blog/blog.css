@@ -1,0 +1,140 @@
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: georgia,times,serif;
+    font-size: 13px;
+    line-height: 1.5em;
+    text-align: center;
+    color: #666;
+}
+a {
+    padding: 2px;
+    text-decoration: none;
+    color: #f1228e;
+}
+a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* OExchange Navbar */
+.navbar {
+    position: relative;
+    background: #1b1b1b;
+    border-bottom: 4px solid #464646;
+    padding: 10px;
+    text-align: center;
+}
+.navbar-inner {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+    text-align: left;
+}
+.navbar a {
+    background: url(/images/logo_inverted_16.gif) no-repeat left;
+    padding-left: 24px;
+    color: #ccc;
+}
+.navbar a:hover {
+    color: #fff;
+}
+
+
+/* Page Wrapper */
+#wrapper {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: left;
+}
+
+/* Header */
+#wrapper .header {
+    position: relative;
+}
+#wrapper .header h1 {
+    font-size: 4em; 
+    line-height: 3em; 
+    margin: 0; 
+    color: #000; 
+    cursor: default;
+}
+#wrapper .header .oexchange-enabled {
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+
+/* Content & Sidebar */
+#wrapper .content {
+    width: 620px;
+    float: left;
+}
+#wrapper .sidebar {
+    width: 220px;
+    float: right;
+}
+
+/* Blog Post */
+#wrapper .post {
+    line-height: 1.8em;
+}
+#wrapper .post h2 {
+    margin-bottom: 10px;
+    font-family: arial,helvetica,lucida,verdana,sans-serif;
+    font-size: 2.5em;    
+    font-weight: normal;
+    color: #f1228e;
+    cursor: default;
+}
+#wrapper .post h4,
+#wrapper .sidebar h4 {
+    font-weight: normal;
+    color: #464646;
+}
+#wrapper .sidebar h3 {
+    font-family: arial,helvetica,lucida,verdana,sans-serif;
+    color: #000;
+}
+#wrapper .sidebar ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    color: #eee;
+}
+#wrapper .footer {
+    padding: 80px 0 40px 0;
+}
+
+/* OExchange Enabled Badge 
+
+div.oexchange-enabled { height:32px; margin-top: 40px; line-height: 32px; font-family:arial,helvetica,tahoma,verdana,sans-serif; font-size:11px; color: #666; }
+div.oexchange-enabled a.oexchange-enabled-btn { display:block; background: url(/images/oexchange_savebtn.png) no-repeat; width:97px; height:32px; line-height:32px; overflow:hidden; text-indent: -9999px; margin-right:12px; }
+div.oexchange-enabled a.oexchange-enabled-btn:hover { background: url(/images/oexchange_savebtn.png) no-repeat; opacity: 0.8; }
+div.oexchange-enabled a { color: #464636; }
+div.oexchange-enabled a:hover { background: transparent; text-decoration: underline; color: #000; }
+div.oexchange-enabled p { display: block; margin-top: 0; }
+*/
+
+/* Custom Icons */
+.addthis_toolbox .custom_images a {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+}
+.addthis_toolbox .custom_images a:hover {
+    background: transparent;
+}
+.addthis_toolbox .custom_images a img {
+    opacity: 1.0;
+}
+.addthis_toolbox .custom_images a:hover img {
+    opacity: 0.75;
+}
+
+
+/* Common Styles */
+
+.clear { clear: both; }

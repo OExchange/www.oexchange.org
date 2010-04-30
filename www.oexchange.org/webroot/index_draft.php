@@ -5,8 +5,10 @@ include 'header.php';
 
 <div class="banner">
 	<h1>Any content, any service.  The web a big place.</h1>
-	<h4>Share URLs with any service.  Locate new services automatically.  Personalize the services available to users.
-		OExchange is an <a href="/spec">open specification</a> for distributed content sharing on the web.
+	<h4>
+		Share URLs with any service.  Locate new services automatically.  Personalize the services available to users.
+		<br/>
+		OExchange is an <a href="/spec">open specification</a> for sharing anything, anywhere.
 	</h4>
 </div>
 	
@@ -15,12 +17,13 @@ include 'header.php';
 </p>
 <p>OExchange defines:</p>
 <ul>
-	<li>A simple method for <b>sending URL-based content to a web-based service</b>.  Send a set of defined parameters via HTTP to a well-defined endpoint.</li>
-	<li>A mechanism for <b>specifying and discovering available services automatically</b>. Find services by hostname, using XRD and /.well-known/host-meta, or from web pages, with page-level link tags.</li>
-	<li>A method for users to register preferences for <b>fully-personalized, no-NASCAR sharing.</b>  Use WebFinger to include OExchange Target preferences in a decentralized and user-centric way</li>	
+	<li>A standard HTTP endpoint for sending URL content to a web-based service (like http://www.example.com/post?url=http://www.youface.com).</li>
+	<li>A way for services to make themselves discoverable automatically (via XRD and .well-known/host-meta).</li>
+	<li>A decentralized, user-centric method for tools to store personal service preferences on behalf of users (via WebFinger)</li>	
 </ul>
 <p>This specification is interoperable now, with <strong>services live on the web today</strong>.</p>	
-<p>Jump right into <a href="/spec">the specification</a>, or <a href="http://groups.google.com/group/oexchange">get involved</a>.</p>	   
+<p>Take a look at the <a href="quickstart.php">Quick Start</a>, jump right into <a href="/spec">the full specification</a>, or <a href="http://groups.google.com/group/oexchange">get involved</a>.
+</p>	   
 
 <?php
 include 'footer.php';

@@ -9,6 +9,6 @@ class Target {
 	public $title;    // optional
 	public $prompt;   // optional
 	public $icon;     // optional
-
+	public $icon32;     // optional
 }
 

@@ -121,7 +121,10 @@ class OExchangeDiscoverer {
 				return null;
 			}
 			if (empty($this->tmpCurrTarget->icon)) {
-				$this->tmpCurrTarget->icon = "http://www.addthis.com/favicon.ico";
+				$this->tmpCurrTarget->icon = "http://www.oexchange.org/images/logo_16x16.png";
+			}
+			if (empty($this->tmpCurrTarget->icon32)) {
+				$this->tmpCurrTarget->icon32 = "http://www.oexchange.org/images/logo_32x32.png";
 			}
 			if (empty($this->tmpCurrTarget->title)) {
 				$this->tmpCurrTarget->title = $this->tmpCurrTarget->name;
@@ -142,7 +145,7 @@ class OExchangeDiscoverer {
 	}
 
 	/**
-	* @return an array of Target objects.
+	* @return an array of XRD, Target objects.
 	*/
 	public function getTargetsOnHost($hostname) {
 		$targetXrds = array();
@@ -164,17 +167,22 @@ class OExchangeDiscoverer {
 	
 		// We now have an array of target descriptors XRD docs, look them each up
 		$targets = array();
+		$results = array();
 		foreach($targetXrds as $targetXrd) {
 			dbglog("Fetching target XRD from " . $targetXrd);
 			$target = $this->getTargetInfoFromXrd($targetXrd);
 			if (isset($target)) {
 				dbglog("Got a Target!");
 				array_push($targets, $target);
+				$result = array();
+				$result["target"] = $target;
+				$result["xrd"] = $targetXrd;
+				array_push($results,$result);
 			} else {
 				dbglog("Not good.");
 			}
 		}
-		return $targets;
+		return $results;
 	}
 	
 	protected function startXrdTag($parser, $name, $attributes){
@@ -187,6 +195,8 @@ class OExchangeDiscoverer {
 				$this->tmpCurrTarget->endpoint = $attributes["HREF"];
 			} else if ($attributes["REL"] == "icon") {
 				$this->tmpCurrTarget->icon = $attributes["HREF"];
+			} else if ($attributes["REL"] == "icon32") {
+				$this->tmpCurrTarget->icon32 = $attributes["HREF"];
 			}
 		} else if ($name == "PROPERTY") {
 		    dbglog("Starting a property tag, type is: " . $attributes["TYPE"]);

@@ -12,12 +12,18 @@ a:hover {
 	color: #f00;
 }
 
+/* OExchange Navbar */
+ 
+.navbar { position: relative; background: #1b1b1b; border-bottom: 4px solid #464646; padding: 10px; text-align: center; }
+.navbar-inner { position: relative; width: 940px; margin: 0 auto; text-align: left; }
+.navbar a { background: url(/images/logo_inverted_16.gif) no-repeat left; padding-left: 24px; color: #ccc; }
+.navbar a:hover { color: #fff; }
 
 /* Page Format */
 
 #header { background: url(/images/bkg-dot.gif) repeat-x bottom; padding: 15px 0; margin-bottom: 50px; }
-#header h1 { width:408px; height:70px; margin: 0; padding: 0; }
-#header h1 a { display: block; background: url(/images/headerlogo_500x128.png) no-repeat; width:408px; height:70px; line-height:128px; text-indent:-9000px; outline:none; overflow: hidden; margin: 0; padding: 0; }
+#header h1 { width:240px; height:64px; margin: 0; padding: 0; }
+#header h1 a { display:block; background: url(/images/oexchange_logo_240x64.png) no-repeat; width:240px; height:64px; line-height:64px; text-indent:-9999px; outline:none; overflow: hidden; margin: 0; padding: 0; }
 #header a { margin-left: 20px; line-height: 4em; float: right; }
 #header .right { padding-top: 12px; }
 #footer { background: url(/images/bkg-dot.gif) repeat-x top; margin: 50px 0; padding-top: 20px;  }

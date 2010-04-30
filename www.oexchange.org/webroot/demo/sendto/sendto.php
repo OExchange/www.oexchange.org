@@ -44,18 +44,28 @@ if ($cmd == "share") {
 			}
 			if (!$target) {
 				
-				// Well, now try it as a host
-				//echo "We were given a URL (" . $targetUrl . "), now attempting to look up host-meta on its host: " . $parts["host"] . "<br/>";
-				$explicitTargets = $oex->getTargetsOnHost($parts["host"]);
+				// Well, this URL wasn't for an XRD, try just the host part of it
+				$results = $oex->getTargetsOnHost($parts["host"]);
+				if (sizeof($results) > 0) {
+					$explicitTargets = array();
+					for ($i = 0; $i < sizeof($results); $i++) {
+						array_push($explicitTargets, $results[$i]["target"]);
+					}
+				}
 			} else {
 				$explicitTargets = array();
-				push_array($explicit_targets, $target);
+				array_push($explicitTargets, $target);
 			}
 		} else {
 			
 			// This might just be a hostname, try that
-			//echo "We don't think " . $targetUrl . " is an URL, so attempting to look up host-meta on it." . "<br/>";
-			$explicitTargets = $oex->getTargetsOnHost($targetUrl);
+			$results = $oex->getTargetsOnHost($targetUrl);
+			if (sizeof($results) > 0) {
+				$explicitTargets = array();
+				for ($i = 0; $i < sizeof($results); $i++) {
+					array_push($explicitTargets, $results[$i]["target"]);
+				}
+			}
 		}
 	}
 

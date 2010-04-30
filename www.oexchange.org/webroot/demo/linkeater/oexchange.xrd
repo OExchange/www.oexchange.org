@@ -29,8 +29,13 @@
     -->
     <Link 
         rel= "icon" 
-        href="http://www.willmeyer.com/favicon.ico"
-        type="image/vnd.microsoft.icon" 
+        href="http://www.oexchange.org/images/logo_16x16.png"
+        type="image/png" 
+        />
+    <Link 
+        rel= "icon32" 
+        href="http://www.oexchange.org/images/logo_32x32.png"
+        type="image/png" 
         />
     
     <!-- 

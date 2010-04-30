@@ -5,12 +5,12 @@ require_once("OExchangeDiscoverer.php");
 $oex = new OExchangeDiscoverer();
 
 echo "<h2>getTargetInfoFromXrd</h2>";
-$target = $oex->getTargetInfoFromXrd("http://www.willmeyer.com/oexchange/demo/linkeater/oexchange.xrd");
+$target = $oex->getTargetInfoFromXrd("http://www.oexchange.org/demo/linkeater/oexchange.xrd");
 printTarget($target);
 
 echo "<h2>getTargetsOnHost</h2>";
-$targets = $oex->getTargetsOnHost("www.willmeyer.com");
-printTargets($targets);
+$results = $oex->getTargetsOnHost("www.oexchange.org");
+printTargetsAndXrdUrls($results);
 
 echo "<h2>getTargetsForUser</h2>";
 $targets = $oex->getTargetsForUser("will@willmeyer.com");
@@ -19,6 +19,13 @@ printTargets($targets);
 function printTargets($targets) {
 	foreach($targets as $target) {
 		printTarget($target);
+	}
+}
+
+function printTargetsAndXrdUrls($results) {
+	foreach($results as $result) {
+		echo "&nbsp;&nbsp;XRD: " . htmlspecialchars($result["xrd"]) . "<br/>";
+		printTarget($result["target"]);
 	}
 }
 
