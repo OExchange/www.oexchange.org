@@ -16,6 +16,9 @@ require_once("../../header-subdemo.php");
 		Have fun...
 	</p>
     <br/>
+	<a class="addthis_button_oexchange_badge"></a>
+
+	<script type="text/javascript" src="http://cache-dev.addthis.com/cachefly/js/250/addthis_widget.js"></script>
 	
 <?
 	require_once("../../footer.php");

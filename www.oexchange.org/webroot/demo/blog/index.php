@@ -25,16 +25,16 @@
             <p><img src="images/big_dog_little_dog.jpg" border="0" alt="" align="right" />Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. Sed venenatis, nunc id pharetra blandit, dolor justo ornare turpis, et consectetur justo ligula ac lorem. Nullam id diam ac lorem dapibus volutpat. Integer vitae lectus mauris, eget malesuada lacus. Donec hendrerit, metus in mollis pellentesque, turpis tellus fringilla eros, vel hendrerit dui dui quis dui. Vivamus eu feugiat nulla. Ut ac ipsum dolor. Sed nisi mauris, dapibus eu facilisis nec, porttitor a purus. Pellentesque lacinia volutpat urna, non fermentum eros hendrerit eget. Fusce eu augue massa, non malesuada mi. Nam congue pulvinar hendrerit. </p>
             
             <p>Share this post:</p>
-            <div class="addthis_toolbox">   
-                <div class="custom_images">
-                    <a class="addthis_button_facebook"><img src="images/facebook_32.png" width="32" height="32" alt="Share to Facebook" /></a>
-                    <a class="addthis_button_twitter"><img src="images/twitter_32.png" width="32" height="32" alt="Share to Twitter" /></a>
-                    <a class="addthis_button_stumbleupon"><img src="images/stumbleupon_32.png" width="32" height="32" alt="Stumble It" /></a>
-                    <a class="addthis_button_email"><img src="images/email_32.png" width="32" height="32" alt="Email This" /></a>
-                    <a class="addthis_button_more"><img src="images/addthis_32.png" width="32" height="32" alt="More..." /></a>
-                </div>
-            </div>
-            <p><a href="">^ Personalize share icons</a></p>            
+			<div class="addthis_toolbox addthis_default_style addthis_32x32">
+				<div class="custom_images">
+					<a class="addthis_button_preferred_1"></a>
+					<a class="addthis_button_preferred_2"></a>
+					<a class="addthis_button_preferred_3"></a>
+					<a class="addthis_button_preferred_4"></a>
+					<a class="addthis_button_more"><img src="images/addthis_32.png" width="32" height="32" alt="More..." /></a>
+				</div>
+			</div>
+			<p><a href="http://ve04.clearspring.local/oxconsole/" target="_blank">^ Personalize share icons</a></p> 
         </div>
         
     </div>
@@ -74,7 +74,7 @@
 </div>
 
 
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+<script type="text/javascript" src="http://cache-dev.addthis.com/cachefly/js/250/addthis_widget.js"></script>
 
 </body>
 </html>

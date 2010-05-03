@@ -123,17 +123,17 @@ div.oexchange-enabled p { display: block; margin-top: 0; }
     height: 32px;
     margin: 0;
     padding: 0;
+    padding-right:4px;
 }
 .addthis_toolbox .custom_images a:hover {
     background: transparent;
 }
-.addthis_toolbox .custom_images a img {
+.addthis_toolbox .custom_images a span {
     opacity: 1.0;
 }
-.addthis_toolbox .custom_images a:hover img {
+.addthis_toolbox .custom_images a:hover span {
     opacity: 0.75;
 }
-
 
 /* Common Styles */
 
