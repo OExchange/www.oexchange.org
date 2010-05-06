@@ -3,6 +3,7 @@
         <h4>Table of Contents</h4>
         <ol>
             <li><a href="#status">Status &amp; Versioning</a></li>
+            <li><a href="#license">License</a></li>
             <li><a href="#conventions">Conventions</a></li>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#definitions">Definitions</a></li>
@@ -46,34 +47,44 @@
 <h2>1. Status and Versioning</h2>
 <p>
     This specification is a <span style="color:red;">WORKING DRAFT</span> and is subject to change without warning in future versions.  
-    This is version 0.8, working draft 6.  
-    See <a href="http://groups.google.com/group/oexchange">the group</a> for discussion of current open items, latest revisions, and future directions.  
+    This is <a href="#license">licensed</a> version 0.8, working draft 6.  
 </p>
-<p>The specification is housed at <a href="http://www.oexchange.org">oexchange.org</a>.</p>
+<p>
+    See the <a href="http://groups.google.com/group/oexchange">discussion group</a> for current open items and future directions.  
+</p>
 
 <h3>1.1. Document History</h3>
 <ul>
-    <li>2008-05-01: original draft created</li>
+    <li>2008-05-01: original concept draft created</li>
     <li>2008-05-26: added gadget and opensocial types</li>
     <li>2008-06-14: added embed-raw type</li>
-    <li>2008-12-07: second round review</li>
-    <li>2009-4-20: prepped for initial feedback</li>
-    <li>2009-6-12: major update per aggregated feedback</li>
-    <li>2009-9-1: pinned at 0.8 WD 1 for implementors</li>
-    <li>2010-2-1: update round for future directions; removal of oexchange-link and significant modifications to oexchange-discovery</li>
-    <li>2010-3-1: added resolved discovery proposal </li>
+    <li>2008-12-07: minor changes per second round implementor review</li>
+    <li>2009-4-20: prepped for additional "open" feedback</li>
+    <li>2009-6-12: major update per aggregated feedback, primarily simplifying the typing mechanism</li>
+    <li>2009-9-1: pinned version at 0.8 WD 1 for concrete implementors</li>
+    <li>2010-2-1: removal of oexchange-link and inclusion of oexchange-discovery via host-meta and xrd</li>
+    <li>2010-3-1: added finalized discovery specification </li>
     <li>2010-3-4: misc textual clarifications on ctype handling</li>
-    <li>2010-4-16: added agreed-to proposed personal and page discovery methods</li>
+    <li>2010-4-16: added agreed-to personal and page discovery methods</li>
     <li>2010-4-23: added icon32 image link</li>
+    <li>2010-4-23: published WD 5</li>
+    <li>2010-5-3: promoted "tags" parameter, clarified encoding rules</li>
+    <li>2010-5-3: cleaned up related reference list</li>
+    <li>2010-5-3: clarified use of xml:lang for localization</li>
+    <li>2010-5-4: formalized Open Web Foundation Agreement licensing </li>
+    <li>2010-5-6: published WD 6</li>
 </ul>
 <br />
 
 <hr />
 
+<a name="license"></a>
 <h3>1.2. License</h3>
 <p>
-    TBD, working toward potential use of the Open Web Foundation Agreement
+This specification is made available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>.   
 </p>
+<p>
+Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <br />
 
 <hr />
@@ -133,15 +144,17 @@
 <h2>4. Definitions</h2>
 <blockquote>
     <dl>
-        <dt>Source:</dt>
+        <dt><b>Source</b></dt>
         <dd>
         A website or application that has content to be shared or offered to a Target.
         </dd>
-        <dt>Target:</dt>
+		<br/>
+        <dt><b>Target</b></dt>
         <dd>
         A website or application that can receive content offered from a Source.
         </dd>
-        <dt>User:</dt>
+		<br/>
+        <dt><b>User</b></dt>
         <dd>
         A real-world user that interacts with Source and Target websites and applications.
         </dd>
@@ -240,7 +253,9 @@
     It is key that it is always possible to conduct a simplest-case transaction between any OExchange compliant entities, regardless of whatever rich type-specific logic they may support.  
     OExchange adopts this "we're always sharing a link, if you can do more with it, great!" practice as opposed to a (complex) type-negotiation system, whether dynamic or at build time.
 </p>
-
+<p>
+	Note that it is fully expected that URLs will increasingly contain <a href="http://www.microformats.org">microformat</a>, <a href="http://opengraphprotocol.org/">open graph protocol</a>, <a href="http://rdfa.info">RDFa</a>, and other meta information via appropriate specifications and channels.  Targets are free to inspect for these as they would any URL.
+</p>	
 <a name="offer-parameters"></a>
 <h3>5.4.  Offer Parameter Details</h3>
 <p>
@@ -248,12 +263,19 @@
 <dl>
     <dt><b><code>url</code></b> (required)</dt>
     <dd>The URL of the content being offered.  It should be expected that this URL is something a user could navigate to directly in a browser.</dd>
+	<br/>
 
     <dt><b><code>title</code></b> (optional)</dt>
     <dd>A human-readable title for the content.  This is typically equivalent to the page&quot;s title meta tag, and is used to convey the same type of information.</dd>
+	<br/>
     
     <dt><b><code>description</code></b> (optional)</dt>
     <dd>A human-readable description of the content.  This is typically equivalent to the page&quot;s description meta tag, and is used to convey the same type of information.</dd>
+	<br/>
+
+    <dt><b><code>tags</code></b> (optional)</dt>
+    <dd>A set of comma-delimited "tags" that further describe the content.  The meaning of tags is determined by the target, but a target should not heavily overload the meaning of tags beyond the generally accepted one: text strings used by users to assist in organizing content.  This parameter is a CSV-format string obeying the rules for line content from <a href="http://tools.ietf.org/html/rfc4180">RFC 4180</a>.  Specifically, a list of comma-separated values with no trailing comma.  Values with commas in them must be placed in double quotes (e.g. foo, bar, "Miami, FL").</dd>
+	<br/>
 
     <dt><b><code>ctype</code></b> (optional)</dt>
     <dd>Additional information on the type of content being shared.  See the list of <a href="#ctypes">supported ctypes</a>; <code>link</code> is the default type.</dd>
@@ -280,13 +302,8 @@
 <a name="ctype-link"></a>
 <h4>5.5.1. The <code>link</code> Type</h4>
 <p>
-    <code>link</code> is the default ctype, and therefore not required.  It indicates that the content is limited to the user-browsable URL provided via <code>url</code>.  
-    The optional type-specific parameters are:
+    <code>link</code> is the default ctype, and therefore not required.  It indicates that the content is limited to the user-browsable URL provided via <code>url</code>.  Again, this URL may itself offer content that includes metadata description of various types (microformats, open graph protocol elements, etc.)  
 </p>
-<dl>
-    <dt><b><code>tags</code></b> (optional)</dt>
-    <dd>A set of comma-delimited "tags" to associate with the URL.  Each tag must be URL-encoded separately.  The logical interpretation of a tag is up to the Source</dd>
-</dl>
 
 <a name="ctype-flash"></a>
 <h4>5.5.2. The <code>flash</code> Type</h4>
@@ -297,12 +314,15 @@
 <dl>
     <dt><b><code>swfurl</code></b></dt>
     <dd>The URL of the actual SWF resource, with appropriate parameters as necessary</dd>
+	<br/>
     
     <dt><b><code>height</code></b></dt>
     <dd>The preferred height of the content (which the Target can use to render the tag)</dd>
+	<br/>
 
     <dt><b><code>width</code></b></dt>
     <dd>The preferred width of the content (which the Target can use to render the tag)</dd>
+	<br/>
 
     <dt><b><code>screenshot</code></b></dt>
     <dd>The URI of an image representation of the Flash content.  The image should be suitable for display the same size as the Flash object (as specified by height and width parameters)</dd>
@@ -318,12 +338,15 @@
 <dl>
     <dt><b><code>iframeurl</code></b></dt>
     <dd>The URL to be used as the actual iframe of the actual SWF resource, with appropriate parameters as necessary</dd>
+	<br/>
     
     <dt><b><code>height</code></b></dt>
     <dd>The preferred height of the content (which the Target can use to render the iframe)</dd>
+	<br/>
 
     <dt><b><code>width</code></b></dt>
     <dd>The preferred width of the content (which the Target can use to render the iframe)</dd>
+	<br/>
 
     <dt><b><code>screenshot</code></b></dt>
     <dd>The URI of an image representation of the iframe content.  The image should be suitable for display the same size as the iframe object (as specified by height and width parameters)</dd>
@@ -338,9 +361,11 @@
 <dl>
     <dt><b><code>imageurl</code></b></dt>
     <dd>The URL that is the source of the image</dd>
+	<br/>
     
     <dt><b><code>height</code></b></dt>
     <dd>The preferred height of the image</dd>
+	<br/>
 
     <dt><b><code>width</code></b></dt>
     <dd>The preferred width of the image</dd>
@@ -366,7 +391,7 @@
 <h3></a>6.2 Target Specification via the OExchange Target XRD</h3>
 <p>
     Each target must be defined in an individual <a href="http://www.oasis-open.org/committees/download.php/36473/xrd-1.0-wd14.html">XRD</a> file. 
-    OExchange leverages standard XRD tags to convey all information.  The XRD is defined as follows:
+    OExchange leverages standard XRD elements to convey all information.  The XRD is defined as follows:
 </p>
 <ul>
     <li>The <code>Subject</code> of the document must be a navigable URL representation of the Target.  This is used to globally and uniquely identify the Target, as well as to send users for reference as required.</li>
@@ -420,6 +445,20 @@
 &lt;/XRD&gt;    
 </pre>  
 
+<h4>6.2.2 Internationalization of the Target XRD</h4>
+<p>
+	The Target XRD contains strings intended for display to users.  
+	In some cases the target may wish to express these strings, such as the action prompt, in various languages.
+	This is supported through the use of the standard <code>xml:lang</code> attribute, which can be included as an attribute on the associated Property element.
+</p>
+<p>	
+	Multiple instances of the particular Property element may be included, each with a unique language indicator.  
+	In such cases, there MUST be one of each element with no lang attribute, indicating the "default", and this element SHOULD be the first such element in the XRD to simplify default parsing.
+</p>
+<p>
+	This attribute is intended to be used in standard fashion, with values corresponding to <a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646</a>.
+</p>
+		      
 <a name="discovery-host"></a>
 <h3>6.3 Host Discovery</h3>
 <p>
@@ -492,9 +531,9 @@
 </p>    
 
 <a name="discovery-relation-related"></a>
-<h4>6.4.1 Link Tags and the <code>related-target</code> Relation Type</h4>
+<h4>6.4.1 Link Elements and the <code>related-target</code> Relation Type</h4>
 <p>
-    Link tags of relation type <code>http://oexchange.org/spec/0.8/rel/related-target</code> point, via their <code>href</code> attribute, to the XRD document of the Target that is related to the page on which the Link is located.  
+    Link elements of relation type <code>http://oexchange.org/spec/0.8/rel/related-target</code> point, via their <code>href</code> attribute, to the XRD document of the Target that is related to the page on which the Link is located.  
 </p>
 <p>
 For example, a link tag like the following may appear in the head of the page:
@@ -506,16 +545,22 @@ For example, a link tag like the following may appear in the head of the page:
 <h3>6.5 Personal Discovery</h3>
 <p style="color: red; font-weight: bold; ">PROPOSED METHOD</p>
 <p>
-    This specification includes a mechanism whereby an individual user can indicate a preference for specific Targets via their personal XRD.  This XRD should be located via WebFinger.
+    Tools that facilitate end-user sharing and link-sending require a means to provide a personalization mechanism.  Presenting the user with too many options, or with options that are not appropriate to them (commonly referred to as "the Nascar problem"), significantly reduces their use in general.  This problem increases dramatically if services are able to, via OExchange Discovery mechanisms, dynamically make themselves available without any prior integration.  This specification approaches this problem in two parts: 
+</p>
+<p>
+<ul>
+	<li><i>Temporal, single-machine user state</i>: the notion of which services, in which priority order, a user is engaged with at any given moment.  This is typically handled through tool-specific implementations, and potentially moving forward with shared-storage approaches such as <a href="http://www.xauth.org">XAuth</a>.  Depending on the specific means used, OExchange integrates in different ways.  With a shared-storage, hostname-based model such as that used by XAuth, for example, the hostnames reported can be used in a Host Discovery flow and be treated as formal Targets.</li>
+	<li><i>Long-term public expression of a user's "preferred" services</i>: the idea that a user should be able to express, in a public way, the services that they use on the web, to encourage sources and sharing tools to prioritize those on their behalf.  OExchange proposes that this occur via a user's personal XRD.  The personal XRD can be obtained via <a href="http://code.google.com/p/webfinger">WebFinger</a> and potentially other means.
+</ul>
 </p>    
          
 <a name="discovery-personal-xrd"></a>
-<h4>6.5.1 WebFinger and the <code>user-target</code> Relation Type</h4>
+<h4>6.5.1 Personal XRDs and the <code>user-target</code> Relation Type</h4>
 <p>
-    To indicate a preference for certain OExchange Targets, a user's personal XRD should include a Link element of the <code>http://oexchange.org/spec/0.8/rel/user-target</code> relation type.  the <code>href</code> attribute of this link MUST be the location of the Target's XRD resource.  
+    To indicate a preference for certain OExchange Targets, a user's personal XRD should include a Link element of the <code>http://oexchange.org/spec/0.8/rel/user-target</code> relation type.  The <code>href</code> attribute of this link MUST be the location of the Target's XRD resource.  
 </p>     
 <p>
-    For example, an individual, WebFingerable XRD may contain the following Link element:
+    For example, an individual XRD may contain the following Link element:
 </p>     
 <pre>&lt;Link 
     rel="http://oexchange.org/spec/0.8/rel/user-target" 
@@ -525,12 +570,12 @@ For example, a link tag like the following may appear in the head of the page:
 </pre>      
 
 <a name="discovery-personal-flow"></a>
-<h4>6.5.2 The Personal Discovery Flow</h4>
+<h4>6.5.2 Example Personal Discovery Flow: WebFinger</h4>
 <p>
-    The exact personal discovery flow, if using this WebFinger-based method, is as follows:
+    As an example, WebFinger can be used to locate a personal XRD, which expresses the users preferred OExchange services.  The exact flow in this case is as follows:
 </p>
 <ol>
-    <li>Per WebFinger, look up the individual XRD of a user given their email address.</li>
+    <li>Per WebFinger protocol, look up the individual XRD of a user given their email address.</li>
     <li>Look for any Link elements that use the <code>http://oexchange.org/spec/0.8/rel/user-target</code> relation type.  Each such Link's href is the location of a specific target's XRD document.</li>
     <li>Request each Target's XRD document.</li>
     <li>Inspect the XRD, obtaining metadata about the target, including its offer endpoint (a Link with a <code>http://www.oexchange.org/spec/0.8/rel/offer</code> relation).</li>
@@ -541,13 +586,22 @@ For example, a link tag like the following may appear in the head of the page:
     
 <a name="related"></a>  
 <h2>7. Related & Background</h2>
+<p>
+	The following specification documents are referenced directly or indirectly by this specification.
+</p>
 <ul>
-    <li><a href="http://tools.ietf.org/html/draft-hammer-hostmeta-05">host-meta</a></li>
-    <li><a href="http://www.oasis-open.org/committees/download.php/36473/xrd-1.0-wd14.html">XRD (working draft 14)</a></li>
+	<li><a href="http://tools.ietf.org/html/rfc5785">RFC 5785: Defining Well-Known Uniform Resource Identifiers (URIs)</a></li>
+    <li><a href="http://tools.ietf.org/html/draft-hammer-hostmeta-06">Web Host Metadata (host-meta)</a></li>
+    <li><a href="http://docs.oasis-open.org/xri/xrd/v1.0/xrd-1.0.html">XRD: Extensible Resource Descriptor</a></li>
     <li><a href="http://www.oembed.com">oEmbed</a></li>
     <li><a href="http://oauth.net">OAuth</a></li>
-    <li><a href="http://www.liveclipboard.org">Live Clipboard</a></li>
     <li><a href="http://groups.google.com/group/activity-streams">Activity Streams</a></li>
+    <li><a href="http://tools.ietf.org/html/rfc4180">RFC 4180: Common Format and MIME Type for Comma-Separated Values (CSV) files</a></li>
+	<li><a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646: Tags for Identifying Languages</a></li>
+	<li><a href="http://www.microformats.org">Microformats</a></li>
+	<li><a href="http://opengraphprotocol.org/">The Open Graph Protocol</a></li>
+	<li><a href="http://rdfa.info">RDFa</a></li>
+	<li><a href="http://code.google.com/p/webfinger">WebFinger</a></li>
 </ul>
 
 </div>

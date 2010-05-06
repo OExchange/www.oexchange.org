@@ -34,11 +34,9 @@
 		<div class="grid_4 omega right">			
 			<a href="/demo">Examples</a>
 			<a href="http://groups.google.com/group/oexchange">Talk</a>
-			<a href="/test">Test</a>
+			<a href="/tools">Tools</a>
 			<a href="/spec">Spec</a>
-<!--			
-			<a href="/quickstart.php">Start</a>
--->			
+			<a href="/guide">Start</a>
 		</div>	
 		<div class="clear"></div>
 	</div>

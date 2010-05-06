@@ -39,6 +39,9 @@ In this case, <code>http://www.example.com/share.php</code> is the endpoint.  Yo
 <p>
 Take a look at the <a target="_blank" href="/spec/#offer">Offer spec</a> for more information on the exact details of the Offer endpoint.
 </p>
+<p>
+	<b>You can use the <a href="/tools/sourceharness/">Source Harness</a> to test out your endpoint!</b>
+</p>
 
 <h5>2. Make your service discoverable by clients on the web</h5>
 <p>
@@ -63,7 +66,9 @@ Now that third parties are capable of sharing content to your service, they need
 <p>
 	You can read more about this tag and its purpose, as usual, <a href="/spec/#discovery-page">in the spec</a>.
 </p>
-
+<p>
+	<b>The <a href="/tools/discoverygen">Discovery File Generator</a> can help you generate all of the files you need!</b>.
+</p>
 <h5>3. You're done.</h5>
 <p>
 	Your service is now ready to accept content from any client on the web!
