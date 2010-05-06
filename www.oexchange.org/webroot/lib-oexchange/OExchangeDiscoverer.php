@@ -145,10 +145,10 @@ class OExchangeDiscoverer {
 	}
 
 	/**
-	* @return an array of XRD, Target objects.
+	* @return an array of Target XRD URLs.
 	*/
-	public function getTargetsOnHost($hostname) {
-		$targetXrds = array();
+	public function getTargetXrdUrlsOnHost($hostname) {
+		$targetXrdUrls = array();
 	
 		// Look up the OExchange relations in the host's main XRD
 		$hostMetaUrl = "http://" . $hostname . "/.well-known/host-meta";
@@ -161,9 +161,17 @@ class OExchangeDiscoverer {
 				dbglog("Found a link with our relation type...");
 			
 				// This link represents an oexchange target
-				array_push($targetXrds, $link["HREF"]);
+				array_push($targetXrdUrls, $link["HREF"]);
 			}
 		}
+		return $targetXrdUrls;
+	}
+
+	/**
+	* @return an array of XRD, Target objects.
+	*/
+	public function getTargetsOnHost($hostname) {
+		$targetXrds = $this->getTargetXrdUrlsOnHost($hostname);
 	
 		// We now have an array of target descriptors XRD docs, look them each up
 		$targets = array();

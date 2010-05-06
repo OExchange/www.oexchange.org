@@ -37,6 +37,7 @@ function printTarget($target) {
 	echo "&nbsp;&nbsp;Endpoint: " . htmlspecialchars($target->endpoint) . "<br/>";
 	echo "&nbsp;&nbsp;Vendor: " . htmlspecialchars($target->vendor) . "<br/>";
 	echo "&nbsp;&nbsp;Icon: " . htmlspecialchars($target->icon) . "<br/>";
+	echo "&nbsp;&nbsp;Icon32: " . htmlspecialchars($target->icon) . "<br/>";
 }
 
 ?>

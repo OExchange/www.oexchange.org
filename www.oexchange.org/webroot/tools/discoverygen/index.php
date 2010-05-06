@@ -125,7 +125,12 @@ $cmd = getDfltArg("cmd", "none");
 	<p>
 		You can read more about this page-level tag <a target="_blank" href="/spec/#discovery-page">in the spec</a>.
 	</p>
-	
+
+	<h3>What now?</h3>
+	<p>
+		Stick these files on your host as explained above, then try it out with the <a href="/tools/discoveryharness">Discovery Test Harness</a>.
+	</p>
+		
 	<h3>Generate another?</h3>
 		<form id="back" action="/tools/discoverygen" method="GET">
 		<input type="submit" value="Back to service details " /></input>

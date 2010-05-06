@@ -63,7 +63,7 @@ if (empty($dfltTarget)) {
     <h2>Target</h2>
     <form name="targetForm">
         Offer endpoint: <br/>
-        <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /></input>?url=http://www.oexchange.org<br/>
+        <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /></input>?url=http://www.example.com<br/>
     </form>
     <p></p>
     
@@ -71,7 +71,7 @@ if (empty($dfltTarget)) {
     
     <h3>Common link offers</h3>
     <form name="commonForm" action="javascript:void(0);" >
-        URL: <input name="url" type="text" size="50" value="http://www.oexchange.org" /><br/><br/>
+        URL: <input name="url" type="text" size="50" value="http://www.example.com" /><br/><br/>
         title: <input name="title" type="text" size="50" value="" /><br/><br/>
         description: <input name="description" type="text" size="50" value="" /><br/><br/>
         <input type="submit" value="Share (without a ctype)" onclick="shareLink();" />
@@ -95,7 +95,7 @@ if (empty($dfltTarget)) {
 
     <h4>ctype iframe</h4>
     <form name="iframeForm" action="javascript:void(0);" >
-        iframefurl: <input name="iframeurl" type="text" size="70" value="http://www.oexchange.org" /><br/><br/>
+        iframefurl: <input name="iframeurl" type="text" size="70" value="http://www.example.com" /><br/><br/>
         height: <input name="height" type="text" size="70" value="480" /><br/><br/>
         width: <input name="width" type="text" size="70" value="640" /><br/><br/>
         screenshot: <input name="screenshot" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /><br/><br/>

@@ -56,7 +56,7 @@ echo "</p>";
 
 <h3>WTF?</h3>
 <p>
-	This is a simple example OExchange Target, to which you can send a link.  You didn't expect me to do anything useful with it, did you?  [<a href="index.php">read more</a>]   
+	This is a simple example OExchange Target, to which you can send a link.  You didn't expect me to do anything useful with it, did you?  [<a href="/demo/linkeater">back to LinkEater</a>]   
 </p>	
 
 <?

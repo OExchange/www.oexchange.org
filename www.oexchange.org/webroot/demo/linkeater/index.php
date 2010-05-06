@@ -5,20 +5,26 @@ require_once("../../header-subdemo.php");
 ?>
     <div class="banner-linkeater"></div>
 	<p>
-		LinkEater is a simple example of a service that accepts links via OExchange.    
+		LinkEater is a simple example of a service that accepts URLs via OExchange.  It doesn't do much with them, but hey, you get the idea.  Imagine its a social network, a news submission service, a translation tool, whatever.      
 	</p>
-	<ul>
-		<li>Links are accepted via <a href="offer.php?url=http://www.willmeyer.com">the Offer endpoint</a></li>
-		<li>The metadata for this Target is in <a href="oexchange.xrd">it&apos;s XRD document</a>, which can also be obtained via <a href="../../../.well-known/host-meta">&lt;host&gt;.well-known/host-meta</a></li>
-	</ul>
-	</p>
+	<h4>Sending Links to LinkEater</h4>
 	<p>
-		Have fun...
+		Links are accepted via a standard OExchange Offer endpoint, at:
 	</p>
-    <br/>
-	<a class="addthis_button_oexchange_badge"></a>
-
-	<script type="text/javascript" src="http://cache-dev.addthis.com/cachefly/js/250/addthis_widget.js"></script>
+	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
+	<p>
+		Try <a href="offer.php?url=http://www.example.com">sending it a URL</a>.
+	</p>	
+	<h4>Automatic Discovery</h4>
+	<p>
+		LinkEater is fully discoverable; any tool that understands OExchange Discovery can figure out how to send links to LinkEater automagically.
+		<ul>
+			<li>The service has a <a href="oexchange.xrd">Target XRD document</a>, which includes all of its details</li>
+			<li>You can discover the service from just the hostname, since it also has a <a href="../../../.well-known/host-meta">/.well-known/host-meta</a> document</li>
+			<li>You can discover the service from any page on this site, because they all have related-target page meta tags</li> 
+		</ul>
+	</p>
+	<h4>Have fun...</h4>
 	
 <?
 	require_once("../../footer.php");

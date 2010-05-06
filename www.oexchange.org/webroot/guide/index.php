@@ -40,12 +40,12 @@ In this case, <code>http://www.example.com/share.php</code> is the endpoint.  Yo
 Take a look at the <a target="_blank" href="/spec/#offer">Offer spec</a> for more information on the exact details of the Offer endpoint.
 </p>
 <p>
-	<b>You can use the <a href="/tools/sourceharness/">Source Harness</a> to test out your endpoint!</b>
+	<b>TIP:</b> Use the <a href="/tools/sourceharness/">Source Test Harness</a> to test out your endpoint!
 </p>
 
 <h5>2. Make your service discoverable by clients on the web</h5>
 <p>
-Now that third parties are capable of sharing content to your service, they need to be able to discover that your service exists.  This is optional, but its really the best way to allow your tool to be interoperable with the web. 
+Now that third parties are capable of sharing content to your service, they need to be able to discover that your service exists.  This is optional, but its really the best way to allow your tool to be interoperable with the web.  The <a href="/tools/discoverygen">Discovery File Generator</a> and <a href="/tools/discoveryharness">Discovery Test Harness</a> can help you set all of this up.
 </p>
 <p>
 	Include the details of your service in an XML file, in a specific format (XRD).  
@@ -67,7 +67,7 @@ Now that third parties are capable of sharing content to your service, they need
 	You can read more about this tag and its purpose, as usual, <a href="/spec/#discovery-page">in the spec</a>.
 </p>
 <p>
-	<b>The <a href="/tools/discoverygen">Discovery File Generator</a> can help you generate all of the files you need!</b>.
+	<b>TIP:</b> Remember that the <a href="/tools/discoverygen">Discovery File Generator</a> can help you generate all of the files you need, and the <a href="/tools/discoveryharness">Discovery Test Harness</a> can help you test compliance.
 </p>
 <h5>3. You're done.</h5>
 <p>
@@ -81,7 +81,11 @@ Now that third parties are capable of sharing content to your service, they need
 </p>
 <pre>http://www.example.com/share.php?url={URI}</pre>
 <p>
-Once you know the core Offer endpoint, then the arguments will be the same no matter which services you are using.  This is a big improvement over the range of URL patterns in use otherwise.
+Once you know the core Offer endpoint, then the arguments will be the same no matter which services you are using.  You can implement the most basic sharing icon like this:
+</p>
+<pre>&lt;a href="{service offer endpoint}?url=http://www.example.com"&gt;&lt;img href="{service image here}"&gt;&lt;/a&gt;</pre>
+<p>
+This is a big improvement over the range of URL patterns in use otherwise.
 </p>
 <p>Usually, you will get the offer endpoint location from the service's documentation since you're not figuring it out dynamically at runtime.  If you'd rather do it automatically, then you're operating more like a sharing tool and should probably take a look <a href="#tools">at that guide</a>.
 </p>
@@ -103,13 +107,17 @@ There are a bunch of optional parameters you can pass, but really <code>url</cod
 <h5>2. You can locate targets automatically</h5>
 <p>
 The more powerful capability of services that support OExchange is their ability to be discovered automatically.  If you know a hostname, for example, you can figure out if there is a service that accepts links there like this:
+</p>
+<p>
 <ol>
 	<li>Look for a document at the host's <code>/.well-known/host-meta</code> path.</li>
 	<li>If there is one, look for a Link element inside this, with a relation type of <code>http://oexchange.org/spec/0.8/rel/resident-target</code>.</li>
 	<li>If there is one, this describes the path of a an XML document (or several) that describes the service.</li>
 	<li>Look up that XRD document, which will describe everything about the service, including the URL for its Offer endpoint.</li> 
-</ol>	
-You can read more about this discovery flow, and the formats of the two documents, <a target="_blank" href="/spec/#discovery">in the specification</a>.  You can also take a look at the example <a href="/demo/linkeater">LinkEater service</a>.
+</ol>
+</p>	
+<p>
+Read more about this discovery flow, and the formats of the two documents, <a target="_blank" href="/spec/#discovery">in the specification</a>.  You can also take a look at the example <a href="/demo/linkeater">LinkEater service</a>, and even use the <a href="/tools/discoveryharness">discovery Test Harness</a> to check hosts automatically.
 </p>
 <p>
 Additional options for locating services are by looking for meta tags in HTML pages that point to related services, or even using WebFinger to look up and record user service preferences.  Take a look at the <a target="_blank" href="/spec/#discovery-page">page metatag</a> and <a href="/spec/#discover-personal">personal XRD</a> specifications.	

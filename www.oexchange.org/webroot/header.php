@@ -32,8 +32,8 @@
 	<div id="header">
 		<div class="grid_8 alpha"><h1><a href="/">OExchange</a></h1></div>
 		<div class="grid_4 omega right">			
-			<a href="/demo">Examples</a>
 			<a href="http://groups.google.com/group/oexchange">Talk</a>
+			<a href="/demo">Examples</a>
 			<a href="/tools">Tools</a>
 			<a href="/spec">Spec</a>
 			<a href="/guide">Start</a>
