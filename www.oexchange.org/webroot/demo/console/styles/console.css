@@ -1,0 +1,14 @@
+.messagebox {
+    border-width: 1px;
+    border-style: solid;
+    padding: 4px;
+}
+.error { border-color: red; background-color: #fcc }
+.notice { border-color: yellow; background-color: #ffc }
+.success { border-color: green; background-color: #cfc }
+
+.iconified {
+    padding-left: 24px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
