@@ -1,6 +1,6 @@
 <?php
 
-$page_title = "LinkEater OExchange Demo Target";
+$page_title = "LinkEater, An Example OExchange Target";
 require_once("../../header-subdemo.php");
 ?>
     <div class="banner-linkeater"></div>

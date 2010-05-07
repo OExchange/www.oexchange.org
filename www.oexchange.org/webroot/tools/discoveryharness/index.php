@@ -27,20 +27,17 @@ $cmd = getDfltArg("cmd", "none");
 
 ?>
 
-    <h1>OExchange Discovery Test Harness</h1>
+    <h1>Discovery Test Harness</h1>
     <p>
-		This tool can help you test a service for proper <a href="/spec/#discovery">OExchange Discovery</a> compliance.  
+		<i>Test a service for <a href="/spec/#discovery">OExchange Discovery</a> compliance.</i>  
 	</p>
 	<p>
-		If you need help setting up discovery files, check the <a href="/guide/#services">Quick Start Guide</a> or the <a href="/tools/discoverygen">Discovery File Generator</a>.
-	</p>
-	<p>
-		If you want to test sending it URLs instead, try <a href="/tools/sourceharness">this tool</a>. 
+		<i>If you need help setting up discovery support, check the <a href="/guide/#services">Quick Start Guide</a> or the <a href="/tools/discoverygen">Discovery File Generator</a>.  If you want to test Offer support instead, use <a href="/tools/sourceharness">this tool</a>.</i>
 	</p>
 
 	<h2>Host Discovery</h2>
 	<p>
-		Does your host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up so that anyone can find your service?
+		Does a host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up so, that anyone can locate the service on that host automatically?
 	</p>
 	<p>
 	<form action="" method="POST">
@@ -110,7 +107,7 @@ $cmd = getDfltArg("cmd", "none");
 
 	<h2>Target XRD Inspection</h2>
 	<p>
-		Want to inspect a <a target="_blank" href="/spec/#discovery-targetxrd">Target XRD</a> directly?
+		Inspect a <a target="_blank" href="/spec/#discovery-targetxrd">Target XRD</a> directly.
 	</p>
 	<p>
 	<form action="" method="POST">

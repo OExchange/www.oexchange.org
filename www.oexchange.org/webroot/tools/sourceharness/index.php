@@ -1,5 +1,5 @@
 <?php
-$page_title = "OExchange Test Source";
+$page_title = "OExchange Offer Test Harness";
 include '../../header.php';
 
 $dfltTarget = $_REQUEST["target"];
@@ -55,7 +55,7 @@ if (empty($dfltTarget)) {
     
     </script>
 
-    <h1>OExchange Test Source</h1>
+    <h1>Offer Test Harness</h1>
     <p>
     <i>Initiate OExchange Offer calls to a target of your choice.</i>
     </p>

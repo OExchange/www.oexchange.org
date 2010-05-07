@@ -24,15 +24,15 @@ $cmd = getDfltArg("cmd", "none");
 
 ?>
 
-    <h1>OExchange Discovery Resource Generator</h1>
+    <h1>Discovery Resource Generator</h1>
     <p>
-		Need an easy way to generate correct OExchange Discovery files for your service?  Tell us your info and this'll help you generate what you need for /.well-known/host-meta and your Target XRD.  As a refresher, these are the things that need to be on your host for sources to <a target="_blank" href="/spec/#discovery-host">discover your service automatically</a>.  
+		<i>For tools to be able to <a target="_blank" href="/spec/#discovery-host">discover a service automatically</a>, the host needs a <code>/.well-known/host-meta</code> resource that points to a XRD file describing the target itself.  Use this tool to generate these two files, then put them on your host to make it discoverable.</i>  
 	</p>
 	
 <?
 	if ($cmd == "none") {
 ?>
-	<h2>About your service...</h2>
+	<h2>About Your Service</h2>
 	<form action="" method="POST">
 		Hostname:<br/>&nbsp;&nbsp;&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" /></input><br/><br/>
 		Primary site URL:<br/>&nbsp;&nbsp;&nbsp;<input name="u" type="text" size="60" value="<?= $url ?>" /></input><br/><br/>
@@ -53,23 +53,23 @@ $cmd = getDfltArg("cmd", "none");
 		$hostMeta = $gen->generateHostMeta($hostname, $url);
 		$targetXrd = $gen->generateTargetXrd($url, $vendor, $title, $name, $prompt, $offer, $icon, $icon32);
 ?>
-	<h2>Your resources...</h2>
+	<h2>Your Resources</h2>
 
-	<h3>Your target's XRD file:</h3>
+	<h3>Your Target XRD File:</h3>
 	<p>
-		You need to provide an XRD file that describes all the information about your Target, including its name and how it accepts URLs.  This can be located anywhere, though usually it will live under the service's main path.   In your case, that would be:
+		The Target XRD describes everything about a Target service, including its name and how it accepts URLs.  This file can be located anywhere, though usually it will live under the service's main path.   From what you told us, in your case that would be:
 	</p>
 	<p>
 		<code><?= $url ?>/oexchange.xrd</code>
 	</p>
 	<p>
-		The XRD file is just an XML resource.  For your service, it should look like this:
+		For your service, the XRD file should look like this:
 	</p>
 	<p>
-	<textarea rows="20" cols="100"><?= $targetXrd ?></textarea>
+	<textarea rows="22" cols="120"><?= $targetXrd ?></textarea>
 	</p>
 	<p>
-		Read more about the Target XRD resource <a target="_blank" href="/spec/#discovery-targetxrd">in the spec</a>. 
+		You can read more about the details of the Target XRD <a target="_blank" href="/spec/#discovery-targetxrd">in the spec</a>. 
 	</p>
 	<p>
 		<form action="dl.php" method="POST">
@@ -89,21 +89,21 @@ $cmd = getDfltArg("cmd", "none");
 	<br/>
 	<br/>
 	
-	<h3>Your host's Host-Meta file:</h3>
+	<h3>Your Host-Meta File:</h3>
 	<p>
-		The host that serves your service needs to have a "host-meta" resource.  This is an XML text file located, in your case, at:
+		The host that serves your service needs to have a "host-meta" resource.  This is an XML text file located in a well-defined location.  In your case, it should be at:
 	</p>
 	<p>
 		<code>http://<?= $hostname ?>/.well-known/host-meta</code>  
 	</p>
 	<p>
-		This file should contain a link to the target XRD.  For your service, assuming you use the XRD file above, it should look like this:
+		This file should contain a link to the target XRD file.  For your service, assuming you use the XRD file above, it should look like this:
 	</p>	
 	<p>
-	<textarea rows="8" cols="100"><?= $hostMeta ?></textarea>
+	<textarea rows="7" cols="120"><?= $hostMeta ?></textarea>
 	</p>
 	<p>
-		If you already have a host-meta resource on your host, then you'll need to add the <code>Link</code> element to it.  If you don't have one, you can just copy this file completely.  Read more about the host-meta resource <a target="_blank" href="/spec/#discovery-hostmeta">in the spec</a>. 
+		If you already have a host-meta resource on your host, then you'll need to add this <code>Link</code> element to it.  If you don't have one, you can just copy this file completely.  Read more about the host-meta resource <a target="_blank" href="/spec/#discovery-hostmeta">in the spec</a>. 
 	</p>
 	<p>
 		<form action="dl.php" method="POST">
@@ -118,7 +118,7 @@ $cmd = getDfltArg("cmd", "none");
 
 	<h3>In-page meta tags:</h3>
 	<p>
-		If you want, you can indicate on HTML pages that there is a target service available.  This provides a hint to browsers and other page-level tools that there is a target, without having to attempt host discovery in every case.  For your target, the tag that you would place in your HTML pages would look like this:
+		Optionally, you can indicate on HTML pages that there is a related target service available.  This provides a hint to browsers and other page-level tools that there is a target, without having to attempt host discovery in every case.  For your target, the tag that you would place in your HTML pages would look like this:
 	</p>
 	<pre>&lt;link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="<?= $url ?>/oexchange.xrd"/&gt;</pre>
 	</p>
