@@ -9,7 +9,7 @@ The source for everything OExchange, including:
 
 * Some PHP utility code, [lib-oexchange](http://github.com/willmeyer/OExchange/tree/master/www.oexchange.org/webroot/lib-oexchange/), currently part of the site but might some day be separated
 
-* Some [presos and collateral](http://github.com/willmeyer/OExchange/tree/master/presos/)
+* Some [presos](http://github.com/willmeyer/OExchange/tree/master/presos/) and other [assets](http://github.com/willmeyer/OExchange/tree/master/assets/)
 
 * The home page, quickstart, all that
 
