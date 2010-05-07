@@ -21,6 +21,6 @@ Deploying the Site
 
 Dirt simple, if you have the creds:
 
-`deploy.sh`
+`deploy.sh <username>`
 
 
