@@ -11,14 +11,14 @@ function getDfltArg($name, $dflt) {
 }
 
 function printTarget($target) {
-	echo "&nbsp;&nbsp;ID: " . htmlspecialchars($target->id) . "<br/>";
-	echo "&nbsp;&nbsp;Name: " . htmlspecialchars($target->name) . "<br/>";
-	echo "&nbsp;&nbsp;Prompt: " . $target->prompt . "<br/>";
-	echo "&nbsp;&nbsp;Title: " . htmlspecialchars($target->title) . "<br/>";
-	echo "&nbsp;&nbsp;Endpoint: " . htmlspecialchars($target->endpoint) . "<br/>";
-	echo "&nbsp;&nbsp;Vendor: " . htmlspecialchars($target->vendor) . "<br/>";
-	echo "&nbsp;&nbsp;Icon: " . htmlspecialchars($target->icon) . "<br/>";
-	echo "&nbsp;&nbsp;Icon32: " . htmlspecialchars($target->icon32) . "<br/>";
+	echo "&nbsp;&nbsp;<b>ID/URL:</b> " . htmlspecialchars($target->id) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Name:</b> " . htmlspecialchars($target->name) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Prompt:</b> " . $target->prompt . "<br/>";
+	echo "&nbsp;&nbsp;<b>Title:</b> " . htmlspecialchars($target->title) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Endpoint:</b> " . htmlspecialchars($target->endpoint) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Vendor:</b> " . htmlspecialchars($target->vendor) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Icon:</b> " . htmlspecialchars($target->icon) . "<br/>";
+	echo "&nbsp;&nbsp;<b>Icon32:</b> " . htmlspecialchars($target->icon32) . "<br/>";
 }
 
 $hostname = getDfltArg("h", "www.oexchange.org");
@@ -40,7 +40,7 @@ $cmd = getDfltArg("cmd", "none");
 		Does a host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up so, that anyone can locate the service on that host automatically?
 	</p>
 	<p>
-	<form action="" method="POST">
+	<form action="/tools/discoveryharness/" method="POST">
 		Hostname (e.g. www.example.com):&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" /></input>
 		<input name="cmd" type="hidden" value="hm" /></input>
 		<input type="submit" value="Check Host" /></input>
@@ -50,7 +50,7 @@ $cmd = getDfltArg("cmd", "none");
 <?
 	if ($cmd == "hm") {
 		?>
-		<h5>Discovery Results</h5>
+		<h5>Discovery Results:</h5>
 		<?	
 		$disc = new OExchangeDiscoverer();
 		$targetXrdUrls = $disc->getTargetXrdUrlsOnHost($hostname);
@@ -66,18 +66,17 @@ $cmd = getDfltArg("cmd", "none");
 		} else {
 			?>
 			<p>
-				We DID find a <code>host-meta</code>, here's what was in it...	
+				We DID locate http://<?= $hostname?>/.well-known/host-meta, here's what was in it:	
 			</p>
 			<?	
 			
 			foreach($targetXrdUrls as $targetXrdUrl) {
 				?>
-				<h6>Target: <?= $targetXrdUrl ?></h6>
 				<p>
-					Loaded from <?= $targetXrdUrl?> (from your host's host-meta file)...
+				<b>Referenced Target XRD:</b> <?= $targetXrdUrl ?>
 				</p>
 				<p>
-					Target details (after we inspected the XRD):
+					&nbsp;&nbsp;Target details (from inspecting this XRD):
 				</p>
 				<?	
 				$target = $disc->getTargetInfoFromXrd($targetXrdUrl);
@@ -89,7 +88,7 @@ $cmd = getDfltArg("cmd", "none");
 					?>
 					</p>
 					<p>
-					Want to use the source harness to test this Target?  <a href="/tools/sourceharness/?target=<?=$target->endpoint ?>">Go there now</a>.	
+					Want to use the test harness to check sending links to this Target?  <a href="/tools/sourceharness/?target=<?=$target->endpoint ?>">Go there now</a>.	
 					</p>
 					<?
 				} else {
@@ -110,7 +109,7 @@ $cmd = getDfltArg("cmd", "none");
 		Inspect a <a target="_blank" href="/spec/#discovery-targetxrd">Target XRD</a> directly.
 	</p>
 	<p>
-	<form action="" method="POST">
+	<form action="/tools/discoveryharness/" method="POST">
 		Target XRD (e.g. http://www.example.com/oexchange.xrd):&nbsp;<input name="x" type="text" size="60" value="<?= $xrdUrl ?>" /></input>
 		<input name="cmd" type="hidden" value="txrd" /></input>
 		<input type="submit" value="Check Target XRD" /></input>
@@ -120,7 +119,7 @@ $cmd = getDfltArg("cmd", "none");
 <?
 	if ($cmd == "txrd") {
 		?>
-		<h5>XRD Lookup Results</h5>
+		<h5>XRD Lookup Results:</h5>
 		<?	
 		$disc = new OExchangeDiscoverer();
 		$target = $disc->getTargetInfoFromXrd($xrdUrl);
@@ -135,7 +134,7 @@ $cmd = getDfltArg("cmd", "none");
 		} else {
 			?>
 			<p>
-				ERROR looking up details; the target XRD was not found or not valid.  If you need help generating one, try <a href="/tools/discoverygen">this tool</a>.
+				<b>ERROR</b> looking up details; the target XRD was not found or not valid.  If you need help generating one, try <a href="/tools/discoverygen">this tool</a>.
 			</p>
 			<?
 		}
