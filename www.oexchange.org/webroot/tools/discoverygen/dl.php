@@ -11,8 +11,8 @@ function getDfltArg($name, $dflt) {
 $hostname = getDfltArg("h", "www.example.com");
 $url = getDfltArg("u", "http://www.example.com/coolservice");
 $vendor = getDfltArg("v", "Examples Inc");
-$title = getDfltArg("v", "A cool service that accepts URLs");
-$name = getDfltArg("v", "CoolService");
+$title = getDfltArg("t", "A cool service that accepts URLs");
+$name = getDfltArg("n", "CoolService");
 $prompt = getDfltArg("p", "Share to CoolService");
 $offer = getDfltArg("o", "http://www.example.com/coolservice/offer.php");
 $icon = getDfltArg("i", "http://www.example.com/assets/icon.png");
@@ -24,7 +24,7 @@ if ($file == "unknown") {
 	header("HTTP/1.0 404 Not Found");
 } else if ($file == "txrd") {
 	$gen = new OExchangeGenerator();
-	$targetXrd = $gen->generateTargetXrd($serviceUrl, $vendor, $title, $name, $prompt, $offer, $icon, $icon32);
+	$targetXrd = $gen->generateTargetXrd($url, $vendor, $title, $name, $prompt, $offer, $icon, $icon32);
 	header("Content-type: application/xml+xrd");
 	header("Content-Disposition: attachment; filename=oexchange.xrd"); 
 	echo $targetXrd;

@@ -91,6 +91,9 @@ $cmd = getDfltArg("cmd", "none");
 					printTarget($target);
 					?>
 					</p>
+					<p>
+					Want to use the source harness to test this Target?  <a href="/tools/sourceharness/?target=<?=$target->endpoint ?>">Go there now</a>.	
+					</p>
 					<?
 				} else {
 					?>
