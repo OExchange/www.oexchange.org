@@ -1,18 +1,17 @@
 What's Here?
 ------------
 
-The source for everything OExchange, including:
+The source for everything on www.oexchange.org, including:
  
-* The [OExchange spec](http://github.com/willmeyer/OExchange/tree/master/www.oexchange.org/webroot/spec/) 
+* The [OExchange spec](http://github.com/OExchange/www.oexchange.org/tree/master/webroot/spec/) 
 
-* Various [tools](http://github.com/willmeyer/OExchange/tree/master/www.oexchange.org/webroot/tools/) to help OExchange development
+* Various [tools](http://github.com/OExchange/www.oexchange.org/tree/master/webroot/tools/) to help OExchange development
 
-* Some PHP utility code, [lib-oexchange](http://github.com/willmeyer/OExchange/tree/master/www.oexchange.org/webroot/lib-oexchange/), currently part of the site but might some day be separated
-
-* Some [presos](http://github.com/willmeyer/OExchange/tree/master/presos/) and other [assets](http://github.com/willmeyer/OExchange/tree/master/assets/)
+* Some PHP utility code, [lib-oexchange](http://github.com/OExchange/www.oexchange.org/tree/master/webroot/lib-oexchange/), currently part of the site but might some day be separated
 
 * The home page, quickstart, all that
 
+Other things are in other repos in the [OExchange account](http://github.com/OExchange).
 
 Contributing
 ------------
