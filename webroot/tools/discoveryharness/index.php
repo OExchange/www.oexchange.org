@@ -3,7 +3,7 @@
 $page_title = "OExchange Discovery Test Harness";
 include '../../header.php';
 include '../../lib-oexchange/OExchangeDiscoverer.php';
-include '../../lib-oexchange/utils.php';
+include_once '../../lib-oexchange/utils.php';
 
 function printTarget($target) {
 	echo "&nbsp;&nbsp;<b>ID/URL:</b> " . htmlspecialchars($target->id) . "<br/>";
