@@ -1,12 +1,7 @@
 <?
 
 include '../../lib-oexchange/OExchangeGenerator.php';
-
-function getDfltArg($name, $dflt) {
-	if (isset($_GET[$name])) return $_GET[$name];
-	else if (isset($_POST[$name])) return $_POST[$name];
-	else return $dflt;
-}
+include '../../lib-oexchange/utils.php';
 
 $hostname = getDfltArg("h", "www.example.com");
 $url = getDfltArg("u", "http://www.example.com/coolservice");

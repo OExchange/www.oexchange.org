@@ -3,12 +3,7 @@
 $page_title = "OExchange Discovery Test Harness";
 include '../../header.php';
 include '../../lib-oexchange/OExchangeDiscoverer.php';
-
-function getDfltArg($name, $dflt) {
-	if (isset($_GET[$name])) return $_GET[$name];
-	else if (isset($_POST[$name])) return $_POST[$name];
-	else return $dflt;
-}
+include '../../lib-oexchange/utils.php';
 
 function printTarget($target) {
 	echo "&nbsp;&nbsp;<b>ID/URL:</b> " . htmlspecialchars($target->id) . "<br/>";

@@ -26,6 +26,12 @@ function getParamDflt($params, $name, $dflt_val) {
 	}	
 }
 
+function getDfltArg($name, $dflt) {
+	if (isset($_GET[$name])) return $_GET[$name];
+	else if (isset($_POST[$name])) return $_POST[$name];
+	else return $dflt;
+}
+
 function getFullUrl() {
 	$query_string = "";
 	foreach ($_GET as $key => $value) {
