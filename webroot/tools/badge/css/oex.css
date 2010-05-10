@@ -1,0 +1,195 @@
+
+/* OExchange Prompt Bar */
+
+#oexchange-prompt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10001;
+    background: #fcf9db;
+    border-bottom: 1px solid #e8e3ae;
+    display: none;
+}
+#oexchange-prompt-inner {
+    position: relative;
+    padding: 10px 20px;
+    font-family: arial,helvetica,verdana,sans-serif;
+    font-size: 14px;
+}
+#oexchange-prompt h1 {
+    display: inline;
+    background: url(http://www.oexchange.org/images/logo_24x24.png) no-repeat left;
+    line-height: 24px;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 4px 0 4px 30px;
+    margin: 0;
+}
+#oexchange-prompt p {
+    display: inline;
+    position: absolute;
+    top: 14px;
+    left: 160px;
+    padding: 0;
+    margin: 0;
+}
+#oexchange-prompt-buttons {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: inline;
+}
+#oexchange-prompt-buttons button {
+    margin-left: 5px;
+}
+
+a.oexchange-enabled { background: url(http://www.oexchange.org/images/logo_16x16.png) no-repeat left; line-height: 16px; padding: 2px 0 2px 21px; text-decoration: none; color: #464646;}
+a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
+
+
+#oexchange-dialog {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 200px;
+    margin-top: -150px;
+    margin-left: -250px;
+    z-index: 10002;
+    background: rgba(0,0,0,.4);
+    padding: 10px;
+    -moz-border-radius: 5px;
+}
+#oexchange-dialog a { color: #06c; }
+#oexchange-dialog a:hover { color: #004890; }
+
+#oexchange-dialog-inner {
+    background: #fff;
+    border: 1px solid #454545;
+    height: 198px;
+    font-family: arial,helvetica,verdana,sans-serif;
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #464646;
+}
+#oexchange-dialog-titlebar {
+    background: #fefefe url(/cachefly/static/t00/oex-titlebar.gif) repeat-x bottom;
+    padding: 10px 15px;
+}
+#oexchange-dialog-titlebar h3 {
+    background: url(http://www.oexchange.org/images/logo_24x24.png) no-repeat left;
+    margin: 0;
+    padding: 4px 0 4px 32px;
+    font-size: 16px;
+    color: #000;
+}
+#oexchange-dialog-content,
+#oexchange-dialog-saved {
+    padding: 10px 15px;
+}
+#oexchange-dialog-buttons,
+#oexchange-dialog-saved-button {
+    text-align: center;
+}
+#oexchange-dialog-buttons button,
+#oexchange-dialog-saved-button button {
+    margin: 0 5px;
+}
+
+
+
+/* AddThis Inline Popup */
+
+.atpop {
+    position: relative;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 200px;
+    padding: 10px;
+    line-height: 1.2em;
+    font-family: arial,helvetica,tahoma,verdana,sans-serif;
+    font-size: 12px;    
+    color: #666;
+    float: left;
+    
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-box-shadow: 1px 4px 8px #ccc;
+	-webkit-box-shadow: 1px 4px 8px #ccc;
+}
+.atpop.atpop-sub {
+    margin-top: -1px;
+}
+.atpop.atpop-side {
+    margin-left: -1px;
+}
+
+.atpop .atpop-help {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    display: block;
+    background: url(/cachefly/static/t00/help.png) no-repeat 0 0;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-indent: -9999px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.atpop .atpop-help:hover {
+    background-position: 0 -16px;
+}
+.atpop .atpop-results {
+    padding-top: 12px;
+}
+.atpop label {
+    display: block;
+    padding-bottom: 5px;
+}
+.atpop .ats input {
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 170px;
+    padding-left: 4px;
+    margin-left: 4px;
+    font-size: 11px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.atpop .atitem {
+	padding: 2px;
+	margin: 2px 0;
+}
+.atpop .atitem span:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.atpop .at15t_person { background: url(/cachefly/static/t00/icon_person.gif) no-repeat 0 0; }
+.atpop .at15t_search { background: url(/cachefly/static/t00/icon_search.gif) no-repeat 0 0; }
+
+.hide { display: none; }
+.blk { color: #000; }
+
+.addthis_32x32 .at300bs {
+    height:32px;
+    width:32px;
+	line-height:32px!important;
+}
+
+
+div.oexchange-enabled { height:32px; line-height: 32px; font-family:arial,helvetica,tahoma,verdana,sans-serif; font-size:11px; color: #666; }
+div.oexchange-enabled a.oexchange-enabled-btn { display:block; background: url(/cachefly/static/t00/oexchange_savebtn.png) no-repeat; width:97px; height:32px; line-height:32px; overflow:hidden; text-indent: -9999px; margin-right:12px; float:left; }
+div.oexchange-enabled a { color: #464636; }
+div.oexchange-enabled a:hover { text-decoration: underline; color: #000; }
+
+
+
+.atpop .atitem-hover {
+    background: #eee;
+    color: #000;
+    cursor: pointer;
+}
