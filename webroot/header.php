@@ -27,6 +27,7 @@
 </head>
   
 <body>
+<!-- this is a foo test -->
 <a name="top"></a>
 <div class="container_12">
 	<div id="header">
