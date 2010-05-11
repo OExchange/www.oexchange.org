@@ -44,7 +44,7 @@ $(function(){
     var loadData = function(){
         serviceList = sharingtoolPrefService.getServiceList();
         serviceHash = (serviceList) ? sharingtoolPrefService.getServiceHash() : null;
-        
+
         if (serviceList && serviceList.length > 0 && serviceHash == null) {
             loadingServices = true;
             sharingtoolPrefService.populateServiceHash(serviceList,function(sh){
@@ -84,12 +84,33 @@ $(function(){
                 xrdData = serviceHash[xrd] || null;
                 tr = $('<tr />',{rel:i});
                 tr.append($('<td />',{text:parseInt(i)+1}))
-                  .append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))
+                  /*.append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))*/
                   .append($('<td />',{text:(xrdData&&xrdData.name)?xrdData.name:'Unknown',class:'iconified',style:(xrdData&&xrdData.icon)?'background-image:url('+xrdData.icon+')':''}))
                   .append($('<td />',{text:(xrdData&&xrdData.offer)?xrdData.offer:''}))
                   .append($('<td />',{html:'<a href="#" class="remove-button">X</a>'}));
                 tableBody.append(tr);
             }
+
+        $("#srvcs tbody").sortable({
+                                        update: function(event, ui) { 
+                                            var row = ui.item[0],
+                                                rows = row.parentNode.children,
+                                                tosort = [];
+                
+                                            for (var i = 0; i < rows.length; i++) {
+                                                tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
+                                                rows[i].setAttribute('rel',i);
+                                                jQuery([rows[i].firstChild]).html(i + 1);
+                                            }
+                                            tosort.sort(function (a, b) { return a.idx - b.idx; });
+                                            serviceList = [];
+                                            for (var i = 0; i < tosort.length; i++) {
+                                                serviceList.push(tosort[i].xrd);
+                                            } 
+                                            storeData();
+                                        }
+                                   });
+        $("#srvcs").disableSelection();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
         }
