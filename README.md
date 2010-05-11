@@ -16,7 +16,7 @@ Other things are in other repos in the [OExchange account](http://github.com/OEx
 Contributing
 ------------
 
-Join [the discussion](http://groups.google.com/groupo/exchange) .
+Join [the discussion](http://groups.google.com/group/exchange) .
 
 
 Deploying the Site
