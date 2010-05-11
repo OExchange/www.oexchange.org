@@ -74,8 +74,8 @@ $(function(){
     };
     
     var displayTable = function(){
-        log(serviceList);
-        log(serviceHash);
+        //log(serviceList);
+        //log(serviceHash);
         var xrd,xrdCache,tr;
         var tableBody = $('#srvcs tbody').empty();
         if (serviceList && serviceList.length > 0) {
@@ -91,7 +91,13 @@ $(function(){
                 tableBody.append(tr);
             }
 
+        $('#oex-priority-sort').click(function() {
+        });
+        $('#oex-services-sort').click(function() {
+        });
+
         $("#srvcs tbody").sortable({
+                                        cursor: 'all-scroll',
                                         update: function(event, ui) { 
                                             var row = ui.item[0],
                                                 rows = row.parentNode.children,
@@ -191,17 +197,16 @@ $(function(){
     
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
-        $.prompt('<p><strong>Are you sure you want to delete this service?</strong></p><p>If you change your mind, you can add the service again here or at the service\'s web site.</p>',{
-            buttons: {'Delete': true, 'Cancel': false},
-            submit: function(v,m,f)
-            {
-                if (v && removeService(index)) {
-                    displayTable();
-                    storeData();
+
+        $('#oex-remove-service').click(
+                function () {
+                    if (removeService(index)) {
+                        displayTable();
+                        storeData();
+                    }
                 }
-            }
-        });
-        return false;
+        );
+        $('#oex-delete').slideDown();
     });
     
     $('#priority-button').click(function(e){
@@ -237,6 +242,14 @@ $(function(){
         storeData();
         w.location.reload(true);
     });
+
+
+    $('#oex-main-whatisthis').click(function () {$('#oex-info-services').slideDown();});
+    $('#oex-main-whatispublish').click(function () {$('#oex-info-how').slideDown();});
+    $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
+    $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
+    $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
+    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();});
     
     /* onload */
     startInit();
