@@ -9,7 +9,7 @@ body {
 }
 a {
 	text-decoration: none;
-	color: #65b0f1;
+	color: #0072bc;
 }
 a:hover {
 	text-decoration: underline;
@@ -42,19 +42,83 @@ a:hover {
 }
 
 .oex-sub {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	width: 400px;
+	margin-left: -200px;
+	z-index: 1001;	
 	background: #fff;
-	padding: 10px 20px;
-	margin: 20px 0;
+	padding: 1px;
 	border: 1px solid #ccc;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
+	/*-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;*/
+	-moz-box-shadow: 0 1px 6px #666;
+	-webkit-box-shadow: 0 1px 4px #666;
 }
 .oex-sub h2 {
-	margin-top: 0;
+	background: #666;
+	padding: 10px 20px;
+	margin: 0;
 	line-height: 1.2em;
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: normal;
-	color: #000;
+	color: #fff;
+}
+.oex-sub p {
+	padding: 5px 20px;
+}
+.oex-sub .oex-controls {
+	background: #fafafa;
+	border-top: 1px solid #eee;
+	padding: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+.oex-sub .oex-controls button {
+	margin: 0 5px;
+}
+
+
+/* Table Style */
+
+#srvcs {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+#srvcs thead th {
+	background: #999;
+	padding: 5px;
+	text-align: left;
+	color: #fff;
+}
+#srvcs thead th a {
+	text-decoration: underline;
+	color: #faf9e0;
+}
+#srvcs tbody td {
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 5px;
+}
+
+
+#foot-publish {
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+#foot-publish button {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#foot-done {
+	margin-top: 10px;
 }
 
 
@@ -101,3 +165,7 @@ button:active {
 	background: #d4d3d3 url(images/bkg-btn-grey.gif) repeat-x 0 -70px;
 	outline: none;
 }
+
+/* Common Styles */
+
+.remove-button { background: url(images/x.gif) no-repeat; display: block; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; margin: 0 auto; }

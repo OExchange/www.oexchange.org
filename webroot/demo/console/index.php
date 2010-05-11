@@ -11,7 +11,7 @@
 
 <div id="text"></div>
 
-<table border="1" id="srvcs" style="display:none">
+<table id="srvcs" style="display:none">
 	<thead>
 		<tr>
 			<th><a href="#" id="oex-priority-sort">Priority</a></th>
@@ -96,12 +96,12 @@
     </div>
 </div>
 
-<div>
+<div id="foot-publish">
     Publish my saved services to a public profile. <a id="oex-main-whatispublish" href="#">What does this mean?</a>
     <button id="oex-main-publish">Publish</button>
 </div>
 
-<div>
+<div id="foot-done">
     <button>Done</button>
 </div>
 
