@@ -1,3 +1,65 @@
+body {
+	background: #fafafa;
+	margin: 0;
+	padding: 20px;
+	line-height: 1.5em;
+	font-family: arial,helvetica,verdana,tahoma,sans-serif;
+	font-size: 13px;
+	color: #666;
+}
+a {
+	text-decoration: none;
+	color: #65b0f1;
+}
+a:hover {
+	text-decoration: underline;
+	color: #ec008c;
+}
+
+/* Console Header */
+
+#header {
+	position: relative;
+	height: 28px;
+	padding-top: 4px;
+}
+#header h1 {
+	display: inline;
+	margin: 0;
+	font-size: 18px;
+	font-weight: normal;
+	color: #333;
+}
+#oex-main-whatisthis {
+	position: absolute;
+	top: 4px;
+	right: 90px;
+}
+#oex-main-add {
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+
+.oex-sub {
+	background: #fff;
+	padding: 10px 20px;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+.oex-sub h2 {
+	margin-top: 0;
+	line-height: 1.2em;
+	font-size: 24px;
+	font-weight: normal;
+	color: #000;
+}
+
+
+/* Message Box */
+
 .messagebox {
     border-width: 1px;
     border-style: solid;
@@ -11,4 +73,31 @@
     padding-left: 24px;
     background-position: left center;
     background-repeat: no-repeat;
+}
+
+
+/* Button */
+
+button {
+	background: #ededed url(images/bkg-btn-grey.gif) repeat-x 0 0;
+	border: 1px solid #b7b7b7;
+	padding: 4px 12px;
+	color: #000;
+	cursor: pointer;		
+	text-shadow: 0 1px 2px #fff;
+	-moz-border-radius: 16px;	
+	-webkit-border-radius: 16px;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+}
+button:hover {
+	background: #dfdfdf url(images/bkg-btn-grey.gif) repeat-x 0 -35px;
+	text-decoration: none;
+	border-color: #afafaf;
+	color: #000;
+	cursor: pointer;
+}
+button:active {
+	background: #d4d3d3 url(images/bkg-btn-grey.gif) repeat-x 0 -70px;
+	outline: none;
 }

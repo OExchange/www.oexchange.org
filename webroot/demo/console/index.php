@@ -1,11 +1,10 @@
 <?php include './template/header.html' ?>
 
 <div id="message" class="messagebox" style="display:none"></div>
-
 <div id="loading"></div>
 
-<h1 id="title">My OExchange Services</h1>
-<div>
+<div id="header">
+	<h1 id="title">My OExchange Services</h1>
     <a id="oex-main-whatisthis" href="#">What is this?</a>
     <button id="oex-main-add">Add</button>
 </div>
@@ -13,17 +12,16 @@
 <div id="text"></div>
 
 <table border="1" id="srvcs" style="display:none">
-<thead>
-    <tr>
-        <th><a href="#" id="oex-priority-sort">Priority</a></th>
-        <!--<th>Reorder</th>-->
-        <th><a href="#" id="oex-services-sort">Services</a> <span class="oex-note">Drag to reorder this list.</span></th>
-        <th>URL</th>
-        <th>Remove</th>
-    </tr>
-</thead>    
-<tbody>
-</tbody>
+	<thead>
+		<tr>
+			<th><a href="#" id="oex-priority-sort">Priority</a></th>
+			<!--<th>Reorder</th>-->
+			<th><a href="#" id="oex-services-sort">Services</a> <span class="oex-note">Drag to reorder this list.</span></th>
+			<th>URL</th>
+			<th>Remove</th>
+		</tr>
+	</thead>    
+	<tbody></tbody>
 </table>
 
 
