@@ -7,8 +7,8 @@ include '../header.php';
 
     <h2 class="pagetitle mb10">Quick Start Guide</h2>
     <div class="bannertext">
-        This'll help you get up and running, whether you're a <a href="">service</a> that can accept content, a <a href="">site</a> 
-        that has content to share, or a <a href="">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; 
+        This'll help you get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
+        that has content to share, or a <a href="#tools">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; 
         it applies to any case where one service wants to send URL-based content to another &mdash; microblogging, translating, 
         printing, whatever.
     </div><br/>
@@ -139,7 +139,7 @@ include '../header.php';
             <h4>Table of Contents</h4>
             <ol>
                 <li><a href="#services">Guide for Services</a></li>
-                <li><a href="#services">Guide for Publishers</a></li>
+                <li><a href="#sites">Guide for Publishers</a></li>
                 <li><a href="#tools">Guide for Sharing Tools</a></li>
             </ol>
         </div>

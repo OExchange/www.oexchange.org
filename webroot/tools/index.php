@@ -7,7 +7,7 @@ include '../header.php';
 ?>
     
     <h2 class="pagetitle mb10">Tools</h2>
-    <div class="bigtext gry">Some things that may be useful...</div><br/>
+    <div class="bannertext">Some things that may be useful...</div>
     
     <hr/>
     
@@ -36,7 +36,7 @@ include '../header.php';
     <br/>
     
     <div class="grid_5 alpha">
-        <h3 class="mb5"><a href="/tools/discoverygen/">Discovery Resource Generator</a></h3>
+        <h3 class="mb5"><a href="/tools/discoveryharness/">Discovery Test Harness</a></h3>
         You can use to test your service's discovery compliance.
     </div>    
     <div class="clear"></div>

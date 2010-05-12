@@ -1,6 +1,7 @@
 <?
 
 $page_title = "OExchange Discovery Resource Generator";
+$nav = "tools";
 include '../../header.php';
 include '../../lib-oexchange/OExchangeGenerator.php';
 include '../../lib-oexchange/utils.php';
@@ -18,10 +19,13 @@ $icon32 = getDfltArg("i32", "http://www.example.com/assets/icon32.png");
 $cmd = getDfltArg("cmd", "none");	
 
 ?>
-
-    <h1>Discovery Resource Generator</h1>
+    
+    <h2 class="pagetitle mb10">Discovery Resource Generator</h2>
+    
+    <hr/>
+    
     <p>
-		<i>For tools to be able to <a target="_blank" href="/spec/#discovery-host">discover a service automatically</a>, the host needs a <code>/.well-known/host-meta</code> resource that points to a XRD file describing the target itself.  Use this tool to generate these two files, then put them on your host to make it discoverable.</i>  
+		<em>For tools to be able to <a target="_blank" href="/spec/#discovery-host">discover a service automatically</a>, the host needs a <code>/.well-known/host-meta</code> resource that points to a XRD file describing the target itself.  Use this tool to generate these two files, then put them on your host to make it discoverable.</em>  
 	</p>
 	
 <?

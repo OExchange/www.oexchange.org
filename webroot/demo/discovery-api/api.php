@@ -1,7 +1,7 @@
 <?
-
 require_once("../../lib-oexchange/OExchangeDiscoverer.php");
 
+$nav = "tools";
 $cmd = $_REQUEST["cmd"];
 
 function outputMatchesJson($callback, $matches) {

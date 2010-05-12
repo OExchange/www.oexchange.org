@@ -1,5 +1,6 @@
 <?php
 $page_title = "OExchange Offer Test Harness";
+$nav = "tools";
 include '../../header.php';
 
 $dfltTarget = $_REQUEST["target"];
@@ -54,18 +55,20 @@ if (empty($dfltTarget)) {
     }
     
     </script>
-
-    <h1>Offer Test Harness</h1>
-    <p>
-    <i>Initiate OExchange Offer calls to a target of your choice.</i>
-    </p>
+    
+    <h2 class="pagetitle mb10">Offer Test Harness</h2>
+    <div class="bannertext">Initiate OExchange Offer calls to a target of your choice.</div>
+    
+    <hr/>
+    
 
     <h2>Target</h2>
     <form name="targetForm">
         Offer endpoint: <br/>
         <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /></input>?url=http://www.example.com<br/>
     </form>
-    <p></p>
+    
+    <br/><hr/><br/>
     
     <h2>Offer Parameters</h2>
     
@@ -76,11 +79,12 @@ if (empty($dfltTarget)) {
         description: <input name="description" type="text" size="50" value="" /><br/><br/>
         <input type="submit" value="Share (without a ctype)" onclick="shareLink();" />
     </form> 
-    <p></p>
+    
+    <br/>
 
     <h3>(Optional) Typed offers</h3>
     <p>
-    Adding ctypes and type-specific parameters:
+        Adding ctypes and type-specific parameters:
     </p>
         
     <h4>ctype flash</h4>
@@ -91,7 +95,8 @@ if (empty($dfltTarget)) {
         screenshot: <input name="screenshot" type="text" size="70" value="http://i3.ytimg.com/vi/nRyoN0AITtw/default.jpg" /><br/><br/>
         <input type="submit" value="Share" onclick="shareFlash();" />
     </form> 
-    <p></p>
+    
+    <br/>
 
     <h4>ctype iframe</h4>
     <form name="iframeForm" action="javascript:void(0);" >
@@ -101,7 +106,8 @@ if (empty($dfltTarget)) {
         screenshot: <input name="screenshot" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /><br/><br/>
         <input type="submit" value="Share" onclick="shareIframe();" />
     </form> 
-    <p></p>
+    
+    <br/>
 
     <h4>ctype image</h4>
     <form name="imageForm" action="javascript:void(0);" >
