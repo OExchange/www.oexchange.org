@@ -98,7 +98,6 @@ a:hover {
 	color: #faf9e0;
 }
 #srvcs tbody td {
-	background: #fff;
 	border-bottom: 1px solid #eee;
 	border-right: 1px solid #eee;
 	padding: 5px;
@@ -134,7 +133,7 @@ a:hover {
 .success { border-color: green; background-color: #cfc }
 
 .iconified {
-    padding-left: 24px;
+    padding-left: 24px!important;
     background-position: left center;
     background-repeat: no-repeat;
 }
@@ -169,3 +168,15 @@ button:active {
 /* Common Styles */
 
 .remove-button { background: url(images/x.gif) no-repeat; display: block; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; margin: 0 auto; }
+
+.oex-error {
+    color:red;
+}
+
+.oex-success {
+    color:green;
+}
+
+.oex-feedback {
+    font-style: italic
+}

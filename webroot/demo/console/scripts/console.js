@@ -1,7 +1,8 @@
 $(function(){
-    var w = window;
-    var serviceList, serviceHash;
-    var loadingServices = false;
+    var w = window,
+        serviceList, serviceHash,
+        sericeToAdd,
+        loadingServices = false;
     
     var log = function(msg) {
         if (console && console.log) console.log(msg);
@@ -23,6 +24,7 @@ $(function(){
             if (!loadData())
             {
                 hideLoading();
+                displayTable();
             }
             else
             {
@@ -81,7 +83,7 @@ $(function(){
         if (serviceList && serviceList.length > 0) {
             for (var i in serviceList) {
                 xrd = serviceList[i];
-                xrdData = serviceHash[xrd] || null;
+                xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
                 tr.append($('<td />',{text:parseInt(i)+1}))
                   /*.append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))*/
@@ -91,32 +93,28 @@ $(function(){
                 tableBody.append(tr);
             }
 
-        $('#oex-priority-sort').click(function() {
-        });
-        $('#oex-services-sort').click(function() {
-        });
-
-        $("#srvcs tbody").sortable({
-                                        cursor: 'all-scroll',
-                                        update: function(event, ui) { 
-                                            var row = ui.item[0],
-                                                rows = row.parentNode.children,
-                                                tosort = [];
-                
-                                            for (var i = 0; i < rows.length; i++) {
-                                                tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
-                                                rows[i].setAttribute('rel',i);
-                                                jQuery([rows[i].firstChild]).html(i + 1);
+            $("#srvcs tbody").sortable({
+                                            cursor: 'all-scroll',
+                                            update: function(e, ui) { 
+                                                var row = ui.item[0],
+                                                    rows = row.parentNode.children,
+                                                    tosort = [];
+                    
+                                                for (var i = 0; i < rows.length; i++) {
+                                                    tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
+                                                    rows[i].setAttribute('rel',i);
+                                                    jQuery([rows[i].firstChild]).html(i + 1);
+                                                }
+                                                tosort.sort(function (a, b) { return a.idx - b.idx; });
+                                                serviceList = [];
+                                                for (var i = 0; i < tosort.length; i++) {
+                                                    serviceList.push(tosort[i].xrd);
+                                                } 
+                                                storeData();
                                             }
-                                            tosort.sort(function (a, b) { return a.idx - b.idx; });
-                                            serviceList = [];
-                                            for (var i = 0; i < tosort.length; i++) {
-                                                serviceList.push(tosort[i].xrd);
-                                            } 
-                                            storeData();
-                                        }
-                                   });
-        $("#srvcs").disableSelection();
+                                       });
+            $("#srvcs td").disableSelection();
+            $('#foot-publish').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
         }
@@ -200,6 +198,7 @@ $(function(){
 
         $('#oex-remove-service').click(
                 function () {
+                    $('.oex-sub').slideUp();
                     if (removeService(index)) {
                         displayTable();
                         storeData();
@@ -243,12 +242,74 @@ $(function(){
         w.location.reload(true);
     });
 
+    function serviceSave() {
+        var service = serviceToAdd || {},
+            found = 0;
+        for (var i = 0; i < serviceList.length; i++) {
+            if (serviceList[i].xrd == service.xrd) {
+                found = 1; break; 
+            }
+        }
+        if (!found) {
+            if (service.target.endpoint) service.target.offer = service.target.endpoint;
+            serviceHash[service.xrd] = service.target;
+            serviceList.push(service.xrd);
+            storeData();
+            displayTable();
+        }
+        serviceToAdd = null;
+        $('.oex-add').slideUp();
+        $('.oex-sub').slideUp();
+    }
+
+    function serviceSearch() {
+        var domain = $('#oex-new-service').val().split('://').pop();
+        if (domain.search(/^([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.)*[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.[a-zA-Z]{2,4}$/) > -1) {
+            $('#oex-new-service').attr('disabled',true);
+
+            $.getJSON('http://www.oexchange.org/demo/discovery-api/api.php?cmd=getHostTargets&jsonpcb=gethostcb&callback=?&host='+domain);
+             
+        } else {
+            $('#oex-add-content').hide();
+            $('#oex-add-error').show();
+        }
+    }
+
+        window.gethostcb = function(data) {
+            $('#oex-feedback').hide();
+            section = 'services';
+            if (data.targets && data.targets.length) {
+                $('#oex-add-success').show();
+                $('#oex-add-service').show();
+                $('#oex-search-service').hide();
+                serviceToAdd = data.targets[0];
+            } else {
+                $('#oex-add-noservice').show();
+                $('#oex-new-service').attr('disabled',false);
+            }
+        }
+
 
     $('#oex-main-whatisthis').click(function () {$('#oex-info-services').slideDown();});
     $('#oex-main-whatispublish').click(function () {$('#oex-info-how').slideDown();});
     $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
     $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
     $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
+    $('.oex-done').click(function () { if (window.parent) window.parent.postMessage('oex=close','*'); else window.close()});
+
+    $('#oex-priority-sort').click(function() {
+    });
+    $('#oex-services-sort').click(function() {
+    });
+
+    $('#oex-new-service').click(function () { 
+                $('.oex-error').hide(); 
+                $('#oex-add-service').hide();
+                $('#oex-search-service').show();
+                $('#oex-add-content').show(); 
+    });
+    $('#oex-search-service').click(serviceSearch);
+    $('#oex-add-service').click(serviceSave);
     $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();});
     
     /* onload */

@@ -38,14 +38,29 @@
 
 <div class="oex-sub" id="oex-add" style="display:none">
     <h2>Add a sharing service</h2>
-    <p>
+    <p id="oex-add-content">
     To look up a service to add, enter the URL below to see if that site supports sharing with OExchange:
     </p>
+    <p class="oex-feedback" id="oex-add-status" style="display:none">
+    Looking for sharing services....
+    </p>
+    <p class="oex-error" id="oex-add-noservice" style="display:none">
+    We're sorry, but no sharing services were found at this web site.
+    </p>
+    <p id="oex-add-success" style="display:none">
+        <span class="oex-success">Success! This site supports OExchange.</span>
+        <br/>
+        Select Save to remember this site for sharing:
+    </p>
+    <p class="oex-error" id="oex-add-error" style="display:none">
+    Please enter a valid domain, such as: Google.com or Facebook.com.
+    </p>
     <p>
-    http://<input type="text" size="30"/>
+    http://<input type="text" size="30" id="oex-new-service"/>
     </p>
     <div class="oex-controls">
-        <button>Go</button>
+        <button id="oex-search-service">Go</button>
+        <button id="oex-add-service" style="display:none">Save</button>
         <button class="oex-sub-cancel">Cancel</button>
     </div>
 </div>
@@ -96,13 +111,13 @@
     </div>
 </div>
 
-<div id="foot-publish">
+<div id="foot-publish" style="display:none">
     Publish my saved services to a public profile. <a id="oex-main-whatispublish" href="#">What does this mean?</a>
     <button id="oex-main-publish">Publish</button>
 </div>
 
 <div id="foot-done">
-    <button>Done</button>
+    <button class="oex-done">Done</button>
 </div>
 
 <?php
