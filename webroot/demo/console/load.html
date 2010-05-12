@@ -1,0 +1,28 @@
+<html>
+<body>
+<script type="text/javascript" src="lib/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="scripts/pref-service.js"></script>
+<script type="text/javascript">
+    serviceList = sharingtoolPrefService.getServiceList();
+    serviceHash = (serviceList) ? sharingtoolPrefService.getServiceHash() : null;
+    if (serviceList && serviceList.length > 0 && serviceHash == null) {
+        sharingtoolPrefService.populateServiceHash(serviceList,function(sh){
+            loadingServices = false;
+            if (sh) {
+                // onSuccess?
+        
+            } else {
+                // onFailure?
+            }
+        });
+    }
+
+
+if (window.parent) {
+        window.parent.postMessage('sl='+JSON.stringify(serviceList),'*');
+        window.parent.postMessage('sh='+JSON.stringify(serviceHash),'*');
+}
+
+</script>
+</body>
+</html>
