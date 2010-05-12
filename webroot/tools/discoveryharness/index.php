@@ -1,6 +1,7 @@
 <?
 
 $page_title = "OExchange Discovery Test Harness";
+$nav = "tools";
 include '../../header.php';
 include '../../lib-oexchange/OExchangeDiscoverer.php';
 include_once '../../lib-oexchange/utils.php';
@@ -25,24 +26,27 @@ $xrdUrl = getDfltArg("x", "http://www.oexchange.org/demo/linkeater/oexchange.xrd
 $cmd = getDfltArg("cmd", "none");	
 
 ?>
-
-    <h1>Discovery Test Harness</h1>
-    <p>
-		<i>Test a service for <a href="/spec/#discovery">OExchange Discovery</a> compliance.</i>  
-	</p>
+    
+    <h2 class="pagetitle mb10">Discovery Test Harness</h2>
+    <div class="bannertext">
+        Test a service for <a href="/spec/#discovery">OExchange Discovery</a> compliance.
+    </div>
+    
+    <hr/>
+    
 	<p>
 		<i>If you need help setting up discovery support, check the <a href="/guide/#services">Quick Start Guide</a> or the <a href="/tools/discoverygen">Discovery File Generator</a>.  If you want to test Offer support instead, use <a href="/tools/sourceharness">this tool</a>.</i>
 	</p>
 
-	<h2>Host Discovery</h2>
+	<h3>Host Discovery</h2>
 	<p>
 		Does a host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up so, that anyone can locate the service on that host automatically?
 	</p>
 	<p>
 	<form action="/tools/discoveryharness/" method="POST">
-		Hostname (e.g. www.example.com):&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" /></input>
-		<input name="cmd" type="hidden" value="hm" /></input>
-		<input type="submit" value="Check Host" /></input>
+		Hostname (e.g. www.example.com):&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" />
+		<input name="cmd" type="hidden" value="hm" />
+		<input type="submit" value="Check Host" />
 	</form>
 	</p>
 	<br/>
@@ -102,16 +106,18 @@ $cmd = getDfltArg("cmd", "none");
 	}
 
 ?>
+    
+    <hr/>
 
-	<h2>Target XRD Inspection</h2>
+	<h3>Target XRD Inspection</h2>
 	<p>
 		Inspect a <a target="_blank" href="/spec/#discovery-targetxrd">Target XRD</a> directly.
 	</p>
 	<p>
 	<form action="/tools/discoveryharness/" method="POST">
-		Target XRD (e.g. http://www.example.com/oexchange.xrd):&nbsp;<input name="x" type="text" size="60" value="<?= $xrdUrl ?>" /></input>
-		<input name="cmd" type="hidden" value="txrd" /></input>
-		<input type="submit" value="Check Target XRD" /></input>
+		Target XRD (e.g. http://www.example.com/oexchange.xrd):&nbsp;<input name="x" type="text" size="60" value="<?= $xrdUrl ?>" />
+		<input name="cmd" type="hidden" value="txrd" />
+		<p><input type="submit" value="Check Target XRD" /></p>
 	</form>
 	</p>
 	<br/>
