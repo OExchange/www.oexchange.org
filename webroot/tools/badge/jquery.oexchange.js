@@ -2,7 +2,8 @@
 * Work-in-progress jQuery plugin for OExchange integration.
 */
 (function () {
-    var addUrl = '//ve04.clearspring.local/oxconsole/', // XXX need real console up on oexchange.org
+    //var addUrl = '//www.oexchange.org/demo/console/', 
+    var addUrl = '/demo/console/', 
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
@@ -45,11 +46,12 @@
     * For postMessage integration. Only loads in the user's service list and definition hash when needed.
     */
     function messageHandler(s) {
-        if (!s || addUrl.indexOf(s.origin) !== 0) return;
+        if (!s /*|| addUrl.indexOf(s.origin) !== 0*/) return;
         var data = fromKV(s.data);
         if (data.sl) serviceList = JSON.parse(data.sl);
         if (data.sh) serviceHash = JSON.parse(data.sh);
-        if (serviceList.length && data.sh) fillPreferredServices();
+        if (data.oex && data.oex=='close') closeDialog();
+        if (serviceList && serviceList.length && data.sh) fillPreferredServices();
     }
 
     /**
@@ -134,6 +136,24 @@
             xrd = oex;
         }
         return xrd;
+    }
+
+    function showConsole() {
+        var div;
+        if (!document.getElementById('oexchange-dialog')) {
+           var s = ['',
+                    '<div id="oexchange-dialog" style="z-index:1000000;width:500px;height:400px;overflow:hidden;display:none">',
+                    '<div id="oexchange-dialog-inner">',
+                    '<iframe id="oexchange-console-dialog" src="'+addUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
+                    '</div>',
+                    '</div>'].join('');
+            jQuery('body').append(s);
+        }
+        jQuery('#oexchange-dialog').show();
+    }
+
+    function hideConsole() {
+        jQuery('#oexchange-dialog').hide();
     }
 
     /**
@@ -267,9 +287,23 @@
         return this;
     }
 
+    function consoleLink() {
+        this.each(function (i, el) {
+                    el.onclick = function () { showConsole(); return false};
+                });
+    }
+
+    function dialogLink() {
+        this.each(function (i, el) {
+                    el.onclick = function () { openRememberDialog(); return false};
+                });
+    }
+
 
     // Add jQuery functions 
     jQuery.fn.oexchange_badge = renderBadge;
+    jQuery.fn.oexchange_console = consoleLink;
+    jQuery.fn.oexchange_save = dialogLink;
 
     // Add static jQuery methods
     jQuery.oex = {
@@ -281,6 +315,9 @@
         closeDialog : closeDialog,
         saveDialog : saveDialog
     };
+
+    // XXX just for demo
+    jQuery('head').append('<style type="text/css">@import "/tools/badge/css/oex.css";</style>');
 
     // When the DOM's ready, we check in with the demo console to load the user's preferred services
     jQuery(document).ready(function() {
