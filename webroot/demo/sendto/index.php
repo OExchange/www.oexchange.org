@@ -1,11 +1,16 @@
 <?php
-
 $page_title = "OExchange Send-To Example";
-require_once("../../header.php");?>
-	<h2>OExchange Send-To</h2>
-	<p>
-		<a href="sendto.php?url=http://www.oexchange.org">OExchange Send-To</a> is a simple web-based example that uses <a href="http://www.oexchange.org">OExchange</a> to enable "send to" operations for a link.
-	</p>
+$nav = "demo";
+require_once("../../header.php");
+?>
+
+    <h2 class="pagetitle mb10">OExchange Send-To</h2>
+    <div class="bannertext">
+        <a href="sendto.php?url=http://www.oexchange.org">OExchange Send-To</a> is a simple web-based example that uses <a href="http://www.oexchange.org">OExchange</a> to enable "send to" operations for a link.
+    </div>
+    
+    <hr/>
+    
 	<p>
 		The <a href="sendto.php?url=http://www.oexchange.org">sendto.php</a> endpoint is a regular <a href="http://www.oexchange.org/spec/#offer-endpoint">OExchange-Offer</a> endpoint, to which you can pass a <code>URL</code> parameter to send an URL to a service.
 	</p>

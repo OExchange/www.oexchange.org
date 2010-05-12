@@ -19,12 +19,13 @@
 	<meta http-equiv="keywords" content="OExchange, share, widget, oEmbed, OAuth, social, Webfinger, sharing" />
 	<meta http-equiv="description" content="<?= $ptitle?>" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet" type="text/css" media="all" href="/styles/reset.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/styles/text.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/styles/960.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" media="all" href="/styles/site.css">
 	<link rel="icon" type="image/png" href="/images/logo_16x16.png" />
 	<link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.oexchange.org/demo/linkeater/oexchange.xrd">
+    <style type="text/css">
+        body { background: #fff; padding: 0; }
+    </style>
 </head>
   
 <body>

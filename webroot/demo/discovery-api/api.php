@@ -129,11 +129,15 @@ if ($cmd == "getUserTargets") {
 		$page_title = "OExchange Demo Discovery API";
 		include ("../../header.php");
 		?>
-			<div id="contentpage">
-			<h2>Demo Discovery API</h2>
-			<p>
-				This is a simple GET/JSON-based API for performing various OExchange-Discovery operations.
-			</p>
+		<div id="contentpage">
+            <h2 class="pagetitle mb10">Demo Discovery API</h2>
+            <div class="bannertext">
+                This is a simple GET/JSON-based API for performing various OExchange-Discovery operations.
+            </div>
+            
+            <hr/><br/>
+            
+            
 			<h3>Using the API</h3>
 			<p>
 				All calls are made against the api.php endpoint with HTTP GETs.  All responses are JSON.  Certain arguments are common to all calls.  They are:
@@ -142,6 +146,9 @@ if ($cmd == "getUserTargets") {
 				<li><code>cmd</code> The name of the method call to execute, described below.</li>
 				<li><code>jsonpcb</code> The name of a callback function to use to form a JSONP response.</li>	
 			</ul>
+            
+            <br/>
+            
 			<h3>Method Detail</h3>
 			<p>
 				Each method requires specific parameters.
@@ -161,9 +168,9 @@ if ($cmd == "getUserTargets") {
 				<li><code>email</code>: The email address to look up via WebFinger.</li>
 			</ul>
 			<h5>An example call</h5>
-			<p>
+			<blockquote>
 				<a target="_blank" href="api.php?cmd=getUserTargets&jsonpcb=callback&email=will@willmeyer.com">api.php?cmd=getUserTargets&jsonpcb=callback&email=will@willmeyer.com</a>
-			</p>
+			</blockquote>
 
 			<a name="getHostTargets"></a>
 			<h4>getHostTargets</h4>
@@ -179,9 +186,9 @@ if ($cmd == "getUserTargets") {
 				<li><code>host</code>: The host to look up.</li>
 			</ul>
 			<h5>An example call</h5>
-			<p>
+			<blockquote>
 				<a target="_blank" href="api.php?cmd=getHostTargets&jsonpcb=callback&host=oexchange.org">api.php?cmd=getHostTargets&jsonpcb=callback&host=oexchange.org</a>
-			</p>
+			</blockquote>
 
 			<a name="getTargetDetail"></a>
 			<h4>getTargetDetail</h4>
@@ -195,9 +202,9 @@ if ($cmd == "getUserTargets") {
 				<li><code>xrd</code>: The URL of the targets XRD document.</li>
 			</ul>
 			<h5>An example call</h5>
-			<p>
+			<blockquote>
 				<a target="_blank" href="api.php?cmd=getTargetDetail&jsonpcb=callback&xrd=http://www.oexchange.org/demo/linkeater/oexchange.xrd">api.php?cmd=getTargetDetail&jsonpcb=callback&xrd=http://www.oexchange.org/demo/linkeater/oexchange.xrd</a>
-			</p>
+			</blockquote>
 
 			<a name="getCommonUserTargets"></a>
 			<h4>getCommonUserTargets</h4>
@@ -216,9 +223,9 @@ if ($cmd == "getUserTargets") {
 				<li><code>to</code>: The email addresses of each recipient, comma-separated.</li>
 			</ul>
 			<h5>An example call</h5>
-			<p>
+			<blockquote>
 				<a target="_blank" href="api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com">api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com</a>
-			</p>
+			</blockquote>
 
 			</div>	
 		<?

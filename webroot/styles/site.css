@@ -1,0 +1,167 @@
+body {
+    background: #fff url(../images/bkg-page.jpg) no-repeat 0 0;
+    margin: 0;
+    padding: 30px 0 0;
+    line-height: 1.6em;
+    font-family: arial,helvetica,lucida,verdana,sans-serif;
+    font-size: 12px;
+    color: #444;
+}
+a {
+    text-decoration: none;    
+    color: #115bb5;
+}
+a:hover {
+    text-decoration: underline;
+    color: #ec008c;
+}
+.container_12 {
+    margin: 0 0 0 85px;
+}
+
+#header {
+    margin-bottom: 40px;
+}
+#header h1 {    
+    margin: 0;
+    padding: 0;
+}
+#header h1 a {
+    font-size: 14px;
+    color: #fff;
+}
+#header a {
+    margin: 0 2px;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+#header a.nav-active {
+    background: #000;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+#header a.nav-active:hover {
+    text-decoration: none;
+}
+
+#footer {
+    position: relative;
+    border-top: 1px solid #e4e4e4;
+    margin-top: 75px;
+    padding: 20px 0 40px 0;
+    color: #bbb;
+}
+#footer a {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 11px;
+}
+
+
+/* OExchange Navbar */
+ 
+.navbar { position: relative; background: #1b1b1b; border-bottom: 4px solid #464646; padding: 10px; margin-bottom: 50px; text-align: center; }
+.navbar-inner { position: relative; width: 940px; margin: 0 auto; text-align: left; }
+.navbar a { background: url(/images/logo_inverted_16.gif) no-repeat left; padding-left: 24px; text-decoration: none; color: #ccc; }
+.navbar a:hover { color: #fff; }
+
+
+/* Banner */
+
+.banner { background: #dbe8f9; margin: -25px 0 25px; padding: 25px 40px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.banner h1 { font-size: 3em; }
+.banner h3 { margin-bottom: 5px; }
+.banner-linkeater { background: url(/images/banner-linkeater.png) no-repeat; width: 960px; height: 200px; margin: -25px 0 50px 0; }
+.funny-monster { background: url(/images/funny-monster.png) no-repeat; width: 500px; height: 418px; }
+
+
+/* Common Styles */
+
+h2,h3,h4,h5 { color: #000; }
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+h4 { font-size: 14px; }
+h5 { font-size: 12px; }
+
+h2.pagetitle { margin: 40px 0; padding: 0; font-size: 44px; line-spacing: -4px; line-height: 1.1em; color: #000; }
+hr { border: none 0; border-top: 1px solid #e4e4e4; height: 1px; margin: 25px 0; padding: 0; }
+strong, b { color: #000; }
+
+.bannertext { line-height: 1.5em; font-size: 18px; color: #a2a2a2; }
+.hide { 	display: none; }
+.bold { font-weight: bold; }
+.bigtext { font-size: 14px; }
+.bigger { font-size: 2em; }
+.right { text-align: right; }
+.blk { color: #000; }
+.gry { color: #a2a2a2; }
+.lgry { color: #a9a9a9; }
+
+.gbox { background: #f5f5f5; border: 1px solid #eee; padding: 10px 10px 15px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.gbox.toc { margin-top: 20px; }
+.gbox h4 { margin-top: 0; font-size: 12px; }
+.gbox ol { margin: 0; padding: 0; font-size: 11px; }
+.gbox ol li { margin-left: 20px; }
+.gbox ol ol { margin-bottom: 0; }
+
+.gbox ul { margin: 0; padding: 0; font-size: 11px; }
+.gbox ul li { list-style: none; margin-left: 5px; }
+.gbox ul li li { margin-left: 20px; }
+.gbox ul ul { margin-bottom: 0; }
+
+
+.mb0 { margin-bottom: 0 !important; }
+.mb5 { margin-bottom: 5px !important; }
+.mb10 { margin-bottom: 10px !important; }
+.mb20 { margin-bottom: 20px !important; }
+.mb30 { margin-bottom: 30px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb50 { margin-bottom: 50px !important; }
+
+.mt20 { margin-top:20px !important; }
+
+code {
+	background-color: #eee;
+	border: 1px solid #999;
+	padding: 0px 2px;
+}
+pre {
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	padding: 8px;
+	margin: 20px 0;
+	color: #000;
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.btn {
+    background: #105ab5;
+    border: 0;
+    padding: 8px 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.btn:hover {
+    background: #034aa1;
+    text-decoration: none;
+    color: #fff;
+}
+a.btn {
+    padding: 10px 20px;
+}
+
+ul.circle {list-style-type:circle}
+ul.square {list-style-type:square}
+ol.upper-roman {list-style-type:upper-roman}
+ol.lower-alpha {list-style-type:lower-alpha}
+ol.lower-roman {list-style-type:lower-roman}
+ol.none, ul.none { list-style-type: none; }
