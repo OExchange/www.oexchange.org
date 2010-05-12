@@ -26,12 +26,12 @@
             <p><img src="images/big_dog_little_dog.jpg" border="0" alt="" align="right" />Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. Sed venenatis, nunc id pharetra blandit, dolor justo ornare turpis, et consectetur justo ligula ac lorem. Nullam id diam ac lorem dapibus volutpat. Integer vitae lectus mauris, eget malesuada lacus. Donec hendrerit, metus in mollis pellentesque, turpis tellus fringilla eros, vel hendrerit dui dui quis dui. Vivamus eu feugiat nulla. Ut ac ipsum dolor. Sed nisi mauris, dapibus eu facilisis nec, porttitor a purus. Pellentesque lacinia volutpat urna, non fermentum eros hendrerit eget. Fusce eu augue massa, non malesuada mi. Nam congue pulvinar hendrerit. </p>
             
             <p>Share this post:</p>
-			<div>
+			<div class="oexchange_toolbox">
 				<div class="custom_images">
-					<a class=""><img src="images/email_32.png" width="32" height="32" alt="Email" /></a>
-					<a class=""><img src="images/facebook_32.png" width="32" height="32" alt="Facebook" /></a>
-					<a class=""><img src="images/stumbleupon_32.png" width="32" height="32" alt="StumbleUpon" /></a>
-					<a class=""><img src="images/twitter_32.png" width="32" height="32" alt="Twitter" /></a>
+					<a class="oexchange-share" href="#" rel="email"><span><img src="images/email_32.png" width="32" height="32" alt="Email" /></span></a>
+					<a class="oexchange-share" href="#" rel="facebook"><span><img src="images/facebook_32.png" width="32" height="32" alt="Facebook" /></span></a>
+					<a class="oexchange-share" href="#" rel="stumbleupon"><span><img src="images/stumbleupon_32.png" width="32" height="32" alt="StumbleUpon" /></span></a>
+					<a class="oexchange-share" href="#" rel="twitter"><span><img src="images/twitter_32.png" width="32" height="32" alt="Twitter" /></span></a>
 				</div>
 			</div>
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
@@ -79,6 +79,7 @@
 $(document).ready(
     function() {
     $('.oexchange-personalize').oexchange_console();
+    $('.oexchange-share').oexchange_share();
     }
 );
 </script>
