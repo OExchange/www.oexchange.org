@@ -4,6 +4,7 @@
 (function () {
     //var addUrl = '//www.oexchange.org/demo/console/', 
     var addUrl = '/demo/console/', 
+        shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href),
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
@@ -299,11 +300,45 @@
                 });
     }
 
+    function shareLink(el, xrd) {
+        el.onclick = function () {
+            window.open(serviceHash[xrd].offer + '?url='+ encodeURIComponent(document.location.href));
+            return false;
+        };
+
+    }
+
+    function renderShare() {
+        this.each(function (i, el) {
+            var xrd = el.getAttribute('rel');
+            if (xrd) {
+                if (!serviceHash[xrd])   {
+                    // need to load xrd
+                    jQuery.ajax({ 
+                        dataType: 'jsonp',
+                        url: "http://www.oexchange.org/demo/discovery-api/api.php?cmd=getTargetDetail&xrd="+encodeURIComponent(xrd),
+                        jsonp:'jsonpcb',
+                        context: document.body, 
+                        success: function(data){
+                            if (data.endpoint) {
+                                data.offer = data.endpoint;
+                                serviceHash[xrd] = data;
+                            }
+                            if (serviceHash[xrd]) shareLink(el, xrd);
+                      }});
+                    
+                } else {
+                    shareLink(el, xrd);
+                }
+            }
+        });
+    }
 
     // Add jQuery functions 
     jQuery.fn.oexchange_badge = renderBadge;
     jQuery.fn.oexchange_console = consoleLink;
     jQuery.fn.oexchange_save = dialogLink;
+    jQuery.fn.oexchange_share = renderShare;
 
     // Add static jQuery methods
     jQuery.oex = {
@@ -330,7 +365,7 @@
                 }
 
                 createCommFrame(addUrl+'update-cache.html');
-                createCommFrame(addUrl+'load.html'); // will postMessage back to this calling frame
+                createCommFrame(addUrl+'load.php'); // will postMessage back to this calling frame
                 
                 loaded = 1;
             }
