@@ -5,17 +5,34 @@ require_once("../../header.php");
 ?>
 	<h2>SuperSendTo</h2>
 	<p>
-		SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  
+		SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  Its like the "Send page..." menu option, but turbocharged.  
 	</p>
-	<p>
-		<b>NOTE</b>: This is a functional extension, though its designed as a technology demo for power users familiar with the goals of OExchange.  Caveats apply.
-	</p>	
 	<ul>
 		<li>It enables context menu, tools menu, and url-bar controls for sending the current page to any configured service</li>
 		<li>It locates and automatically enables services as you browse the web</li>
 	</ul>	
 	<p>
-		<a href="oeff-0.8-ff.xpi">Download It Here</a>
+		<b>NOTE</b>: This is a functional extension, though its designed as a technology demo for power users familiar with the goals of OExchange.  Caveats apply -- I wouldn't recommend using this in your primary user profile.
+	</p>	
+	<p>
+		<a href="oeff-0.8-ff.xpi">Download It Here</a>&nbsp;&nbsp;<i>(If you had a previous version installed...please uninstall it, restart Firefox, clear your cache, then download the latest version)</i>
+	</p>
+	<h3>Things to Try</h3>
+	<p>
+		<ul>
+			<li>
+				By default, it'll come configured with a few popular services on the web (using demo servers that fully support OExchange on behalf of the live services in question).  You can send content to them from the OExchange logo in the URL bar, the context menu, or the tools menu.
+			</li>
+			<li>
+				Browse to some page on www.oexchange.org.  If you have been there several times before, you'll get a proactive prompt to add the LinkEater service thats hosted there.  If you haven't been there before, you can add the service from OExchange logo in the URL bar.  Whenever the extension detects that the site you are on can support links, it will present you with this option. 
+			</li>
+			<li>
+				You can also enter hostnames directly.  From the Options page (accessible from the tools menu, the context menu, or the URL bar button), enter http://oexchange-delicious.appspot.com.  The extension will automatically determine that that host can accept links, and you can add it as a SendTo option. 
+			</li>
+			<li>
+				If your webfingerable email address is set up with preferred services, you can enter that as well.
+			</li>
+		</ul>
 	</p>
 	
 	<h3>The Details</h3>
@@ -32,7 +49,9 @@ require_once("../../header.php");
    rel="http://oexchange.org/spec/0.8/rel/related-target"
    type="application/xrd+xml" href="http://www.oexchange.org/demo/linkeater/oexchange.xrd"/&gt;</pre> 
 	</p>
-
+	<p>
+		You can also request that the plugin look for services on the current page, through the URL bar icon.  The service must support OExchange-Discovery for this to work, but it doesn't need to have its pages tagged.
+	</p>
 	<a name="add-service"></a>
 	<h4>Adding Services by URL</h4>
 	<p>
