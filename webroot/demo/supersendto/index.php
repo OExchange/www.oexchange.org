@@ -3,21 +3,26 @@
 $page_title = "SuperSendTo Example OExchange Browser Extension";
 require_once("../../header.php");
 ?>
-	<h2>SuperSendTo</h2>
+    <h2 class="pagetitle mb10">SuperSendTo</h2>
+    <div class="bannertext">
+        SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  
+    </div>
+    
+    <hr/>
+        
 	<p>
-		SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  
-	</p>
-	<p>
-		<b>NOTE</b>: This is a functional extension, though its designed as a technology demo for power users familiar with the goals of OExchange.  Caveats apply.
+		<strong>NOTE</strong>: This is a functional extension, though its designed as a technology demo for power users familiar with the goals of OExchange.  Caveats apply.
 	</p>	
 	<ul>
 		<li>It enables context menu, tools menu, and url-bar controls for sending the current page to any configured service</li>
 		<li>It locates and automatically enables services as you browse the web</li>
 	</ul>	
-	<p>
-		<a href="oeff-0.8-ff.xpi">Download It Here</a>
+	<p style="padding:20px 0;">
+		<a class="btn" href="oeff-0.8-ff.xpi">Download It Here</a>
 	</p>
 	
+    <hr/>
+    
 	<h3>The Details</h3>
 
 	<a name="normal"></a>

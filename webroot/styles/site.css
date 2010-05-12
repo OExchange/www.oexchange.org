@@ -49,7 +49,7 @@ a:hover {
     position: relative;
     border-top: 1px solid #e4e4e4;
     margin-top: 75px;
-    padding: 20px 0;
+    padding: 20px 0 40px 0;
     color: #bbb;
 }
 #footer a {
@@ -79,7 +79,7 @@ h5 { font-size: 12px; }
 
 h2.pagetitle { margin: 40px 0; padding: 0; font-size: 44px; line-spacing: -4px; line-height: 1.1em; color: #000; }
 hr { border: none 0; border-top: 1px solid #e4e4e4; height: 1px; margin: 25px 0; padding: 0; }
-strong { color: #000; }
+strong, b { color: #000; }
 
 .bannertext { line-height: 1.5em; font-size: 18px; color: #a2a2a2; }
 .hide { 	display: none; }
