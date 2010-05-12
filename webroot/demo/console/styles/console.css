@@ -1,3 +1,129 @@
+body {
+	background: #fafafa;
+	margin: 0;
+	padding: 20px;
+	line-height: 1.5em;
+	font-family: arial,helvetica,verdana,tahoma,sans-serif;
+	font-size: 13px;
+	color: #666;
+}
+a {
+	text-decoration: none;
+	color: #0072bc;
+}
+a:hover {
+	text-decoration: underline;
+	color: #ec008c;
+}
+
+/* Console Header */
+
+#header {
+	position: relative;
+	height: 28px;
+	padding-top: 4px;
+}
+#header h1 {
+	display: inline;
+	margin: 0;
+	font-size: 18px;
+	font-weight: normal;
+	color: #000;
+}
+#oex-main-whatisthis {
+	position: absolute;
+	top: 4px;
+	right: 70px;
+}
+#oex-main-add {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.oex-sub {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	width: 400px;
+	margin-left: -200px;
+	z-index: 1001;	
+	background: #fff;
+	padding: 1px;
+	border: 1px solid #ccc;
+	/*-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;*/
+	-moz-box-shadow: 0 1px 6px #666;
+	-webkit-box-shadow: 0 1px 4px #666;
+}
+.oex-sub h2 {
+	background: #666;
+	padding: 10px 20px;
+	margin: 0;
+	line-height: 1.2em;
+	font-size: 16px;
+	font-weight: normal;
+	color: #fff;
+}
+.oex-sub p {
+	padding: 5px 20px;
+}
+.oex-sub .oex-controls {
+	background: #fafafa;
+	border-top: 1px solid #eee;
+	padding: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+.oex-sub .oex-controls button {
+	margin: 0 5px;
+}
+
+
+/* Table Style */
+
+#srvcs {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+#srvcs thead th {
+	background: #999;
+	padding: 5px;
+	text-align: left;
+	color: #fff;
+}
+#srvcs thead th a {
+	text-decoration: underline;
+	color: #faf9e0;
+}
+#srvcs tbody td {
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 5px;
+}
+
+
+#foot-publish {
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 10px;
+}
+#foot-publish button {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#foot-done {
+	margin-top: 10px;
+}
+
+
+/* Message Box */
+
 .messagebox {
     border-width: 1px;
     border-style: solid;
@@ -12,3 +138,34 @@
     background-position: left center;
     background-repeat: no-repeat;
 }
+
+
+/* Button */
+
+button {
+	background: #ededed url(images/bkg-btn-grey.gif) repeat-x 0 0;
+	border: 1px solid #b7b7b7;
+	padding: 2px 10px;
+	color: #000;
+	cursor: pointer;		
+	text-shadow: 0 1px 2px #fff;
+	-moz-border-radius: 16px;	
+	-webkit-border-radius: 16px;
+	-moz-box-shadow: 0 1px 2px #ccc;
+	-webkit-box-shadow: 0 1px 2px #ccc;
+}
+button:hover {
+	background: #dfdfdf url(images/bkg-btn-grey.gif) repeat-x 0 -35px;
+	text-decoration: none;
+	border-color: #afafaf;
+	color: #000;
+	cursor: pointer;
+}
+button:active {
+	background: #d4d3d3 url(images/bkg-btn-grey.gif) repeat-x 0 -70px;
+	outline: none;
+}
+
+/* Common Styles */
+
+.remove-button { background: url(images/x.gif) no-repeat; display: block; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; margin: 0 auto; }

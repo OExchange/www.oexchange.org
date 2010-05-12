@@ -44,7 +44,7 @@ $(function(){
     var loadData = function(){
         serviceList = sharingtoolPrefService.getServiceList();
         serviceHash = (serviceList) ? sharingtoolPrefService.getServiceHash() : null;
-        
+
         if (serviceList && serviceList.length > 0 && serviceHash == null) {
             loadingServices = true;
             sharingtoolPrefService.populateServiceHash(serviceList,function(sh){
@@ -74,8 +74,8 @@ $(function(){
     };
     
     var displayTable = function(){
-        log(serviceList);
-        log(serviceHash);
+        //log(serviceList);
+        //log(serviceHash);
         var xrd,xrdCache,tr;
         var tableBody = $('#srvcs tbody').empty();
         if (serviceList && serviceList.length > 0) {
@@ -84,12 +84,39 @@ $(function(){
                 xrdData = serviceHash[xrd] || null;
                 tr = $('<tr />',{rel:i});
                 tr.append($('<td />',{text:parseInt(i)+1}))
-                  .append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))
+                  /*.append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))*/
                   .append($('<td />',{text:(xrdData&&xrdData.name)?xrdData.name:'Unknown',class:'iconified',style:(xrdData&&xrdData.icon)?'background-image:url('+xrdData.icon+')':''}))
                   .append($('<td />',{text:(xrdData&&xrdData.offer)?xrdData.offer:''}))
                   .append($('<td />',{html:'<a href="#" class="remove-button">X</a>'}));
                 tableBody.append(tr);
             }
+
+        $('#oex-priority-sort').click(function() {
+        });
+        $('#oex-services-sort').click(function() {
+        });
+
+        $("#srvcs tbody").sortable({
+                                        cursor: 'all-scroll',
+                                        update: function(event, ui) { 
+                                            var row = ui.item[0],
+                                                rows = row.parentNode.children,
+                                                tosort = [];
+                
+                                            for (var i = 0; i < rows.length; i++) {
+                                                tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
+                                                rows[i].setAttribute('rel',i);
+                                                jQuery([rows[i].firstChild]).html(i + 1);
+                                            }
+                                            tosort.sort(function (a, b) { return a.idx - b.idx; });
+                                            serviceList = [];
+                                            for (var i = 0; i < tosort.length; i++) {
+                                                serviceList.push(tosort[i].xrd);
+                                            } 
+                                            storeData();
+                                        }
+                                   });
+        $("#srvcs").disableSelection();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
         }
@@ -170,17 +197,16 @@ $(function(){
     
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
-        $.prompt('<p><strong>Are you sure you want to delete this service?</strong></p><p>If you change your mind, you can add the service again here or at the service\'s web site.</p>',{
-            buttons: {'Delete': true, 'Cancel': false},
-            submit: function(v,m,f)
-            {
-                if (v && removeService(index)) {
-                    displayTable();
-                    storeData();
+
+        $('#oex-remove-service').click(
+                function () {
+                    if (removeService(index)) {
+                        displayTable();
+                        storeData();
+                    }
                 }
-            }
-        });
-        return false;
+        );
+        $('#oex-delete').slideDown();
     });
     
     $('#priority-button').click(function(e){
@@ -216,6 +242,14 @@ $(function(){
         storeData();
         w.location.reload(true);
     });
+
+
+    $('#oex-main-whatisthis').click(function () {$('#oex-info-services').slideDown();});
+    $('#oex-main-whatispublish').click(function () {$('#oex-info-how').slideDown();});
+    $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
+    $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
+    $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
+    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();});
     
     /* onload */
     startInit();
