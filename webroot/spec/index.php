@@ -1,7 +1,7 @@
 <?php
 $page_title = "OExchange Specification";
 $nav = "spec";
-$version = (isset($_GET['v']) ? $_GET['v'] : '0.8-wd7');
+$version = (isset($_GET['v']) ? $_GET['v'] : '0.8-wd6');
 include '../header.php';
 ?>	
     

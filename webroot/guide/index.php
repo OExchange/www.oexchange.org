@@ -15,7 +15,7 @@ include '../header.php';
     
     <hr/>
     
-    <div class="grid_6 suffix_1 alpha">
+    <div class="grid_7 alpha">
          
         <a name="services"></a>        
         <h3>OExchange For Services</h3>
@@ -72,6 +72,9 @@ include '../header.php';
         	Once you've got a compliant Offer endpoint, a Target XRD that describes your service, and a host-meta resource that lets it be found automatically, your service is ready to accept content from any client on the web!
         </p>
         
+        <br/>
+        
+        
         <a name="sites"></a>        
         <h3>OExchange For Content Publishers</h3>
         <p>
@@ -88,6 +91,9 @@ include '../header.php';
         <p>
             Usually, you will get the offer endpoint location from the service's documentation since you're not figuring it out dynamically at runtime.  If you'd rather do it automatically, then you're operating more like a sharing tool and should probably take a look <a href="#tools">at that guide</a>.
         </p>
+        
+        <br/>
+        
         
         <a name="tools"></a>        
         <h3>OExchange For Sharing Tools</h3>

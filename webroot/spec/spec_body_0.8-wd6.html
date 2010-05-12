@@ -1,5 +1,4 @@
-    
-    <div class="grid_6 suffix_1 alpha">
+    <div class="grid_7 alpha">
         
         <a name="status"></a>
         <h2>1. Status and Versioning</h2>
@@ -31,9 +30,7 @@
             <li>2010-5-6: published WD 6</li>
         </ul>
         <br />
-        
-        <hr />
-        
+                
         <a name="license"></a>
         <h3>1.2. License</h3>
         <p>
@@ -43,7 +40,7 @@
             Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
         <br />
         
-        <hr />
+        <hr /><br/>
         
         <a name="conventions"></a>
         <h2>2. Conventions</h2>
@@ -53,7 +50,7 @@
         </p>
         <br />
         
-        <hr />
+        <hr /><br/>
         
         <a name="introduction"></a>
         <h2>3. Introduction</h2>
@@ -94,7 +91,7 @@
             See the <a href="/guide">Quick Start Guide</a> for a quick and dirty intro to making it work.     
         </p>
         
-        <hr />
+        <br/><hr /><br/>
         
         <a name="definitions"></a>
         <h2>4. Definitions</h2>
@@ -116,9 +113,9 @@
                 </dd>
             </dl>
         </blockquote>       
-        <br />
         
-        <hr />
+        
+        <br/><hr /><br/>
         
         <a name="offer"></a>
         <h2>5. OExchange-Offer</h2>
@@ -157,6 +154,8 @@
             or the like.  It is simply required that sources know (perhaps via <a href="#discovery-overview">OExchange-Discovery</a>) the full endpoint such that they can pass arguments to it appropriately.
         </p>    
         
+        <br/>
+        
         <a name="offer-flow"></a>
         <h3>5.2. The Offer Flow</h3>
         <p>
@@ -193,6 +192,8 @@
             OExchange does specify that targets MUST NOT require their offer endpoints to be HTTPS URLs.  Though this does prevent certain real-world scenarios, it also prevents interoperability problems caused by variability between sites.  A Target may certainly redirect from HTTP to HTTPS URLs as desired once the offer flow is initiated.
         </p>
         
+        <br/>
+        
         <a name="offer-typing"></a>
         <h3>5.3. OExchange Data Typing</h3>
         <p>
@@ -212,6 +213,9 @@
         <p>
         	Note that it is fully expected that URLs will increasingly contain <a href="http://www.microformats.org">microformat</a>, <a href="http://opengraphprotocol.org/">open graph protocol</a>, <a href="http://rdfa.info">RDFa</a>, and other meta information via appropriate specifications and channels.  Targets are free to inspect for these as they would any URL.
         </p>	
+        
+        <br/>
+        
         <a name="offer-parameters"></a>
         <h3>5.4.  Offer Parameter Details</h3>
         <p>
@@ -245,7 +249,9 @@
             <li>The offer MAY include additional type information for that content</li>  
             <li>If a <code>ctype</code> is present, then the offer call will take additional parameters dictated by that type (including potentially additional related URLs)</li>  
             <li>If a <code>ctype</code> is not present, the type defaults to "link"</li>  
-        </ul>     
+        </ul>  
+        
+        <br/>   
         
         <h3><a name="ctypes"></a>5.5. Supported <code>ctype</code> Values</h3>
         <p>
@@ -327,7 +333,9 @@
             <dd>The preferred width of the image</dd>
         </dl>
         
-        <hr />
+        
+        <br/><hr /><br/>
+        
         
         <h2><a name="discovery"></a>6. OExchange-Discovery</h2>
         
@@ -342,6 +350,8 @@
             <li><a href="#discovery-personal">Personal discovery</a>: how to identify OExchange Targets appropriate for an individual user</li>
         </ul>
         </p>
+        
+        <br/>
         
         <a name="discovery-targetxrd">
         <h3></a>6.2 Target Specification via the OExchange Target XRD</h3>
@@ -414,6 +424,8 @@
         <p>
         	This attribute is intended to be used in standard fashion, with values corresponding to <a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646</a>.
         </p>
+        
+        <br/>
         		      
         <a name="discovery-host"></a>
         <h3>6.3 Host Discovery</h3>
@@ -480,6 +492,8 @@
             <li>Inspect the XRD, obtaining metadata about the target, including its offer endpoint (a Link with a <code>http://www.oexchange.org/spec/0.8/rel/offer</code> relation).</li>
         </ol>
         
+        <br/>
+        
         <a name="discovery-page"></a>
         <h3>6.4 Page Discovery</h3>
         <p>
@@ -496,6 +510,8 @@
         <pre>&lt;link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.example.com/linkeater/oexchange.xrd"/&gt;
         </pre>
         </p>
+        
+        <br/>
         
         <a name="discovery-personal"></a>
         <h3>6.5 Personal Discovery</h3>
@@ -540,7 +556,9 @@
             This indicates that this user uses the Target described by a given XRD document.
         </p>    
         
-        <hr />
+        
+        <br/><hr /><br/>
+        
             
         <a name="related"></a>  
         <h2>7. Related & Background</h2>
