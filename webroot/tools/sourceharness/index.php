@@ -14,17 +14,17 @@ if (empty($dfltTarget)) {
     function shareIframe() {
         var url = baseUrl()
             + "&ctype=iframe" 
-            + "&iframeurl=" + escape(document.iframeForm.iframeurl.value)
+            + "&iframeurl=" + encodeURIComponent(document.iframeForm.iframeurl.value)
             + "&height=" + document.iframeForm.height.value
             + "&width=" + document.iframeForm.width.value
-            + "&screenshot=" + escape(document.iframeForm.screenshot.value)
+            + "&screenshot=" + encodeURIComponent(document.iframeForm.screenshot.value)
         window.open(url);
     }
 
     function shareImage() {
         var url = baseUrl()
             + "&ctype=image" 
-            + "&imageurl=" + escape(document.imageForm.imageurl.value)
+            + "&imageurl=" + encodeURIComponent(document.imageForm.imageurl.value)
             + "&height=" + document.imageForm.height.value
             + "&width=" + document.imageForm.width.value;
         window.open(url);
@@ -32,9 +32,9 @@ if (empty($dfltTarget)) {
 
     function baseUrl() {
         var baseUrl = document.targetForm.target.value
-            + "?url=" + escape(document.commonForm.url.value)
-            + "&title=" + escape(document.commonForm.title.value)
-            + "&description=" + escape(document.commonForm.description.value);
+            + "?url=" + encodeURIComponent(document.commonForm.url.value)
+            + "&title=" + encodeURIComponent(document.commonForm.title.value)
+            + "&description=" + encodeURIComponent(document.commonForm.description.value);
         return baseUrl;
     }
     
@@ -46,10 +46,10 @@ if (empty($dfltTarget)) {
     function shareFlash() {
         var url = baseUrl()
             + "&ctype=flash" 
-            + "&swfurl=" + escape(document.flashForm.swfurl.value)
+            + "&swfurl=" + encodeURIComponent(document.flashForm.swfurl.value)
             + "&height=" + document.flashForm.height.value
             + "&width=" + document.flashForm.width.value
-            + "&screenshot=" + escape(document.flashForm.screenshot.value);
+            + "&screenshot=" + encodeURIComponent(document.flashForm.screenshot.value);
         window.open(url);
     }
     

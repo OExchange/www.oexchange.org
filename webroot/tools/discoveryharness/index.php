@@ -14,6 +14,10 @@ function printTarget($target) {
 	echo "&nbsp;&nbsp;<b>Vendor:</b> " . htmlspecialchars($target->vendor) . "<br/>";
 	echo "&nbsp;&nbsp;<b>Icon:</b> " . htmlspecialchars($target->icon) . "<br/>";
 	echo "&nbsp;&nbsp;<b>Icon32:</b> " . htmlspecialchars($target->icon32) . "<br/>";
+	echo "<br/>";
+	echo "&nbsp;&nbsp;<img src=\"" . htmlspecialchars($target->icon) . "\"/>";
+	echo "&nbsp;&nbsp;<img src=\"" . htmlspecialchars($target->icon32) . "\"/>";
+	echo "<br/>";
 }
 
 $hostname = getDfltArg("h", "www.oexchange.org");

@@ -18,6 +18,7 @@
 	<meta name="robots" content="all" />
 	<meta http-equiv="keywords" content="OExchange, share, widget, oEmbed, OAuth, social, Webfinger, sharing" />
 	<meta http-equiv="description" content="<?= $ptitle?>" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<link rel="stylesheet" type="text/css" media="all" href="/styles/reset.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/styles/text.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/styles/960.css" />
