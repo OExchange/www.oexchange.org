@@ -60,6 +60,14 @@ a:hover {
 }
 
 
+/* OExchange Navbar */
+ 
+.navbar { position: relative; background: #1b1b1b; border-bottom: 4px solid #464646; padding: 10px; margin-bottom: 50px; text-align: center; }
+.navbar-inner { position: relative; width: 940px; margin: 0 auto; text-align: left; }
+.navbar a { background: url(/images/logo_inverted_16.gif) no-repeat left; padding-left: 24px; text-decoration: none; color: #ccc; }
+.navbar a:hover { color: #fff; }
+
+
 /* Banner */
 
 .banner { background: #dbe8f9; margin: -25px 0 25px; padding: 25px 40px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
