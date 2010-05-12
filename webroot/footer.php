@@ -1,7 +1,7 @@
 
         <div id="footer">
             <a href="#top">Top</a>
-            OExchange is an open source project being developed by a small group of dedicated individuals.
+            &copy; 2009-2010 OExchange.org
         </div>
     </div>    
 </div>
