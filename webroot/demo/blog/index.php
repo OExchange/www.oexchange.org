@@ -22,8 +22,9 @@
         <!-- Blog Post -->
         <div class="post">
             <h2>Lorem ipsum dolor sit amet</h2>
+            <img src="images/big_dog_little_dog2.jpg" border="0" alt="" align="right" style="margin:14px 0 0 20px;" />
             <h4>Consectetur adipiscing elit. Pellentesque sapien magna.</h4>
-            <p><img src="images/big_dog_little_dog.jpg" border="0" alt="" align="right" />Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. Sed venenatis, nunc id pharetra blandit, dolor justo ornare turpis, et consectetur justo ligula ac lorem. Nullam id diam ac lorem dapibus volutpat. Integer vitae lectus mauris, eget malesuada lacus. Donec hendrerit, metus in mollis pellentesque, turpis tellus fringilla eros, vel hendrerit dui dui quis dui. Vivamus eu feugiat nulla. Ut ac ipsum dolor. Sed nisi mauris, dapibus eu facilisis nec, porttitor a purus. Pellentesque lacinia volutpat urna, non fermentum eros hendrerit eget. Fusce eu augue massa, non malesuada mi. Nam congue pulvinar hendrerit. </p>
+            <p>Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. </p>
             
             <p>Share this post:</p>
 			<div class="oexchange_toolbox">
@@ -38,7 +39,7 @@
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
         </div>
         
-        <div id="tt1" class="tt" style="position:absolute;top:445px;left:20px;">
+        <div id="tt1" class="tt" style="position:absolute;top:95px;left:25px;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 The sharing options on this page can personalized with your favorite ways to share.<br/><br/>
@@ -61,8 +62,6 @@
             <li><a href="">Sollicitudin fringilla</a></li>
             <li><a href="">Aenean ut tempus nulla</a></li>
             <li><a href="">Sed accumsan placerat massa</a></li>
-            <li><a href="">Nec rhoncus libero lobortis sed</a></li>
-            <li><a href="">Morbi ipsum neque, porttitor</a></li>
         </ul>
         
         <h4>March, 2010</h4>
@@ -70,11 +69,6 @@
             <li><a href="">Nec rhoncus nec, iaculis eget leo</a></li>
             <li><a href="">Proin est arcu, sodales sed</a></li>
             <li><a href="">Viverra et, ultricies in dui</a></li>
-            <li><a href="">Maecenas a dui nec dui</a></li>
-            <li><a href="">Sollicitudin fringilla</a></li>
-            <li><a href="">Aenean ut tempus nulla</a></li>
-            <li><a href="">Sed accumsan placerat massa</a></li>
-            <li><a href="">Nec rhoncus libero lobortis sed</a></li>
         </ul>
         
         <p><a href="">More...</a></p>
