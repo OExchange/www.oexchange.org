@@ -25,6 +25,7 @@
 	<link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.oexchange.org/demo/linkeater/oexchange.xrd">
     <style type="text/css">
         body { background: #fff; padding: 0; }
+        .container_12 { margin: 0 auto; }
     </style>
 </head>
   

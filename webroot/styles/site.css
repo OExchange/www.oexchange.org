@@ -168,3 +168,49 @@ ol.upper-roman {list-style-type:upper-roman}
 ol.lower-alpha {list-style-type:lower-alpha}
 ol.lower-roman {list-style-type:lower-roman}
 ol.none, ul.none { list-style-type: none; }
+
+
+/* Tool Tip */
+
+.tt {
+    position: relative;
+    width: 400px;
+    padding-bottom: 11px; 
+    z-index: 1000;   
+}
+.tt-tick {    
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    background: url(images/bkg-tt.gif) no-repeat bottom left;
+    width: 42px;
+    height: 12px;
+    margin-top: -1px;
+}
+.tt-x {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: url(images/x.gif) no-repeat 0 0;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    z-index: 1;
+}
+.tt-inner {
+    background: #f5f6c6;
+    border: 1px solid #dcdd76;
+    padding: 20px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-box-shadow: 0 1px 6px #ccc;
+	-webkit-box-shadow: 0 1px 4px #ccc;
+}
+.tt-inner a {
+    background: transparent;
+    text-decoration: none;
+    color: #06c;
+}
+.tt-inner a:hover {
+    text-decoration: underline;
+}
