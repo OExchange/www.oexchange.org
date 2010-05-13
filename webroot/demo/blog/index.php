@@ -38,6 +38,17 @@
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
         </div>
         
+        <div id="tt1" class="tt" style="position:absolute;top:445px;left:20px;">
+            <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
+            <div class="tt-inner">
+                The sharing options on this page can personalized with your favorite ways to share.<br/><br/>
+                To see this in action, check out <a href="/demo/linkeater/">LinkEater</a>, an example
+                sharing service that supports OExchange. Or, select Personalize to manage your 
+                OExchange sharing services.
+            </div>
+            <div class="tt-tick"></div>
+        </div>
+        
     </div>
     <div class="sidebar">
         <h3>Archive</h3>
@@ -79,8 +90,8 @@
 <script type="text/javascript">
 $(document).ready(
     function() {
-    $('.oexchange-personalize').oexchange_console();
-    setTimeout(function () { $('.oexchange-share').oexchange_share(); }, 400);
+        $('.oexchange-personalize').oexchange_console();
+        $('.oexchange-share').oexchange_share();
     }
 );
 </script>

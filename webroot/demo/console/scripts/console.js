@@ -115,10 +115,16 @@ $(function(){
                                        });
             $("#srvcs td").disableSelection();
             $('#foot-publish').show();
+            $('#text').html('<p>Sharing Tool makes it easy to keep track of your favorite places to share.  Saved sharing services can be presented by any product that supports OExchange for you to use.</p>');
+            $('#srvcs').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
+            $('#srvcs').hide();
+            $('#text').html(["<p><a href=\"http://www.oexchange.org\" target=\"_blank\">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.",
+                             "When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.",
+                             "Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.",
+                             "Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select Personalize to return to this screen."].join('</p><p>'));
         }
-        $('#srvcs').show();
     };
     
     var processQueryString = function(){
@@ -170,7 +176,7 @@ $(function(){
         var xrd = serviceList[index];
         if (xrd) {
             serviceList.splice(index,1);
-            if (serviceHash[xrd]) delete serviceHash[xrd];
+            //if (serviceHash[xrd]) delete serviceHash[xrd];
             return true;
         }
     };
@@ -196,12 +202,18 @@ $(function(){
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
 
-        $('#oex-remove-service').click(
+        $('#oex-remove-service').live('click',
                 function () {
                     $('.oex-sub').slideUp();
                     if (removeService(index)) {
-                        displayTable();
-                        storeData();
+                        try {
+                            // ignore sortable bug
+                            displayTable();
+                        } catch (e) {
+                            //log(e);
+                        } finally {
+                            storeData();
+                        }
                     }
                 }
         );
@@ -252,6 +264,8 @@ $(function(){
                 found = 1; break; 
             }
         }
+        $('#oex-add').slideUp();
+        $('.oex-sub').slideUp();
         if (!found) {
             if (service.target.endpoint) service.target.offer = service.target.endpoint;
             serviceHash[service.xrd] = service.target;
@@ -260,13 +274,11 @@ $(function(){
             displayTable();
         }
         serviceToAdd = null;
-        $('.oex-add').slideUp();
-        $('.oex-sub').slideUp();
     }
 
     function serviceSearch() {
         var domain = $('#oex-new-service').val().split('://').pop();
-        if (domain.search(/^([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.)*[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.[a-zA-Z]{2,4}$/) > -1) {
+        if (domain.search(/^([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.)*[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.[a-zA-Z]{2,4}\/?$/) > -1) {
             $('#oex-new-service').attr('disabled',true);
 
             $.getJSON('http://www.oexchange.org/demo/discovery-api/api.php?cmd=getHostTargets&jsonpcb=gethostcb&callback=?&host='+domain);
@@ -297,7 +309,15 @@ $(function(){
     $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
     $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
     $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
-    $('.oex-done').click(function () { if (window.parent) window.parent.postMessage('oex=close','*'); else window.close()});
+    $('.oex-done').click(function () { 
+        if (window.parent) {
+            var message = 'oex=close' +
+                          (serviceList ? '&sl='+(JSON.stringify(serviceList)) : '') + 
+                          (serviceHash ? '&sh='+(JSON.stringify(serviceHash)) : '');
+            window.parent.postMessage(message, '*'); 
+        }
+        else window.close()
+    });
 
     $('#oex-priority-sort').click(function() {
     });
