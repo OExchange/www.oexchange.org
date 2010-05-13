@@ -245,6 +245,8 @@ $(function(){
     function serviceSave() {
         var service = serviceToAdd || {},
             found = 0;
+        if (!serviceList) serviceList = [];
+        if (!serviceHash) serviceHash = {};
         for (var i = 0; i < serviceList.length; i++) {
             if (serviceList[i].xrd == service.xrd) {
                 found = 1; break; 
@@ -310,7 +312,9 @@ $(function(){
     });
     $('#oex-search-service').click(serviceSearch);
     $('#oex-add-service').click(serviceSave);
-    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();});
+    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();
+                                            $('#oex-new-service').attr('disabled',false);
+                                });
     
     /* onload */
     startInit();

@@ -28,11 +28,11 @@
             <p>Share this post:</p>
 			<div class="oexchange_toolbox">
 				<div class="custom_images">
-					<a class="oexchange-share" href="#" rel="http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd"></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-buzz.appspot.com/buzz/oexchange.xrd"></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd"></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-digg.appspot.com/oexchange/oexchange.xrd"></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" ox:pref="1" ox:xrd="http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" ox:pref="2" ox:xrd="http://oexchange-buzz.appspot.com/buzz/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" ox:pref="3" ox:xrd="http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" ox:pref="4" ox:xrd="http://oexchange-digg.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" ox:pref="5" ox:xrd="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"></a>
 				</div>
 			</div>
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
@@ -80,7 +80,7 @@
 $(document).ready(
     function() {
     $('.oexchange-personalize').oexchange_console();
-    $('.oexchange-share').oexchange_share();
+    setTimeout(function () { $('.oexchange-share').oexchange_share(); }, 400);
     }
 );
 </script>
