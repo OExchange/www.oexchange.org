@@ -28,18 +28,6 @@ require_once("../../header-subdemo.php");
     	</p>
     	<h4>Have fun...</h4>
         
-        <p style="padding:200px 0 20px 0;">
-            <a class="btn" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
-        </p>
-        
-        <div id="tt1" class="tt" style="position:absolute;top:415px;left:-20px;">
-            <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
-            <div class="tt-inner">
-                Because LinkEater supports OExchange, it can be saved as a favorite way to share.<br/><br/>
-                Then, when a user encounters OExchange-enabled sharing elsewhere, <a href="/demo/blog">such as on a blog</a>, LinkEater will be presented as a personalized option.
-            </div>
-            <div class="tt-tick" style="left:85px;"></div>
-        </div>
         
     </div>
 	
