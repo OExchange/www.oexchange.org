@@ -50,7 +50,10 @@
         if (!s /*|| addUrl.indexOf(s.origin) !== 0*/) return;
         var data = fromKV(s.data);
         if (data.sl) serviceList = JSON.parse(data.sl);
-        if (data.sh) serviceHash = JSON.parse(data.sh);
+        if (data.sh) {
+            var sh = JSON.parse(data.sh);
+            for (var k in sh) serviceHash[k] = sh[k];
+        }
         if (data.oex && data.oex=='close') closeDialog();
         if (serviceList && serviceList.length && data.sh) fillPreferredServices();
     }
@@ -320,8 +323,8 @@
                         jsonp:'jsonpcb',
                         context: document.body, 
                         success: function(data){
-                            if (data.endpoint) {
-                                data.offer = data.endpoint;
+                            if (data.endpoint) data.offer = data.endpoint;
+                            if (data.offer) {
                                 serviceHash[xrd] = data;
                             }
                             if (serviceHash[xrd]) shareLink(el, xrd);
