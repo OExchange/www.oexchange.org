@@ -64,7 +64,6 @@ $(function(){
     };
     
     var storeData = function(){
-        console.log('saving ', serviceList);
         sharingtoolPrefService.saveData(serviceList, serviceHash);
     };
     
