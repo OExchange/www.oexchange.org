@@ -8,6 +8,7 @@
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
+        shareLinkHash = {},
         serviceList = [],
         serviceHash = {},
         serviceExport = {},
@@ -54,8 +55,11 @@
             var sh = JSON.parse(data.sh);
             for (var k in sh) serviceHash[k] = sh[k];
         }
+        if (serviceList && serviceList.length && data.sh) {
+            userServices = [];
+            fillPreferredServices(1);
+        }
         if (data.oex && data.oex=='close') closeDialog();
-        if (serviceList && serviceList.length && data.sh) fillPreferredServices();
     }
 
     /**
@@ -246,6 +250,7 @@
     */
     function closeDialog() {
         jQuery('#oexchange-dialog').hide();
+        refreshShareLinks();
     }
 
     function createCommFrame(url) {
@@ -313,14 +318,34 @@
 
     }
 
-    function renderShare() {
-        this.each(function (i, el) {
+    function addShareLink(rank, el) {
+        if (!shareLinkHash[rank]) shareLinkHash[rank] = [];
+        shareLinkHash[rank].push(el);
+    }
+
+    function refreshShareLinks() {
+        for (var rank in shareLinkHash) {
+            if (parseInt(rank) > 0 && shareLinkHash[rank]) {
+                for (var i = 0; i < shareLinkHash[rank].length; i++) {
+                    renderShare(i, shareLinkHash[rank][i], 1);
+                }
+            }
+        }
+    }
+
+    function renderShare(i, el, noadd) {
             var xrd = el.getAttribute('ox:xrd'),
                 pref = el.getAttribute('ox:pref');
             if (pref) {
                 pref = parseInt(pref);
-                if (userServices.length >= parseInt(pref))
+                if (userServices.length >= parseInt(pref)) {
                     xrd = userServices[pref - 1].xrd;
+                    if (!noadd) addShareLink(pref, el);
+                } else {
+                    if (!noadd) addShareLink(0, el);
+                }
+            } else {
+                if (!noadd) addShareLink(0, el);
             }
             if (xrd) {
                 if (!serviceHash[xrd])   {
@@ -342,14 +367,13 @@
                     shareLink(el, xrd);
                 }
             }
-        });
     }
 
     // Add jQuery functions 
     jQuery.fn.oexchange_badge = renderBadge;
     jQuery.fn.oexchange_console = consoleLink;
     jQuery.fn.oexchange_save = dialogLink;
-    jQuery.fn.oexchange_share = renderShare;
+    jQuery.fn.oexchange_share = function () { this.each(renderShare); };
 
     // Add static jQuery methods
     jQuery.oex = {
