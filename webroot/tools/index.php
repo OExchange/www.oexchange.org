@@ -13,11 +13,11 @@ include '../header.php';
     
     <div class="grid_5 alpha">
         <h3 class="mb5"><a href="sourceharness">Offer Test Harness</a></h3>
-        Send OExchange Offer requests to Targets you are developing.
+        A harness that can send OExchange Offer requests to Targets.
     </div>
     <div class="grid_5 omega">
-        <h3 class="mb5"><a href="/demo/linkeater/">Sample Target</a></h3>
-        A demo you can send OExchange Offer requests to.
+        <h3 class="mb5"><a href="/demo/linkeater/">LinkEater Demo Target</a></h3>
+        A demo Target that accepts Offer requests, and is discoverable.
     </div>
     <div class="clear"></div>
     
@@ -25,11 +25,11 @@ include '../header.php';
     
     <div class="grid_5 alpha">
         <h3 class="mb5"><a href="/tools/discoverygen/">Discovery Resource Generator</a></h3>
-        To generate discovery files automatically for your service.
+        A tool to generate required discovery files.
     </div>
     <div class="grid_5 omega">
-        <h3 class="mb5"><a href="/demo/discovery-api/">Discovery API</a></h3>
-        A simple JSON-based API to test out OExchange discovery files.
+        <h3 class="mb5"><a href="/demo/discovery-api/">Utility API</a></h3>
+        A simple JSON-based API to test out OExchange discovery operations.
     </div>
     <div class="clear"></div>
     
@@ -37,7 +37,7 @@ include '../header.php';
     
     <div class="grid_5 alpha">
         <h3 class="mb5"><a href="/tools/discoveryharness/">Discovery Test Harness</a></h3>
-        You can use to test your service's discovery compliance.
+        A test harness to check OExchange Discovery for a service.
     </div>    
     <div class="clear"></div>
     
