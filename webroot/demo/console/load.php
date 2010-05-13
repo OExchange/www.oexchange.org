@@ -31,8 +31,7 @@
 
 
 if (window.parent) {
-        window.parent.postMessage('sl='+JSON.stringify(serviceList),'*');
-        window.parent.postMessage('sh='+JSON.stringify(serviceHash),'*');
+        window.parent.postMessage('sl='+JSON.stringify(serviceList)+'&sh='+JSON.stringify(serviceHash),'*');
 }
 
 </script>
