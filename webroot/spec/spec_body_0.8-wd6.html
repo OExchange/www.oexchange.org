@@ -139,12 +139,12 @@
             <dd>
             A website or application that has content to be shared or offered to a Target.
             </dd>
-    		<br/>
+            <br/>
             <dt><b>Target</b></dt>
             <dd>
             A website or application that can receive content offered from a Source.
             </dd>
-    		<br/>
+            <br/>
             <dt><b>User</b></dt>
             <dd>
             A real-world user that interacts with Source and Target websites and applications.
@@ -250,8 +250,8 @@
             OExchange adopts this "we're always sharing a link, if you can do more with it, great!" practice as opposed to a (complex) type-negotiation system, whether dynamic or at build time.
         </p>
         <p>
-        	Note that it is fully expected that URLs will increasingly contain <a href="http://www.microformats.org">microformat</a>, <a href="http://opengraphprotocol.org/">open graph protocol</a>, <a href="http://rdfa.info">RDFa</a>, and other meta information via appropriate specifications and channels.  Targets are free to inspect for these as they would any URL.
-        </p>	
+            Note that it is fully expected that URLs will increasingly contain <a href="http://www.microformats.org">microformat</a>, <a href="http://opengraphprotocol.org/">open graph protocol</a>, <a href="http://rdfa.info">RDFa</a>, and other meta information via appropriate specifications and channels.  Targets are free to inspect for these as they would any URL.
+        </p>    
         
         <br/>
         
@@ -262,19 +262,19 @@
         <dl>
             <dt><b><code>url</code></b> (required)</dt>
             <dd>The URL of the content being offered.  It should be expected that this URL is something a user could navigate to directly in a browser.</dd>
-        	<br/>
+            <br/>
         
             <dt><b><code>title</code></b> (optional)</dt>
             <dd>A human-readable title for the content.  This is typically equivalent to the page&quot;s title meta tag, and is used to convey the same type of information.</dd>
-        	<br/>
+            <br/>
             
             <dt><b><code>description</code></b> (optional)</dt>
             <dd>A human-readable description of the content.  This is typically equivalent to the page&quot;s description meta tag, and is used to convey the same type of information.</dd>
-        	<br/>
+            <br/>
         
             <dt><b><code>tags</code></b> (optional)</dt>
             <dd>A set of comma-delimited "tags" that further describe the content.  The meaning of tags is determined by the target, but a target should not heavily overload the meaning of tags beyond the generally accepted one: text strings used by users to assist in organizing content.  This parameter is a CSV-format string obeying the rules for line content from <a href="http://tools.ietf.org/html/rfc4180">RFC 4180</a>.  Specifically, a list of comma-separated values with no trailing comma.  Values with commas in them must be placed in double quotes (e.g. foo, bar, "Miami, FL").</dd>
-        	<br/>
+            <br/>
         
             <dt><b><code>ctype</code></b> (optional)</dt>
             <dd>Additional information on the type of content being shared.  See the list of <a href="#ctypes">supported ctypes</a>; <code>link</code> is the default type.</dd>
@@ -313,15 +313,15 @@
             <dl>
                 <dt><b><code>swfurl</code></b></dt>
                 <dd>The URL of the actual SWF resource, with appropriate parameters as necessary</dd>
-            	<br/>
+                <br/>
                 
                 <dt><b><code>height</code></b></dt>
                 <dd>The preferred height of the content (which the Target can use to render the tag)</dd>
-            	<br/>
+                <br/>
             
                 <dt><b><code>width</code></b></dt>
                 <dd>The preferred width of the content (which the Target can use to render the tag)</dd>
-            	<br/>
+                <br/>
             
                 <dt><b><code>screenshot</code></b></dt>
                 <dd>The URI of an image representation of the Flash content.  The image should be suitable for display the same size as the Flash object (as specified by height and width parameters)</dd>
@@ -335,15 +335,15 @@
             <dl>
                 <dt><b><code>iframeurl</code></b></dt>
                 <dd>The URL to be used as the actual iframe of the actual SWF resource, with appropriate parameters as necessary</dd>
-            	<br/>
+                <br/>
                 
                 <dt><b><code>height</code></b></dt>
                 <dd>The preferred height of the content (which the Target can use to render the iframe)</dd>
-            	<br/>
+                <br/>
             
                 <dt><b><code>width</code></b></dt>
                 <dd>The preferred width of the content (which the Target can use to render the iframe)</dd>
-            	<br/>
+                <br/>
             
                 <dt><b><code>screenshot</code></b></dt>
                 <dd>The URI of an image representation of the iframe content.  The image should be suitable for display the same size as the iframe object (as specified by height and width parameters)</dd>
@@ -357,11 +357,11 @@
             <dl>
                 <dt><b><code>imageurl</code></b></dt>
                 <dd>The URL that is the source of the image</dd>
-            	<br/>
+                <br/>
                 
                 <dt><b><code>height</code></b></dt>
                 <dd>The preferred height of the image</dd>
-            	<br/>
+                <br/>
             
                 <dt><b><code>width</code></b></dt>
                 <dd>The preferred width of the image</dd>
@@ -415,55 +415,55 @@
             An example of a target XRD file:
         </p>
         <pre>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-        &lt;XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0"&gt;
+&lt;XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0"&gt;
         
-            &lt;Subject&gt;http://www.example.com/linkeater&lt;/Subject&gt;
+    &lt;Subject&gt;http://www.example.com/linkeater&lt;/Subject&gt;
         
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/vendor"&gt;Examples Inc.&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/title"&gt;A Link-Accepting Service&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/name"&gt;LinkEater&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/prompt"&gt;Send to LinkEater&lt;/Property&gt;
-        
-            &lt;Link 
-                rel= "icon" 
-                href="http://www.example.com/favicon.ico"
-                type="image/vnd.microsoft.icon" 
-                /&gt;
-        
-            &lt;Link 
-                rel= "icon32" 
-                href="http://www.example.com/favicon32.png"
-                type="image/png" 
-                /&gt;
-        
-            &lt;Link 
-                rel= "http://www.oexchange.org/spec/0.8/rel/offer" 
-                href="http://www.example.com/linkeater/offer.php"
-                type="text/html" 
-                /&gt;
-        &lt;/XRD&gt;    
-        </pre>  
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/vendor"&gt;Examples Inc.&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/title"&gt;A Link-Accepting Service&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/name"&gt;LinkEater&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/prompt"&gt;Send to LinkEater&lt;/Property&gt;
+
+    &lt;Link 
+        rel= "icon" 
+        href="http://www.example.com/favicon.ico"
+        type="image/vnd.microsoft.icon" 
+        /&gt;
+
+    &lt;Link 
+        rel= "icon32" 
+        href="http://www.example.com/favicon32.png"
+        type="image/png" 
+        /&gt;
+
+    &lt;Link 
+        rel= "http://www.oexchange.org/spec/0.8/rel/offer" 
+        href="http://www.example.com/linkeater/offer.php"
+        type="text/html" 
+        /&gt;
+
+&lt;/XRD&gt;</pre>  
         
         <h4>6.2.2 Internationalization of the Target XRD</h4>
         <p>
-        	The Target XRD contains strings intended for display to users.  
-        	In some cases the target may wish to express these strings, such as the action prompt, in various languages.
-        	This is supported through the use of the standard <code>xml:lang</code> attribute, which can be included as an attribute on the associated Property element.
+            The Target XRD contains strings intended for display to users.  
+            In some cases the target may wish to express these strings, such as the action prompt, in various languages.
+            This is supported through the use of the standard <code>xml:lang</code> attribute, which can be included as an attribute on the associated Property element.
         </p>
-        <p>	
-        	Multiple instances of the particular Property element may be included, each with a unique language indicator.  
-        	In such cases, there MUST be one of each element with no lang attribute, indicating the "default", and this element SHOULD be the first such element in the XRD to simplify default parsing.
+        <p> 
+            Multiple instances of the particular Property element may be included, each with a unique language indicator.  
+            In such cases, there MUST be one of each element with no lang attribute, indicating the "default", and this element SHOULD be the first such element in the XRD to simplify default parsing.
         </p>
         <p>
-        	This attribute is intended to be used in standard fashion, with values corresponding to <a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646</a>.
+            This attribute is intended to be used in standard fashion, with values corresponding to <a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646</a>.
         </p>
         
         <br/>
-        		      
+                      
         <a name="discovery-host"></a>
         <h3>6.3 Host Discovery</h3>
         <p>
@@ -494,27 +494,25 @@
         <p>
             An example of the relevant Link element required within a host-meta resource to identify the location of a target's XRD descriptor:
         <pre>&lt;Link 
-            rel="http://oexchange.org/spec/0.8/rel/resident-target" 
-            type="application/xrd+xml"
-            href="http://www.example.com/linkeater/oexchange.xrd" >
-        &lt;/Link&gt;   
-        </pre>      
+    rel="http://oexchange.org/spec/0.8/rel/resident-target" 
+    type="application/xrd+xml"
+    href="http://www.example.com/linkeater/oexchange.xrd" >
+&lt;/Link&gt;</pre>      
         </p>
         <p>
             A complete host-meta resource, therefore, might look like the following:
         <pre>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-        &lt;XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0' 
-             xmlns:hm='http://host-meta.net/xrd/1.0'&gt;
-            &lt;hm:Host&gt;www.example.com&lt;/hm:Host&gt;
+&lt;XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0' 
+    xmlns:hm='http://host-meta.net/xrd/1.0'&gt;
+    &lt;hm:Host&gt;www.example.com&lt;/hm:Host&gt;
         
-            &lt;Link 
-                rel="http://oexchange.org/spec/0.8/rel/resident-target" 
-                type="application/xrd+xml"
-                href="http://www.example.com/linkeater/oexchange.xrd" &gt;
-            &lt;/Link&gt;
-        
-        &lt;/XRD&gt;    
-        </pre>      
+    &lt;Link 
+        rel="http://oexchange.org/spec/0.8/rel/resident-target" 
+        type="application/xrd+xml"
+        href="http://www.example.com/linkeater/oexchange.xrd" &gt;
+    &lt;/Link&gt;
+
+&lt;/XRD&gt;</pre>      
         </p>
         
         <a name="discovery-flow">
@@ -544,8 +542,7 @@
         </p>
         <p>
         For example, a link tag like the following may appear in the head of the page:
-        <pre>&lt;link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.example.com/linkeater/oexchange.xrd"/&gt;
-        </pre>
+        <pre>&lt;link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.example.com/linkeater/oexchange.xrd"/&gt;</pre>
         </p>
         
         <br/>
@@ -558,8 +555,8 @@
         </p>
         <p>
         <ul>
-        	<li><i>Temporal, single-machine user state</i>: the notion of which services, in which priority order, a user is engaged with at any given moment.  This is typically handled through tool-specific implementations, and potentially moving forward with shared-storage approaches such as <a href="http://www.xauth.org">XAuth</a>.  Depending on the specific means used, OExchange integrates in different ways.  With a shared-storage, hostname-based model such as that used by XAuth, for example, the hostnames reported can be used in a Host Discovery flow and be treated as formal Targets.</li>
-        	<li><i>Long-term public expression of a user's "preferred" services</i>: the idea that a user should be able to express, in a public way, the services that they use on the web, to encourage sources and sharing tools to prioritize those on their behalf.  OExchange proposes that this occur via a user's personal XRD.  The personal XRD can be obtained via <a href="http://code.google.com/p/webfinger">WebFinger</a> and potentially other means.
+            <li><i>Temporal, single-machine user state</i>: the notion of which services, in which priority order, a user is engaged with at any given moment.  This is typically handled through tool-specific implementations, and potentially moving forward with shared-storage approaches such as <a href="http://www.xauth.org">XAuth</a>.  Depending on the specific means used, OExchange integrates in different ways.  With a shared-storage, hostname-based model such as that used by XAuth, for example, the hostnames reported can be used in a Host Discovery flow and be treated as formal Targets.</li>
+            <li><i>Long-term public expression of a user's "preferred" services</i>: the idea that a user should be able to express, in a public way, the services that they use on the web, to encourage sources and sharing tools to prioritize those on their behalf.  OExchange proposes that this occur via a user's personal XRD.  The personal XRD can be obtained via <a href="http://code.google.com/p/webfinger">WebFinger</a> and potentially other means.
         </ul>
         </p>    
                  
@@ -572,11 +569,10 @@
             For example, an individual XRD may contain the following Link element:
         </p>     
         <pre>&lt;Link 
-            rel="http://oexchange.org/spec/0.8/rel/user-target" 
-            type="application/xrd+xml"
-            href="http://www.example.com/linkeater/oexchange.xrd" >
-        &lt;/Link&gt;   
-        </pre>      
+    rel="http://oexchange.org/spec/0.8/rel/user-target" 
+    type="application/xrd+xml"
+    href="http://www.example.com/linkeater/oexchange.xrd" >
+&lt;/Link&gt;</pre>      
         
         <a name="discovery-personal-flow"></a>
         <h4>6.5.2 Example Personal Discovery Flow: WebFinger</h4>
@@ -600,21 +596,21 @@
         <a name="related"></a>  
         <h2>7. Related & Background</h2>
         <p>
-        	The following specification documents are referenced directly or indirectly by this specification.
+            The following specification documents are referenced directly or indirectly by this specification.
         </p>
         <ul>
-        	<li><a href="http://tools.ietf.org/html/rfc5785">RFC 5785: Defining Well-Known Uniform Resource Identifiers (URIs)</a></li>
+            <li><a href="http://tools.ietf.org/html/rfc5785">RFC 5785: Defining Well-Known Uniform Resource Identifiers (URIs)</a></li>
             <li><a href="http://tools.ietf.org/html/draft-hammer-hostmeta-06">Web Host Metadata (host-meta)</a></li>
             <li><a href="http://docs.oasis-open.org/xri/xrd/v1.0/xrd-1.0.html">XRD: Extensible Resource Descriptor</a></li>
             <li><a href="http://www.oembed.com">oEmbed</a></li>
             <li><a href="http://oauth.net">OAuth</a></li>
             <li><a href="http://groups.google.com/group/activity-streams">Activity Streams</a></li>
             <li><a href="http://tools.ietf.org/html/rfc4180">RFC 4180: Common Format and MIME Type for Comma-Separated Values (CSV) files</a></li>
-        	<li><a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646: Tags for Identifying Languages</a></li>
-        	<li><a href="http://www.microformats.org">Microformats</a></li>
-        	<li><a href="http://opengraphprotocol.org/">The Open Graph Protocol</a></li>
-        	<li><a href="http://rdfa.info">RDFa</a></li>
-        	<li><a href="http://code.google.com/p/webfinger">WebFinger</a></li>
+            <li><a href="http://www.ietf.org/rfc/rfc4646.txt">RFC 4646: Tags for Identifying Languages</a></li>
+            <li><a href="http://www.microformats.org">Microformats</a></li>
+            <li><a href="http://opengraphprotocol.org/">The Open Graph Protocol</a></li>
+            <li><a href="http://rdfa.info">RDFa</a></li>
+            <li><a href="http://code.google.com/p/webfinger">WebFinger</a></li>
         </ul>
     
     </div>

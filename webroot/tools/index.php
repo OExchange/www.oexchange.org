@@ -7,7 +7,7 @@ include '../header.php';
 ?>
     
     <h2 class="pagetitle mb10">Tools</h2>
-    <div class="bannertext">Some things that may be useful...</div>
+    <div class="bannertext">Testing and development aids</div>
     
     <hr/>
     

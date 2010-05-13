@@ -57,7 +57,7 @@ if (empty($dfltTarget)) {
     </script>
     
     <h2 class="pagetitle mb10">Offer Test Harness</h2>
-    <div class="bannertext">Initiate OExchange Offer calls to a target of your choice.</div>
+    <div class="bannertext">Initiate OExchange Offer calls to a target of your choice</div>
     
     <hr/>
     
@@ -68,11 +68,11 @@ if (empty($dfltTarget)) {
         <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /></input>?url=http://www.example.com<br/>
     </form>
     
-    <br/><hr/><br/>
+    <br/><br/>
     
-    <h2>Offer Parameters</h2>
+    <h3>Offer Parameters</h3>
     
-    <h3>Common link offers</h3>
+    <h4>Common link offers</h4>
     <form name="commonForm" action="javascript:void(0);" >
         URL: <input name="url" type="text" size="50" value="http://www.example.com" /><br/><br/>
         title: <input name="title" type="text" size="50" value="" /><br/><br/>
@@ -82,12 +82,12 @@ if (empty($dfltTarget)) {
     
     <br/>
 
-    <h3>(Optional) Typed offers</h3>
+    <h4>(Optional) Typed offers</h4>
     <p>
         Adding ctypes and type-specific parameters:
     </p>
         
-    <h4>ctype flash</h4>
+    <h5>ctype flash</h5>
     <form name="flashForm" action="javascript:void(0);" >
         swfurl: <input name="swfurl" type="text" size="70" value="http://www.youtube.com/v/lFF2bkiHNVQ&hl=en_US&fs=1&" /><br/><br/>
         height: <input name="height" type="text" size="70" value="385" /><br/><br/>
@@ -98,7 +98,7 @@ if (empty($dfltTarget)) {
     
     <br/>
 
-    <h4>ctype iframe</h4>
+    <h5>ctype iframe</h5>
     <form name="iframeForm" action="javascript:void(0);" >
         iframefurl: <input name="iframeurl" type="text" size="70" value="http://www.example.com" /><br/><br/>
         height: <input name="height" type="text" size="70" value="480" /><br/><br/>
@@ -109,7 +109,7 @@ if (empty($dfltTarget)) {
     
     <br/>
 
-    <h4>ctype image</h4>
+    <h5>ctype image</h5>
     <form name="imageForm" action="javascript:void(0);" >
         imageurl: <input name="imageurl" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /><br/><br/>
         height: <input name="height" type="text" size="70" value="432" /><br/><br/>
