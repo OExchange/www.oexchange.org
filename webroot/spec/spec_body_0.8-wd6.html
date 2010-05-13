@@ -415,37 +415,37 @@
             An example of a target XRD file:
         </p>
         <pre>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-        &lt;XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0"&gt;
+&lt;XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0"&gt;
         
-            &lt;Subject&gt;http://www.example.com/linkeater&lt;/Subject&gt;
-        
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/vendor"&gt;Examples Inc.&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/title"&gt;A Link-Accepting Service&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/name"&gt;LinkEater&lt;/Property&gt;
-            &lt;Property 
-                type="http://www.oexchange.org/spec/0.8/prop/prompt"&gt;Send to LinkEater&lt;/Property&gt;
-        
-            &lt;Link 
-                rel= "icon" 
-                href="http://www.example.com/favicon.ico"
-                type="image/vnd.microsoft.icon" 
-                /&gt;
-        
-            &lt;Link 
-                rel= "icon32" 
-                href="http://www.example.com/favicon32.png"
-                type="image/png" 
-                /&gt;
-        
-            &lt;Link 
-                rel= "http://www.oexchange.org/spec/0.8/rel/offer" 
-                href="http://www.example.com/linkeater/offer.php"
-                type="text/html" 
-                /&gt;
-        &lt;/XRD&gt;    
+    &lt;Subject&gt;http://www.example.com/linkeater&lt;/Subject&gt;
+
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/vendor"&gt;Examples Inc.&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/title"&gt;A Link-Accepting Service&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/name"&gt;LinkEater&lt;/Property&gt;
+    &lt;Property 
+        type="http://www.oexchange.org/spec/0.8/prop/prompt"&gt;Send to LinkEater&lt;/Property&gt;
+
+    &lt;Link 
+        rel= "icon" 
+        href="http://www.example.com/favicon.ico"
+        type="image/vnd.microsoft.icon" 
+        /&gt;
+
+    &lt;Link 
+        rel= "icon32" 
+        href="http://www.example.com/favicon32.png"
+        type="image/png" 
+        /&gt;
+
+    &lt;Link 
+        rel= "http://www.oexchange.org/spec/0.8/rel/offer" 
+        href="http://www.example.com/linkeater/offer.php"
+        type="text/html" 
+        /&gt;
+&lt;/XRD&gt;    
         </pre>  
         
         <h4>6.2.2 Internationalization of the Target XRD</h4>
@@ -494,26 +494,26 @@
         <p>
             An example of the relevant Link element required within a host-meta resource to identify the location of a target's XRD descriptor:
         <pre>&lt;Link 
-            rel="http://oexchange.org/spec/0.8/rel/resident-target" 
-            type="application/xrd+xml"
-            href="http://www.example.com/linkeater/oexchange.xrd" >
-        &lt;/Link&gt;   
+    rel="http://oexchange.org/spec/0.8/rel/resident-target" 
+    type="application/xrd+xml"
+    href="http://www.example.com/linkeater/oexchange.xrd" >
+&lt;/Link&gt;   
         </pre>      
         </p>
         <p>
             A complete host-meta resource, therefore, might look like the following:
         <pre>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-        &lt;XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0' 
-             xmlns:hm='http://host-meta.net/xrd/1.0'&gt;
-            &lt;hm:Host&gt;www.example.com&lt;/hm:Host&gt;
-        
-            &lt;Link 
-                rel="http://oexchange.org/spec/0.8/rel/resident-target" 
-                type="application/xrd+xml"
-                href="http://www.example.com/linkeater/oexchange.xrd" &gt;
-            &lt;/Link&gt;
-        
-        &lt;/XRD&gt;    
+&lt;XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0' 
+     xmlns:hm='http://host-meta.net/xrd/1.0'&gt;
+    &lt;hm:Host&gt;www.example.com&lt;/hm:Host&gt;
+
+    &lt;Link 
+        rel="http://oexchange.org/spec/0.8/rel/resident-target" 
+        type="application/xrd+xml"
+        href="http://www.example.com/linkeater/oexchange.xrd" &gt;
+    &lt;/Link&gt;
+
+&lt;/XRD&gt;    
         </pre>      
         </p>
         
@@ -572,10 +572,10 @@
             For example, an individual XRD may contain the following Link element:
         </p>     
         <pre>&lt;Link 
-            rel="http://oexchange.org/spec/0.8/rel/user-target" 
-            type="application/xrd+xml"
-            href="http://www.example.com/linkeater/oexchange.xrd" >
-        &lt;/Link&gt;   
+    rel="http://oexchange.org/spec/0.8/rel/user-target" 
+    type="application/xrd+xml"
+    href="http://www.example.com/linkeater/oexchange.xrd" >
+&lt;/Link&gt;   
         </pre>      
         
         <a name="discovery-personal-flow"></a>
@@ -598,7 +598,7 @@
                 
             
         <a name="related"></a>  
-        <h2>7. Related & Background</h2>
+        <h2>7. Related &amp; Background</h2>
         <p>
         	The following specification documents are referenced directly or indirectly by this specification.
         </p>
