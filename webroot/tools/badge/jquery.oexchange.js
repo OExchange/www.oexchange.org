@@ -304,6 +304,7 @@
     }
 
     function shareLink(el, xrd) {
+        jQuery(el).html('<span><img src="'+serviceHash[xrd].icon32+'" width="32" height="32" style="border:0"></span>');
         el.onclick = function () {
             window.open(serviceHash[xrd].offer + '?url='+ encodeURIComponent(document.location.href));
             return false;

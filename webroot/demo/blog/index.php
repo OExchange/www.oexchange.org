@@ -28,11 +28,11 @@
             <p>Share this post:</p>
 			<div class="oexchange_toolbox">
 				<div class="custom_images">
-					<a class="oexchange-share" href="#" rel="http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd"><span><img src="http://oexchange-facebook.appspot.com/images/logo_32x32.png" width="32" height="32" alt="Facebook" /></span></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-buzz.appspot.com/oexchange/oexchange.xrd"><span><img src="http://oexchange-buzz.appspot.com/images/logo_32x32.png" width="32" height="32" alt="Google Buzz" /></span></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd"><span><img src="http://oexchange-twitter.appspot.com/images/logo_32x32.png" width="32" height="32" alt="Digg" /></span></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-digg.appspot.com/oexchange/oexchange.xrd"><span><img src="http://oexchange-digg.appspot.com/images/logo_32x32.png" width="32" height="32" alt="Digg" /></span></a>
-					<a class="oexchange-share" href="#" rel="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"><span><img src="http://oexchange-delicious.appspot.com/images/logo_32x32.png" width="32" height="32" alt="Delicious" /></span></a>
+					<a class="oexchange-share" href="#" rel="http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" rel="http://oexchange-buzz.appspot.com/buzz/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" rel="http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" rel="http://oexchange-digg.appspot.com/oexchange/oexchange.xrd"></a>
+					<a class="oexchange-share" href="#" rel="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"></a>
 				</div>
 			</div>
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
