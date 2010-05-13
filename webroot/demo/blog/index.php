@@ -39,7 +39,7 @@
         </div>
         
         <div id="tt1" class="tt" style="position:absolute;top:445px;left:20px;">
-            <div class="tt-x" title="Close" onclick="document.getElementById('tt1').style.display = 'none';"></div>
+            <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 The sharing options on this page can personalized with your favorite ways to share.<br/><br/>
                 To see this in action, check out <a href="/demo/linkeater/">LinkEater</a>, an example
