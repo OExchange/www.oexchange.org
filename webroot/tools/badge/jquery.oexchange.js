@@ -72,6 +72,7 @@
                 svc = serviceHash[k];
             if (svc) {
                 svc.code = urlToCode(k);
+                if (!svc.xrd) svc.xrd = k;
                 svc.url = svc.offer;
                 serviceExport[svc.code] = {name: svc, code: svc.code, icon: svc.icon, icon32: svc.icon32, url: svc.url};
                 userServices.push(svc);
@@ -314,7 +315,13 @@
 
     function renderShare() {
         this.each(function (i, el) {
-            var xrd = el.getAttribute('rel');
+            var xrd = el.getAttribute('ox:xrd'),
+                pref = el.getAttribute('ox:pref');
+            if (pref) {
+                pref = parseInt(pref);
+                if (userServices.length >= parseInt(pref))
+                    xrd = userServices[pref - 1].xrd;
+            }
             if (xrd) {
                 if (!serviceHash[xrd])   {
                     // need to load xrd
@@ -358,16 +365,17 @@
     // XXX just for demo
     jQuery('head').append('<style type="text/css">@import "/tools/badge/css/oex.css";</style>');
 
+    if (jQuery.browser.msie) { 
+        window.attachEvent('onmessage', messageHandler);
+    } else {
+        window.addEventListener('message', messageHandler, false);
+    }
+
+
     // When the DOM's ready, we check in with the demo console to load the user's preferred services
     jQuery(document).ready(function() {
         if (supportStorage) {
             if (!loaded) {
-                if (jQuery.browser.msie) { 
-                    window.attachEvent('onmessage', messageHandler);
-                } else {
-                    window.addEventListener('message', messageHandler, false);
-                }
-
                 createCommFrame(addUrl+'update-cache.html');
                 createCommFrame(addUrl+'load.php'); // will postMessage back to this calling frame
                 
