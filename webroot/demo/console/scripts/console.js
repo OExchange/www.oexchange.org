@@ -297,7 +297,15 @@ $(function(){
     $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
     $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
     $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
-    $('.oex-done').click(function () { if (window.parent) window.parent.postMessage('oex=close','*'); else window.close()});
+    $('.oex-done').click(function () { 
+        if (window.parent) {
+            var message = 'oex=close' +
+                          (serviceList ? '&sl='+(JSON.stringify(serviceList)) : '') + 
+                          (serviceHash ? '&sh='+(JSON.stringify(serviceHash)) : '');
+            window.parent.postMessage(message, '*'); 
+        }
+        else window.close()
+    });
 
     $('#oex-priority-sort').click(function() {
     });
