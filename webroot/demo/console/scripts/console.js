@@ -115,10 +115,16 @@ $(function(){
                                        });
             $("#srvcs td").disableSelection();
             $('#foot-publish').show();
+            $('#text').html('<p>Sharing Tool makes it easy to keep track of your favorite places to share.  Saved sharing services can be presented by any product that supports OExchange for you to use.</p>');
+            $('#srvcs').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
+            $('#srvcs').hide();
+            $('#text').html(["<p><a href=\"http://www.oexchange.org\" target=\"_blank\">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.",
+                             "When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.",
+                             "Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.",
+                             "Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select Personalize to return to this screen."].join('</p><p>'));
         }
-        $('#srvcs').show();
     };
     
     var processQueryString = function(){
