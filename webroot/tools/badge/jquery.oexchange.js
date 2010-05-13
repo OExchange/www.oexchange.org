@@ -349,10 +349,8 @@
                 pref = parseInt(pref);
                 if (userServices.length >= parseInt(pref)) {
                     xrd = userServices[pref - 1].xrd;
-                    if (!noadd) addShareLink(pref, el);
-                } else {
-                    if (!noadd) addShareLink(0, el);
                 }
+                if (!noadd) addShareLink(pref, el);
             } else {
                 if (!noadd) addShareLink(0, el);
             }

@@ -6,7 +6,7 @@ include ("../header.php");
 	<h2 class="pagetitle">Examples &amp; Demos</h2>
     
     <hr/>
-    
+
     <div class="grid_5 alpha">
         <h3 class="bigger mb5"><a href="./linkeater">LinkEater</a></h3>
         LinkEater, an example Target that takes links in a compliant way.  You can use this for testing.

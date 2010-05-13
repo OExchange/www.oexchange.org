@@ -126,13 +126,13 @@ if ($cmd == "getUserTargets") {
 	if (isset($cmd)) {
 		header("HTTP/1.0 404 Not Found", true, true);
 	} else {
-		$page_title = "OExchange Demo Discovery API";
+		$page_title = "OExchange Demo Utility API";
 		include ("../../header.php");
 		?>
 		<div id="contentpage">
-            <h2 class="pagetitle mb10">Demo Discovery API</h2>
+            <h2 class="pagetitle mb10">Demo Utility API</h2>
             <div class="bannertext">
-                This is a simple GET/JSON-based API for performing various OExchange-Discovery operations.
+                A simple GET/JSON-based API for various OExchange operations
             </div>
             
             <hr/><br/>

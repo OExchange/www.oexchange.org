@@ -21,6 +21,9 @@ $cmd = getDfltArg("cmd", "none");
 ?>
     
     <h2 class="pagetitle mb10">Discovery Resource Generator</h2>
+    <div class="bannertext">
+        Generate <a href="/spec/#discovery">OExchange Discovery</a> files automatically
+    </div>
     
     <hr/>
     
