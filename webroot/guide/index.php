@@ -6,23 +6,39 @@ include '../header.php';
 
 
     <h2 class="pagetitle mb10">Quick Start Guide</h2>
-    <div class="bannertext">
-        This'll help you get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
-        that has content to share, or a <a href="#tools">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; 
-        it applies to any case where one service wants to send URL-based content to another &mdash; microblogging, translating, 
-        printing, whatever.
-    </div><br/>
     
     <hr/>
     
-    <div class="grid_7 alpha">
-         
+    <div class="grid_7 alpha"> 
+        <h2>Overview</h2>       
+        <p>
+            This'll help you get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
+            that has content to share, or a <a href="#tools">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; it applies 
+            to any case where one service wants to send URL-based content to another &mdash; microblogging, translating, printing, whatever.
+        </p>
+    </div>
+    <div class="grid_3 omega">
+        <div class="gbox toc">
+            <h4>Table of Contents</h4>
+            <ol>
+                <li><a href="#services">Guide for Services</a></li>
+                <li><a href="#sites">Guide for Publishers</a></li>
+                <li><a href="#tools">Guide for Sharing Tools</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="clear"></div>    
+    
+    <br/>
+    
+    <div class="grid_10 alpha omega">       
         <a name="services"></a>        
-        <h3>OExchange For Services</h3>
+        <h2>OExchange For Services</h2>
         <p>
             If you're a service that can accept URLs and do something useful with them, then in OExchange terms you're referred to as a "target".  Here's what you need to know (there's also an example target, <a target="_blank" href="/demo/linkeater">the LinkEater service</a>).
         </p>
-        <h5>1. Expose an endpoint to receive URLs in a standard way</h5>
+        
+        <h4>1. Expose an endpoint to receive URLs in a standard way</h4>
         <p>
             The first thing you'll need to do is make sure your service exposes a URL endpoint at which users, via their browsers, can send you content. 
             Your endpoint needs to be compatible with the OExchange Offer specification.  
@@ -40,7 +56,7 @@ include '../header.php';
         	<strong>TIP:</strong> Use the <a href="/tools/sourceharness/">Offer Test Harness</a> to test your endpoint.
         </p>
         
-        <h5>2. Make your service discoverable</h5>
+        <h4>2. Make your service discoverable</h4>
         <p>
             Now that third parties are capable of sharing content to your service, they need to be able to discover that your service exists, and locate its Offer endpoint.  This is optional, but if you don't implement it then anyone that wants to share content to your service will have to look it up in documentation and integrate that way.  The <a href="/tools/discoverygen">Discovery File Generator</a> and <a href="/tools/discoveryharness">Discovery Test Harness</a> can help you set all of this up.  Here's basically what you'll do.
         </p>
@@ -67,7 +83,7 @@ include '../header.php';
         	<strong>TIP:</strong> Remember that the <a href="/tools/discoverygen">Discovery File Generator</a> can help you generate all of the files you need, and the <a href="/tools/discoveryharness">Discovery Test Harness</a> can help you test compliance.
         </p>
         
-        <h5>3. You're done.</h5>
+        <h4>3. You're done.</h4>
         <p>
         	Once you've got a compliant Offer endpoint, a Target XRD that describes your service, and a host-meta resource that lets it be found automatically, your service is ready to accept content from any client on the web!
         </p>
@@ -76,7 +92,7 @@ include '../header.php';
         
         
         <a name="sites"></a>        
-        <h3>OExchange For Content Publishers</h3>
+        <h4>OExchange For Content Publishers</h4>
         <p>
             If you're a site that has content to share (a "source" in OExchange terms), you can of course use one of the many sharing aggregators and tools that are out there.  If you want to build your own sophisticated, personalized sharing options yourself, take a look at the information intended for these <a href="#tools">tools</a>.  If you just want to make your own icons and link to the URLs of various services, then all you need to do is link to their Offer endpoints directly.  These look something like:
         </p>
@@ -96,12 +112,12 @@ include '../header.php';
         
         
         <a name="tools"></a>        
-        <h3>OExchange For Sharing Tools</h3>
+        <h4OExchange For Sharing Tools</h4>
         <p>
             Want to start leveraging OExchange to share content?  Things you need to know...
         </p>
         
-        <h5>1. Targets accept content in a standard way</h5>
+        <h4>1. Targets accept content in a standard way</h4>
         <p>
         	If you want to send content to an OExchange-compliant service, all you'll need to do is send the browser to the service's Offer endpoint.  This is a URL that looks something like:
         </p>
@@ -110,7 +126,7 @@ include '../header.php';
             There are a bunch of optional parameters you can pass, but really <code>url</code> is the only one that's actually required.  Take a look at the <a target="_blank" href="/spec/#offer">Offer spec</a> for more information on the exact details of the Offer endpoint.
         </p>
         
-        <h5>2. You can locate targets automatically</h5>
+        <h4>2. You can locate targets automatically</h4>
         <p>
             The more powerful capability of services that support OExchange is their ability to be discovered automatically.  If you know a hostname, for example, you can figure out if there is a service that accepts links there like this:
         </p>
@@ -127,23 +143,12 @@ include '../header.php';
             Additional options for locating services are by looking for meta tags in HTML pages that point to related services, or even using WebFinger to look up and record user service preferences.  Take a look at the <a target="_blank" href="/spec/#discovery-page">page metatag</a> and <a href="/spec/#discover-personal">personal XRD</a> specifications.	
         </p>
         	
-        <h5>3. The rest is your call</h5>
+        <h4>3. The rest is your call</h4>
         <p>
         	What you do with all these capabilities as a sharing tool is up to you, thats the value you're adding!
         </p>
         
-    </div>
-    
-    <div class="grid_3 omega">
-        <div class="gbox">
-            <h4>Table of Contents</h4>
-            <ol>
-                <li><a href="#services">Guide for Services</a></li>
-                <li><a href="#sites">Guide for Publishers</a></li>
-                <li><a href="#tools">Guide for Sharing Tools</a></li>
-            </ol>
-        </div>
-    </div>
+    </div>   
     <div class="clear"></div>
 
 <?php

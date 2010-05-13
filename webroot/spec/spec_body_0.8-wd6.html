@@ -1,5 +1,4 @@
-    <div class="grid_7 alpha">
-        
+    <div class="grid_7 alpha">        
         <a name="status"></a>
         <h2>1. Status and Versioning</h2>
         <p>
@@ -29,7 +28,48 @@
             <li>2010-5-3: promoted "tags" parameter, clarified encoding rules; updated reference; clarified use of xml:lang for localization; formalized OWFa licensing</li>
             <li>2010-5-6: published WD 6</li>
         </ul>
-        <br />
+    </div>
+    <div class="grid_3 omega">
+        <div class="gbox toc">
+            <h4>Table of Contents</h4>
+            <ul>
+                <li><a href="#status">1. Status &amp; Versioning</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#history">1.1 Document History</a></li>
+                        <li><a href="#license">1.2 License</a></li>
+                    </ul>
+                </li>                
+                <li><a href="#conventions">2. Conventions</a></li>
+                <li><a href="#introduction">3. Introduction</a></li>
+                <li><a href="#definitions">4. Definitions</a></li>
+                <li><a href="#offer">5. OExchange-Offer</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#offer-endpoint">5.1 The Endpoint</a></li>
+                        <li><a href="#offer-flow">5.2 The Offer Flow</a></li>
+                        <li><a href="#offer-typing">5.3 OExchange Data Typing</a></li>
+                        <li><a href="#offer-parameters">5.4 Offer Parameter Details</a></li>
+                        <li><a href="#ctypes">5.5 Supported ctype Values</a></li>
+                    </ul></li>
+                <li><a href="#discovery">6. OExchange-Discovery</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#discovery-overview">6.1 Discovery Overview</a></li>
+                        <li><a href="#discovery-targetxrd">6.2 Target Specification / XRD</a></li>
+                        <li><a href="#discovery-host">6.3 Host Discovery</a>
+                            <ul>
+                                <li><a href="#discovery-hostmeta">6.3.1 host-meta</a></li>
+                                <li><a href="#discovery-flow">6.3.2 Target Discovery Flow</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#discovery-page">6.4 Page Discovery</a></li>
+                        <li><a href="#discovery-personal">6.5 Personal Discovery</a></li>
+                    </ul></li>
+                <li><a href="#related">7. Related &amp; Relevant Specifications</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="grid_10 alpha omega">
                 
         <a name="license"></a>
         <h3>1.2. License</h3>
@@ -40,7 +80,6 @@
             Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
         <br />
         
-        <hr /><br/>
         
         <a name="conventions"></a>
         <h2>2. Conventions</h2>
@@ -48,10 +87,9 @@
             The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, 
             &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>. Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
         </p>
+        
         <br />
-        
-        <hr /><br/>
-        
+                
         <a name="introduction"></a>
         <h2>3. Introduction</h2>
         <p>
@@ -91,7 +129,7 @@
             See the <a href="/guide">Quick Start Guide</a> for a quick and dirty intro to making it work.     
         </p>
         
-        <br/><hr /><br/>
+        <br/>
         
         <a name="definitions"></a>
         <h2>4. Definitions</h2>
@@ -114,8 +152,7 @@
             </dl>
         </blockquote>       
         
-        
-        <br/><hr /><br/>
+        <br/>
         
         <a name="offer"></a>
         <h2>5. OExchange-Offer</h2>
@@ -334,7 +371,7 @@
         </dl>
         
         
-        <br/><hr /><br/>
+        <br/>
         
         
         <h2><a name="discovery"></a>6. OExchange-Discovery</h2>
@@ -557,7 +594,7 @@
         </p>    
         
         
-        <br/><hr /><br/>
+        <br/>
         
             
         <a name="related"></a>  
@@ -580,44 +617,5 @@
         	<li><a href="http://code.google.com/p/webfinger">WebFinger</a></li>
         </ul>
     
-    </div>
-    
-    <div class="grid_3 omega">
-        <div class="gbox toc">
-            <h4>Table of Contents</h4>
-            <ul>
-                <li><a href="#status">1. Status &amp; Versioning</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#history">1.1 Document History</a></li>
-                        <li><a href="#license">1.2 License</a></li>
-                    </ul>
-                </li>                
-                <li><a href="#conventions">2. Conventions</a></li>
-                <li><a href="#introduction">3. Introduction</a></li>
-                <li><a href="#definitions">4. Definitions</a></li>
-                <li><a href="#offer">5. OExchange-Offer</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#offer-endpoint">5.1 The Endpoint</a></li>
-                        <li><a href="#offer-flow">5.2 The Offer Flow</a></li>
-                        <li><a href="#offer-typing">5.3 OExchange Data Typing</a></li>
-                        <li><a href="#offer-parameters">5.4 Offer Parameter Details</a></li>
-                        <li><a href="#ctypes">5.5 Supported ctype Values</a></li>
-                    </ul></li>
-                <li><a href="#discovery">6. OExchange-Discovery</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#discovery-overview">6.1 Discovery Overview</a></li>
-                        <li><a href="#discovery-targetxrd">6.2 Target Specification / XRD</a></li>
-                        <li><a href="#discovery-host">6.3 Host Discovery</a>
-                            <ul>
-                                <li><a href="#discovery-hostmeta">6.3.1 host-meta</a></li>
-                                <li><a href="#discovery-flow">6.3.2 Target Discovery Flow</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#discovery-page">6.4 Page Discovery</a></li>
-                        <li><a href="#discovery-personal">6.5 Personal Discovery</a></li>
-                    </ul></li>
-                <li><a href="#related">7. Related &amp; Relevant Specifications</a></li>
-            </ul>
-        </div>
     </div>
     <div class="clear"></div>

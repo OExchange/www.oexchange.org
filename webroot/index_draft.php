@@ -28,8 +28,8 @@ include 'header.php';
         <div class="grid_6 alpha suffix_1">
             <h3>The Problem</h4>
             <p>
-                There is a whole world of sharing services, more every day. Many do not accept content the same way. 
-                It's hard to know which service a user wants, and how to share content there.
+                There is a whole world of services &mdash; social networks, communication tools, social news and bookmarking sites &mdash; with more 
+                appearing every day. Many do not accept content the same way. It's hard to know which service a user wants, and how to share content there.
             </p>
             
             <h3>OExchange Provides</h4>

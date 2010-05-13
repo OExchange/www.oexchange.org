@@ -13,7 +13,8 @@ a {
 }
 a:hover {
     text-decoration: underline;
-    color: #ec008c;
+    color: #03408a;
+    /*color: #ec008c;*/
 }
 .container_12 {
     margin: 0 0 0 85px;
@@ -33,13 +34,15 @@ a:hover {
 #header a {
     margin: 0 2px;
     padding: 8px 12px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 #header a.nav-active {
-    background: #000;
+    font-weight: bold;
+    color: #000;
+    /*background: #000;
     color: #fff;
     -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+    -webkit-border-radius: 4px;*/
 }
 #header a.nav-active:hover {
     text-decoration: none;
