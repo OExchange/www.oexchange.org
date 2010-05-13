@@ -8,11 +8,13 @@
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
+        ready = 0,
         shareLinkHash = {},
         serviceList = [],
         serviceHash = {},
         serviceExport = {},
         userServices = [],
+        readyCallbacks = [],
         xrd;
 
 
@@ -60,6 +62,13 @@
             fillPreferredServices(1);
         }
         if (data.oex && data.oex=='close') closeDialog();
+        if (data.rdy) {
+            ready = 1;
+            var cb;
+            while (cb = readyCallbacks.shift()) {
+                cb();
+            }
+        }
     }
 
     /**
@@ -373,7 +382,17 @@
     jQuery.fn.oexchange_badge = renderBadge;
     jQuery.fn.oexchange_console = consoleLink;
     jQuery.fn.oexchange_save = dialogLink;
-    jQuery.fn.oexchange_share = function () { this.each(renderShare); };
+    jQuery.fn.oexchange_share = function () { 
+        if (!supportStorage || ready) {
+            this.each(renderShare); 
+            return;
+        }
+       
+        // not ready
+        var coll = this;
+        readyCallbacks.push( function () {coll.each(renderShare);} );
+    };
+    
 
     // Add static jQuery methods
     jQuery.oex = {

@@ -79,8 +79,8 @@
 <script type="text/javascript">
 $(document).ready(
     function() {
-    $('.oexchange-personalize').oexchange_console();
-    setTimeout(function () { $('.oexchange-share').oexchange_share(); }, 400);
+        $('.oexchange-personalize').oexchange_console();
+        $('.oexchange-share').oexchange_share();
     }
 );
 </script>
