@@ -117,7 +117,9 @@ a:hover {
 }
 
 #foot-done {
-	margin-top: 10px;
+    position:absolute;
+    bottom: 10px;
+    margin-left:200px;
 }
 
 
