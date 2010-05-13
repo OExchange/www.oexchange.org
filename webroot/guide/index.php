@@ -88,11 +88,12 @@ include '../header.php';
         	Once you've got a compliant Offer endpoint, a Target XRD that describes your service, and a host-meta resource that lets it be found automatically, your service is ready to accept content from any client on the web!
         </p>
         
-        <br/>
+        
+        <br/><hr/><br/>
         
         
         <a name="sites"></a>        
-        <h4>OExchange For Content Publishers</h4>
+        <h2>OExchange For Content Publishers</h2>
         <p>
             If you're a site that has content to share (a "source" in OExchange terms), you can of course use one of the many sharing aggregators and tools that are out there.  If you want to build your own sophisticated, personalized sharing options yourself, take a look at the information intended for these <a href="#tools">tools</a>.  If you just want to make your own icons and link to the URLs of various services, then all you need to do is link to their Offer endpoints directly.  These look something like:
         </p>
@@ -108,11 +109,12 @@ include '../header.php';
             Usually, you will get the offer endpoint location from the service's documentation since you're not figuring it out dynamically at runtime.  If you'd rather do it automatically, then you're operating more like a sharing tool and should probably take a look <a href="#tools">at that guide</a>.
         </p>
         
-        <br/>
+        
+        <br/><hr/><br/>
         
         
         <a name="tools"></a>        
-        <h4OExchange For Sharing Tools</h4>
+        <h2>OExchange For Sharing Tools</h2>
         <p>
             Want to start leveraging OExchange to share content?  Things you need to know...
         </p>

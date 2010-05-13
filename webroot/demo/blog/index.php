@@ -38,6 +38,18 @@
 			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
         </div>
         
+        <div class="tt">
+            <div class="tt-x" title="Close"></div>
+            <div class="tt-inner">
+                The sharing options on this page can personalized with
+                your favorite ways to share.<br/><br/>
+                To see this in action, check out LinkEater, an example
+                sharing service that supports OExchange. Or, select
+                Personalize to manage your OExchange sharing services.
+            </div>
+            <div class="tt-tick"></div>
+        </div>
+        
     </div>
     <div class="sidebar">
         <h3>Archive</h3>
