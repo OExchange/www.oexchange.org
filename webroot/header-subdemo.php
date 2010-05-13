@@ -23,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="/styles/site.css">
 	<link rel="icon" type="image/png" href="/images/logo_16x16.png" />
 	<link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.oexchange.org/demo/linkeater/oexchange.xrd">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <style type="text/css">
         body { background: #fff; padding: 0; }
         .container_12 { margin: 0 auto; }

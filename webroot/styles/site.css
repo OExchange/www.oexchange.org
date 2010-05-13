@@ -116,6 +116,7 @@ strong, b { color: #000; }
 .gbox ul li li { margin-left: 20px; }
 .gbox ul ul { margin-bottom: 0; }
 
+.mt0 { margin-top: 0 !important; }
 
 .mb0 { margin-bottom: 0 !important; }
 .mb5 { margin-bottom: 5px !important; }
@@ -182,7 +183,7 @@ ol.none, ul.none { list-style-type: none; }
     position: absolute;
     bottom: 0;
     left: 20px;
-    background: url(images/bkg-tt.gif) no-repeat bottom left;
+    background: url(/images/bkg-tt.gif) no-repeat bottom left;
     width: 42px;
     height: 12px;
     margin-top: -1px;
@@ -191,7 +192,7 @@ ol.none, ul.none { list-style-type: none; }
     position: absolute;
     top: 6px;
     right: 6px;
-    background: url(images/x.gif) no-repeat 0 0;
+    background: url(/images/x.gif) no-repeat 0 0;
     width: 14px;
     height: 14px;
     cursor: pointer;
