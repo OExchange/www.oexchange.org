@@ -64,6 +64,7 @@ $(function(){
     };
     
     var storeData = function(){
+        console.log('saving ', serviceList);
         sharingtoolPrefService.saveData(serviceList, serviceHash);
     };
     
@@ -170,7 +171,7 @@ $(function(){
         var xrd = serviceList[index];
         if (xrd) {
             serviceList.splice(index,1);
-            if (serviceHash[xrd]) delete serviceHash[xrd];
+            //if (serviceHash[xrd]) delete serviceHash[xrd];
             return true;
         }
     };
@@ -196,12 +197,18 @@ $(function(){
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
 
-        $('#oex-remove-service').click(
+        $('#oex-remove-service').live('click',
                 function () {
                     $('.oex-sub').slideUp();
                     if (removeService(index)) {
-                        displayTable();
-                        storeData();
+                        try {
+                            // ignore sortable bug
+                            displayTable();
+                        } catch (e) {
+                            //log(e);
+                        } finally {
+                            storeData();
+                        }
                     }
                 }
         );
@@ -252,6 +259,8 @@ $(function(){
                 found = 1; break; 
             }
         }
+        $('#oex-add').slideUp();
+        $('.oex-sub').slideUp();
         if (!found) {
             if (service.target.endpoint) service.target.offer = service.target.endpoint;
             serviceHash[service.xrd] = service.target;
@@ -260,13 +269,11 @@ $(function(){
             displayTable();
         }
         serviceToAdd = null;
-        $('.oex-add').slideUp();
-        $('.oex-sub').slideUp();
     }
 
     function serviceSearch() {
         var domain = $('#oex-new-service').val().split('://').pop();
-        if (domain.search(/^([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.)*[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.[a-zA-Z]{2,4}$/) > -1) {
+        if (domain.search(/^([a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.)*[a-zA-Z0-9]+(\-[a-zA-Z0-9]+)*\.[a-zA-Z]{2,4}\/?$/) > -1) {
             $('#oex-new-service').attr('disabled',true);
 
             $.getJSON('http://www.oexchange.org/demo/discovery-api/api.php?cmd=getHostTargets&jsonpcb=gethostcb&callback=?&host='+domain);
