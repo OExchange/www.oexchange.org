@@ -147,7 +147,7 @@
         var div;
         if (!document.getElementById('oexchange-dialog')) {
            var s = ['',
-                    '<div id="oexchange-dialog" style="z-index:1000000;width:500px;height:400px;overflow:hidden;display:none">',
+                    '<div id="oexchange-dialog">',
                     '<div id="oexchange-dialog-inner">',
                     '<iframe id="oexchange-console-dialog" src="'+addUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
                     '</div>',

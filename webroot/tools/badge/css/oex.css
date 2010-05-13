@@ -50,12 +50,13 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 
 #oexchange-dialog {
     display: none;
-    position: absolute;
+    position: fixed;
+    overflow:hidden;
     top: 50%;
     left: 50%;
     width: 500px;
-    height: 200px;
-    margin-top: -150px;
+    height: 400px;
+    margin-top: -250px;
     margin-left: -250px;
     z-index: 10002;
     background: rgba(0,0,0,.4);
