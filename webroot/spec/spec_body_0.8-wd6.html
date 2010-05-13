@@ -2,7 +2,7 @@
         <a name="status"></a>
         <h2>1. Status and Versioning</h2>
         <p>
-            This specification is a <span style="color:red;">WORKING DRAFT</span> and is subject to change without warning in future versions.  
+            This specification is a <span class="magnum">WORKING DRAFT</span> and is subject to change without warning in future versions.  
             This is <a href="#license">licensed</a> version 0.8, working draft 6.  
         </p>
         <p>
@@ -77,9 +77,10 @@
             This specification is made available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>.   
         </p>
         <p>
-            Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
-        <br />
-        
+            Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        </p>
+
+        <br/><hr/><br/>        
         
         <a name="conventions"></a>
         <h2>2. Conventions</h2>
@@ -88,7 +89,7 @@
             &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>. Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
         </p>
         
-        <br />
+        <br/><hr/><br/>
                 
         <a name="introduction"></a>
         <h2>3. Introduction</h2>
@@ -129,33 +130,34 @@
             See the <a href="/guide">Quick Start Guide</a> for a quick and dirty intro to making it work.     
         </p>
         
-        <br/>
+        <br/><hr/><br/>
         
         <a name="definitions"></a>
         <h2>4. Definitions</h2>
-        <blockquote>
-            <dl>
-                <dt><b>Source</b></dt>
-                <dd>
-                A website or application that has content to be shared or offered to a Target.
-                </dd>
-        		<br/>
-                <dt><b>Target</b></dt>
-                <dd>
-                A website or application that can receive content offered from a Source.
-                </dd>
-        		<br/>
-                <dt><b>User</b></dt>
-                <dd>
-                A real-world user that interacts with Source and Target websites and applications.
-                </dd>
-            </dl>
-        </blockquote>       
+        <dl>
+            <dt><b>Source</b></dt>
+            <dd>
+            A website or application that has content to be shared or offered to a Target.
+            </dd>
+    		<br/>
+            <dt><b>Target</b></dt>
+            <dd>
+            A website or application that can receive content offered from a Source.
+            </dd>
+    		<br/>
+            <dt><b>User</b></dt>
+            <dd>
+            A real-world user that interacts with Source and Target websites and applications.
+            </dd>
+        </dl> 
         
-        <br/>
+        <br/><hr/><br/>
         
         <a name="offer"></a>
         <h2>5. OExchange-Offer</h2>
+        
+        <br/>
+        
         <a name="offer-endpoint"></a>
         <h3>5.1. The Endpoint</h3>
         <p>
@@ -205,29 +207,29 @@
         </p>
         
         <a name="offer-ux"></a>
-        <h4>5.2.1 User Experience Implications</h4>
-        <p>
+        <h5>5.2.1. User Experience Implications</h5>
+        <blockquote>
             The Target endpoint is designed to be a complete browsing experience for the user.  A Source may send the user to the Target and lose control itself, but it may also use a target _blank link.  
             OExchange does not impose a restriction on the Target of having to return to the Source when the transaction is complete.
-        </p>
+        </blockquote>
         
         <a name="offer-errors"></a>
-        <h4>5.2.2. Handling Errors</h4>
-        <p>
+        <h5>5.2.2. Handling Errors</h5>
+        <blockquote>
             For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors that occur within the target site must be handled gracefully in a way that the end user sees and understands.</p>
-        <p>
+            <br/><br/>
             In practice, since there is no type negotiation and URLs are always required, there should not be any mismatch error condition; assuming a source forms a valid offer call, any target will be capable of accepting it (at the protocol level).
-        </p>
+        </blockquote>
         
-        <h4>5.2.3. Authentication, Security, and the Offer Flow</h4>
-        <p>
+        <h5>5.2.3. Authentication, Security, and the Offer Flow</h5>
+        <blockquote>
             The Target and Source are each responsible for their own authentication and access control.  That is, OExchange does not define or require any additional security layer on top of the exchange transaction.  
             Typically, a Target that requires an authentication and/or authorization step before ingesting content will perform that step at the beginning of its handling of the Offer.  
             This allows the AA layer to exist independent of the offer transaction and specification, and for the Source and Target to employ whatever means they have deemed appropriate for their user interactions.  
-        </p>
-        <p>
+            <br/><br/>
             OExchange does specify that targets MUST NOT require their offer endpoints to be HTTPS URLs.  Though this does prevent certain real-world scenarios, it also prevents interoperability problems caused by variability between sites.  A Target may certainly redirect from HTTP to HTTPS URLs as desired once the offer flow is initiated.
-        </p>
+        </blockquote>
+
         
         <br/>
         
@@ -299,82 +301,80 @@
         </p>
         
         <a name="ctype-link"></a>
-        <h4>5.5.1. The <code>link</code> Type</h4>
-        <p>
+        <h5>5.5.1. The <code>link</code> Type</h5>
+        <blockquote>
             <code>link</code> is the default ctype, and therefore not required.  It indicates that the content is limited to the user-browsable URL provided via <code>url</code>.  Again, this URL may itself offer content that includes metadata description of various types (microformats, open graph protocol elements, etc.)  
-        </p>
+        </blockquote>
         
         <a name="ctype-flash"></a>
-        <h4>5.5.2. The <code>flash</code> Type</h4>
-        <p>
-            A Flash movie element which can be directly embedded by the target.
-            This type supports the following specific parameters:
-        </p>
-        <dl>
-            <dt><b><code>swfurl</code></b></dt>
-            <dd>The URL of the actual SWF resource, with appropriate parameters as necessary</dd>
-        	<br/>
+        <h5>5.5.2. The <code>flash</code> Type</h5>
+        <blockquote>
+            A Flash movie element which can be directly embedded by the target. This type supports the following specific parameters:
+            <dl>
+                <dt><b><code>swfurl</code></b></dt>
+                <dd>The URL of the actual SWF resource, with appropriate parameters as necessary</dd>
+            	<br/>
+                
+                <dt><b><code>height</code></b></dt>
+                <dd>The preferred height of the content (which the Target can use to render the tag)</dd>
+            	<br/>
             
-            <dt><b><code>height</code></b></dt>
-            <dd>The preferred height of the content (which the Target can use to render the tag)</dd>
-        	<br/>
-        
-            <dt><b><code>width</code></b></dt>
-            <dd>The preferred width of the content (which the Target can use to render the tag)</dd>
-        	<br/>
-        
-            <dt><b><code>screenshot</code></b></dt>
-            <dd>The URI of an image representation of the Flash content.  The image should be suitable for display the same size as the Flash object (as specified by height and width parameters)</dd>
-        
-        </dl>
+                <dt><b><code>width</code></b></dt>
+                <dd>The preferred width of the content (which the Target can use to render the tag)</dd>
+            	<br/>
+            
+                <dt><b><code>screenshot</code></b></dt>
+                <dd>The URI of an image representation of the Flash content.  The image should be suitable for display the same size as the Flash object (as specified by height and width parameters)</dd>
+            </dl>
+        </blockquote>    
         
         <a name="ctype-iframe"></a>
-        <h4>5.5.3. The <code>iframe</code> Type</h4>
-        <p>
-            Content that can be embedded by a target by including an HTML iframe sourced to a specified URL.
-            This type supports the following specific parameters:
-        </p>
-        <dl>
-            <dt><b><code>iframeurl</code></b></dt>
-            <dd>The URL to be used as the actual iframe of the actual SWF resource, with appropriate parameters as necessary</dd>
-        	<br/>
+        <h5>5.5.3. The <code>iframe</code> Type</h5>
+        <blockquote>
+            Content that can be embedded by a target by including an HTML iframe sourced to a specified URL. This type supports the following specific parameters:
+            <dl>
+                <dt><b><code>iframeurl</code></b></dt>
+                <dd>The URL to be used as the actual iframe of the actual SWF resource, with appropriate parameters as necessary</dd>
+            	<br/>
+                
+                <dt><b><code>height</code></b></dt>
+                <dd>The preferred height of the content (which the Target can use to render the iframe)</dd>
+            	<br/>
             
-            <dt><b><code>height</code></b></dt>
-            <dd>The preferred height of the content (which the Target can use to render the iframe)</dd>
-        	<br/>
-        
-            <dt><b><code>width</code></b></dt>
-            <dd>The preferred width of the content (which the Target can use to render the iframe)</dd>
-        	<br/>
-        
-            <dt><b><code>screenshot</code></b></dt>
-            <dd>The URI of an image representation of the iframe content.  The image should be suitable for display the same size as the iframe object (as specified by height and width parameters)</dd>
-        </dl>
+                <dt><b><code>width</code></b></dt>
+                <dd>The preferred width of the content (which the Target can use to render the iframe)</dd>
+            	<br/>
+            
+                <dt><b><code>screenshot</code></b></dt>
+                <dd>The URI of an image representation of the iframe content.  The image should be suitable for display the same size as the iframe object (as specified by height and width parameters)</dd>
+            </dl>
+        </blockquote>
         
         <a name="ctype-image"></a>
-        <h4>5.5.4. The <code>image</code> Type</h4>
-        <p>
-            A simple web-renderable image.
-            This type supports the following specific parameters:
-        </p>
-        <dl>
-            <dt><b><code>imageurl</code></b></dt>
-            <dd>The URL that is the source of the image</dd>
-        	<br/>
+        <h5>5.5.4. The <code>image</code> Type</h5>
+        <blockquote>
+            A simple web-renderable image. This type supports the following specific parameters:
+            <dl>
+                <dt><b><code>imageurl</code></b></dt>
+                <dd>The URL that is the source of the image</dd>
+            	<br/>
+                
+                <dt><b><code>height</code></b></dt>
+                <dd>The preferred height of the image</dd>
+            	<br/>
             
-            <dt><b><code>height</code></b></dt>
-            <dd>The preferred height of the image</dd>
-        	<br/>
+                <dt><b><code>width</code></b></dt>
+                <dd>The preferred width of the image</dd>
+            </dl>
+        </blockquote>
+                
         
-            <dt><b><code>width</code></b></dt>
-            <dd>The preferred width of the image</dd>
-        </dl>
-        
-        
-        <br/>
+        <br/><hr/><br/>
         
         
         <h2><a name="discovery"></a>6. OExchange-Discovery</h2>
+        
+        <br/>
         
         <a name="discovery-overview"></a>
         <h3>6.1 Discovery Overview</h3>
@@ -552,7 +552,7 @@
         
         <a name="discovery-personal"></a>
         <h3>6.5 Personal Discovery</h3>
-        <p style="color: red; font-weight: bold; ">PROPOSED METHOD</p>
+        <p class="magnum xl">PROPOSED METHOD</p>
         <p>
             Tools that facilitate end-user sharing and link-sending require a means to provide a personalization mechanism.  Presenting the user with too many options, or with options that are not appropriate to them (commonly referred to as "the Nascar problem"), significantly reduces their use in general.  This problem increases dramatically if services are able to, via OExchange Discovery mechanisms, dynamically make themselves available without any prior integration.  This specification approaches this problem in two parts: 
         </p>
@@ -594,8 +594,8 @@
         </p>    
         
         
-        <br/>
-        
+        <br/><hr/><br/>
+                
             
         <a name="related"></a>  
         <h2>7. Related & Background</h2>

@@ -50,7 +50,7 @@ a:hover {
 
 #footer {
     position: relative;
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid #eee;
     margin-top: 75px;
     padding: 20px 0 40px 0;
     color: #bbb;
@@ -89,18 +89,20 @@ h4 { font-size: 14px; }
 h5 { font-size: 12px; }
 
 h2.pagetitle { margin: 40px 0; padding: 0; font-size: 44px; line-spacing: -4px; line-height: 1.1em; color: #000; }
-hr { border: none 0; border-top: 1px solid #e4e4e4; height: 1px; margin: 25px 0; padding: 0; }
+hr { border: none 0; border-top: 4px solid #eee; height: 1px; margin: 25px 0; padding: 0; }
 strong, b { color: #000; }
 
 .bannertext { line-height: 1.5em; font-size: 18px; color: #a2a2a2; }
 .hide { 	display: none; }
-.bold { font-weight: bold; }
+.bold, .xl { font-weight: bold; }
 .bigtext { font-size: 14px; }
 .bigger { font-size: 2em; }
 .right { text-align: right; }
 .blk { color: #000; }
 .gry { color: #a2a2a2; }
 .lgry { color: #a9a9a9; }
+.red { color: #f00; }
+.magnum { color: #f06; }
 
 .gbox { background: #f5f5f5; border: 1px solid #eee; padding: 10px 10px 15px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .gbox.toc { margin-top: 20px; }
@@ -126,9 +128,10 @@ strong, b { color: #000; }
 .mt20 { margin-top:20px !important; }
 
 code {
-	background-color: #eee;
+	color: #c83e0e;
+    /*background-color: #eee;
 	border: 1px solid #999;
-	padding: 0px 2px;
+	padding: 0px 2px;*/
 }
 pre {
 	background-color: #f5f5f5;
