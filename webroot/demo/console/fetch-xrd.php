@@ -27,6 +27,7 @@ if (is_array($xrdArray))
                             $key = 'icon';
                             break;
                         case 'icon-32':
+                        case 'icon32':
                             $key = 'icon32';
                             break;
                         case 'http://www.oexchange.org/spec/0.8/rel/offer':
