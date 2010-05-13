@@ -7,7 +7,7 @@ include ("../header.php");
     
     <hr/>
     
-    <p class="mb20">The folling demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols:</p>
+    <p class="mb20">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols:</p>
     
     <div class="grid_7 alpha">
         <object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
@@ -38,15 +38,6 @@ include ("../header.php");
     <div class="clear"></div>
     
     <br/>
-    
-<<<<<<< HEAD
-    <div class="grid_5 alpha">
-        <h3 class="bigger mb5"><a href="./discovery-api/api.php">A JSON Utility API</a></h3>
-        A simple GET/JSON-based Discovery API that can help when using OExchange Discovery and WebFinger together.
-    </div>
-    <div class="clear"></div>
-=======
->>>>>>> 495b59ecc66755475a8dadbaf295867cd5ea4ce4
     
     <!--
     
