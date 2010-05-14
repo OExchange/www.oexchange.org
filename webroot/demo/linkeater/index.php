@@ -26,9 +26,10 @@ require_once("../../header-subdemo.php");
         		It can accept links at a standard <a href="/spec/#offer">Offer</a> endpoint:
         	</p>
         	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
-        	<p>
-        		Try <a href="offer.php?url=http://www.example.com">sending it a URL</a>.
+        	<p style="padding:10px 0 30px 0;">
+        		<a class="btn" href="offer.php?url=http://www.example.com" title="Try sending it a URL">Try sending it a URL</a>.
         	</p>	
+            
         	<h3>Discovering LinkEater</h3>
         	<p>
         		Any tool that can perform <a href="/spec/#discovery">Discovery</a> can figure out how to send content to LinkEater:
@@ -46,7 +47,7 @@ require_once("../../header-subdemo.php");
 ?>	
 		<div class="grid_3 omega">          
 		    <p style="padding:20px 0;">
-		        <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
+		        <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;" title="Save this Sharepoint">Save this Sharepoint</a>
 		    </p>
 		</div>
 <? 
