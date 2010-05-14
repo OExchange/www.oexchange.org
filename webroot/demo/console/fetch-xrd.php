@@ -51,6 +51,9 @@ if (is_array($xrdArray))
                         case 'http://www.oexchange.org/spec/0.8/prop/title':
                             $key = 'title';
                             break;
+                        case 'http://www.oexchange.org/spec/0.8/prop/vendor':
+                            $key = 'vendor';
+                            break;
                     }
                     if (!is_null($key)) $xrdObj->{$key} = (string)$property;
                 }

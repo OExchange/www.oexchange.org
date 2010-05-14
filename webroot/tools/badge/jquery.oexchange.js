@@ -213,11 +213,23 @@
     * @param xrd    xrd to remember; defaults to page XRD
     */
     function openRememberDialog(xrd) {
-        var div;
-        if (!document.getElementById('oexchange-dialog')) {
+        var xrd = xrd || getXRD(),
+            service = serviceHash[xrd];
+        if (!service) {
+            cacheXRD(xrd, function(data) {
+                renderRememberDialog(xrd);
+            });
+        }
+        else 
+            renderRememberDialog(xrd);
+    }
+
+    function renderRememberDialog(xrd) {
+        var service = serviceHash[xrd];
+        if (!document.getElementById('oexchange-remember-dialog')) {
            var s = ['',
-                    '<div id="oexchange-dialog-inner">',
-                    '<div id="oexchange-dialog-titlebar"><h3>OExchange</h3></div>',
+                    '<div id="oexchange-remember-dialog-inner">',
+                    '<div id="oexchange-dialog-titlebar"><h3>New Service Discovered: '+service.name+'</h3></div>',
                     '<div id="oexchange-dialog-saved" style="display-none">',
                     '<p>This site has been added to your preferred services list.</p>',
                     '</div>',
@@ -227,21 +239,23 @@
                     '<div id="oexchange-dialog-content">',
                     '<p>Oexchange makes it easy to keep track of your favorite places to share. <a href="'+oexUrl+'" target="_blank">Learn more</a>.</p>',
                     '<p>Would you like to remember this site for sharing?</p>',
+                    '<p class="oexchange-service-description"><img width="16" height="16" src="'+service.icon+'"> '+service.name + (service.title?': ' + service.title:''),
+                    service.vendor ? '<br/>By ' + service.vendor + '</p>' : '',
                     '</div>',
                     '<div id="oexchange-dialog-buttons">',
-                    '<input type="hidden" name="add" value="'+(xrd || getXRD())+'">',
+                    '<input type="hidden" name="add" value="'+(service.xrd || xrd)+'">',
                     '<button onclick="jQuery.oex.saveDialog();jQuery.oex.save()">Save</button>',
                     '<button onclick="jQuery.oex.closeDialog();return false">No Thanks</button>',
                     '</form>',
                     '</div>'].join('');
-            jQuery('body').append('<div id="oexchange-dialog">' + s + '</div>');
+            jQuery('body').append('<div id="oexchange-remember-dialog">' + s + '</div>');
         }
 
         jQuery('#oexchange-dialog-content').show();
         jQuery('#oexchange-dialog-buttons').show();
         jQuery('#oexchange-dialog-saved').hide();
         jQuery('#oexchange-dialog-saved-button').hide();
-        jQuery('#oexchange-dialog').show();
+        jQuery('#oexchange-remember-dialog').show();
     }
 
     /**
@@ -259,6 +273,7 @@
     */
     function closeDialog() {
         jQuery('#oexchange-dialog').hide();
+        jQuery('#oexchange-remember-dialog').hide();
         refreshShareLinks();
     }
 
@@ -342,6 +357,21 @@
         }
     }
 
+    function cacheXRD(xrd, success) {
+        jQuery.ajax({ 
+            dataType: 'jsonp',
+            url: "http://www.oexchange.org/demo/discovery-api/api.php?cmd=getTargetDetail&xrd="+encodeURIComponent(xrd),
+            jsonp:'jsonpcb',
+            context: document.body, 
+            success: function (data) {
+                if (data.endpoint) data.offer = data.endpoint;
+                if (data.offer) {
+                    serviceHash[xrd] = data;
+                }
+                success();
+          }});
+    }
+
     function renderShare(i, el, noadd) {
             var xrd = el.getAttribute('ox:xrd'),
                 pref = el.getAttribute('ox:pref');
@@ -357,18 +387,9 @@
             if (xrd) {
                 if (!serviceHash[xrd])   {
                     // need to load xrd
-                    jQuery.ajax({ 
-                        dataType: 'jsonp',
-                        url: "http://www.oexchange.org/demo/discovery-api/api.php?cmd=getTargetDetail&xrd="+encodeURIComponent(xrd),
-                        jsonp:'jsonpcb',
-                        context: document.body, 
-                        success: function(data){
-                            if (data.endpoint) data.offer = data.endpoint;
-                            if (data.offer) {
-                                serviceHash[xrd] = data;
-                            }
+                    cacheXRD(xrd, function(data){
                             if (serviceHash[xrd]) shareLink(el, xrd);
-                      }});
+                    });
                     
                 } else {
                     shareLink(el, xrd);
@@ -411,7 +432,6 @@
     } else {
         window.addEventListener('message', messageHandler, false);
     }
-
 
     // When the DOM's ready, we check in with the demo console to load the user's preferred services
     jQuery(document).ready(function() {

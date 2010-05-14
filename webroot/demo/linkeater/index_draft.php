@@ -3,6 +3,14 @@
 $page_title = "LinkEater, An Example OExchange Target";
 require_once("../../header-subdemo.php");
 ?>
+    <script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
+    <script type="text/javascript">
+    $(document).ready(
+        function() {
+            $('.oexchange-sharepoint').oexchange_save();
+        }
+    );
+    </script>
     <div style="position:relative;">
         <div class="banner-linkeater"></div>
 	    <div class="grid_8 suffix_1 alpha">
@@ -30,7 +38,7 @@ require_once("../../header-subdemo.php");
         </div>
         <div class="grid_3 omega">          
             <p style="padding:20px 0;">
-                <a class="btn" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
+                <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
             </p>
         </div>
         <div class="clear"></div>
