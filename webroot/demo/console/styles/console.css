@@ -1,7 +1,7 @@
 body {
-	background: #fafafa;
+	background: #fff;
 	margin: 0;
-	padding: 20px;
+	padding: 0;
 	line-height: 1.5em;
 	font-family: arial,helvetica,verdana,tahoma,sans-serif;
 	font-size: 13px;
@@ -20,8 +20,10 @@ a:hover {
 
 #header {
 	position: relative;
-	height: 28px;
-	padding-top: 4px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+	height: 18px;
+	padding: 10px 20px;
 }
 #header h1 {
 	display: inline;
@@ -30,15 +32,19 @@ a:hover {
 	font-weight: normal;
 	color: #000;
 }
+#content {
+    padding: 0 20px 10px;
+}
 #oex-main-whatisthis {
 	position: absolute;
-	top: 4px;
-	right: 70px;
+	top: 12px;
+	right: 85px;
+    font-size: 11px;
 }
 #oex-main-add {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 8px;
+	right: 20px;
 }
 
 .oex-sub {
@@ -51,8 +57,6 @@ a:hover {
 	background: #fff;
 	padding: 1px;
 	border: 1px solid #ccc;
-	/*-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;*/
 	-moz-box-shadow: 0 1px 6px #666;
 	-webkit-box-shadow: 0 1px 4px #666;
 }
@@ -82,10 +86,13 @@ a:hover {
 
 /* Table Style */
 
-#srvcs {
+.srvcs {    
 	border: 1px solid #ccc;
-	border-collapse: collapse;
-	width: 100%;
+}
+#srvcs {
+    background: #fff;
+    border-spacing: 0;
+	width: 458px;
 }
 #srvcs thead th {
 	background: #999;
@@ -97,10 +104,19 @@ a:hover {
 	text-decoration: underline;
 	color: #faf9e0;
 }
+#srvcs tbody {
+    height: 170px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 #srvcs tbody td {
-	border-bottom: 1px solid #eee;
+    background-color: #fff;
 	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 	padding: 5px;
+}
+#srvcs tbody td.alt {
+    background-color: #f5f5f5;
 }
 
 
@@ -117,9 +133,11 @@ a:hover {
 }
 
 #foot-done {
-    position:absolute;
+    /*position:absolute;
     bottom: 10px;
-    margin-left:200px;
+    margin-left:200px;*/
+    padding: 10px;
+    text-align: center;
 }
 
 
