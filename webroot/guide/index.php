@@ -10,23 +10,23 @@ include '../header.php';
     <hr/>
     
     <div class="grid_10 alpha omega"> 
-        <h2>Overview</h2>       
-        <p>
-            Get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
-            that has content to share, or a <a href="#tools">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; it applies 
-            to any case where one service wants to send URL-based content to another &mdash; microblogging, translating, printing, whatever.
-        </p>
+        <div class="topguide">
+            <div class="bluebox">
+                <h3>For Services</h3>
+                <p><a class="btn" href="#services">Go!</a></p>
+            </div>
+            <div class="bluebox">
+                <h3>For Publishers</h3>
+                <p><a class="btn" href="#sites">Go!</a></p>
+            </div>
+            <div class="bluebox">
+                <h3>For Sharing Tools</h3>
+                <p><a class="btn" href="#tools">Go!</a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
         
-        <br/><hr/><br/>
-        
-        <h2>Table of Contents</h2>        
-        <ol>
-            <li><a href="#services">Guide for Services</a></li>
-            <li><a href="#sites">Guide for Publishers</a></li>
-            <li><a href="#tools">Guide for Sharing Tools</a></li>
-        </ol>
-        
-        <br/><hr/><br/>
+        <hr/><br/>
         
         <a name="services"></a>        
         <h2>OExchange For Services</h2>

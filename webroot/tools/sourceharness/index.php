@@ -65,56 +65,66 @@ if (empty($dfltTarget)) {
     <h2>Target</h2>
     <form name="targetForm">
         Offer endpoint: <br/>
-        <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /></input>?url=http://www.example.com<br/>
+        <input name="target" type="text" size="60" value="<?= $dfltTarget ?>" /> <code>?url=http://www.example.com</code><br/>
     </form>
     
-    <br/><br/>
+    <hr/>
     
-    <h3>Offer Parameters</h3>
+    <h2>Offer Parameters</h2>
     
     <h4>Common link offers</h4>
-    <form name="commonForm" action="javascript:void(0);" >
-        URL: <input name="url" type="text" size="50" value="http://www.example.com" /><br/><br/>
-        title: <input name="title" type="text" size="50" value="" /><br/><br/>
-        description: <input name="description" type="text" size="50" value="" /><br/><br/>
-        <input type="submit" value="Share (without a ctype)" onclick="shareLink();" />
+    <form name="commonForm" action="javascript:void(0);">
+    <table cellpadding="4">
+    <colgroup><col width="15%"/><col width="85%"/></colgroup>
+        <tr><td><code>url:</code></td><td><input name="url" type="text" size="70" value="http://www.example.com" /></td></tr>
+        <tr><td><code>title:</code></td><td><input name="title" type="text" size="70" value="" /></td></tr>
+        <tr><td><code>description:</code></td><td><input name="description" type="text" size="70" value="" /></td></tr>
+        <tr><td></td><td><input class="btn" type="submit" value="Share (without a ctype)" onclick="shareLink();" /></td></tr>
+    </table>    
     </form> 
     
     <br/>
 
     <h4>(Optional) Typed offers</h4>
-    <p>
-        Adding ctypes and type-specific parameters:
-    </p>
+    <p>Adding ctypes and type-specific parameters:</p>
         
     <h5>ctype flash</h5>
     <form name="flashForm" action="javascript:void(0);" >
-        swfurl: <input name="swfurl" type="text" size="70" value="http://www.youtube.com/v/lFF2bkiHNVQ&hl=en_US&fs=1&" /><br/><br/>
-        height: <input name="height" type="text" size="70" value="385" /><br/><br/>
-        width: <input name="width" type="text" size="70" value="640" /><br/><br/>
-        screenshot: <input name="screenshot" type="text" size="70" value="http://i3.ytimg.com/vi/nRyoN0AITtw/default.jpg" /><br/><br/>
-        <input type="submit" value="Share" onclick="shareFlash();" />
+    <table cellpadding="4">
+    <colgroup><col width="15%"/><col width="85%"/></colgroup>
+        <tr><td><code>swfurl:</code></td><td><input name="swfurl" type="text" size="70" value="http://www.youtube.com/v/lFF2bkiHNVQ&hl=en_US&fs=1&" /></td></tr>
+        <tr><td><code>height:</code></td><td><input name="height" type="text" size="70" value="385" /></td></tr>
+        <tr><td><code>width:</code></td><td><input name="width" type="text" size="70" value="640" /></td></tr>
+        <tr><td><code>screenshot:</code></td><td><input name="screenshot" type="text" size="70" value="http://i3.ytimg.com/vi/nRyoN0AITtw/default.jpg" /></td></tr>
+        <tr><td></td><td><input class="btn" type="submit" value="Share" onclick="shareFlash();" /></td></tr>
+    </table>    
     </form> 
     
     <br/>
 
     <h5>ctype iframe</h5>
     <form name="iframeForm" action="javascript:void(0);" >
-        iframefurl: <input name="iframeurl" type="text" size="70" value="http://www.example.com" /><br/><br/>
-        height: <input name="height" type="text" size="70" value="480" /><br/><br/>
-        width: <input name="width" type="text" size="70" value="640" /><br/><br/>
-        screenshot: <input name="screenshot" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /><br/><br/>
-        <input type="submit" value="Share" onclick="shareIframe();" />
+    <table cellpadding="4">
+    <colgroup><col width="15%"/><col width="85%"/></colgroup>
+        <tr><td><code>iframefurl:</code></td><td><input name="iframeurl" type="text" size="70" value="http://www.example.com" /></td></tr>
+        <tr><td><code>height:</code></td><td><input name="height" type="text" size="70" value="480" /></td></tr>
+        <tr><td><code>width:</code></td><td><input name="width" type="text" size="70" value="640" /></td></tr>
+        <tr><td><code>screenshot:</code></td><td><input name="screenshot" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /></td></tr>
+        <tr><td></td><td><input class="btn" type="submit" value="Share" onclick="shareIframe();" /></td></tr>
+    </table>
     </form> 
     
     <br/>
 
     <h5>ctype image</h5>
     <form name="imageForm" action="javascript:void(0);" >
-        imageurl: <input name="imageurl" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /><br/><br/>
-        height: <input name="height" type="text" size="70" value="432" /><br/><br/>
-        width: <input name="width" type="text" size="70" value="556" /><br/><br/>
-        <input type="submit" value="Share" onclick="shareImage();" />
+    <table cellpadding="4">
+    <colgroup><col width="15%"/><col width="85%"/></colgroup>
+        <tr><td><code>imageurl:</code></td><td><input name="imageurl" type="text" size="70" value="http://brammofan.files.wordpress.com/2009/08/10_12_07_evel_knievel_dies_69xr750.jpg?w=556&h=432" /></td></tr>
+        <tr><td><code>height:</code></td><td><input name="height" type="text" size="70" value="432" /></td></tr>
+        <tr><td><code>width:</code></td><td><input name="width" type="text" size="70" value="556" /></td></tr>
+        <tr><td></td><td><input class="btn" type="submit" value="Share" onclick="shareImage();" /></td></tr>
+    </table>
     </form> 
     <p></p>
 

@@ -124,6 +124,8 @@ label.block { display: block; padding-bottom: 5px; }
     padding: 5px 15px 15px; 
 }
 .bluebox hr { border-width: 1px; border-color: #d8e9f0; margin: 15px 0 10px 0; }
+.topguide .bluebox { width: 205px; margin: 0 10px; float: left; }
+
 
 .mt0 { margin-top: 0 !important; }
 
@@ -136,6 +138,8 @@ label.block { display: block; padding-bottom: 5px; }
 .mb50 { margin-bottom: 50px !important; }
 
 .mt20 { margin-top:20px !important; }
+
+.ml20 { margin-left: 20px !important; }
 
 code { color: #598527; }
 pre {
