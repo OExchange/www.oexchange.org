@@ -10,21 +10,19 @@ include '../header.php';
     <hr/>
     
     <div class="grid_10 alpha omega"> 
-        <div class="topguide">
-            <div class="guidebox">
-                <h3>For Service Providers</h3>
-                <p><a class="btn" href="#services">Go!</a></p>
-            </div>
-            <div class="guidebox">
-                <h3>For Publishers</h3>
-                <p><a class="btn" href="#sites">Go!</a></p>
-            </div>
-            <div class="guidebox">
-                <h3>For Sharing Tools</h3>
-                <p><a class="btn" href="#tools">Go!</a></p>
-            </div>
-            <div class="clear"></div>
+        <div class="grid_3 alpha">
+            <h3>For Service Providers</h3>
+            <p><a class="btn" href="#services">Go!</a></p>
         </div>
+        <div class="grid_3">
+            <h3>For Publishers</h3>
+            <p><a class="btn" href="#sites">Go!</a></p>
+        </div>
+        <div class="grid_3 omega">
+            <h3>For Sharing Tools</h3>
+            <p><a class="btn" href="#tools">Go!</a></p>
+        </div>
+        <div class="clear"></div>
         
         <hr/><br/>
         
