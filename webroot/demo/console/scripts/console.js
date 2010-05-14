@@ -114,7 +114,7 @@ $(function(){
                                             }
                                        });
             $("#srvcs td").disableSelection();
-            $('#foot-publish').show();
+            //$('#foot-publish').show();
             $('#text').html('<p>Sharing Tool makes it easy to keep track of your favorite places to share.  Saved sharing services can be presented by any product that supports OExchange for you to use.</p>');
             $('#srvcs').show();
         } else {
