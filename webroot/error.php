@@ -52,21 +52,49 @@ switch(getenv("REDIRECT_STATUS"))
 <?php
 	if ($redirect_to != "") {
 ?>
-	<meta http-equiv="Refresh" content="5; url='<?php print($redirect_to); ?>'">
+<meta http-equiv="Refresh" content="5; url='<?php print($redirect_to); ?>'">
 <?php
 	}
 ?>
-
-	<title>Sorry...</title>
-
+<title>Oops!</title>
+<style type="text/css">
+body {
+    background: #fff url(/images/bkg-404.png) no-repeat 0 0;
+    padding: 0;
+    margin: 0;
+    font-family: arial,helvetica,lucida,verdana,sans-serif;
+    font-size: 12px;
+    color: #444;
+}
+a {
+    text-decoration: none;    
+    color: #115bb5;
+}
+a:hover {
+    text-decoration: underline;
+    color: #03408a;
+    /*color: #ec008c;*/
+}
+h1 { 
+    font-size: 60px; 
+    color: #000;
+}
+h3 { 
+    font-size: 16px; 
+    color: #000;
+}
+#content {
+    padding: 80px 0 0 450px;
+    width: 400px;
+}
+</style>
 </head>
 <body>
-
-<h1>Error Code <?php print ($error_code); ?></h1>
-
-<p>The <a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a> you requested was not found. <?PHP echo($explanation); ?></p>
-
-<p>You may want to try starting from the home page: <a href="<?php print ($server_url); ?>"><?php print ($server_url); ?></a></p>
-
+<div id="content">
+    <h1>Oops!</h1>
+    <h3>Error Code <?php print ($error_code); ?></h1>
+    <p>The <a href="http://en.wikipedia.org/wiki/Uniform_resource_locator">URL</a> you requested was not found. <?PHP echo($explanation); ?></p>
+    <p>You may want to try starting from the home page: <a href="<?php print ($server_url); ?>"><?php print ($server_url); ?></a></p>
+</div>
 </body>
 </html>
