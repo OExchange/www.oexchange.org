@@ -1,4 +1,44 @@
-    <div class="grid_7 alpha">        
+    <div class="grid_10 alpha omega">
+        <h2>Table of Contents</h2>
+        <ul class="toc">
+            <li><a href="#introduction">1. Introduction</a>
+            <ul class="lower-alpha">
+                <li><a href="#motivation">1.1 Motivation</a></li>
+                <li><a href="#conventions">1.2 Document Conventions</a></li>
+                <li><a href="#definitions">1.3 Definitions &amp; Terminology</a></li>
+            </ul></li>
+            <li><a href="#offer">2. OExchange-Offer</a>
+                <ul class="lower-alpha">
+                    <li><a href="#offer-endpoint">2.1 The Endpoint</a></li>
+                    <li><a href="#offer-flow">2.2 The Offer Flow</a></li>
+                    <li><a href="#offer-typing">2.3 OExchange Data Typing</a></li>
+                    <li><a href="#offer-parameters">2.4 Offer Parameter Details</a></li>
+                    <li><a href="#ctypes">2.5 Supported ctype Values</a></li>
+                </ul></li>
+            <li><a href="#discovery">3. OExchange-Discovery</a>
+                <ul class="lower-alpha">
+                    <li><a href="#discovery-overview">3.1 Discovery Overview</a></li>
+                    <li><a href="#discovery-targetxrd">3.2 Target Specification / XRD</a></li>
+                    <li><a href="#discovery-host">3.3 Host Discovery</a>
+                        <ul>
+                            <li><a href="#discovery-hostmeta">3.3.1 host-meta</a></li>
+                            <li><a href="#discovery-flow">3.3.2 Target Discovery Flow</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#discovery-page">3.4 Page Discovery</a></li>
+                    <li><a href="#discovery-personal">3.5 Personal Discovery</a></li>
+                </ul></li>
+            <li><a href="#license">4. Licensing</a></li>
+            <li><a href="#status">5. Document Status</a>
+                <ul class="lower-alpha">
+                    <li><a href="#history">5.1 Revision History</a></li>
+                </ul>
+            </li>                
+            <li><a href="#related">6. Related &amp; Relevant Specifications</a></li>
+        </ul>
+        
+        <br/><hr/><br/>
+                
         <a name="introduction"></a>
         <h2>1. Introduction</h2>
         <p>
@@ -48,51 +88,8 @@
             <li>Define a discovery component on top of the core exchange mechanism, supporting dynamic integration between services</li>
 			<li>Add advanced features only on top of a core layer of defined interoperability and practical deployment</li>
         </ul>
-    </div>
-    <div class="grid_3 omega">
-        <div class="gbox toc">
-            <h4>Table of Contents</h4>
-            <ul>
-                <li><a href="#introduction">1. Introduction</a>
-                <ul class="lower-alpha">
-                    <li><a href="#motivation">1.1 Motivation</a></li>
-                    <li><a href="#conventions">1.2 Document Conventions</a></li>
-                    <li><a href="#definitions">1.3 Definitions &amp; Terminology</a></li>
-                </ul></li>
-                <li><a href="#offer">2. OExchange-Offer</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#offer-endpoint">2.1 The Endpoint</a></li>
-                        <li><a href="#offer-flow">2.2 The Offer Flow</a></li>
-                        <li><a href="#offer-typing">2.3 OExchange Data Typing</a></li>
-                        <li><a href="#offer-parameters">2.4 Offer Parameter Details</a></li>
-                        <li><a href="#ctypes">2.5 Supported ctype Values</a></li>
-                    </ul></li>
-                <li><a href="#discovery">3. OExchange-Discovery</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#discovery-overview">3.1 Discovery Overview</a></li>
-                        <li><a href="#discovery-targetxrd">3.2 Target Specification / XRD</a></li>
-                        <li><a href="#discovery-host">3.3 Host Discovery</a>
-                            <ul>
-                                <li><a href="#discovery-hostmeta">3.3.1 host-meta</a></li>
-                                <li><a href="#discovery-flow">3.3.2 Target Discovery Flow</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#discovery-page">3.4 Page Discovery</a></li>
-                        <li><a href="#discovery-personal">3.5 Personal Discovery</a></li>
-                    </ul></li>
-                <li><a href="#license">4. Licensing</a></li>
-                <li><a href="#status">5. Document Status</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#history">5.1 Revision History</a></li>
-                    </ul>
-                </li>                
-                <li><a href="#related">6. Related &amp; Relevant Specifications</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="grid_10 alpha omega">
+        
+        <br/><hr/><br/>
         
         <a name="conventions"></a>
         <h3>1.2. Document Conventions</h2>

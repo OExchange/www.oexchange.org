@@ -35,19 +35,20 @@ $cmd = getDfltArg("cmd", "none");
 	if ($cmd == "none") {
 ?>
 	<h2>About Your Service</h2>
-	<form action="" method="POST">
-		Hostname:<br/>&nbsp;&nbsp;&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" /></input><br/><br/>
-		Primary site URL:<br/>&nbsp;&nbsp;&nbsp;<input name="u" type="text" size="60" value="<?= $url ?>" /></input><br/><br/>
-		Service name:<br/>&nbsp;&nbsp;&nbsp;<input name="n" type="text" size="60" value="<?= $name ?>" /></input><br/><br/>
-		Service title:<br/>&nbsp;&nbsp;&nbsp;<input name="t" type="text" size="60" value="<?= $title ?>" /></input><br/><br/>
-		Vendor Name:<br/>&nbsp;&nbsp;&nbsp;<input name="v" type="text" size="60" value="<?= $vendor ?>" /></input><br/><br/>
-		User prompt:<br/>&nbsp;&nbsp;&nbsp;<input name="p" type="text" size="60" value="<?= $prompt ?>" /></input><br/><br/>
-		Offer endpoint URL: (such that &lt;endpoint&gt;?url=&lt;url&gt; works)<br/>&nbsp;&nbsp;&nbsp;<input name="o" type="text" size="60" value="<?= $offer ?>" /></input><br/><br/>
-		16x16 icon (png) URL:<br/>&nbsp;&nbsp;&nbsp;<input name="i" type="text" size="60" value="<?= $icon ?>" /></input><br/><br/>
-		32x32 icon (png) URL:<br/>&nbsp;&nbsp;&nbsp;<input name="i32" type="text" size="60" value="<?= $icon32 ?>" /></input><br/>
-		<input name="cmd" type="hidden" value="gen" /></input>
-		<br/><br/>
-		<input type="submit" value="Generate Resources" /></input>
+	<form action="" method="POST">        
+		<p class="mb20"><label class="block" for="h">Hostname:</label><input id="h" name="h" type="text" size="60" value="<?= $hostname ?>" /></p>
+		<p class="mb20"><label class="block" for="u">Primary site URL:</label><input id="u" name="u" type="text" size="60" value="<?= $url ?>" /></p>
+		<p class="mb20"><label class="block" for="n">Service name:</label><input id="n" name="n" type="text" size="60" value="<?= $name ?>" /></p>
+		<p class="mb20"><label class="block" for="t">Service title:</label><input id="t" name="t" type="text" size="60" value="<?= $title ?>" /></p>
+		<p class="mb20"><label class="block" for="v">Vendor Name:</label><input id="v" name="v" type="text" size="60" value="<?= $vendor ?>" /></p>
+		<p class="mb20"><label class="block" for="p">User prompt:</label><input id="p" name="p" type="text" size="60" value="<?= $prompt ?>" /></p>
+		<p><label class="block" for="o">Offer endpoint URL:</label><input id="o" name="o" type="text" size="60" value="<?= $offer ?>" /></p>
+        <p class="mb20">(such that &lt;endpoint&gt;?url=&lt;url&gt; works)</p>
+		<p class="mb20"><label class="block" for="i">16x16 icon (png) URL:</label><input id="i" name="i" type="text" size="60" value="<?= $icon ?>" /></p>
+		<p class="mb20"><label class="block" for="i32">32x32 icon (png) URL:</label><input id="i32" name="i32" type="text" size="60" value="<?= $icon32 ?>" /></p>
+		<input name="cmd" type="hidden" value="gen" />
+		<br/>
+		<p><input class="btn" type="submit" value="Generate Resources" /></p>
     </form>
 <?
 	} else if ($cmd == "gen") {
@@ -61,14 +62,14 @@ $cmd = getDfltArg("cmd", "none");
 	<p>
 		The Target XRD describes everything about a Target service, including its name and how it accepts URLs.  This file can be located anywhere, though usually it will live under the service's main path.   From what you told us, in your case that would be:
 	</p>
-	<p>
+	<p class="bigtext">
 		<code><?= $url ?>/oexchange.xrd</code>
 	</p>
 	<p>
 		For your service, the XRD file should look like this:
 	</p>
 	<p>
-	<textarea rows="22" cols="120"><?= $targetXrd ?></textarea>
+	<textarea rows="22" cols="80" class="codebox" style="width:778px"><?= $targetXrd ?></textarea>
 	</p>
 	<p>
 		You can read more about the details of the Target XRD <a target="_blank" href="/spec/#discovery-targetxrd">in the spec</a>. 
@@ -85,24 +86,24 @@ $cmd = getDfltArg("cmd", "none");
 			<input name="i" type="hidden" value="<?= $icon ?>" /></input>
 			<input name="i32" type="hidden" value="<?= $icon32 ?>" /></input>
 			<input name="file" type="hidden" value="txrd" /></input>
-			<input type="submit" value="Download the File" /></input>
+			<input class="btn" type="submit" value="Download the File" /></input>
 		</form>
 	</p>
-	<br/>
-	<br/>
+    
+	<br/><hr/>
 	
 	<h3>Your Host-Meta File:</h3>
 	<p>
 		The host that serves your service needs to have a "host-meta" resource.  This is an XML text file located in a well-defined location.  In your case, it should be at:
 	</p>
-	<p>
+	<p class="bigtext">
 		<code>http://<?= $hostname ?>/.well-known/host-meta</code>  
 	</p>
 	<p>
 		This file should contain a link to the target XRD file.  For your service, assuming you use the XRD file above, it should look like this:
 	</p>	
 	<p>
-	<textarea rows="7" cols="120"><?= $hostMeta ?></textarea>
+	<textarea rows="7" cols="80" class="codebox" style="width:778px"><?= $hostMeta ?></textarea>
 	</p>
 	<p>
 		If you already have a host-meta resource on your host, then you'll need to add this <code>Link</code> element to it.  If you don't have one, you can just copy this file completely.  Read more about the host-meta resource <a target="_blank" href="/spec/#discovery-hostmeta">in the spec</a>. 
@@ -112,11 +113,11 @@ $cmd = getDfltArg("cmd", "none");
 			<input name="h" type="hidden" value="<?= $hostname ?>" /></input>
 			<input name="u" type="hidden" value="<?= $url ?>" /></input>
 			<input name="file" type="hidden" value="hm" /></input>
-			<input type="submit" value="Download the File" /></input>
+			<input class="btn" type="submit" value="Download the File" /></input>
 		</form>
-	</p>			  
-	<br/>
-	<br/>
+	</p>	
+    		  
+	<br/><hr/>
 
 	<h3>In-page meta tags:</h3>
 	<p>
@@ -135,7 +136,7 @@ $cmd = getDfltArg("cmd", "none");
 		
 	<h3>Generate another?</h3>
 		<form id="back" action="/tools/discoverygen" method="GET">
-		<input type="submit" value="Back to service details " /></input>
+		    <input class="btn" type="submit" value="Back to service details " /></input>
 		</form>
 <?
 	}
