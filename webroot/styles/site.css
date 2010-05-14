@@ -186,7 +186,6 @@ input[type="text"]:focus {
 
 .codebox { background: #fefdeb; border: 1px solid #ccc; color: #000; }
 
-.toc { margin: 0; padding: 0; }
 .toc li { list-style: none; }
 
 ul.circle {list-style-type:circle}
