@@ -12,7 +12,7 @@ include '../header.php';
     <div class="grid_10 alpha omega"> 
         <div class="topguide">
             <div class="bluebox">
-                <h3>For Services</h3>
+                <h3>For Service Providers</h3>
                 <p><a class="btn" href="#services">Go!</a></p>
             </div>
             <div class="bluebox">
