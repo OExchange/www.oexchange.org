@@ -33,7 +33,7 @@ a:hover {
 }
 #header a {
     font-size: 14px;
-    margin: 2px;
+    margin: 0 2px;
     padding: 8px 12px;
 }
 #header a.nav-active {

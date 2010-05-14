@@ -1,51 +1,4 @@
     <div class="grid_7 alpha">        
-        
-    </div>
-    <div class="grid_3 omega">
-        <div class="gbox toc">
-            <h4>Table of Contents</h4>
-            <ul>
-                <li><a href="#introduction">3. Introduction</a>
-                <ul class="lower-alpha">
-                    <li><a href="#motivation">1.1 Motivation</a></li>
-                    <li><a href="#conventions">1.2 Document Conventions</a></li>
-                    <li><a href="#definitions">1.3 Definitions &amp; Terminology</a></li>
-                </ul></li>
-                <li><a href="#offer">5. OExchange-Offer</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#offer-endpoint">5.1 The Endpoint</a></li>
-                        <li><a href="#offer-flow">5.2 The Offer Flow</a></li>
-                        <li><a href="#offer-typing">5.3 OExchange Data Typing</a></li>
-                        <li><a href="#offer-parameters">5.4 Offer Parameter Details</a></li>
-                        <li><a href="#ctypes">5.5 Supported ctype Values</a></li>
-                    </ul></li>
-                <li><a href="#discovery">6. OExchange-Discovery</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#discovery-overview">6.1 Discovery Overview</a></li>
-                        <li><a href="#discovery-targetxrd">6.2 Target Specification / XRD</a></li>
-                        <li><a href="#discovery-host">6.3 Host Discovery</a>
-                            <ul>
-                                <li><a href="#discovery-hostmeta">6.3.1 host-meta</a></li>
-                                <li><a href="#discovery-flow">6.3.2 Target Discovery Flow</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#discovery-page">6.4 Page Discovery</a></li>
-                        <li><a href="#discovery-personal">6.5 Personal Discovery</a></li>
-                    </ul></li>
-                <li><a href="#license">7. Licensing</a></li>
-                <li><a href="#status">1. Document Status</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#history">1.1 Revision History</a></li>
-                    </ul>
-                </li>                
-                <li><a href="#related">7. Related &amp; Relevant Specifications</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clear"></div>
-    
-    <div class="grid_10 alpha omega">
-                
         <a name="introduction"></a>
         <h2>1. Introduction</h2>
         <p>
@@ -95,9 +48,52 @@
             <li>Define a discovery component on top of the core exchange mechanism, supporting dynamic integration between services</li>
 			<li>Add advanced features only on top of a core layer of defined interoperability and practical deployment</li>
         </ul>
+    </div>
+    <div class="grid_3 omega">
+        <div class="gbox toc">
+            <h4>Table of Contents</h4>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a>
+                <ul class="lower-alpha">
+                    <li><a href="#motivation">1.1 Motivation</a></li>
+                    <li><a href="#conventions">1.2 Document Conventions</a></li>
+                    <li><a href="#definitions">1.3 Definitions &amp; Terminology</a></li>
+                </ul></li>
+                <li><a href="#offer">2. OExchange-Offer</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#offer-endpoint">2.1 The Endpoint</a></li>
+                        <li><a href="#offer-flow">2.2 The Offer Flow</a></li>
+                        <li><a href="#offer-typing">2.3 OExchange Data Typing</a></li>
+                        <li><a href="#offer-parameters">2.4 Offer Parameter Details</a></li>
+                        <li><a href="#ctypes">2.5 Supported ctype Values</a></li>
+                    </ul></li>
+                <li><a href="#discovery">3. OExchange-Discovery</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#discovery-overview">3.1 Discovery Overview</a></li>
+                        <li><a href="#discovery-targetxrd">3.2 Target Specification / XRD</a></li>
+                        <li><a href="#discovery-host">3.3 Host Discovery</a>
+                            <ul>
+                                <li><a href="#discovery-hostmeta">3.3.1 host-meta</a></li>
+                                <li><a href="#discovery-flow">3.3.2 Target Discovery Flow</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#discovery-page">3.4 Page Discovery</a></li>
+                        <li><a href="#discovery-personal">3.5 Personal Discovery</a></li>
+                    </ul></li>
+                <li><a href="#license">4. Licensing</a></li>
+                <li><a href="#status">5. Document Status</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#history">5.1 Revision History</a></li>
+                    </ul>
+                </li>                
+                <li><a href="#related">6. Related &amp; Relevant Specifications</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="grid_10 alpha omega">
         
-        <br/>
-
         <a name="conventions"></a>
         <h3>1.2. Document Conventions</h2>
         <p>
@@ -132,12 +128,12 @@
         <br/><hr/><br/>
         
         <a name="offer"></a>
-        <h2>5. OExchange-Offer</h2>
+        <h2>2. OExchange-Offer</h2>
         
         <br/>
         
         <a name="offer-endpoint"></a>
-        <h3>5.1. The Endpoint</h3>
+        <h3>2.1. The Endpoint</h3>
         <p>
             The <b>Offer</b> verb is the core of the sharing transaction within OExchange.  A target must implement a simple URL endpoint on which other applications can send it web content.  For example:
         </p>
@@ -174,7 +170,7 @@
         <br/>
         
         <a name="offer-flow"></a>
-        <h3>5.2. The Offer Flow</h3>
+        <h3>2.2. The Offer Flow</h3>
         <p>
             The offer endpoint accepts requests <i>from a user's browser</i>, not from a backend.  When a Source site wishes to share content with a Target, it sends the user's browser to this well-defined endpoint via an HTTP GET with appropriately URL-encoded parameters.
             The Target then takes over the control flow for the remainder of the transaction.
@@ -185,21 +181,21 @@
         </p>
         
         <a name="offer-ux"></a>
-        <h5>5.2.1. User Experience Implications</h5>
+        <h5>2.2.1. User Experience Implications</h5>
         <blockquote>
             The Target endpoint is designed to be a complete browsing experience for the user.  A Source may send the user to the Target and lose control itself, but it may also use a target _blank link.  
             OExchange does not impose a restriction on the Target of having to return to the Source when the transaction is complete.
         </blockquote>
         
         <a name="offer-errors"></a>
-        <h5>5.2.2. Handling Errors</h5>
+        <h5>2.2.2. Handling Errors</h5>
         <blockquote>
             For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors that occur within the target site must be handled gracefully in a way that the end user sees and understands.</p>
             <br/><br/>
             In practice, since there is no type negotiation and URLs are always required, there should not be any mismatch error condition; assuming a source forms a valid offer call, any target will be capable of accepting it (at the protocol level).
         </blockquote>
         
-        <h5>5.2.3. Authentication, Security, and the Offer Flow</h5>
+        <h5>2.2.3. Authentication, Security, and the Offer Flow</h5>
         <blockquote>
             The Target and Source are each responsible for their own authentication and access control.  That is, OExchange does not define or require any additional security layer on top of the exchange transaction.  
             Typically, a Target that requires an authentication and/or authorization step before ingesting content will perform that step at the beginning of its handling of the Offer.  
@@ -212,7 +208,7 @@
         <br/>
         
         <a name="offer-typing"></a>
-        <h3>5.3. OExchange Data Typing</h3>
+        <h3>2.3. OExchange Data Typing</h3>
         <p>
             All Offer transactions MUST include a URL.  The URL is the core of the transaction; it is the thing being posted, shared, exchanged, translated, or otherwise operated on.  
             The <code>ctype</code> type parameter defines a mechanism to specify additional rich content, such as an image, but this is as an extension to the basic Offer flow, not a specialization of it.  
@@ -234,7 +230,7 @@
         <br/>
         
         <a name="offer-parameters"></a>
-        <h3>5.4.  Offer Parameter Details</h3>
+        <h3>2.4.  Offer Parameter Details</h3>
         <p>
             The Offer endpoint accepts several parameters, only one of which, <code>url</code>, is required.  All parameters must be properly URL-encoded.  The following parameters are common across all content types:</p>       
         <dl>
@@ -279,13 +275,13 @@
         </p>
         
         <a name="ctype-link"></a>
-        <h5>5.5.1. The <code>link</code> Type</h5>
+        <h5>2.5.1. The <code>link</code> Type</h5>
         <blockquote>
             <code>link</code> is the default ctype, and therefore not required.  It indicates that the content is limited to the user-browsable URL provided via <code>url</code>.  Again, this URL may itself offer content that includes metadata description of various types (microformats, open graph protocol elements, etc.)  
         </blockquote>
         
         <a name="ctype-flash"></a>
-        <h5>5.5.2. The <code>flash</code> Type</h5>
+        <h5>2.5.2. The <code>flash</code> Type</h5>
         <blockquote>
             A Flash movie element which can be directly embedded by the target. This type supports the following specific parameters:
             <dl>
@@ -307,7 +303,7 @@
         </blockquote>    
         
         <a name="ctype-iframe"></a>
-        <h5>5.5.3. The <code>iframe</code> Type</h5>
+        <h5>2.5.3. The <code>iframe</code> Type</h5>
         <blockquote>
             Content that can be embedded by a target by including an HTML iframe sourced to a specified URL. This type supports the following specific parameters:
             <dl>
@@ -329,7 +325,7 @@
         </blockquote>
         
         <a name="ctype-image"></a>
-        <h5>5.5.4. The <code>image</code> Type</h5>
+        <h5>2.5.4. The <code>image</code> Type</h5>
         <blockquote>
             A simple web-renderable image. This type supports the following specific parameters:
             <dl>
@@ -350,12 +346,12 @@
         <br/><hr/><br/>
         
         
-        <h2><a name="discovery"></a>6. OExchange-Discovery</h2>
+        <h2><a name="discovery"></a>3. OExchange-Discovery</h2>
         
         <br/>
         
         <a name="discovery-overview"></a>
-        <h3>6.1 Discovery Overview</h3>
+        <h3>3.1 Discovery Overview</h3>
         <p>
             OExchange-Discovery defines a manner in which clients can discover information about OExchange Targets dynamically, at run-time.  The specification defines four elements, with related technical solutions:
         <ul>
@@ -369,7 +365,7 @@
         <br/>
         
         <a name="discovery-targetxrd">
-        <h3></a>6.2 Target Specification via the OExchange Target XRD</h3>
+        <h3></a>3.2 Target Specification via the OExchange Target XRD</h3>
         <p>
             Each target must be defined in an individual <a href="http://www.oasis-open.org/committees/download.php/36473/xrd-1.0-wd14.html">XRD</a> file. 
             OExchange leverages standard XRD elements to convey all information.  The XRD is defined as follows:
@@ -388,7 +384,7 @@
             The Target XRD file may live at any location on a host, but SHOULD remain consistent over time.  Clients may refer to this XRD directly as the definitive source for Target metadata.  In addition, <a href="#discovery-hostmeta">Host Discovery</a> can be used to look up the location of the Target's XRD document.
         </p>
         
-        <h4>6.2.1 Example Target XRD</h4>
+        <h4>3.2.1 Example Target XRD</h4>
         <p>
             An example of a target XRD file:
         </p>
@@ -425,7 +421,7 @@
         /&gt;
 &lt;/XRD&gt;</pre>  
         
-        <h4>6.2.2 Internationalization of the Target XRD</h4>
+        <h4>3.2.2 Internationalization of the Target XRD</h4>
         <p>
             The Target XRD contains strings intended for display to users.  
             In some cases the target may wish to express these strings, such as the action prompt, in various languages.
@@ -442,7 +438,7 @@
         <br/>
                       
         <a name="discovery-host"></a>
-        <h3>6.3 Host Discovery</h3>
+        <h3>3.3 Host Discovery</h3>
         <p>
             An Internet host that contains an OExchange Target SHOULD support the following Discovery mechanism, to allow clients to locate Targets by host name alone:
         </p>    
@@ -455,19 +451,19 @@
         </p>
                  
         <a name="discovery-hostmeta"></a>
-        <h4>6.3.1 The /.well-known/host-meta Document</h4>
+        <h4>3.3.1 The /.well-known/host-meta Document</h4>
         <p>
             The /.well-known/host-meta resource is an XRD document that describes services available on the host (as defined <a href="http://tools.ietf.org/html/draft-hammer-hostmeta-05">here</a>), and is available via simple HTTP request.
             If the host does not already contain such a resource for other purposes, this is an opportunity to create one. 
         </p>      
         
         <a name="discovery-relation-resident"></a>
-        <h5>6.3.1.1 The <code>resident-target</code> Relation</h5>
+        <h5>3.3.1.1 The <code>resident-target</code> Relation</h5>
         <p>
             Within host-meta, OExchange targets are identified with<code>Link</code> elements of the <code>http://oexchange.org/spec/0.8/rel/resident-target</code> relation type.  The <code>href</code> attribute of the relation must be the location of the target-specific XRD descriptor.
         </p>
         
-        <h5>6.3.1.2 Example host-meta XRD</h5>
+        <h5>3.3.1.2 Example host-meta XRD</h5>
         <p>
             An example of the relevant Link element required within a host-meta resource to identify the location of a target's XRD descriptor:
         <pre>&lt;Link 
@@ -493,7 +489,7 @@
         </p>
         
         <a name="discovery-flow">
-        <h4></a>6.3.4 Detailed Target Discovery Flow</h4>
+        <h4></a>3.3.4 Detailed Target Discovery Flow</h4>
         <p>
             The exact flow of a client attempting to discover OExchange compatibility of a given host must be:
         </p>
@@ -507,13 +503,13 @@
         <br/>
         
         <a name="discovery-page"></a>
-        <h3>6.4 Page Discovery</h3>
+        <h3>3.4 Page Discovery</h3>
         <p>
             It is possible for a web page to suggest to a user agent that a related Target is available.  For example, the pages of a social networking site might include references to a Target that allows users to post content into that network.  Pages do this by including an HTML/XHTML <code>link</code> tag that points to the XRD for a related target. The presence of this tag indicates to the user agent that there is a Target related to this content, and where to locate the XRD document that describes that Target in detail.  
         </p>    
         
         <a name="discovery-relation-related"></a>
-        <h4>6.4.1 Link Elements and the <code>related-target</code> Relation Type</h4>
+        <h4>3.4.1 Link Elements and the <code>related-target</code> Relation Type</h4>
         <p>
             Link elements of relation type <code>http://oexchange.org/spec/0.8/rel/related-target</code> point, via their <code>href</code> attribute, to the XRD document of the Target that is related to the page on which the Link is located.  
         </p>
@@ -525,7 +521,7 @@
         <br/>
         
         <a name="discovery-personal"></a>
-        <h3>6.5 Personal Discovery</h3>
+        <h3>3.5 Personal Discovery</h3>
         <p class="magnum xl">PROPOSED METHOD</p>
         <p>
             Tools that facilitate end-user sharing and link-sending require a means to provide a personalization mechanism.  Presenting the user with too many options, or with options that are not appropriate to them (commonly referred to as "the Nascar problem"), significantly reduces their use in general.  This problem increases dramatically if services are able to, via OExchange Discovery mechanisms, dynamically make themselves available without any prior integration.  This specification approaches this problem in two parts: 
@@ -538,7 +534,7 @@
         </p>    
                  
         <a name="discovery-personal-xrd"></a>
-        <h4>6.5.1 Personal XRDs and the <code>user-target</code> Relation Type</h4>
+        <h4>3.5.1 Personal XRDs and the <code>user-target</code> Relation Type</h4>
         <p>
             To indicate a preference for certain OExchange Targets, a user's personal XRD should include a Link element of the <code>http://oexchange.org/spec/0.8/rel/user-target</code> relation type.  The <code>href</code> attribute of this link MUST be the location of the Target's XRD resource.  
         </p>     
@@ -552,7 +548,7 @@
 &lt;/Link&gt;</pre>      
         
         <a name="discovery-personal-flow"></a>
-        <h4>6.5.2 Example Personal Discovery Flow: WebFinger</h4>
+        <h4>3.5.2 Example Personal Discovery Flow: WebFinger</h4>
         <p>
             As an example, WebFinger can be used to locate a personal XRD, which expresses the users preferred OExchange services.  The exact flow in this case is as follows:
         </p>
@@ -570,7 +566,7 @@
         <br/><hr/><br/>
                 
         <a name="license"></a>
-        <h2>6. Licensing</h2>
+        <h2>4. Licensing</h2>
         <p>
             This specification is made available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>.   
         </p>
@@ -581,7 +577,7 @@
         <br/><hr/><br/>        
         
 		<a name="status"></a>
-        <h2>7. Document Status</h2>
+        <h2>5. Document Status</h2>
         <p>
             This specification document is version 0.8, <span class="magnum">WORKING DRAFT</span> 7.  It may be superseded by future versions.  
         </p>
@@ -589,7 +585,7 @@
 		<br/>
         
         <a name="history"></a>
-        <h3>7.1. Revision History</h3>
+        <h3>5.1. Revision History</h3>
         <ul>
             <li>2008-05-01: original concept draft created</li>
             <li>2008-05-26: added gadget and opensocial types</li>
@@ -613,7 +609,7 @@
         <br/><hr/><br/>        
 
         <a name="related"></a>  
-        <h2>7. Related &amp; Background</h2>
+        <h2>6. Related &amp; Background</h2>
         <p>
             The following specification documents are referenced directly or indirectly by this specification.
         </p>
