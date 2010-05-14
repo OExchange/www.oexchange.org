@@ -36,16 +36,15 @@
 					<a class="oexchange-share" href="#" ox:pref="5" ox:xrd="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"></a>
 				</div>
 			</div>
-			<p><a href="#" class="oexchange-personalize">^ Personalize share icons</a></p> 
+			<p><a href="#" class="oexchange-personalize">^ Personalize this</a></p> 
         </div>
         
         <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
-                The sharing options on this page can personalized with your favorite ways to share.<br/><br/>
-                To see this in action, check out <a href="/demo/linkeater/">LinkEater</a>, an example
-                sharing service that supports OExchange. Or, select Personalize to manage your 
-                OExchange sharing services.
+                These options can be personalized with new OExchange-enabled services automatically.<br/><br/>
+                To see this in action, check out <a href="/demo/linkeater/index_draft.php">LinkEater</a>, an example
+                service that supports OExchange. Or, select Personalize to add OExchange services directly.
             </div>
             <div class="tt-tick"></div>
         </div>

@@ -46,8 +46,8 @@ require_once("../../header-subdemo.php");
         <div id="tt1" class="tt" style="position:absolute;top:100px;right:-20px;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
-                Because LinkEater supports OExchange, it can be saved as a favorite way to share.<br/><br/>
-                Then, when a user encounters OExchange-enabled sharing elsewhere, <a href="/demo/blog">such as on a blog</a>, LinkEater will be presented as a personalized option.
+                Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
+                Add it here, then check out <a href="/demo/blog">the blog</a> to see LinkEater as a new option!
             </div>
             <div class="tt-tick" style="left:205px;"></div>
         </div>
