@@ -10,8 +10,8 @@ include 'header.php';
         <p>For now, take a look at:</p>
        	<ul>
        		<li>the <a href="/guide">Quick Start Guide</a></li> 
-       		<li>some dev and test <a href="/tools">tools</a></li>
-       		<li>the actual <a href="/spec">spec</a></li>
+       		<li>some dev and test <a href="/tools">Tools</a></li>
+       		<li>the actual <a href="/spec">Spec</a></li>
        	</ul>
     </div>
     
