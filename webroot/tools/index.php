@@ -6,9 +6,10 @@ include '../header.php';
 
 ?>
     
-    <h2 class="pagetitle mb10">Tools</h2>
+    <h2 class="pagetitle mb10">Dev &amp; Test Tools</h2>
+<!--
     <div class="bannertext">Testing and development aids</div>
-    
+-->    
     <hr/>
     
     <div class="grid_5 alpha">

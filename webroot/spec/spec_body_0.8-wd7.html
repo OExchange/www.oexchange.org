@@ -1,47 +1,16 @@
     <div class="grid_7 alpha">        
-        <a name="status"></a>
-        <h2>1. Status and Versioning</h2>
-        <p>
-            This specification is a <span class="magnum">WORKING DRAFT</span> and is subject to change without warning in future versions.  
-            This is <a href="#license">licensed</a> version 0.8, working draft 6.  
-        </p>
-        <p>
-            See the <a href="http://groups.google.com/group/oexchange">discussion group</a> for current open items and future directions.  
-        </p>
         
-        <a name="history"></a>
-        <h3>1.1. Document History</h3>
-        <ul>
-            <li>2008-05-01: original concept draft created</li>
-            <li>2008-05-26: added gadget and opensocial types</li>
-            <li>2008-06-14: added embed-raw type</li>
-            <li>2008-12-07: minor changes per second round implementor review</li>
-            <li>2009-4-20: prepped for additional "open" feedback</li>
-            <li>2009-6-12: major update per aggregated feedback, primarily simplifying the typing mechanism</li>
-            <li>2009-9-1: pinned version at 0.8 WD 1 for concrete implementors</li>
-            <li>2010-2-1: removal of oexchange-link and inclusion of oexchange-discovery via host-meta and xrd</li>
-            <li>2010-3-1: added finalized discovery specification </li>
-            <li>2010-3-4: misc textual clarifications on ctype handling</li>
-            <li>2010-4-16: added agreed-to personal and page discovery methods</li>
-            <li>2010-4-23: added icon32 image link</li>
-            <li>2010-4-23: published WD 5</li>
-            <li>2010-5-3: promoted "tags" parameter, clarified encoding rules; updated reference; clarified use of xml:lang for localization; formalized OWFa licensing</li>
-            <li>2010-5-6: published WD 6</li>
-        </ul>
     </div>
     <div class="grid_3 omega">
         <div class="gbox toc">
             <h4>Table of Contents</h4>
             <ul>
-                <li><a href="#status">1. Document Status</a>
-                    <ul class="lower-alpha">
-                        <li><a href="#history">1.1 Document History</a></li>
-                        <li><a href="#license">1.2 License</a></li>
-                    </ul>
-                </li>                
-                <li><a href="#conventions">2. Conventions</a></li>
-                <li><a href="#introduction">3. Introduction</a></li>
-                <li><a href="#definitions">4. Definitions</a></li>
+                <li><a href="#introduction">3. Introduction</a>
+                <ul class="lower-alpha">
+                    <li><a href="#motivation">1.1 Motivation</a></li>
+                    <li><a href="#conventions">1.2 Document Conventions</a></li>
+                    <li><a href="#definitions">1.3 Definitions &amp; Terminology</a></li>
+                </ul></li>
                 <li><a href="#offer">5. OExchange-Offer</a>
                     <ul class="lower-alpha">
                         <li><a href="#offer-endpoint">5.1 The Endpoint</a></li>
@@ -63,6 +32,12 @@
                         <li><a href="#discovery-page">6.4 Page Discovery</a></li>
                         <li><a href="#discovery-personal">6.5 Personal Discovery</a></li>
                     </ul></li>
+                <li><a href="#license">7. Licensing</a></li>
+                <li><a href="#status">1. Document Status</a>
+                    <ul class="lower-alpha">
+                        <li><a href="#history">1.1 Revision History</a></li>
+                    </ul>
+                </li>                
                 <li><a href="#related">7. Related &amp; Relevant Specifications</a></li>
             </ul>
         </div>
@@ -71,69 +46,72 @@
     
     <div class="grid_10 alpha omega">
                 
-        <a name="license"></a>
-        <h3>1.2. License</h3>
-        <p>
-            This specification is made available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>.   
-        </p>
-        <p>
-            Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-        </p>
-
-        <br/><hr/><br/>        
-        
-        <a name="conventions"></a>
-        <h2>2. Conventions</h2>
-        <p>
-            The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, 
-            &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>. Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
-        </p>
-        
-        <br/><hr/><br/>
-                
         <a name="introduction"></a>
-        <h2>3. Introduction</h2>
+        <h2>1. Introduction</h2>
         <p>
-            OExchange specifies the "share this link" and related use-cases in the simplest possible terms.  For example:
+            OExchange is a simple specification for URL-based content sharing on the web.  It defines:
         </p>
         <ul>
-            <li>Post a link to followers on a stream or microblogging platform</li>
-            <li>Send a link to a content service like a translator or spell-check</li>
-            <li>Add a link to a personal bookmarking service</li>
-            <li>Add a video to a video-blogging platform</li>
-        </ul>
-        <p>
-            This specification attempts to meet the following objectives:
-        </p>
-        <ul>
-            <li>Simplify the link-sharing process to bring its implementation costs down for sending and receiving sites (Sources and Targets in OExchange terms)</li>
-            <li>Standardize the user experience during this type of interaction</li>
-            <li>Provide facilities to allow users greater control and personalization of the link sharing process</li>
-            <li>Map as closely as possible to the dozens of current link-sharing implementations on the web</li>
-        </ul>
-        <p>
-            The specification defines, concretely:
-        </p>
-        <ul>
-            <li>A well-known sharing endpoint at which a service on the web can receive link and related rich content on behalf of a user</li>
-            <li>A specific flow for how the sending and receiving site interact with each other and with the user during this exchange</li>
-            <li>Mechanisms for discovering the capabilities of a host in terms of this type of exchange</li>
+            <li>An endpoint at which a service on the web can receive links and related rich content on behalf of a user</li>
+            <li>A specific flow for how the sending and receiving services interact with each other and with the user during this exchange</li>
+            <li>Several mechanisms for discovering the existence and capabilities of a service that can perform this type of exchange</li>
         </ul>
         <p>
             The specification consists of two parts:
         </p>
         <ul>
-            <li>OExchange-Offer: the share transaction between sites</li>
-            <li>OExchange-Discovery: the manner in which OExchange Targets can be discovered</li>
+            <li><a href="#offer">OExchange-Offer</a>: the transaction that takes place between sites</li>
+            <li><a href="#discovery">OExchange-Discovery</a>: the manner in which services and their capabilities can be discovered</li>
         </ul>
         <p>
-            See the <a href="/guide">Quick Start Guide</a> for a quick and dirty intro to making it work.     
+            See the <a href="/guide">Quick Start Guide</a> for implementation guidance.  
+        </p>
+    	<p>
+ 			This specification is both <a href="#license">licensed</a> and <a href="#status">versioned</a>.  
+    	</p>
+
+        <br/>
+
+		<a name="motivation"></a>
+		<h3>1.1 Motivation</h3>
+		<p>
+			Intended use-cases for the specification include:
+		</p>
+        <ul>
+            <li>Post a link to followers on a stream or microblogging platform</li>
+            <li>Send a page to a content service like a translator or spell-check</li>
+            <li>Add a link to a personal bookmarking service</li>
+            <li>Post a video or photo to a media-blogging platform</li>
+        </ul>
+		<p>
+			Generally, any operation that involves sending URL-based content from one service to another, with a user mediating the transaction, is addressed.  
+			Special focus is given to the fact that all the possible services a user will want to push their content to cannot be known a-priori.
+		</p>
+        <p>
+            This specification takes the following general approach:
+        </p>
+        <ul>
+            <li>Codify the link-sharing mechanism and user experience in wide use today, providing a structured but compatible recommendation</li>
+            <li>Define a discovery component on top of the core exchange mechanism, supporting dynamic integration between services</li>
+			<li>Add advanced features only on top of a core layer of defined interoperability and practical deployment</li>
+        </ul>
+        
+        <br/>
+
+        <a name="conventions"></a>
+        <h3>1.2. Document Conventions</h2>
+        <p>
+            The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, 
+            &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>. Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
         </p>
         
-        <br/><hr/><br/>
-        
+        <br/>
+
         <a name="definitions"></a>
-        <h2>4. Definitions</h2>
+        <h3>1.3. Definitions &amp; Terminology</h3>
+		<p>
+			The following terminology is used throughout this document.
+		</p>
         <dl>
             <dt><b>Source</b></dt>
             <dd>
@@ -591,7 +569,49 @@
         
         <br/><hr/><br/>
                 
+        <a name="license"></a>
+        <h2>6. Licensing</h2>
+        <p>
+            This specification is made available under the <a href="http://openwebfoundation.org/legal/agreement/">Open Web Foundation Agreement, Version 0.9</a>.   
+        </p>
+        <p>
+            Your use of this Specification may be subject to other third party rights. THIS SPECIFICATION IS PROVIDED &quot;AS IS.&quot; The contributors expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification. The entire risk as to implementing or otherwise using the Specification is assumed by the Specification implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS SPECIFICATION OR ITS GOVERNING AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        </p>
+
+        <br/><hr/><br/>        
+        
+		<a name="status"></a>
+        <h2>7. Document Status</h2>
+        <p>
+            This specification document is version 0.8, <span class="magnum">WORKING DRAFT</span> 7.  It may be superseded by future versions.  
+        </p>
+
+		<br/>
+        
+        <a name="history"></a>
+        <h3>7.1. Revision History</h3>
+        <ul>
+            <li>2008-05-01: original concept draft created</li>
+            <li>2008-05-26: added gadget and opensocial types</li>
+            <li>2008-06-14: added embed-raw type</li>
+            <li>2008-12-07: minor changes per second round implementor review</li>
+            <li>2009-4-20: prepped for additional "open" feedback</li>
+            <li>2009-6-12: major update per aggregated feedback, primarily simplifying the typing mechanism</li>
+            <li>2009-9-1: pinned version at 0.8 WD 1 for concrete implementors</li>
+            <li>2010-2-1: removal of oexchange-link and inclusion of oexchange-discovery via host-meta and xrd</li>
+            <li>2010-3-1: added finalized discovery specification </li>
+            <li>2010-3-4: misc textual clarifications on ctype handling</li>
+            <li>2010-4-16: added agreed-to personal and page discovery methods</li>
+            <li>2010-4-23: added icon32 image link</li>
+            <li>2010-4-23: published WD 5</li>
+            <li>2010-5-3: promoted "tags" parameter, clarified encoding rules; updated reference; clarified use of xml:lang for localization; formalized OWFa licensing</li>
+            <li>2010-5-6: published WD 6</li>
+            <li>2010-5-12: reformatted introductory content; new styling;</li>
+            <li>2010-5-15: published WD 7</li>
+        </ul>
             
+        <br/><hr/><br/>        
+
         <a name="related"></a>  
         <h2>7. Related &amp; Background</h2>
         <p>
