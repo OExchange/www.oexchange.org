@@ -7,18 +7,17 @@ include '../../lib-oexchange/OExchangeDiscoverer.php';
 include_once '../../lib-oexchange/utils.php';
 
 function printTarget($target) {
-	echo "&nbsp;&nbsp;<b>ID/URL:</b> " . htmlspecialchars($target->id) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Name:</b> " . htmlspecialchars($target->name) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Prompt:</b> " . $target->prompt . "<br/>";
-	echo "&nbsp;&nbsp;<b>Title:</b> " . htmlspecialchars($target->title) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Endpoint:</b> " . htmlspecialchars($target->endpoint) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Vendor:</b> " . htmlspecialchars($target->vendor) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Icon:</b> " . htmlspecialchars($target->icon) . "<br/>";
-	echo "&nbsp;&nbsp;<b>Icon32:</b> " . htmlspecialchars($target->icon32) . "<br/>";
-	echo "<br/>";
-	echo "&nbsp;&nbsp;<img src=\"" . htmlspecialchars($target->icon) . "\"/>";
-	echo "&nbsp;&nbsp;<img src=\"" . htmlspecialchars($target->icon32) . "\"/>";
-	echo "<br/>";
+    echo '<table class="dtbl">';
+    echo '<thead><tr><th>Property</th><th>&nbsp;</th></th><th>Value</th></tr></thead><tbody>';
+	echo "<tr><td>ID/URL:</td><td>&nbsp;</td></td><td>" . htmlspecialchars($target->id) . "</td></tr>";
+	echo "<tr><td>Name:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->name) . "</td></tr>";
+	echo "<tr><td>Prompt:</td><td>&nbsp;</td><td>" . $target->prompt . "</td></tr>";
+	echo "<tr><td>Title:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->title) . "</td></tr>";
+	echo "<tr><td>Endpoint:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->endpoint) . "</td></tr>";
+	echo "<tr><td>>Vendor:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->vendor) . "</td></tr>";
+	echo "<tr><td>Icon:</td><td><img src=\"" . htmlspecialchars($target->icon) . "\"/></td><td>" . htmlspecialchars($target->icon) . "</td></tr>";
+	echo "<tr><td>Icon32:</td><td><img src=\"" . htmlspecialchars($target->icon32) . "\"/></td><td>" . htmlspecialchars($target->icon32) . "</td></tr>";
+	echo "</tbody></table>";
 }
 
 $hostname = getDfltArg("h", "www.oexchange.org");
@@ -49,11 +48,13 @@ $cmd = getDfltArg("cmd", "none");
 		<input type="submit" value="Check Host" />
 	</form>
 	</p>
-	<br/>
+	
 <?
 	if ($cmd == "hm") {
 		?>
-		<h5>Discovery Results:</h5>
+        <hr/>
+        
+		<h3>Discovery Results:</h3>
 		<?	
 		$disc = new OExchangeDiscoverer();
 		$targetXrdUrls = $disc->getTargetXrdUrlsOnHost($hostname);
@@ -69,17 +70,15 @@ $cmd = getDfltArg("cmd", "none");
 		} else {
 			?>
 			<p>
-				We DID locate http://<?= $hostname?>/.well-known/host-meta, here's what was in it:	
+				We DID locate <code>http://<?= $hostname?>/.well-known/host-meta</code>, here's what was in it:	
 			</p>
 			<?	
 			
 			foreach($targetXrdUrls as $targetXrdUrl) {
 				?>
+				<p><b>Referenced Target XRD:</b><br/>><code><?= $targetXrdUrl ?>></code></p>
 				<p>
-				<b>Referenced Target XRD:</b> <?= $targetXrdUrl ?>
-				</p>
-				<p>
-					&nbsp;&nbsp;Target details (from inspecting this XRD):
+					Target details (from inspecting this XRD):
 				</p>
 				<?	
 				$target = $disc->getTargetInfoFromXrd($targetXrdUrl);
@@ -120,11 +119,13 @@ $cmd = getDfltArg("cmd", "none");
 		<p><input type="submit" value="Check Target XRD" /></p>
 	</form>
 	</p>
-	<br/>
+    
 <?
 	if ($cmd == "txrd") {
 		?>
-		<h5>XRD Lookup Results:</h5>
+        <hr/>
+        
+		<h3>XRD Lookup Results:</h3>
 		<?	
 		$disc = new OExchangeDiscoverer();
 		$target = $disc->getTargetInfoFromXrd($xrdUrl);
@@ -145,8 +146,6 @@ $cmd = getDfltArg("cmd", "none");
 		}
 	}
 ?>
-
-
 
 
 <?
