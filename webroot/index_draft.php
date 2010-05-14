@@ -9,7 +9,7 @@ include 'header.php';
         
         <div class="grid_5 alpha">
             <h2 class="mb0">For Service Providers</h3>
-            <p class="bigtext">Enable your service to be automaticallyl discovered and more easily integrated with 3rd party sharing tools.</p>
+            <p class="bigtext">Enable your service to be automatically discovered and more easily integrated with 3rd party sharing tools.</p>
         </div>
         <div class="grid_5 omega">
             <h2 class="mb0">For Sharing Tools</h3>
@@ -26,18 +26,19 @@ include 'header.php';
         <hr/>
         
         <div class="grid_6 alpha suffix_1">
-            <h3>The Problem</h4>
+            <h3>The Problem</h3>
             <p>
                 There is a whole world of services &mdash; social networks, communication tools, social news and bookmarking sites &mdash; with more 
                 appearing every day. Many do not accept content the same way. It's hard to know which service a user wants, and how to share content there.
             </p>
             
-            <h3>OExchange Provides</h4>
-            <p>
-                A standard way for services to be more easily integrated into sharing tools, by making them automatically 
-                discoverable. A standard way to receive content, making it easier to communicate with sharing tools. 
-                A decentralized model for saving and displaying a user's preferred services.
-            </p>
+            <h3>The Solution</h3>
+            <p>OExchange makes sharing better by:</p>
+            <ul>
+                <li>Providing a standardized way for services to receive content, making communication with sharing tools easier.</li>
+                <li>Allowing services to be automatically discoverable, making integration with sharing tools faster.</li>
+                <li>Establishing a decentralized model for saving and displaying a user's preferred services, making sharing more personal.</li>
+            </ul>
         </div>
         <div class="grid_3 omega">
             <h5>OExchange Supporters</h5>

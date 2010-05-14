@@ -124,7 +124,7 @@ label.block { display: block; padding-bottom: 5px; }
     padding: 5px 15px 15px; 
 }
 .bluebox hr { border-width: 1px; border-color: #d8e9f0; margin: 15px 0 10px 0; }
-.topguide .bluebox { width: 205px; margin: 0 10px; float: left; }
+.topguide .guidebox { width: 205px; padding: 5px 15px 15px;  margin: 0 10px; float: left; }
 
 
 .mt0 { margin-top: 0 !important; }
@@ -162,8 +162,8 @@ pre {
     font-weight: bold;
     color: #fff;
     cursor: pointer;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
 }
 .btn:hover {
     background: #034aa1;
