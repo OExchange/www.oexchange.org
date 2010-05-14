@@ -43,7 +43,7 @@
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 These options can be personalized with new OExchange-enabled services automatically.<br/><br/>
-                To see this in action, check out <a href="/demo/linkeater/index_draft.php">LinkEater</a>, an example
+                To see this in action, check out <a href="/demo/linkeater/index.php?demo=true">LinkEater</a>, an example
                 service that supports OExchange. Or, select Personalize to add OExchange services directly.
             </div>
             <div class="tt-tick"></div>

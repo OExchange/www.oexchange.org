@@ -1,5 +1,8 @@
 <?php
 
+if (isset($_GET["demo"])) $demo = $_GET["demo"];
+else $demo = false;
+
 $page_title = "LinkEater, An Example OExchange Target";
 require_once("../../header-subdemo.php");
 ?>
@@ -18,7 +21,7 @@ require_once("../../header-subdemo.php");
         		LinkEater is a simple example of a service that accepts URLs via OExchange.  It doesn't do much with them, but hey, you get the idea.  Imagine its a social network, a news submission service, a translation tool, whatever.      
         	</p>
           
-        	<h4>Sending Links to LinkEater</h4>
+        	<h3>Sending Links to LinkEater</h3>
         	<p>
         		Links are accepted via a standard OExchange Offer endpoint, at:
         	</p>
@@ -26,7 +29,7 @@ require_once("../../header-subdemo.php");
         	<p>
         		Try <a href="offer.php?url=http://www.example.com">sending it a URL</a>.
         	</p>	
-        	<h4>Automatic Discovery</h4>
+        	<h3>Automatic Discovery</h3>
         	<p>
         		LinkEater is fully discoverable; any tool that understands OExchange Discovery can figure out how to send links to LinkEater automagically.
         		<ul>
@@ -36,13 +39,22 @@ require_once("../../header-subdemo.php");
         		</ul>
         	</p>
         </div>
-        <div class="grid_3 omega">          
-            <p style="padding:20px 0;">
-                <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
-            </p>
-        </div>
-        <div class="clear"></div>
         
+<? 
+	if ($demo) {
+?>	
+		<div class="grid_3 omega">          
+		    <p style="padding:20px 0;">
+		        <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;">Save this Sharepoint</a>
+		    </p>
+		</div>
+<? 
+	}
+?>	
+		<div class="clear"></div>
+<? 
+	if ($demo) {
+?>	
         <div id="tt1" class="tt" style="position:absolute;top:100px;right:-20px;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
@@ -51,6 +63,9 @@ require_once("../../header-subdemo.php");
             </div>
             <div class="tt-tick" style="left:205px;"></div>
         </div>
+<? 
+	}
+?>	
     </div>
 	
 <?
