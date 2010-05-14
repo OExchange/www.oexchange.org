@@ -43,9 +43,10 @@ $cmd = getDfltArg("cmd", "none");
 	</p>
 	<p>
 	<form action="/tools/discoveryharness/" method="POST">
-		Hostname (e.g. www.example.com):&nbsp;<input name="h" type="text" size="60" value="<?= $hostname ?>" />
-		<input name="cmd" type="hidden" value="hm" />
-		<input type="submit" value="Check Host" />
+		<p>Hostname (e.g. www.example.com):</p>
+        <p><input name="h" type="text" size="80" value="<?= $hostname ?>" /></p>
+		<p><input class="btn" type="submit" value="Check Host" /></p>
+        <input name="cmd" type="hidden" value="hm" />
 	</form>
 	</p>
 	
@@ -114,9 +115,10 @@ $cmd = getDfltArg("cmd", "none");
 	</p>
 	<p>
 	<form action="/tools/discoveryharness/" method="POST">
-		Target XRD (e.g. http://www.example.com/oexchange.xrd):&nbsp;<input name="x" type="text" size="60" value="<?= $xrdUrl ?>" />
-		<input name="cmd" type="hidden" value="txrd" />
-		<p><input type="submit" value="Check Target XRD" /></p>
+		<p>Target XRD (e.g. http://www.example.com/oexchange.xrd):</p>
+        <p><input name="x" type="text" size="80" value="<?= $xrdUrl ?>" /></p>		
+		<p><input class="btn" type="submit" value="Check Target XRD" /></p>
+        <input name="cmd" type="hidden" value="txrd" />
 	</form>
 	</p>
     
