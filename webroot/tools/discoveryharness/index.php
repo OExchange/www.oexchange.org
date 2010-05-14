@@ -8,15 +8,15 @@ include_once '../../lib-oexchange/utils.php';
 
 function printTarget($target) {
     echo '<table class="dtbl">';
-    echo '<thead><tr><th>Property</th><th>&nbsp;</th></th><th>Value</th></tr></thead><tbody>';
-	echo "<tr><td>ID/URL:</td><td>&nbsp;</td></td><td>" . htmlspecialchars($target->id) . "</td></tr>";
-	echo "<tr><td>Name:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->name) . "</td></tr>";
-	echo "<tr><td>Prompt:</td><td>&nbsp;</td><td>" . $target->prompt . "</td></tr>";
-	echo "<tr><td>Title:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->title) . "</td></tr>";
-	echo "<tr><td>Endpoint:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->endpoint) . "</td></tr>";
-	echo "<tr><td>>Vendor:</td><td>&nbsp;</td><td>" . htmlspecialchars($target->vendor) . "</td></tr>";
-	echo "<tr><td>Icon:</td><td><img src=\"" . htmlspecialchars($target->icon) . "\"/></td><td>" . htmlspecialchars($target->icon) . "</td></tr>";
-	echo "<tr><td>Icon32:</td><td><img src=\"" . htmlspecialchars($target->icon32) . "\"/></td><td>" . htmlspecialchars($target->icon32) . "</td></tr>";
+    echo '<thead><tr><th>Property</th><th>Value</th><th>&nbsp;</th></tr></thead><tbody>';
+	echo "<tr><td>ID/URL:</td></td><td>" . htmlspecialchars($target->id) . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Name:</td><td>" . htmlspecialchars($target->name) . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Prompt:</td><td>" . $target->prompt . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Title:</td><td>" . htmlspecialchars($target->title) . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Endpoint:</td><td>" . htmlspecialchars($target->endpoint) . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Vendor:</td><td>" . htmlspecialchars($target->vendor) . "</td><td>&nbsp;</td></tr>";
+	echo "<tr><td>Icon:</td><td>" . htmlspecialchars($target->icon) . "</td><td><img src=\"" . htmlspecialchars($target->icon) . "\"/></td></tr>";
+	echo "<tr><td>Icon32:</td><td>" . htmlspecialchars($target->icon32) . "</td><td><img src=\"" . htmlspecialchars($target->icon32) . "\"/></td></tr>";
 	echo "</tbody></table>";
 }
 
@@ -77,7 +77,7 @@ $cmd = getDfltArg("cmd", "none");
 			
 			foreach($targetXrdUrls as $targetXrdUrl) {
 				?>
-				<p><b>Referenced Target XRD:</b><br/>><code><?= $targetXrdUrl ?>></code></p>
+				<p><b>Referenced Target XRD:&nbsp;</b><code><?= $targetXrdUrl ?></code></p>
 				<p>
 					Target details (from inspecting this XRD):
 				</p>
