@@ -12,14 +12,25 @@ include ("../header.php");
     <div class="grid_7 alpha">
         <object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
     </div>
-    <div class="grid_3 omega">
+    <div class="grid_3 bigtext omega">
+        <h3 class="mb5">Step 1</h3>
+        <a href="/demo/blog/">Start at a blog</a> that uses an OExchange enabled sharing tool.<br/>
+        
+        <h3 class="mb5">Step 2</h3>
+        <a href="/demo/linkeater">Visit a service</a> that, via OExchange, can be discovered as a sharing destination. Save the service.<br/>
+        
+        <h3 class="mb5">Step 3</h3>
+        <a href="/demo/blog/">Return to the blog</a>, and note that the new service has been added to the user's favorite sharing destinations.
+        
+        <!--
         <h4 class="mt0">To walk through the demo:</h4>
         <ol style="padding:0 0 0 20px;">
             <li><a href="/demo/blog/">Start at a blog</a> that uses an OExchange enabled sharing tool.</li>
             <li><a href="/demo/linkeater">Visit a service</a> that, via OExchange, can be discovered as a sharing destination. Save the service.</li>
             <li><a href="/demo/blog/">Return to the blog</a>, and note that the new service has been added to the user's favorite sharing destinations.</li>
         </ol>
-        <p>These saved services can be published to the user's WebFinger profile.</p>
+        -->
+        <p><small>These saved services can be published to the user's WebFinger profile.</small></p>
     </div>
     <div class="clear"></div>        
     

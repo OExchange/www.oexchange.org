@@ -12,7 +12,7 @@ include '../header.php';
     <div class="grid_7 alpha"> 
         <h2>Overview</h2>       
         <p>
-            This'll help you get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
+            Get up and running, whether you're a <a href="#services">service</a> that can accept content, a <a href="#sites">site</a> 
             that has content to share, or a <a href="#tools">tool</a> of some sort. Remember that OExchange isn't limited to "sharing" things; it applies 
             to any case where one service wants to send URL-based content to another &mdash; microblogging, translating, printing, whatever.
         </p>
