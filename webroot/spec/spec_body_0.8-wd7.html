@@ -2,8 +2,11 @@
         <a name="#abstract"></a>
         <h2>Abstract</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse imperdiet pellentesque tortor adipiscing consectetur. 
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed porta erat vel purus consectetur pretium.
+            This document describes OExchange, a simple specification URL-based content sharing on the web.  
+			OExchange codifies an existing model in wide use today, adds a dynamic discovery capability, and creates a foundation for additional verbs.
+        </p>
+        <p>
+			This is the technical specification.  The <a href="/guide">Quick Start Guide</a> provides a short introduction to the protocol and its practical implementation.
         </p>
         
         <br/><hr/><br/>
@@ -65,9 +68,6 @@
             <li><a href="#offer">OExchange-Offer</a>: the transaction that takes place between sites</li>
             <li><a href="#discovery">OExchange-Discovery</a>: the manner in which services and their capabilities can be discovered</li>
         </ul>
-        <p>
-            See the <a href="/guide">Quick Start Guide</a> for implementation guidance.  
-        </p>
     	<p>
  			This specification is both <a href="#license">licensed</a> and <a href="#status">versioned</a>.  
     	</p>
@@ -101,10 +101,10 @@
         <br/>
         
         <a name="conventions"></a>
-        <h3>1.2. Document Conventions</h2>
+        <h3>1.2. Document Conventions</h3>
         <p>
             The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;,&#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, 
-            &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in <a href='#RFC2119'>[RFC2119]</a>. Domain name examples use <a href='#RFC2606'>[RFC2606]</a>.
+            &#8220;MAY&#8221;, and &#8220;OPTIONAL&#8221; in this document are to be interpreted as described in RFC2119. Domain name examples use RFC2606</a>.
         </p>
         
         <br/>
@@ -196,7 +196,7 @@
         <a name="offer-errors"></a>
         <h5>2.2.2. Handling Errors</h5>
         <blockquote>
-            For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors that occur within the target site must be handled gracefully in a way that the end user sees and understands.</p>
+            For the <code>offer</code> verb, the exchange happens in the user's browser, so all errors that occur within the target site must be handled gracefully in a way that the end user sees and understands.
             <br/><br/>
             In practice, since there is no type negotiation and URLs are always required, there should not be any mismatch error condition; assuming a source forms a valid offer call, any target will be capable of accepting it (at the protocol level).
         </blockquote>
@@ -272,7 +272,7 @@
         
         <br/>   
         
-        <h3><a name="ctypes"></a>5.5. Supported <code>ctype</code> Values</h3>
+        <h3><a name="ctypes"></a>2.5. Supported <code>ctype</code> Values</h3>
         <p>
             The set of possible ctypes is finite, and defined by this specification.  
         </p>
@@ -495,7 +495,7 @@
         </p>
         
         <a name="discovery-flow">
-        <h4></a>3.3.4 Detailed Target Discovery Flow</h4>
+        <h4></a>3.3.2 Detailed Target Discovery Flow</h4>
         <p>
             The exact flow of a client attempting to discover OExchange compatibility of a given host must be:
         </p>
@@ -608,8 +608,8 @@
             <li>2010-4-23: published WD 5</li>
             <li>2010-5-3: promoted "tags" parameter, clarified encoding rules; updated reference; clarified use of xml:lang for localization; formalized OWFa licensing</li>
             <li>2010-5-6: published WD 6</li>
-            <li>2010-5-12: reformatted introductory content; new styling;</li>
-            <li>2010-5-15: published WD 7</li>
+            <li>2010-5-12: reformatted introductory content; updated for new site styling;</li>
+            <li>2010-5-14: published as WD 7</li>
         </ul>
             
         <br/><hr/><br/>        

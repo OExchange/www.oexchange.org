@@ -27,7 +27,7 @@ require_once("../../header-subdemo.php");
         	</p>
         	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
         	<p style="padding:10px 0 30px 0;">
-        		<a class="btn" href="offer.php?url=http://www.example.com" title="Try sending it a URL">Try sending it a URL</a>.
+        		<a class="btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
         	</p>	
             
         	<h3>Discovering LinkEater</h3>

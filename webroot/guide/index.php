@@ -29,12 +29,12 @@ include '../header.php';
         <a name="services"></a>        
         <h2>OExchange For Services</h2>
         <p>
-            If you're a service that can accept URLs and do something useful with them, then in OExchange terms you're referred to as a "target".  Here's what you need to know (there's also an example target, <a target="_blank" href="/demo/linkeater">the LinkEater service</a>).
+            If you manage a service that can accept URLs and do something useful with them (a "Target" in OExchange terms), here's what you need to know to support the protocol.  There's also <a target="_blank" href="/demo/linkeater">an example service</a> you can take a look at.
         </p>
         
         <h4>1. Expose an endpoint to receive URLs in a standard way</h4>
         <p>
-            The first thing you'll need to do is make sure your service exposes a URL endpoint at which users, via their browsers, can send you content. 
+            First make sure that your service exposes a URL endpoint at which users, via their browsers, can send it content. 
             Your endpoint needs to be compatible with the OExchange Offer specification.  
             This just means that users can navigate to it with their browser, via an HTTP GET, and that it accepts the standard OExchange URL arguments.    
             In simplest terms:
