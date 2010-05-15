@@ -1,5 +1,7 @@
-What's Here?
-------------
+OExchange Web
+=============
+
+### What's Here? ###
 
 The source for everything on www.oexchange.org, including:
  
@@ -13,14 +15,17 @@ The source for everything on www.oexchange.org, including:
 
 Other things are in other repos in the [OExchange account](http://github.com/OExchange).
 
-Contributing
-------------
+### Contributing ###
 
-Join [the discussion](http://groups.google.com/group/oexchange) .
+If you're interested in being a contributor, join [the discussion](http://groups.google.com/group/oexchange).
 
+### Running Locally ###
 
-Deploying the Site
-------------------
+The root of the site is /webroot.  To run it locally, just point an Apache/PHP setup to it (xampp for example).  
+
+The site is self-contained and there are no complex or additional  dependencies.
+
+### Deploying ###
 
 Dirt simple, if you have the approval:
 

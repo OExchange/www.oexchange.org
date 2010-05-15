@@ -135,10 +135,10 @@ if ($cmd == "getUserTargets") {
                 A simple GET/JSON-based API for various OExchange operations
             </div>
             
-            <hr/><br/>
+            <hr/>
             
             
-			<h3>Using the API</h3>
+			<h2>Using the API</h2>
 			<p>
 				All calls are made against the api.php endpoint with HTTP GETs.  All responses are JSON.  Certain arguments are common to all calls.  They are:
 			</p>
@@ -149,7 +149,7 @@ if ($cmd == "getUserTargets") {
             
             <br/>
             
-			<h3>Method Detail</h3>
+			<h2>Method Detail</h2>
 			<p>
 				Each method requires specific parameters.
 			</p>
