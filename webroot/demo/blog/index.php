@@ -40,7 +40,7 @@
 			<p></p> 
         </div>
         
-        <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;">
+        <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 These options can be personalized with new OExchange-enabled services automatically.<br/><br/>
@@ -88,6 +88,7 @@ $(document).ready(
         $('.oexchange-share').oexchange_share();
     }
 );
+setTimeout("$('#tt1').fadeIn();",2000)
 </script>
 
 </body>
