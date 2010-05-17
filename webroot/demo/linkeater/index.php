@@ -47,7 +47,8 @@ require_once("../../header-subdemo.php");
 ?>	
 		<div class="grid_3 omega">          
 		    <p style="padding:20px 0;">
-		        <a class="btn oexchange-sharepoint" style="background:#f1228e;" href="#" onclick="return false;" title="Save this Sharepoint">Save this Sharepoint</a>
+		        <a class="oexchange-btn oexchange-sharepoint" href="#" onclick="return false;" title="Save this Sharepoint"><span>Save this Sharepoint</span></a>
+                <!-- "oexchange-btn-saved" class when clicked, changes the style of the button to green -->
 		    </p>
 		</div>
 <? 
@@ -57,13 +58,13 @@ require_once("../../header-subdemo.php");
 <? 
 	if ($demo) {
 ?>	
-        <div id="tt1" class="tt" style="position:absolute;top:100px;right:-20px;">
+        <div id="tt1" class="tt" style="position:absolute;top:105px;right:-20px;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
                 Add it here, then check out <a href="/demo/blog">the blog</a> to see LinkEater as a new option!
             </div>
-            <div class="tt-tick" style="left:205px;"></div>
+            <div class="tt-tick" style="left:215px;"></div>
         </div>
 <? 
 	}

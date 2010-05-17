@@ -269,3 +269,52 @@ ol.none, ul.none { list-style-type: none; }
 .tt-inner a:hover {
     text-decoration: underline;
 }
+
+/* OExchange Sharepoint Button */
+
+.oexchange-btn {
+    background: #fff !important;
+    border: 1px solid #c0c0c0;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+.oexchange-btn span {
+    background: url(/images/btn-oexchange-sharepoint.gif) no-repeat 0 0;
+    padding: 1px 0 1px 22px;
+    line-height: 16px;
+}
+.oexchange-btn:hover {
+    background-color: #f4f4f4 !important;
+    text-decoration: none;
+    color: #000;
+}
+.oexchange-btn:hover span {
+    background-position: 0 -16px;
+}
+
+.oexchange-btn-saved {
+    background: #a8d241 !important;
+    border: 1px solid #a8d241;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+.oexchange-btn-saved:hover {
+    text-decoration: none;
+    color: #fff;
+    cursor: default;
+}
+.oexchange-btn-saved span {
+    background: url(/images/btn-oexchange-sharepoint.gif) no-repeat 0 -32px;
+    padding: 1px 0 1px 22px;
+    line-height: 16px;
+}
