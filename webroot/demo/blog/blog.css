@@ -119,12 +119,13 @@ div.oexchange-enabled p { display: block; margin-top: 0; }
 */
 
 /* Custom Icons */
+
 .oexchange_toolbox .custom_images a {
     width: 32px;
     height: 32px;
     margin: 0;
-    padding: 0;
-    padding-right:4px;
+    padding-right: 4px;
+    line-height: 32px;
 }
 
 .oexchange_toolbox .custom_images a img {
@@ -133,6 +134,7 @@ div.oexchange-enabled p { display: block; margin-top: 0; }
 
 .oexchange_toolbox .custom_images a:hover {
     background: transparent;
+    color: #000;
 }
 .oexchange_toolbox .custom_images a span {
     opacity: 1.0;
@@ -140,6 +142,7 @@ div.oexchange-enabled p { display: block; margin-top: 0; }
 .oexchange_toolbox .custom_images a:hover span {
     opacity: 0.75;
 }
+.oexchange_toolbox .custom_images a.oexchange-personalize {}
 
 /* Common Styles */
 

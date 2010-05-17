@@ -34,9 +34,10 @@
 					<a class="oexchange-share" href="#" ox:pref="3" ox:xrd="http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd"></a>
 					<a class="oexchange-share" href="#" ox:pref="4" ox:xrd="http://oexchange-digg.appspot.com/oexchange/oexchange.xrd"></a>
 					<a class="oexchange-share" href="#" ox:pref="5" ox:xrd="http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd"></a>
+                    <a class="oexchange-personalize" href="#">Edit this list</a>
 				</div>
 			</div>
-			<p><a href="#" class="oexchange-personalize">^ Personalize this</a></p> 
+			<p></p> 
         </div>
         
         <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;">
