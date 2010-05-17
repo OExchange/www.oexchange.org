@@ -26,7 +26,7 @@
             <h4>Consectetur adipiscing elit. Pellentesque sapien magna.</h4>
             <p>Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum.</p>
             
-            <p>Share this post:</p>
+            <p>Acme sharing tool:</p>
 			<div class="oexchange_toolbox">
 				<div class="custom_images">
 					<a class="oexchange-share" href="#" ox:pref="1" ox:xrd="http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd"></a>
