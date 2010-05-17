@@ -187,6 +187,7 @@ input[type="text"]:focus {
 
 .toc li { list-style: none; }
 
+ul { margin: 0; padding: 0 0 0 20px; }
 ul.circle {list-style-type:circle}
 ul.square {list-style-type:square}
 ol.upper-roman {list-style-type:upper-roman}
