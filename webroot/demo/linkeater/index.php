@@ -58,7 +58,7 @@ require_once("../../header-subdemo.php");
 <? 
 	if ($demo) {
 ?>	
-        <div id="tt1" class="tt" style="position:absolute;top:105px;right:-20px;">
+        <div id="tt1" class="tt" style="position:absolute;top:105px;right:-20px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
@@ -66,6 +66,7 @@ require_once("../../header-subdemo.php");
             </div>
             <div class="tt-tick" style="left:215px;"></div>
         </div>
+        <script type="text/javascript">setTimeout("$('#tt1').fadeIn();",1500)</script>
 <? 
 	}
 ?>	
