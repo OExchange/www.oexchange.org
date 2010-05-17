@@ -3,7 +3,7 @@ $page_title = "OExchange Examples and Demos";
 $nav = "demo";
 include ("../header.php");
 ?>
-	<h2 class="pagetitle">Examples &amp; Demos</h2>
+	<h2 class="pagetitle">Demo &amp; Examples</h2>
     <hr/>
     
     <div class="bannertext dgry mb40">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>
