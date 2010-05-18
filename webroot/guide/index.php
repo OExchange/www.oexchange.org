@@ -7,27 +7,21 @@ include '../header.php';
 
     <h2 class="pagetitle">Quick Start Guide</h2>
     
-    <hr/>
+    <hr class="mb10"/>
     
     <div class="grid_10 alpha omega"> 
-        <div class="grid_3 alpha">
-            <h3>For Service Providers</h3>
-            <p><a class="btn" href="#services">Go!</a></p>
-        </div>
-        <div class="grid_3">
-            <h3>For Publishers</h3>
-            <p><a class="btn" href="#sites">Go!</a></p>
-        </div>
-        <div class="grid_3 omega">
-            <h3>For Sharing Tools</h3>
-            <p><a class="btn" href="#tools">Go!</a></p>
-        </div>
-        <div class="clear"></div>
         
+        <h4 class="mb10">Jump to instructions for:</h4>
+        <ul class="bigtext">
+            <li><a href="#services">Service Providers</a></li>
+            <li><a href="#sites">Publishers</a></li>
+            <li><a href="#tools">3rd Party Developers</a></li>
+        </ul>
+                
         <hr/><br/>
         
         <a name="services"></a>        
-        <h2>OExchange For Services</h2>
+        <h2>OExchange For Service Providers</h2>
         <p>
             If you manage a service that can accept URLs and do something useful with them (a "Target" in OExchange terms), here's what you need to know to support the protocol.  There's also <a target="_blank" href="/demo/linkeater">an example service</a> you can take a look at.
         </p>
@@ -87,7 +81,7 @@ include '../header.php';
         
         
         <a name="sites"></a>        
-        <h2>OExchange For Content Publishers</h2>
+        <h2>OExchange For Publishers</h2>
         <p>
             If you're a site that has content to share (a "source" in OExchange terms), you can of course use one of the many sharing aggregators and tools that are out there.  If you want to build your own sophisticated, personalized sharing options yourself, take a look at the information intended for these <a href="#tools">tools</a>.  If you just want to make your own icons and link to the URLs of various services, then all you need to do is link to their Offer endpoints directly.  These look something like:
         </p>
@@ -108,7 +102,7 @@ include '../header.php';
         
         
         <a name="tools"></a>        
-        <h2>OExchange For Sharing Tools</h2>
+        <h2>OExchange For 3rd Party Developers</h2>
         <p>
             Want to start leveraging OExchange to share content?  Things you need to know...
         </p>

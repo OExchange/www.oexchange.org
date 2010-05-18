@@ -38,7 +38,7 @@
             <a href="/spec"<?php if($nav=='spec') { ?> class="nav-active"<?php }?>>Spec</a>
             <a href="/tools"<?php if($nav=='tools') { ?> class="nav-active"<?php }?>>Tools</a>
             <a href="/demo"<?php if($nav=='demo') { ?> class="nav-active"<?php }?>>Demo</a>
-            <a href="http://groups.google.com/group/oexchange">Talk</a>
+            <a href="http://groups.google.com/group/oexchange">Discuss</a>
         </div>
         <div class="clear"></div>
     </div>
