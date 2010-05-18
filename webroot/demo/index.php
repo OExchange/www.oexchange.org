@@ -6,12 +6,14 @@ include ("../header.php");
 	<h2 class="pagetitle">Demo &amp; Examples</h2>
     <hr/>
     
-    <div class="bannertext dgry mb40">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>
+    <div class="bannertext dgry mb20">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>
     
     <div class="grid_7 alpha">
+        <h3>Watch the demo video...</h3>
         <object width="540" height="385"><param name="movie" value="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="385"></embed></object>
     </div>
     <div class="grid_3 omega">
+        <h3>Or, try the demo:</h3>
         <div class="bluebox">
             <h3 class="smaller mb5">Step 1</h3>
             <a href="/demo/blog/">Start at a blog</a> that uses an OExchange enabled sharing tool.
@@ -32,7 +34,7 @@ include ("../header.php");
     
     <br/><hr/>
     
-    <h3 class="mb0">Other Examples</h3>
+    <h3 class="mb0">More Examples</h3>
     
     <div class="grid_5 alpha">
         <h4 class="mb5"><a href="./discovery-api/api.php">A JSON Discovery API</a></h4>

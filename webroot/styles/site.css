@@ -50,13 +50,10 @@ a:hover {
     border-top: 1px solid #eee;
     margin-top: 75px;
     padding: 20px 0 40px 0;
-    color: #bbb;
+    color: #666;
 }
-#footer a {
-    position: absolute;
-    top: 20px;
-    right: 0;
-    font-size: 11px;
+#footer .copyright {
+    color: #bbb;
 }
 
 
@@ -100,11 +97,13 @@ label.block { display: block; padding-bottom: 5px; }
 .bigger { font-size: 2em; }
 .smaller { font-size: 1.2em; }
 .right { text-align: right; }
+.center { text-align: center; }
 .blk { color: #000; }
 .gry { color: #a2a2a2; }
 .lgry { color: #a9a9a9; }
 .red { color: #f00; }
 .magnum { color: #f06; }
+.pipe { margin: 0 5px; color: #ccc; }
 
 .gbox { background: #f5f5f5; border: 1px solid #eee; padding: 10px 10px 15px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .gbox.toc { margin-top: 20px; }
@@ -194,6 +193,11 @@ ol.upper-roman {list-style-type:upper-roman}
 ol.lower-alpha {list-style-type:lower-alpha}
 ol.lower-roman {list-style-type:lower-roman}
 ol.none, ul.none { list-style-type: none; }
+
+.col1 { width: 240px; padding-right: 20px; float: left; }
+.col2 { width: 240px; padding: 0 20px; float: left; }
+.col3 { width: 240px; float: left; }
+
 
 /* Data Table */
 

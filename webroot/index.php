@@ -7,21 +7,28 @@ include 'header.php';
         
         <hr/>
         
-        <div class="grid_5 alpha">
-            <h2 class="mb0">For Service Providers</h3>
-            <p class="bigtext">Enable your service to be automatically discovered and more easily integrated with 3rd party sharing tools.</p>
+        <div class="col1">
+            <h2 class="mb0">Service Providers</h3>
+            <p class="bigtext">Enable your social networking, bookmarking or other service to be more easily integrated with sharing tools.</p>
         </div>
-        <div class="grid_5 omega">
-            <h2 class="mb0">For Sharing Tools</h3>
-            <p class="bigtext">Learn how to automatically discover and communicate with any service, and present the right service to the right user, at the right time.</p>
+        <div class="col2">
+            <h2 class="mb0">Publishers</h2>
+            <p class="bigtext">Increase distribution of your content by building your own sharing options, or using an Oexchange enabled sharing tool.</p>
+        </div>
+        <div class="col3 omega">
+            <h2 class="mb0">Developers</h3>
+            <p class="bigtext">Learn how to build sharing into your applications, discover services automatically and personalize sharing options.</p>
         </div>
         <div class="clear"></div>
         <div class="mb10"></div>
         
-        <div class="grid_5 alpha"><a href="/guide/#services" class="btn">Get Started</a></div>
-        <div class="grid_5 omega"><a href="/guide/#tools" class="btn">Get Started</a></div>
+        <div class="col1"><a href="/guide/#services" class="btn">Get Started</a></div>
+        <div class="col2"><a href="/guide/#sites" class="btn">Get Started</a></div>
+        <div class="col3"><a href="/guide/#tools" class="btn">Get Started</a></div>
         <div class="clear"></div>
-        <div class="mb50"></div>
+        <div class="mb40"></div>
+        <p class="bigtext">Or jump right in and <a href="/demo">checkout the demo</a>.</p>
+        <div class="mb20"></div>
         
         <hr/>
         
