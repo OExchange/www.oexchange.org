@@ -88,7 +88,7 @@ $(document).ready(
         $('.oexchange-share').oexchange_share();
     }
 );
-setTimeout("$('#tt1').fadeIn();",1500)
+setTimeout("$('#tt1').fadeIn();",1000)
 </script>
 
 </body>
