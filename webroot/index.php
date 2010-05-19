@@ -57,6 +57,7 @@ include 'header.php';
             <a href="http://www.linkedin.com/">LinkedIn</a><br/>
             <a href="http://www.microsoft.com/">Microsoft</a><br/>
             <a href="http://posterous.com/">Posterous</a><br/>
+            <a href="http://www.printfriendly.com/">PrintFriendly</a><br/>
             <a href="http://springpadit.com/">Springpad</a><br/>
             <a href="http://www.webs.com/">Webs.com</a><br/>
             <a href="http://imageshack.us/">yfrog (Imageshack)</a><br/>
