@@ -56,9 +56,9 @@ if (empty($dfltTarget)) {
     
     </script>
     
-    <h2 class="pagetitle mb10">Offer Test Harness</h2>
+    <h2 class="pagetitle">Offer Test Harness</h2>
     <div class="bannertext">Initiate OExchange Offer calls to a target of your choice</div>
-    
+    <?php include '../../share.php' ?>
     <hr/>
     
 

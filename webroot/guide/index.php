@@ -6,7 +6,7 @@ include '../header.php';
 
 
     <h2 class="pagetitle">Quick Start Guide</h2>
-    
+    <?php include '../share.php' ?>
     <hr class="mb10"/>
     
     <div class="grid_10 alpha omega"> 
@@ -15,7 +15,7 @@ include '../header.php';
         <ul class="bigtext">
             <li><a href="#services">Service Providers</a></li>
             <li><a href="#sites">Publishers</a></li>
-            <li><a href="#tools">3rd Party Developers</a></li>
+            <li><a href="#tools">Developers</a></li>
         </ul>
                 
         <hr/><br/>
@@ -102,7 +102,7 @@ include '../header.php';
         
         
         <a name="tools"></a>        
-        <h2>OExchange For 3rd Party Developers</h2>
+        <h2>OExchange For Developers</h2>
         <p>
             Want to start leveraging OExchange to share content?  Things you need to know...
         </p>

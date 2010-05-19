@@ -82,12 +82,14 @@ h3 { font-size: 18px; }
 h4 { font-size: 14px; }
 h5 { font-size: 12px; }
 
-h2.pagetitle { margin: 40px 0; padding: 0; font-size: 44px; line-spacing: -4px; line-height: 1.1em; color: #000; }
+h2.pagetitle { margin: 40px 0 0; padding: 0; font-size: 44px; line-spacing: -4px; line-height: 1.1em; color: #000; }
 hr { border: none 0; border-top: 4px solid #eee; height: 1px; margin: 25px 0; padding: 0; }
 strong, b { color: #000; }
 label { font-weight: bold; color: #000; }
 label.block { display: block; padding-bottom: 5px; }
 
+.share { padding: 10px 0 0; line-height: 16px; color: #666; }
+.share a { margin: 0 2px; }
 .bannertext { line-height: 1.5em; font-size: 18px; color: #a2a2a2; }
 .hide { 	display: none; }
 .bold, .xl { font-weight: bold; }

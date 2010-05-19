@@ -26,11 +26,11 @@ $cmd = getDfltArg("cmd", "none");
 
 ?>
     
-    <h2 class="pagetitle mb10">Discovery Test Harness</h2>
+    <h2 class="pagetitle">Discovery Test Harness</h2>
     <div class="bannertext">
         Test a service for <a href="/spec/#discovery">OExchange Discovery</a> compliance
     </div>
-    
+    <?php include '../../share.php' ?>
     <hr/>
     
 	<p>

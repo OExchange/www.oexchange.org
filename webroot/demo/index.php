@@ -4,6 +4,7 @@ $nav = "demo";
 include ("../header.php");
 ?>
 	<h2 class="pagetitle">Demo &amp; Examples</h2>
+    <?php include '../share.php' ?>
     <hr/>
     
     <div class="bannertext dgry mb20">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>

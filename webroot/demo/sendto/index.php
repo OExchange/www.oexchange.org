@@ -4,11 +4,11 @@ $nav = "demo";
 require_once("../../header.php");
 ?>
 
-    <h2 class="pagetitle mb10">OExchange Send-To</h2>
+    <h2 class="pagetitle">OExchange Send-To</h2>
     <div class="bannertext">
         <a href="sendto.php?url=http://www.oexchange.org">OExchange Send-To</a> is a simple web-based example that uses <a href="http://www.oexchange.org">OExchange</a> to enable "send to" operations for a link.
     </div>
-    
+    <?php include '../../share.php' ?>
     <hr/>
     
 	<p>

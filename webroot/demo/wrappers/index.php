@@ -4,11 +4,11 @@ $nav = "demo";
 require_once("../../header.php");
 ?>
 
-    <h2 class="pagetitle mb10">OExchange Demo Wrappers</h2>
+    <h2 class="pagetitle">OExchange Demo Wrappers</h2>
     <div class="bannertext">
         Example wrappers for popular services
     </div>
-    
+    <?php include '../../share.php' ?>
     <hr/>
     
 	<p>

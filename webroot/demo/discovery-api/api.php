@@ -130,11 +130,11 @@ if ($cmd == "getUserTargets") {
 		include ("../../header.php");
 		?>
 		<div id="contentpage">
-            <h2 class="pagetitle mb10">Demo Utility API</h2>
+            <h2 class="pagetitle">Demo Utility API</h2>
             <div class="bannertext">
                 A simple GET/JSON-based API for various OExchange operations
             </div>
-            
+            <?php include '../../share.php' ?>
             <hr/>
             
             

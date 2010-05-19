@@ -3,11 +3,11 @@
 $page_title = "SuperSendTo Example OExchange Browser Extension";
 require_once("../../header.php");
 ?>
-    <h2 class="pagetitle mb10">SuperSendTo</h2>
+    <h2 class="pagetitle">SuperSendTo</h2>
     <div class="bannertext">
         SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  
     </div>
-    
+    <?php include '../../share.php' ?>
     <hr/>
         
 	<p>
