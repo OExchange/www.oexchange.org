@@ -3,7 +3,7 @@ $page_title = "OExchange";
 include '../header.php';
 ?>
     <h2 class="pagetitle"><span class="lgry">OExchange</span> Logo <span class="lgry">&amp;</span> T-Shirt</h2>
-    
+    <?php include '../share.php' ?>
     <hr/>
     
     
@@ -22,7 +22,7 @@ include '../header.php';
     <div class="clear"></div>
     
     <div class="grid_10 alpha omega">
-        <p style="padding:20px 0;"><a class="btn" href="oexchange_logo.zip">Download Oexchange Logo (PNG &amp; Vector)</a></p>
+        <p style="padding:20px 0;"><a class="btn" href="oexchange_logo.zip">Download OExchange Logo (PNG &amp; Vector)</a></p>
     </div>
     <div class="clear"></div>
     <div class="mb40"></div>

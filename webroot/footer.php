@@ -6,7 +6,7 @@
                 <a href="#top">Top of Page</a>
             </div>
             <div class="grid_4 omega right">
-                Follow us on: <a href="http://www.twitter.com/oexchange">Twitter</a> <span class="pipe">|</span> <a href="http://www.facebook.com/oexchange">Facebook</a>                
+                Follow us on: <a href="http://www.facebook.com/pages/OExchange/122164667802257?ref=ts" class="ml5">Facebook</a> <span class="pipe">|</span> <a href="http://twitter.com/oexchange">Twitter</a>
             </div>
             <div class="clear"></div>            
         </div>

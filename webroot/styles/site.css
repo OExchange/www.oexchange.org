@@ -52,9 +52,6 @@ a:hover {
     padding: 20px 0 40px 0;
     color: #666;
 }
-#footer .copyright {
-    color: #bbb;
-}
 
 
 /* OExchange Navbar */
@@ -139,6 +136,7 @@ label.block { display: block; padding-bottom: 5px; }
 
 .mt20 { margin-top:20px !important; }
 
+.ml5 { margin-left: 5px !important; }
 .ml20 { margin-left: 20px !important; }
 
 code { color: #598527; }
