@@ -20,6 +20,7 @@ include '../header.php';
                 
         <hr/><br/>
         
+        <a name="service-providers"></a>
         <a name="services"></a>        
         <h2>OExchange For Service Providers</h2>
         <p>
@@ -80,6 +81,7 @@ include '../header.php';
         <br/><hr/><br/>
         
         
+        <a name="publishers"></a>
         <a name="sites"></a>        
         <h2>OExchange For Publishers</h2>
         <p>
@@ -101,6 +103,7 @@ include '../header.php';
         <br/><hr/><br/>
         
         
+        <a name="developers"></a>
         <a name="tools"></a>        
         <h2>OExchange For Developers</h2>
         <p>

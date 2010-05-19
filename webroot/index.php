@@ -23,9 +23,9 @@ include 'header.php';
         <div class="clear"></div>
         <div class="mb10"></div>
         
-        <div class="col1"><a href="/guide/#services" class="btn">Get Started</a></div>
-        <div class="col2"><a href="/guide/#sites" class="btn">Get Started</a></div>
-        <div class="col3"><a href="/guide/#tools" class="btn">Get Started</a></div>
+        <div class="col1"><a href="/guide/#service-providers" class="btn">Get Started</a></div>
+        <div class="col2"><a href="/guide/#publishers" class="btn">Get Started</a></div>
+        <div class="col3"><a href="/guide/#developers" class="btn">Get Started</a></div>
         <div class="clear"></div>
         <div class="mb40"></div>
         <p class="bigtext">Or jump right in and <a href="/demo">checkout the demo</a>.</p>
