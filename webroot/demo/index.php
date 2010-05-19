@@ -11,7 +11,7 @@ include ("../header.php");
     
     <div class="grid_7 alpha">
         <h3>Watch the demo video...</h3>
-        <object width="540" height="385"><param name="movie" value="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ZPBvFXf9Q2U&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="385"></embed></object>
+        <object width="540" height="328"><param name="movie" value="http://www.youtube.com/v/ckAxFebiqpc&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ckAxFebiqpc&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="328"></embed></object>
     </div>
     <div class="grid_3 omega">
         <h3>Or, try the demo:</h3>
