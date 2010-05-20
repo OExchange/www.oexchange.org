@@ -29,12 +29,12 @@
     -->
     <Link 
         rel= "icon" 
-        href="http://www.oexchange.org/images/logo_16x16.png"
+        href="http://www.oexchange.org/images/linkeater_16x16.png"
         type="image/png" 
         />
     <Link 
         rel= "icon32" 
-        href="http://www.oexchange.org/images/logo_32x32.png"
+        href="http://www.oexchange.org/images/linkeater_32x32.png"
         type="image/png" 
         />
     
