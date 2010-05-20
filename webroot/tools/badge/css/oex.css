@@ -63,6 +63,8 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
     background: rgba(0,0,0,.4);
     padding: 10px;
     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 #oexchange-remember-dialog {
     height:230px;
@@ -73,7 +75,7 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 #oexchange-dialog-inner,
 #oexchange-remember-dialog-inner {
     background: #fff;
-    border: 1px solid #454545;
+    border: 1px solid #555;
     height: 198px;
     font-family: arial,helvetica,verdana,sans-serif;
     font-size: 12px;
@@ -85,11 +87,12 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 }
 .oexchange-service-description {
     font-style: italic !important;
-    margin:20px 0 0 20px;
+    margin: 20px 0 0 20px;
 }
 #oexchange-dialog-titlebar {
     background: #fefefe url(/cachefly/static/t00/oex-titlebar.gif) repeat-x bottom;
-    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    padding: 10px 15px;    
 }
 #oexchange-dialog-titlebar h3 {
     background: url(http://www.oexchange.org/images/logo_24x24.png) no-repeat left;
