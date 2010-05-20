@@ -3,7 +3,7 @@ $page_title = "OExchange";
 include '../header.php';
 ?>
     <h2 class="pagetitle"><span class="lgry">OExchange</span> Logo <span class="lgry">&amp;</span> T-Shirt</h2>
-    <?php include '../share.php' ?>
+
     <hr/>
     
     

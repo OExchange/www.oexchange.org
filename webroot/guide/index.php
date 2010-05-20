@@ -4,9 +4,8 @@ $nav = "start";
 include '../header.php';
 ?>
 
-
     <h2 class="pagetitle">Quick Start Guide</h2>
-    <?php include '../share.php' ?>
+
     <hr class="mb10"/>
     
     <div class="grid_10 alpha omega"> 

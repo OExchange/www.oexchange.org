@@ -7,7 +7,7 @@ require_once("../../header.php");
     <div class="bannertext">
         SuperSendTo is a FireFox browser extension that uses OExchange to enable you to send links to any OExchange service on the web.  
     </div>
-    <?php include '../../share.php' ?>
+
     <hr/>
         
 	<p>

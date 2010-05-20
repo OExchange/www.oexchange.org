@@ -14,7 +14,17 @@ require_once("../../header-subdemo.php");
         }
     );
     </script>
-    <div style="position:relative;">
+    <div style="position:relative;margin-top:-25px;">
+        <div style="padding-bottom: 30px;">
+            <div class="grid_2 alpha">
+                <h3 style="padding:7px 0;margin:0;line-height:32px;font-weight:normal;color:#666;">Linkeater</h3>
+            </div>
+            <div class="grid_10 omega right gry">
+                <div style="padding:15px 0 0;">Home <span class="pipe">|</span> Interesting <span class="pipe">|</span> Most Recent <span class="pipe">|</span> Community <span class="pipe">|</span> Profile <span class="pipe">|</span> Sign-out</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
         <div class="banner-linkeater"></div>
 	    <div class="grid_8 suffix_1 alpha">
             <p>
@@ -58,7 +68,7 @@ require_once("../../header-subdemo.php");
 <? 
 	if ($demo) {
 ?>	
-        <div id="tt1" class="tt" style="position:absolute;top:105px;right:-20px;display:none;">
+        <div id="tt1" class="tt" style="position:absolute;top:140px;right:-20px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
@@ -71,7 +81,5 @@ require_once("../../header-subdemo.php");
 	}
 ?>	
     </div>
+    <div style="margin-top:40px;border-top:1px solid #ccc;padding:20px 0;color:#666;">A service called "Linkeater", for demo purposes.</div>
 	
-<?
-	require_once("../../footer.php");
-?>

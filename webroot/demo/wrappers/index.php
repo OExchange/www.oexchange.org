@@ -8,7 +8,7 @@ require_once("../../header.php");
     <div class="bannertext">
         Example wrappers for popular services
     </div>
-    <?php include '../../share.php' ?>
+
     <hr/>
     
 	<p>

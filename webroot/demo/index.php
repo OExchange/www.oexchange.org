@@ -4,14 +4,14 @@ $nav = "demo";
 include ("../header.php");
 ?>
 	<h2 class="pagetitle">Demo &amp; Examples</h2>
-    <?php include '../share.php' ?>
+    
     <hr/>
     
     <div class="bannertext dgry mb20">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>
     
     <div class="grid_7 alpha">
         <h3>Watch the demo video...</h3>
-        <object width="540" height="328"><param name="movie" value="http://www.youtube.com/v/ckAxFebiqpc&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ckAxFebiqpc&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="328"></embed></object>
+        <object width="540" height="328"><param name="movie" value="http://www.youtube.com/v/rcyEmzZoCwU&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/rcyEmzZoCwU&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="328"></embed></object>
     </div>
     <div class="grid_3 omega">
         <h3>Or, try the demo:</h3>

@@ -7,7 +7,7 @@ include '../header.php';
 ?>
     
     <h2 class="pagetitle">Dev &amp; Test Tools</h2>
-    <?php include '../share.php' ?>
+
     <hr/>
     
     <div class="grid_5 alpha">

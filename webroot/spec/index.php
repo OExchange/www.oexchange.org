@@ -6,7 +6,7 @@ include '../header.php';
 ?>	
     
     <h2 class="pagetitle">Technical Specification</h2>
-    <?php include '../share.php' ?>
+
     <hr/>
 
 <?php

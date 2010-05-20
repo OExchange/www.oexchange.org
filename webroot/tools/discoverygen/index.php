@@ -24,7 +24,7 @@ $cmd = getDfltArg("cmd", "none");
     <div class="bannertext">
         Generate <a href="/spec/#discovery">OExchange Discovery</a> files automatically
     </div>
-    <?php include '../../share.php' ?>
+
     <hr/>
     
     <p>

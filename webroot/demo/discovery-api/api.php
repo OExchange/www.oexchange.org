@@ -134,7 +134,7 @@ if ($cmd == "getUserTargets") {
             <div class="bannertext">
                 A simple GET/JSON-based API for various OExchange operations
             </div>
-            <?php include '../../share.php' ?>
+
             <hr/>
             
             

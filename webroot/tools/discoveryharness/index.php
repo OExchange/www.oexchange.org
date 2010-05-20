@@ -30,7 +30,7 @@ $cmd = getDfltArg("cmd", "none");
     <div class="bannertext">
         Test a service for <a href="/spec/#discovery">OExchange Discovery</a> compliance
     </div>
-    <?php include '../../share.php' ?>
+
     <hr/>
     
 	<p>

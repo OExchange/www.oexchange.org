@@ -4,7 +4,6 @@ include 'header.php';
 ?>
 
         <h2 class="pagetitle"><span class="lgry">OExchange is an</span> open protocol <span class="lgry">for</span> sharing <span class="lgry">anything, anywhere.</span></h2>
-        <?php include 'share.php' ?>
         
         <hr/>
         
