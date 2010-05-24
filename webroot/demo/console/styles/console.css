@@ -33,7 +33,7 @@ a:hover {
 	color: #000;
 }
 #content {
-    padding: 0 20px 10px;
+    padding: 0 0 10px;
 }
 #oex-main-whatisthis {
 	position: absolute;
@@ -46,6 +46,40 @@ a:hover {
 	top: 8px;
 	right: 20px;
 }
+
+#oex-services-promo {
+    /* to foo */ 
+    margin:20px;
+    margin-top:0;
+}
+
+#oex-services-promo a {
+    padding:10px;
+}
+
+#oex-priority-sort,
+#oex-services-sort {
+    /* temporary, til sorting is supported */
+    font-weight:normal;
+    color:#fff!important;
+    text-decoration:none!important;
+}
+
+#no-services {
+    padding:0px 20px;
+}
+
+#srvcs .oex-note {
+    font-weight:normal;
+    font-style:italic;
+    font-size:12px;
+    padding-left:100px;
+}
+
+#srvcs td {
+	cursor: pointer;		
+}
+
 
 .oex-sub {
 	position: absolute;
@@ -92,7 +126,8 @@ a:hover {
 #srvcs {
     background: #fff;
     border-spacing: 0;
-	width: 458px;
+	width:494px;
+    overflow:hidden;
 }
 #srvcs thead th {
 	background: #999;
@@ -105,7 +140,7 @@ a:hover {
 	color: #faf9e0;
 }
 #srvcs tbody {
-    height: 170px;
+    height: 220px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -125,11 +160,11 @@ a:hover {
 	height: 30px;
 	line-height: 30px;
 	margin-top: 10px;
+    padding:10px;
 }
 #foot-publish button {
 	position: absolute;
-	top: 0;
-	right: 0;
+	right: 10px;
 }
 
 #foot-done {

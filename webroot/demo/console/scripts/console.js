@@ -1,7 +1,60 @@
 $(function(){
-    var w = window,
+    var defaultXrd = {
+            facebook: {
+                vendor: 'Facebook',
+                title: 'Facebook',
+                name: 'Facebook',
+                prompt: 'Share to Facebook',
+                icon: 'http://facebook.com/favicon.ico',
+                icon32: 'http://oexchange-facebook.appspot.com/images/logo_32x32.png' ,
+                offer: 'http://oexchange-facebook.appspot.com/offer',
+                xrd: 'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd'
+            },
+            twitter: {
+                vendor: 'Twitter',
+                title: 'Twitter',
+                name: 'Twitter',
+                prompt: 'Tweet This',
+                icon: 'http://twitter.com/favicon.ico',
+                icon32: 'http://oexchange-twitter.appspot.com/images/logo_32x32.png',
+                offer: 'http://www.twitter.com/save',
+                xrd: 'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd'
+            },
+            delicious: {
+                vendor: 'Yahoo',
+                title: 'Delicious',
+                name: 'Delicious',
+                prompt: 'Save on Delicious',
+                icon: 'http://delicious.com/favicon.ico',
+                icon32: 'http://oexchange-delicious.appspot.com/images/logo_32x32.png' ,
+                offer: 'http://www.delicious.com/save',
+                xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
+            },
+            digg: {
+                vendor: 'Digg',
+                title: 'Digg',
+                name: 'Digg',
+                prompt: 'Digg This',
+                icon: 'http://digg.com/favicon.ico',
+                icon32: 'http://oexchange-digg.appspot.com/images/logo_32x32.png' ,
+                offer: 'http://www.digg.com/submit',
+                xrd: 'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd'
+            },
+            buzz: {
+                vendor: 'Google',
+                title: 'Google Buzz',
+                name: 'Google Buzz',
+                prompt: 'Post to Buzz',
+                icon: 'http://oexchange-buzz.appspot.com/images/logo_16x16.gif',
+                icon32: 'http://oexchange-buzz.appspot.com/images/logo_32x32.png',
+                offer: 'http://www.google.com/buzz/post',
+                xrd: 'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd'
+            }
+        },
+        w = window,
         serviceList, serviceHash,
         sericeToAdd,
+        duration = 100,
         loadingServices = false;
     
     var log = function(msg) {
@@ -36,7 +89,6 @@ $(function(){
     var completeInit = function(){
         if (serviceList != null) {
             $('#title').text('My Saved Sharing Services');
-            $('#text').html('<p>Sharing Tool makes it easy to keep track of your favorite places to share.  Saved sharing services can be presented by any product that supports OExchange for you to use.</p>');
         }
         displayTable();
         hideLoading();
@@ -86,14 +138,17 @@ $(function(){
                 xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
                 tr.append($('<td />',{text:parseInt(i)+1}))
-                  /*.append($('<td />',{html:'<a href="#" class="up-button">up</a> <a href="#" class="down-button">down</a>'}))*/
-                  .append($('<td />',{text:(xrdData&&xrdData.name)?xrdData.name:'Unknown',class:'iconified',style:(xrdData&&xrdData.icon)?'background-image:url('+xrdData.icon+')':''}))
-                  .append($('<td />',{text:(xrdData&&xrdData.offer)?xrdData.offer:''}))
+                  .append($('<td />',{text:xrdData.name?xrdData.name:'Unknown',
+                                      'class':'iconified',
+                                      style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
+                  .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
                   .append($('<td />',{html:'<a href="#" class="remove-button">X</a>'}));
                 tableBody.append(tr);
             }
 
-            $("#srvcs tbody").sortable({
+            if (serviceList.length > 1) {
+                $('.oex-note').show();
+                $("#srvcs tbody").sortable({
                                             cursor: 'all-scroll',
                                             update: function(e, ui) { 
                                                 var row = ui.item[0],
@@ -113,17 +168,18 @@ $(function(){
                                                 storeData();
                                             }
                                        });
+            } else {
+                $('.oex-note').hide();
+            }
             $("#srvcs td").disableSelection();
-            //$('#foot-publish').show();
-            $('#text').html('<p>Sharing Tool makes it easy to keep track of your favorite places to share.  Saved sharing services can be presented by any product that supports OExchange for you to use.</p>');
-            $('#srvcs').show();
+            $('#no-services').hide();
+            $('.srvcs').show();
+            $('#foot-publish').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
-            $('#srvcs').hide();
-            $('#text').html(["<p><a href=\"http://www.oexchange.org\" target=\"_blank\">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.",
-                             "When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.",
-                             "Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.",
-                             "Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select Personalize to return to this screen."].join('</p><p>'));
+            $('.srvcs').hide();
+            $('#foot-publish').hide();
+            $('#no-services').show();
         }
     };
     
@@ -204,7 +260,7 @@ $(function(){
 
         $('#oex-remove-service').live('click',
                 function () {
-                    $('.oex-sub').slideUp();
+                    $('.oex-sub').slideUp(duration);
                     if (removeService(index)) {
                         try {
                             // ignore sortable bug
@@ -217,7 +273,7 @@ $(function(){
                     }
                 }
         );
-        $('#oex-delete').slideDown();
+        $('#oex-delete').slideDown(duration);
     });
     
     $('#priority-button').click(function(e){
@@ -254,19 +310,23 @@ $(function(){
         w.location.reload(true);
     });
 
+    function isInServiceList(xrd) {
+        for (var i = 0; i < serviceList.length; i++) {
+            if (serviceList[i] == xrd)
+                return true;
+        }
+
+        return false;
+    }
+
     function serviceSave() {
         var service = serviceToAdd || {},
             found = 0;
         if (!serviceList) serviceList = [];
         if (!serviceHash) serviceHash = {};
-        for (var i = 0; i < serviceList.length; i++) {
-            if (serviceList[i].xrd == service.xrd) {
-                found = 1; break; 
-            }
-        }
-        $('#oex-add').slideUp();
-        $('.oex-sub').slideUp();
-        if (!found) {
+        $('#oex-add').slideUp(duration);
+        $('.oex-sub').slideUp(duration);
+        if (!isInServiceList(service.xrd)) {
             if (service.target.endpoint) service.target.offer = service.target.endpoint;
             serviceHash[service.xrd] = service.target;
             serviceList.push(service.xrd);
@@ -284,8 +344,28 @@ $(function(){
             $.getJSON('http://www.oexchange.org/demo/discovery-api/api.php?cmd=getHostTargets&jsonpcb=gethostcb&callback=?&host='+domain);
              
         } else {
+            $('#oex-new-service').attr('disabled',false);
             $('#oex-add-content').hide();
             $('#oex-add-error').show();
+        }
+    }
+
+    function xrdpSave(email, data) {
+        if (email && data && data instanceof Array) {
+            $.ajax({
+                'url': '/tools/xrdp/xrdpproxy.php?acct='+encodeURIComponent(email),
+                'type': 'post',
+                'processData': false,
+                'data': JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data) { 
+                    if (!data) { 
+                        // success 
+                    } else {
+                        // error saving
+                    }
+                }
+            });
         }
     }
 
@@ -295,6 +375,7 @@ $(function(){
             if (data.targets && data.targets.length) {
                 $('#oex-add-success').show();
                 $('#oex-add-service').show();
+                $('#oex-add-cancel').hide();
                 $('#oex-search-service').hide();
                 serviceToAdd = data.targets[0];
             } else {
@@ -304,11 +385,19 @@ $(function(){
         }
 
 
-    $('#oex-main-whatisthis').click(function () {$('#oex-info-services').slideDown();});
-    $('#oex-main-whatispublish').click(function () {$('#oex-info-how').slideDown();});
-    $('#oex-publish-why').click(function () { $('#oex-publish').slideUp();$('#oex-info-why').slideDown();});
-    $('#oex-main-add').click(function () {$('#oex-add').slideDown();});
-    $('#oex-main-publish').click(function () {$('#oex-publish').slideDown();});
+    $('#oex-main-whatisthis').click(function () {$('#oex-info-services').slideDown(duration);});
+    $('#oex-main-whatispublish').click(function () {$('#oex-info-how').slideDown(duration);});
+    $('#oex-publish-why').click(function () { $('#oex-publish').slideUp(duration);$('#oex-info-why').slideDown(duration);});
+    $('#oex-main-add').click(function () {
+                $('#oex-feedback').hide();
+                $('#oex-error').hide();
+                $('#oex-add-success').hide();
+                $('#oex-new-service').attr('disabled',false);
+                $('#oex-new-service').val('');
+                $('#oex-add-cancel').show();
+                $('#oex-add').slideDown(duration);
+    });
+    $('.oex-publish').click(function () { $('#oex-info-why').hide(); $('#oex-publish').slideDown(duration);});
     $('.oex-done').click(function () { 
         if (window.parent) {
             var message = 'oex=close' +
@@ -332,9 +421,16 @@ $(function(){
     });
     $('#oex-search-service').click(serviceSearch);
     $('#oex-add-service').click(serviceSave);
-    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp();
+    $('.oex-sub-cancel').click(function () {$('.oex-sub').slideUp(duration);
                                             $('#oex-new-service').attr('disabled',false);
                                 });
+
+    $('#oex-services-promo a').click(function () { var xrd  = defaultXrd[this.getAttribute('ox:service')]; serviceToAdd = {xrd: xrd.xrd, target: xrd}; serviceSave(); });
+
+    $('#oex-xrdp-save').click(function () {
+            var email = $('#oex-publish-email').val();
+            xrdpSave(email, serviceList);
+    });
     
     /* onload */
     startInit();

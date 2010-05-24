@@ -9,15 +9,33 @@
     <button id="oex-main-add">Add</button>
 </div>
 <div id="content">
-    <div id="text"></div>
-    <div class="srvcs">
-    <table id="srvcs" style="display:none">
+    <div id="no-services" style="display:none">
+        <p><a href="http://www.oexchange.org" target="_blank">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.
+             </p><p>
+             When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.
+             </p><p>
+             Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.
+             </p><p>
+             Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select <strong>Edit</strong> to return to this screen.
+             </p><p>
+             Want to give it a try? Here are a few services, or select <strong>Add</strong> to search for more:
+             </p>
+             <div id="oex-services-promo">
+                <a ox:service="facebook" href="#">Facebook</a> 
+                <a ox:service="buzz" href="#">Google Buzz</a> 
+                <a ox:service="twitter" href="#">Twitter</a> 
+                <a ox:service="digg" href="#">Digg</a> 
+                <a ox:service="delicious" href="#">Delicious</a>
+            </div>
+    </div>
+    <div class="srvcs" style="display:none">
+    <table id="srvcs">
     	<thead>
     		<tr>
     			<th><a href="#" id="oex-priority-sort">Priority</a></th>
     			<!--<th>Reorder</th>-->
-    			<th><a href="#" id="oex-services-sort">Services</a> <span class="oex-note">Drag to reorder this list.</span></th>
-    			<th>URL</th>
+    			<th><a href="#" id="oex-services-sort">Services</a></th>
+    			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
     			<th>Remove</th>
     		</tr>
     	</thead>    
@@ -48,9 +66,7 @@
         We're sorry, but no sharing services were found at this web site.
         </p>
         <p id="oex-add-success" style="display:none">
-            <span class="oex-success">Success! This site supports OExchange.</span>
-            <br/>
-            Select Save to remember this site for sharing:
+            <span class="oex-success">Success! This service has been added to your favorites.</span>
         </p>
         <p class="oex-error" id="oex-add-error" style="display:none">
         Please enter a valid domain, such as: Google.com or Facebook.com.
@@ -60,8 +76,8 @@
         </p>
         <div class="oex-controls">
             <button id="oex-search-service">Go</button>
-            <button id="oex-add-service" style="display:none">Save</button>
-            <button class="oex-sub-cancel">Cancel</button>
+            <button class="oex-sub-cancel" id="oex-add-service" style="display:none">Done</button>
+            <button class="oex-sub-cancel" id="oex-add-cancel">Cancel</button>
         </div>
     </div>
     
@@ -72,10 +88,10 @@
         <a id="oex-publish-why" href="#">Why should I do this?</a>
         </p>
         <p>
-        Email: <input type="text" size="30"/>
+        Email: <input id="oex-publish-email" type="text" size="30"/>
         </p>
         <div class="oex-controls">
-            <button>Save</button>
+            <button id="oex-xrdp-save">Save</button>
             <button class="oex-sub-cancel">Cancel</button>
         </div>
     </div>
@@ -107,13 +123,13 @@
         If you choose to publish your sharing services, they will be publicly accessible to other tools that can use them to make sharing more convenient. In addition, your services will be available should you remove or lose your browser cookies.
             </p>
         <div class="oex-controls">
-            <button class="oex-sub-cancel">Ok</button>
+            <button class="oex-publish">Ok</button>
         </div>
     </div>
     
-    <div id="foot-publish" style="display:none">
-        Publish my saved services to a public profile. <a id="oex-main-whatispublish" href="#">What does this mean?</a>
-        <button id="oex-main-publish">Publish</button>
+    <div id="foot-publish">
+        Publish my saved services to a public profile: <a id="oex-main-whatispublish" href="#">What does this mean?</a>
+        <button class="oex-publish">Publish</button>
     </div>
     
     <div id="foot-done">
