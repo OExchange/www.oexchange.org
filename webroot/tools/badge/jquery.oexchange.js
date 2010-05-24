@@ -229,43 +229,21 @@
         if (!document.getElementById('oexchange-remember-dialog')) {
            var s = ['',
                     '<div id="oexchange-remember-dialog-inner">',
-                    '<div id="oexchange-dialog-titlebar"><h3>New Service Discovered: '+service.name+'</h3></div>',
-                    '<div id="oexchange-dialog-saved" style="display-none">',
-                    '<p>This site has been added to your preferred services list.</p>',
-                    '</div>',
-                    '<div id="oexchange-dialog-saved-button" style="display:none">',
-                    '<button onclick="jQuery.oex.closeDialog();return false">Okay</button>',
-                    '</div>',
-                    '<div id="oexchange-dialog-content">',
-                    '<p>Oexchange makes it easy to keep track of your favorite places to share. <a href="'+oexUrl+'" target="_blank">Learn more</a>.</p>',
-                    '<p>Would you like to remember this site for sharing?</p>',
+                    '<div id="oexchange-dialog-titlebar"><h3>'+service.name+' has been saved as a favorite place to share.</h3></div>',
                     '<p class="oexchange-service-description"><img width="16" height="16" src="'+service.icon+'"> '+service.name + (service.title?': ' + service.title:''),
                     service.vendor ? '<br/>By ' + service.vendor + '</p>' : '',
+                    '<div id="oexchange-dialog-content">',
+                    '<p>When you use sharing tools that support <a href="'+oexUrl+'" target="_blank">OExchange</a>, you\'ll be able to easily share to your favorite services.',
                     '</div>',
                     '<div id="oexchange-dialog-buttons">',
-                    '<input type="hidden" name="add" value="'+(service.xrd || xrd)+'">',
-                    '<button onclick="jQuery.oex.saveDialog();jQuery.oex.save()">Save</button>',
-                    '<button onclick="jQuery.oex.closeDialog();return false">No Thanks</button>',
-                    '</form>',
+                    '<button onclick="jQuery.oex.closeDialog();jQuery.oex.save()">Close</button>',
                     '</div>'].join('');
             jQuery('body').append('<div id="oexchange-remember-dialog">' + s + '</div>');
         }
 
         jQuery('#oexchange-dialog-content').show();
         jQuery('#oexchange-dialog-buttons').show();
-        jQuery('#oexchange-dialog-saved').hide();
-        jQuery('#oexchange-dialog-saved-button').hide();
         jQuery('#oexchange-remember-dialog').show();
-    }
-
-    /**
-    * Lame method to show the "Saved" message
-    */
-    function saveDialog() {
-        jQuery('#oexchange-dialog-content').hide();
-        jQuery('#oexchange-dialog-buttons').hide();
-        jQuery('#oexchange-dialog-saved').show();
-        jQuery('#oexchange-dialog-saved-button').show();
     }
 
     /**
@@ -420,8 +398,7 @@
         showPrompt : promptIfOexchange,
         hidePrompt : hidePrompt,
         openDialog : openRememberDialog,
-        closeDialog : closeDialog,
-        saveDialog : saveDialog
+        closeDialog : closeDialog
     };
 
     // XXX just for demo
