@@ -4,6 +4,7 @@
 (function () {
     //var addUrl = '//www.oexchange.org/demo/console/', 
     var addUrl = '/demo/console/', 
+        consoleUrl = addUrl +  (window.oex_demo ? '?demo=true' : ''),
         shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href),
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
@@ -162,7 +163,7 @@
            var s = ['',
                     '<div id="oexchange-dialog">',
                     '<div id="oexchange-dialog-inner">',
-                    '<iframe id="oexchange-console-dialog" src="'+addUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
+                    '<iframe id="oexchange-console-dialog" src="'+consoleUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
                     '</div>',
                     '</div>'].join('');
             jQuery('body').append(s);
@@ -291,7 +292,7 @@
                 el.innerHTML = ['',
                   '<div class="oexchange-enabled">',
                   (hasSaved(xrd) ?
-                    '<a class="oexchange-enabled-btn" href="'+addUrl+'" target="_blank">Customize</a>'
+                    '<a class="oexchange-enabled-btn" href="'+consoleUrl+'" target="_blank">Customize</a>'
                     : 
                     '<a class="oexchange-enabled-btn" href="#" onclick="jQuery.oex.openDialog(\''+xrd+'\');return false">Save</a>'),
                   'This site is <a href="'+oexUrl+'" target="_blank">OExchange Enabled</a>.</div>'].join('');

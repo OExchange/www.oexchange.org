@@ -1,4 +1,7 @@
 <?php include './template/header.html' ?>
+<script type="text/javascript">
+    var oex_defaultServices = <?php echo ($_GET['demo'] ? 'true' : 'false'); ?>;
+</script>
 
 <div id="message" class="messagebox" style="display:none"></div>
 <div id="loading"></div>

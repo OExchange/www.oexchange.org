@@ -5,6 +5,9 @@
 <title>OExchange Demo Blog</title>
 <link rel="stylesheet" type="text/css" href="blog.css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+    var oex_demo = true;
+</script>
 </head>
 
 <body>

@@ -52,10 +52,21 @@ $(function(){
             }
         },
         w = window,
-        serviceList, serviceHash,
+        serviceList = oex_defaultServices ? [defaultXrd.facebook.xrd, defaultXrd.buzz.xrd, defaultXrd.twitter.xrd, defaultXrd.digg.xrd, defaultXrd.delicious.xrd] : [], 
+        serviceHash,
         sericeToAdd,
         duration = 100,
         loadingServices = false;
+
+    window.oex_defaultServices = !!window.oex_defaultServices;
+
+    // preload services with defaults
+    if (oex_defaultServices) {
+        serviceHash = {};
+        for (var k in defaultXrd) {
+            serviceHash[defaultXrd[k].xrd] = defaultXrd[k];
+        }
+    }
     
     var log = function(msg) {
         if (console && console.log) console.log(msg);
@@ -96,8 +107,9 @@ $(function(){
     
     
     var loadData = function(){
-        serviceList = sharingtoolPrefService.getServiceList();
-        serviceHash = (serviceList) ? sharingtoolPrefService.getServiceHash() : null;
+        var storedList = sharingtoolPrefService.getServiceList();
+        serviceList = (storedList && storedList.length || !oex_defaultServices) ? storedList : serviceList;
+        serviceHash = ((serviceList && serviceList == storedList) || !oex_defaultServices) ? sharingtoolPrefService.getServiceHash() : serviceHash || null;
 
         if (serviceList && serviceList.length > 0 && serviceHash == null) {
             loadingServices = true;
