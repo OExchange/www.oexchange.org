@@ -38,23 +38,29 @@ a:hover {
 #oex-main-whatisthis {
 	position: absolute;
 	top: 12px;
-	right: 85px;
+	right: 75px;
     font-size: 11px;
 }
 #oex-main-add {
 	position: absolute;
 	top: 8px;
-	right: 20px;
+	right: 10px;
 }
 
 #oex-services-promo {
     /* to foo */ 
-    margin:20px;
-    margin-top:0;
+    background: #fcfbea;
+    border: 1px solid #f1eecd;
+    margin: 20px 0 10px 0;
+    padding: 10px;
+    text-align: center;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
 
 #oex-services-promo a {
-    padding:10px;
+    padding: 0 15px;
 }
 
 #oex-priority-sort,
@@ -126,8 +132,8 @@ a:hover {
 #srvcs {
     background: #fff;
     border-spacing: 0;
-	width:494px;
-    overflow:hidden;
+	width: 498px;
+    overflow: hidden;
 }
 #srvcs thead th {
 	background: #999;
@@ -140,9 +146,12 @@ a:hover {
 	color: #faf9e0;
 }
 #srvcs tbody {
-    height: 220px;
+    max-height: 220px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+#srvcs tbody tr:hover {
+    background-color: #fcfbea;
 }
 #srvcs tbody td {
     background-color: #fff;
@@ -168,9 +177,6 @@ a:hover {
 }
 
 #foot-done {
-    /*position:absolute;
-    bottom: 10px;
-    margin-left:200px;*/
     padding: 10px;
     text-align: center;
 }

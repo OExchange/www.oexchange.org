@@ -10,23 +10,18 @@
 </div>
 <div id="content">
     <div id="no-services" style="display:none">
-        <p><a href="http://www.oexchange.org" target="_blank">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.
-             </p><p>
-             When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.
-             </p><p>
-             Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.
-             </p><p>
-             Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select <strong>Edit</strong> to return to this screen.
-             </p><p>
-             Want to give it a try? Here are a few services, or select <strong>Add</strong> to search for more:
-             </p>
-             <div id="oex-services-promo">
-                <a ox:service="facebook" href="#">Facebook</a> 
-                <a ox:service="buzz" href="#">Google Buzz</a> 
-                <a ox:service="twitter" href="#">Twitter</a> 
-                <a ox:service="digg" href="#">Digg</a> 
-                <a ox:service="delicious" href="#">Delicious</a>
-            </div>
+        <p><a href="http://www.oexchange.org" target="_blank">OExchange</a> is a way for websites, sharing tools, and sharing services like Facebook or Twitter to allow you to more easily share content between them.</p>
+        <p>When you visit a sharing service that supports OExchange, you have the option of saving that service as one of your favorite places to share.</p>
+        <p>Then, when you use a sharing tool that also supports OExchange, you'll be able to easily share to your favorite services.</p>
+        <p>Once you've saved at least one OExchange service, you'll be able to manage your services here. Just select <strong>Edit</strong> to return to this screen.</p>
+        <p>Want to give it a try? Here are a few services, or select <strong>Add</strong> to search for more:</p>
+        <div id="oex-services-promo">
+           <a ox:service="facebook" href="#">Facebook</a> 
+           <a ox:service="buzz" href="#">Google Buzz</a> 
+           <a ox:service="twitter" href="#">Twitter</a> 
+           <a ox:service="digg" href="#">Digg</a> 
+           <a ox:service="delicious" href="#">Delicious</a>
+        </div>
     </div>
     <div class="srvcs" style="display:none">
     <table id="srvcs">
