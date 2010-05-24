@@ -24,7 +24,8 @@
         </div>
     </div>
     <div class="srvcs" style="display:none">
-    <table id="srvcs">
+    <table id="srvcs" cellspacing="0">
+        <colgroup><col width="5%"/><col width="10%"/><col width="75%"/><col width="10%"/></colgroup>
     	<thead>
     		<tr>
     			<th><a href="#" id="oex-priority-sort">Priority</a></th>

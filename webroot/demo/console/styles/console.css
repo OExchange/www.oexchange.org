@@ -6,6 +6,7 @@ body {
 	font-family: arial,helvetica,verdana,tahoma,sans-serif;
 	font-size: 13px;
 	color: #666;
+    overflow: hidden;
 }
 a {
 	text-decoration: none;
@@ -79,7 +80,8 @@ a:hover {
     font-weight:normal;
     font-style:italic;
     font-size:12px;
-    padding-left:100px;
+    /*padding-left:100px;*/
+    float: right;
 }
 
 #srvcs td {
@@ -132,12 +134,12 @@ a:hover {
 #srvcs {
     background: #fff;
     border-spacing: 0;
-	width: 498px;
+	width: 100%;
     overflow: hidden;
 }
 #srvcs thead th {
 	background: #999;
-	padding: 5px;
+	padding: 5px 2px;
 	text-align: left;
 	color: #fff;
 }
@@ -157,7 +159,7 @@ a:hover {
     background-color: #fff;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
-	padding: 5px;
+	padding: 5px 2px;
 }
 #srvcs tbody td.alt {
     background-color: #f5f5f5;
