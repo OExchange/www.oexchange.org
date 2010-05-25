@@ -31,9 +31,8 @@
         <colgroup><col width="5%"/><col width="10%"/><col width="75%"/><col width="10%"/></colgroup>
     	<thead>
     		<tr>
-    			<th><a href="#" id="oex-priority-sort">Priority</a></th>
-    			<!--<th>Reorder</th>-->
-    			<th><a href="#" id="oex-services-sort">Services</a></th>
+    			<th><a href="#" id="oex-priority-sort">Pri</a></th>
+    			<th><a href="#" id="oex-services-sort">Service</a></th>
     			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
     			<th>Remove</th>
     		</tr>
@@ -127,7 +126,7 @@
     </div>
     
     <div id="foot-publish">
-        Publish my saved services to a public profile: <a id="oex-main-whatispublish" href="#">What does this mean?</a>
+        Publish my saved services to a public profile (<a id="oex-main-whatispublish" href="#">?</a>):
         <button class="oex-publish">Publish</button>
     </div>
     
