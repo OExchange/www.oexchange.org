@@ -149,7 +149,7 @@ $(function(){
                 xrd = serviceList[i];
                 xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
-                tr.append($('<td class="center"/>',{text:parseInt(i)+1}))
+                tr.append($('<td />',{text:parseInt(i)+1, class: 'center'}))
                   .append($('<td />',{text:xrdData.name?xrdData.name:'Unknown',
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
