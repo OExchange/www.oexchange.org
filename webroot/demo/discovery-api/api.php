@@ -127,7 +127,7 @@ if ($cmd == "getUserTargets") {
 		header("HTTP/1.0 404 Not Found", true, true);
 	} else {
 		$page_title = "OExchange Demo Utility API";
-		include ("../../header.php");
+		include ("../../pagetop-main.inc.php");
 		?>
 		<div id="contentpage">
             <h2 class="pagetitle">Demo Utility API</h2>
@@ -229,7 +229,7 @@ if ($cmd == "getUserTargets") {
 
 			</div>	
 		<?
-		include("../../footer.php");
+		include("../../pagebottom.inc.php");
 	}
 }
 

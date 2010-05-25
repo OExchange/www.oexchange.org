@@ -4,7 +4,7 @@ if (isset($_GET["demo"])) $demo = $_GET["demo"];
 else $demo = false;
 
 $page_title = "LinkEater: An Example OExchange Target";
-require_once("../../header-subdemo.php");
+require_once("../../pagetop-demo.inc.php");
 ?>
     <script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
     <script type="text/javascript">

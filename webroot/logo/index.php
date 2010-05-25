@@ -1,6 +1,6 @@
 <?php
 $page_title = "OExchange";
-include '../header.php';
+include '../pagetop-main.inc.php';
 ?>
     <h2 class="pagetitle"><span class="lgry">OExchange</span> Logo <span class="lgry">&amp;</span> T-Shirt</h2>
 
@@ -29,7 +29,7 @@ include '../header.php';
     
     
 <?php
-include '../footer.php';
+include '../pagebottom.inc.php';
 ?>
 
 

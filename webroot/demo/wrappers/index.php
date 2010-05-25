@@ -1,7 +1,7 @@
 <?php
 $page_title = "OExchange Demo Wrappers";
 $nav = "demo";
-require_once("../../header.php");
+require_once("../../pagetop-main.inc.php");
 ?>
 
     <h2 class="pagetitle">OExchange Demo Wrappers</h2>
@@ -25,5 +25,5 @@ require_once("../../header.php");
 	
 	
 <?
-require_once("../../footer.php");
+require_once("../../pagebottom.inc.php");
 ?>

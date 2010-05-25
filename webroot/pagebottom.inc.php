@@ -14,7 +14,7 @@
 </div>
 
 <?
-require_once($_SERVER['DOCUMENT_ROOT'] . "/gablock.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/ga.inc.php");
 ?>
 
 </body>

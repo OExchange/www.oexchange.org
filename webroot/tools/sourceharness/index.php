@@ -1,7 +1,7 @@
 <?php
 $page_title = "OExchange Offer Test Harness";
 $nav = "tools";
-include '../../header.php';
+include '../../pagetop-main.inc.php';
 
 $dfltTarget = $_REQUEST["target"];
 if (empty($dfltTarget)) {
@@ -129,5 +129,5 @@ if (empty($dfltTarget)) {
     <p></p>
 
 <?
-include '../../footer.php';
+include '../../pagebottom.inc.php';
 ?>

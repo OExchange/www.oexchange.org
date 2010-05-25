@@ -1,22 +1,8 @@
-<!DOCTYPE html> 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:addthis="http://www.addthis.com/help/api-spec"> 
+<?php
+$page_title = "OExchange Demo Blog";
+include '../../pagetop-blog.inc.php';
+?>
 
-<head>
-<title>OExchange Demo Blog</title>
-<link rel="stylesheet" type="text/css" href="blog.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript">
-    var oex_demo = true;
-</script>
-</head>
-
-<body>
-
-<div class="navbar">
-    <div class="navbar-inner">
-        <a href="/demo">Back to OExchange Demos</a>
-    </div>
-</div>
 <div id="wrapper">    
     <div class="header">
         <h1>My Blog</h1>        
@@ -85,6 +71,7 @@
 
 <script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
 <script type="text/javascript">
+var oex_demo = true;
 $(document).ready(
     function() {
         $('.oexchange-personalize').oexchange_console();
