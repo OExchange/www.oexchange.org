@@ -30,7 +30,7 @@
     }
 
 
-if (window.parent) {
+if (window.parent && window.parent.postMessage && window.JSON) {
         window.parent.postMessage('rdy=1&sl='+JSON.stringify(serviceList)+'&sh='+JSON.stringify(serviceHash),'*');
 }
 
