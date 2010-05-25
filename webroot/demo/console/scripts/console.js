@@ -59,6 +59,7 @@ $(function(){
         loadingServices = false;
 
     window.oex_defaultServices = !!window.oex_defaultServices;
+    if (!window.JSON) window.JSON = {stringify : function () { return '' }};
 
     // preload services with defaults
     if (oex_defaultServices) {
