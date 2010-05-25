@@ -1,6 +1,6 @@
 <?php
 $page_title = "OExchange";
-include 'header.php';
+include 'pagetop-main.inc.php';
 ?>
     <h2 class="pagetitle"><span class="lgry">Beautiful, informative home page</span> coming soon...</h2>
     
@@ -16,7 +16,7 @@ include 'header.php';
     </div>
     
 <?php
-include 'footer.php';
+include 'pagebottom.inc.php';
 ?>
 
 

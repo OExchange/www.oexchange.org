@@ -1,6 +1,6 @@
 <?php
 $page_title = "OExchange";
-include 'header.php';
+include 'pagetop-main.inc.php';
 ?>
 
         <h2 class="pagetitle"><span class="lgry">OExchange is an</span> open protocol <span class="lgry">for</span> sharing <span class="lgry">anything, anywhere.</span></h2>
@@ -64,7 +64,7 @@ include 'header.php';
         <div class="clear"></div>
 
 <?php
-include 'footer.php';
+include 'pagebottom.inc.php';
 ?>
 
 

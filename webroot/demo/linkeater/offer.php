@@ -5,7 +5,7 @@ $title = $_GET["title"];
 $description = $_GET["description"];
 
 $page_title = "LinkEater Example OExchange Target";
-require_once("../../header-subdemo.php");
+require_once("../../pagetop-demo.inc.php");
 require_once("../../lib-oexchange/OExchangeDiscoverer.php");
 
 if (!isset($url)) {
@@ -81,7 +81,7 @@ if (!isset($url)) {
     </div>
     <div class="clear"></div>  
 <?
-	include("../../footer.php");
+	include("../../pagebottom.inc.php");
 }
 
 function error($msg) {

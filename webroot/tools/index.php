@@ -2,7 +2,7 @@
 
 $page_title = "OExchange Test Tools";
 $nav = "tools";
-include '../header.php';
+include '../pagetop-main.inc.php';
 
 ?>
     
@@ -41,5 +41,5 @@ include '../header.php';
     <div class="clear"></div>
     
 <?
-include '../footer.php';
+include '../pagebottom.inc.php';
 ?>

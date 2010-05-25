@@ -1,7 +1,7 @@
 <?php
 $page_title = "OExchange Send-To Example";
 $nav = "demo";
-require_once("../../header.php");
+require_once("../../pagetop-main.inc.php");
 ?>
 
     <h2 class="pagetitle">OExchange Send-To</h2>
@@ -53,5 +53,5 @@ require_once("../../header.php");
 	</p>
 	
 <?
-require_once("../../footer.php");
+require_once("../../pagebottom.inc.php");
 ?>

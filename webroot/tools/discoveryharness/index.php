@@ -2,7 +2,7 @@
 
 $page_title = "OExchange Discovery Test Harness";
 $nav = "tools";
-include '../../header.php';
+include '../../pagetop-main.inc.php';
 include '../../lib-oexchange/OExchangeDiscoverer.php';
 include_once '../../lib-oexchange/utils.php';
 
@@ -151,5 +151,5 @@ $cmd = getDfltArg("cmd", "none");
 
 
 <?
-include '../../footer.php';
+include '../../pagebottom.inc.php';
 ?>

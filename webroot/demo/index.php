@@ -1,7 +1,7 @@
 <?
 $page_title = "OExchange Examples and Demos";
 $nav = "demo";
-include ("../header.php");
+include ("../pagetop-main.inc.php");
 ?>
 	<h2 class="pagetitle">Demo &amp; Examples</h2>
     
@@ -49,5 +49,5 @@ include ("../header.php");
     
 
 <?
-include("../footer.php");
+include("../pagebottom.inc.php");
 ?>

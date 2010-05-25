@@ -1,7 +1,7 @@
 <?php
 $page_title = "OExchange Quick Start Guide";
 $nav = "start";
-include '../header.php';
+include '../pagetop-main.inc.php';
 ?>
 
     <h2 class="pagetitle">Quick Start Guide</h2>
@@ -144,5 +144,5 @@ include '../header.php';
     <div class="clear"></div>
 
 <?php
-include '../footer.php';
+include '../pagebottom.inc.php';
 ?>

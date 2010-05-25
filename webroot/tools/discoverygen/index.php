@@ -2,7 +2,7 @@
 
 $page_title = "OExchange Discovery Resource Generator";
 $nav = "tools";
-include '../../header.php';
+include '../../pagetop-main.inc.php';
 include '../../lib-oexchange/OExchangeGenerator.php';
 include '../../lib-oexchange/utils.php';
 
@@ -143,5 +143,5 @@ $cmd = getDfltArg("cmd", "none");
 ?>
 
 <?
-include '../../footer.php';
+include '../../pagebottom.inc.php';
 ?>
