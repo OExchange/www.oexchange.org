@@ -5,6 +5,9 @@ var sharingtoolPrefService = (function () {
     var serviceListKey = 'pref-service-list',
         serviceHashKey = 'pref-service-hash';
 
+    if (!w.JSON) w.JSON = { stringify: function () {return ''},
+                            parse : $.parseJSON};
+
     var getServiceList = function(){
         var slEncoded = storage.getItem(serviceListKey);
         if (slEncoded) {
