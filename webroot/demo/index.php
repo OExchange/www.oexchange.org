@@ -3,7 +3,7 @@ $page_title = "OExchange Examples and Demos";
 $nav = "demo";
 include ("../pagetop-main.inc.php");
 ?>
-	<h2 class="pagetitle">Demo &amp; Examples</h2>
+	<h2 class="pagetitle">Demos &amp; Examples</h2>
     
     <hr/>
     
@@ -35,16 +35,24 @@ include ("../pagetop-main.inc.php");
     
     <br/><hr/>
     
-    <h3 class="mb0">More Examples</h3>
+    <h3 class="mb0">Other Examples</h3>
     
     <div class="grid_5 alpha">
         <h4 class="mb5"><a href="./discovery-api/api.php">A JSON Discovery API</a></h4>
-        A simple GET/JSON-based Discovery API that can help when using OExchange Discovery and WebFinger together.
+        A GET/JSON-based Discovery API that can help when using OExchange Discovery and WebFinger together.
     </div>
     <div class="grid_5 omega">
-        <h4 class="mb5"><a href="./sendto">Send-To</a></h4>
+        <h4 class="mb5"><a href="./sendto/">Web Send-To</a></h4>
         The Send-To service uses OExchange and WebFinger protocols together to send links around.
     </div>
+
+    <div class="clear"></div>
+
+    <div class="grid_5 alpha">
+        <h4 class="mb5"><a href="./wrappers/">Popular Service Wrappers</a></h4>
+        OExchange-compliant wrappers that demonstrate what it would be like for a few popular services to fully support OExchange discovery.
+    </div>
+
     <div class="clear"></div>
     
 

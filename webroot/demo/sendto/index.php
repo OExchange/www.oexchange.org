@@ -6,13 +6,14 @@ require_once("../../pagetop-main.inc.php");
 
     <h2 class="pagetitle">OExchange Send-To</h2>
     <div class="bannertext">
-        <a href="sendto.php?url=http://www.oexchange.org">OExchange Send-To</a> is a simple web-based example that uses <a href="http://www.oexchange.org">OExchange</a> to enable "send to" operations for a link.
+        A simple web-based OExchange target example that uses <a href="http://www.oexchange.org">OExchange</a> to enable "send to" operations for a link.
     </div>
 
     <hr/>
     
 	<p>
 		The <a href="sendto.php?url=http://www.oexchange.org">sendto.php</a> endpoint is a regular <a href="http://www.oexchange.org/spec/#offer-endpoint">OExchange-Offer</a> endpoint, to which you can pass a <code>URL</code> parameter to send an URL to a service.
+		It uses various discovery features (and the <a href="/demo/discovery-api">demo discovery api</a>) to let you do some other things, like send URLs to services just by knowing their hostname.
 	</p>
 	
 	<h3>What it Does</h3>
