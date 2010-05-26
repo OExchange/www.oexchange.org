@@ -72,7 +72,7 @@ if (!isset($url)) {
         
         <h3>WTF?</h3>
         <p>This is a simple example OExchange Target, to which you can send a link.  You didn't expect me to do anything useful with it, did you?</p>
-        <p><a href="/demo/linkeater">&laquo; Back to LinkEater</a></p>
+        <p><a href="/demo/linkeater/">&laquo; Back to LinkEater</a></p>
         
         
     </div>

@@ -32,7 +32,7 @@
     	<thead>
     		<tr>
     			<th><a href="#" id="oex-priority-sort">Pri</a></th>
-    			<th><a href="#" id="oex-services-sort">Service</a></th>
+    			<th><a href="#" id="oex-services-sort">Name</a></th>
     			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
     			<th>Remove</th>
     		</tr>
@@ -125,7 +125,7 @@
         </div>
     </div>
     
-    <div id="foot-publish">
+    <div id="foot-publish" style="display:none">
         Publish my saved services to a public profile (<a id="oex-main-whatispublish" href="#">?</a>):
         <button class="oex-publish">Publish</button>
     </div>

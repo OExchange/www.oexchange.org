@@ -187,7 +187,7 @@ $(function(){
             $("#srvcs td").disableSelection();
             $('#no-services').hide();
             $('.srvcs').show();
-            $('#foot-publish').show();
+            //$('#foot-publish').show(); // until webfinger is sorted out
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
             $('.srvcs').hide();

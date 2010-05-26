@@ -23,7 +23,7 @@ include '../pagetop-main.inc.php';
         <a name="services"></a>        
         <h2>OExchange For Service Providers</h2>
         <p>
-            If you manage a service that can accept URLs and do something useful with them (a "Target" in OExchange terms), here's what you need to know to support the protocol.  There's also <a target="_blank" href="/demo/linkeater">an example service</a> you can take a look at.
+            If you manage a service that can accept URLs and do something useful with them (a "Target" in OExchange terms), here's what you need to know to support the protocol.  There's also <a target="_blank" href="/demo/linkeater/">an example service</a> you can take a look at.
         </p>
         
         <h4>1. Expose an endpoint to receive URLs in a standard way</h4>
