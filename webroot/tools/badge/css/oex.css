@@ -60,7 +60,8 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
     margin-top: -250px;
     margin-left: -250px;
     z-index: 10002;
-    background: rgba(0,0,0,.4);
+    background: url(/images/t.png);
+    /*background: rgba(0,0,0,.4);*/
     padding: 10px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
