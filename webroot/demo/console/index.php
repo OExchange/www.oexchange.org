@@ -125,7 +125,7 @@
         </div>
     </div>
     
-    <div id="foot-publish">
+    <div id="foot-publish" style="display:none">
         Publish my saved services to a public profile (<a id="oex-main-whatispublish" href="#">?</a>):
         <button class="oex-publish">Publish</button>
     </div>
