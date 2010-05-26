@@ -3,21 +3,21 @@ $page_title = "OExchange";
 include 'pagetop-main.inc.php';
 ?>
 
-        <h2 class="pagetitle"><span class="lgry">OExchange is an</span> open protocol <span class="lgry">for</span> sharing <span class="lgry">anything, anywhere.</span></h2>
+        <h2 class="pagetitle"><span class="lgry">OExchange is an</span> open protocol <span class="lgry">for </span> sharing <span class="lgry">any URL with any service on the web.</span></h2>
         
         <hr/>
         
         <div class="col1">
             <h2 class="mb0">Service Providers</h3>
-            <p class="bigtext">Enable your social networking, bookmarking or other service to be more easily integrated with sharing tools.</p>
+            <p class="bigtext">Let your service receive more content by allowing anyone to integrate easily</p>
         </div>
         <div class="col2">
             <h2 class="mb0">Publishers</h2>
-            <p class="bigtext">Increase distribution of your content by building your own sharing options, or using an Oexchange enabled sharing tool.</p>
+            <p class="bigtext">Have your content more widely distributed by a new generation of dynamic sharing tools</p>
         </div>
         <div class="col3 omega">
-            <h2 class="mb0">Developers</h3>
-            <p class="bigtext">Learn how to build sharing into your applications, discover services automatically and personalize sharing options.</p>
+            <h2 class="mb0">Tool Developers</h3>
+            <p class="bigtext">Integrate with more services than you ever thought possible, and personalize the experience</p>
         </div>
         <div class="clear"></div>
         <div class="mb10"></div>
@@ -27,7 +27,7 @@ include 'pagetop-main.inc.php';
         <div class="col3"><a href="/guide/#developers" class="btn">Get Started</a></div>
         <div class="clear"></div>
         <div class="mb40"></div>
-        <p class="bigtext">Or jump right in and <a href="/demo">checkout the demo</a>.</p>
+        <p class="bigtext">Or jump right in to <a href="/demo">some demos</a> or <a href="/spec">the spec</a>...</p>
         <div class="mb20"></div>
         
         <hr/>
@@ -35,20 +35,19 @@ include 'pagetop-main.inc.php';
         <div class="grid_6 alpha suffix_1">
             <h3>The Problem</h3>
             <p>
-                There is a whole world of services &mdash; social networks, communication tools, social news and bookmarking sites &mdash; with more 
-                appearing every day. Many do not accept content the same way. It's hard to know which service a user wants, and how to share content there.
+                Lots of services accept URL-based content &mdash; social networks, news and bookmarking sites, communication tools, long-tail forums, translation and printing utilities &mdash; and more appear every day. Why do blogs still show chiclets for only the top few social networks?  Why can't users engage with more personal, relevant, dynamically-discovered options?  Why are sharing tools still "integrating" with services individually?  
             </p>
             
             <h3>The Solution</h3>
-            <p>OExchange makes sharing better by:</p>
+            <p>OExchange makes it possible to share any URL-based content with any service on the web.  It makes things better by defining:</p>
             <ul>
-                <li>Providing a standardized way for services to receive content, making communication with sharing tools easier.</li>
-                <li>Allowing services to be automatically discoverable, making integration with sharing tools faster.</li>
-                <li>Establishing a decentralized model for saving and displaying a user's preferred services, making sharing more personal.</li>
+                <li>A common way for services to receive content, removing any and all service-specific integration requirements</li>
+                <li>A discovery feature so services can publish themselves and their endpoints, making it possible to integrate with services you didn't even know about at development time</li>
+                <li>A decentralized, user-centric model for saving preferred services, making sharing more personal</li>
             </ul>
         </div>
         <div class="grid_3 omega">
-            <h5>OExchange Supporters</h5>
+            <h5>The Players</h5>
             <a href="http://www.digg.com/">Digg</a><br/>
             <a href="http://aboutecho.com/">Echo</a><br/>
             <a href="http://www.google.com/">Google</a><br/>
@@ -60,6 +59,8 @@ include 'pagetop-main.inc.php';
             <a href="http://springpadit.com/">Springpad</a><br/>
             <a href="http://www.webs.com/">Webs.com</a><br/>
             <a href="http://imageshack.us/">yfrog (Imageshack)</a><br/>
+			<br/>
+			Join <a href="http://groups.google.com/group/oexchange">the fun</a></br>
         </div>
         <div class="clear"></div>
 
