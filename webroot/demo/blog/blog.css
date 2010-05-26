@@ -53,10 +53,12 @@ a:hover {
 /* Header */
 #wrapper .header {
     position: relative;
+    border-bottom: 3px solid #333;
+    margin-bottom: 25px;
 }
 #wrapper .header h1 {
     font-size: 4em; 
-    line-height: 2.5em; 
+    line-height: 2em; 
     margin: 0; 
     color: #000; 
     cursor: default;
@@ -105,7 +107,9 @@ a:hover {
     color: #eee;
 }
 #wrapper .footer {
-    padding: 80px 0 40px 0;
+    border-top: 3px solid #333;
+    margin-top: 80px;
+    padding: 25px 0 40px 0;
 }
 
 /* OExchange Enabled Badge 
@@ -191,4 +195,9 @@ div.oexchange-enabled p { display: block; margin-top: 0; }
 }
 .tt-inner a:hover {
     text-decoration: underline;
+}
+
+.thumb {
+    border: 1px solid #ccc;
+    margin: 14px 0 10px 20px;
 }
