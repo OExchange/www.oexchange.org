@@ -223,6 +223,8 @@
         }
         else 
             renderRememberDialog(xrd);
+
+        save();
     }
 
     function renderRememberDialog(xrd) {
@@ -237,7 +239,7 @@
                     '<p>When you use sharing tools that support <a href="'+oexUrl+'" target="_blank">OExchange</a>, you\'ll be able to easily share to your favorite services.',
                     '</div>',
                     '<div id="oexchange-dialog-buttons">',
-                    '<button onclick="jQuery.oex.closeDialog();jQuery.oex.save()">Close</button>',
+                    '<button onclick="jQuery.oex.closeDialog();">Close</button>',
                     '</div>'].join('');
             jQuery('body').append('<div id="oexchange-remember-dialog">' + s + '</div>');
         }
@@ -257,7 +259,7 @@
     }
 
     function createCommFrame(url) {
-        jQuery('body').append('<iframe id="oexifr'+Math.floor(100*Math.random())+'" src="' + url + '" style="width:1px;height:1px;border:0px" frameborder="0"></iframe>');
+        jQuery('<iframe id="oexifr'+Math.floor(100*Math.random())+'" style="width:1px;height:1px;border:0px" frameborder="0"></iframe>').appendTo(jQuery('body')).attr('src',url);
     }
 
     /**
@@ -308,7 +310,12 @@
 
     function dialogLink() {
         this.each(function (i, el) {
-                    el.onclick = function () { openRememberDialog(); return false};
+                    el.onclick = function () { 
+                        openRememberDialog(); 
+                        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
+                        el.onclick = function () {return false;};
+                        return false;
+                    };
                 });
     }
 
@@ -415,7 +422,7 @@
     jQuery(document).ready(function() {
         if (supportStorage) {
             if (!loaded) {
-                createCommFrame(addUrl+'update-cache.html');
+                createCommFrame(addUrl + 'update-cache.html');
                 createCommFrame(addUrl+'load.php'); // will postMessage back to this calling frame
                 
                 loaded = 1;
