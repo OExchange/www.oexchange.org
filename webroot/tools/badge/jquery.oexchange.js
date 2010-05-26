@@ -308,15 +308,20 @@
                 });
     }
 
-    function dialogLink() {
-        this.each(function (i, el) {
-                    el.onclick = function () { 
-                        openRememberDialog(); 
-                        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
-                        el.onclick = function () {return false;};
-                        return false;
-                    };
-                });
+    function renderSave(i, el, noadd) {
+        var xrd = getXRD(),
+            newService = !(serviceHash[xrd]);
+        if (newService || true) {
+            el.onclick = function () { 
+                openRememberDialog(); 
+                jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
+                el.onclick = function () {return false;};
+                return false;
+            };
+        } else {
+            jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
+            el.onclick = function () {return false;};
+        }
     }
 
     function shareLink(el, xrd) {
@@ -386,7 +391,15 @@
     // Add jQuery functions 
     jQuery.fn.oexchange_badge = renderBadge;
     jQuery.fn.oexchange_console = consoleLink;
-    jQuery.fn.oexchange_save = dialogLink;
+    jQuery.fn.oexchange_save = function () {
+        if (ready) {
+            this.each(renderSave);
+            return;
+        }
+    
+        var coll = this;
+        readyCallbacks.push( function () {coll.each(renderSave);} );
+    }
     jQuery.fn.oexchange_share = function () { 
         if (!supportStorage || ready) {
             this.each(renderShare); 
@@ -422,10 +435,8 @@
     jQuery(document).ready(function() {
         if (supportStorage) {
             if (!loaded) {
-                createCommFrame(addUrl + 'update-cache.html');
-                createCommFrame(addUrl+'load.php'); // will postMessage back to this calling frame
-                
                 loaded = 1;
+                createCommFrame(addUrl+'load.php'); // will postMessage back to this calling frame
             }
         }
     });
