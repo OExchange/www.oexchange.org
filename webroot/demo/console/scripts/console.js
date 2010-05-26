@@ -234,6 +234,9 @@ $(function(){
     };
     
     var addServices = function(services){
+        if (services && services.length == 1) {
+            if ($.inArray(services[0], serviceList || []) > -1) return false;
+        }
         serviceList = $.merge(serviceList || [],services);
         serviceHash = null;
         storeData();
