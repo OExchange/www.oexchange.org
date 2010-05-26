@@ -17,7 +17,7 @@ require_once("../../pagetop-demo.inc.php");
     <div style="position:relative;margin-top:-25px;">
         <div style="padding-bottom: 30px;">
             <div class="grid_2 alpha">
-                <h3 style="padding:7px 0;margin:0;line-height:32px;font-weight:normal;color:#666;">Linkeater</h3>
+                <h3 style="padding:7px 0;margin:0;line-height:32px;font-weight:normal;color:#dd00fb;">Linkeater</h3>
             </div>
             <div class="grid_10 omega right gry">
                 <div style="padding:15px 0 0;">Home <span class="pipe">|</span> Interesting <span class="pipe">|</span> Most Recent <span class="pipe">|</span> Community <span class="pipe">|</span> Profile <span class="pipe">|</span> Sign-out</div>
@@ -28,16 +28,16 @@ require_once("../../pagetop-demo.inc.php");
         <div class="banner-linkeater"></div>
 	    <div class="grid_8 suffix_1 alpha">
             <p>
-        		LinkEater is a service that can accept URLs via OExchange.  It doesn't do much with them, but hey, its just an example.  Imagine its a social network, a news submission service, a translation tool, whatever.      
+        		Linkeater is a service that can accept URLs via OExchange.  It doesn't do much with them, but hey, its just an example.  Imagine its a social network, a news submission service, a translation tool, whatever.      
         	</p>
           
-        	<h3>Sending Links to LinkEater</h3>
+        	<h3>Sending Links to Linkeater</h3>
         	<p>
         		It can accept links at a standard <a href="/spec/#offer">Offer</a> endpoint:
         	</p>
         	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
         	<p style="padding:10px 0 30px 0;">
-        		<a class="btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
+        		<a class="oexchange-btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
         	</p>	
             
         	<h3>Discovering LinkEater</h3>

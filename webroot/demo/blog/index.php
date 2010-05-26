@@ -11,7 +11,7 @@ include '../../pagetop-blog.inc.php';
         <!-- Blog Post -->
         <div class="post">
             <h2>Lorem ipsum dolor sit amet</h2>
-            <img src="images/big_dog_little_dog2.jpg" border="0" alt="" align="right" style="margin:14px 0 10px 20px;" />
+            <img src="images/big_dog_little_dog2.jpg" border="0" alt="" align="right" class="thumb" />
             <h4>Consectetur adipiscing elit. Pellentesque sapien magna.</h4>
             <p>Lorem ipsum <a href="">dolor sit amet</a>, consectetur adipiscing elit. Integer accumsan ultrices velit venenatis sollicitudin. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Duis mi tellus, tincidunt ac pharetra eu, vehicula et sapien. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum. Cras in erat dui, vel varius risus. Maecenas lobortis, diam ut sodales vestibulum, diam libero porttitor est, id tristique elit tellus nec ipsum.</p>
             
