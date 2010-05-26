@@ -62,12 +62,10 @@ include '../../pagetop-blog.inc.php';
         
         <p><a href="">More...</a></p>
         
-    
     </div>
     <div class="clear"></div>
     <div class="footer">&copy; 2010 MyBlog</div>
 </div>
-
 
 <script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
 <script type="text/javascript">
@@ -80,6 +78,9 @@ $(document).ready(
 );
 setTimeout("$('#tt1').fadeIn();",1000)
 </script>
+<?
+require_once($_SERVER['DOCUMENT_ROOT'] . "/ga.inc.php");
+?>
 
 </body>
 </html>
