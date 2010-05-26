@@ -72,7 +72,7 @@ require_once("../../pagetop-demo.inc.php");
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
                 Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
-                Add it here, then check out <a href="/demo/blog">the blog</a> to see LinkEater as a new option!
+                Add it here, then check out <a href="/demo/blog/">the blog</a> to see LinkEater as a new option!
             </div>
             <div class="tt-tick" style="left:215px;"></div>
         </div>
