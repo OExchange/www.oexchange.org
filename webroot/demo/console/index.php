@@ -85,12 +85,24 @@
         To publish your sharing services to your Webfinger account, please enter your email address.
         <a id="oex-publish-why" href="#">Why should I do this?</a>
         </p>
+        <p class="oex-feedback" id="oex-publish-status" style="display:none">
+        Publishing sharing services....
+        </p>
+        <p class="oex-error" id="oex-publish-error" style="display:none">
+        We're sorry, but we were unable to publish your sharing services.
+        </p>
+        <p id="oex-publish-success" style="display:none">
+            <span class="oex-success">Success! Your services have been published.</span>
+        </p>
         <p>
         Email: <input id="oex-publish-email" type="text" size="30"/>
         </p>
-        <div class="oex-controls">
+        <div class="oex-controls" id="oex-publish-controls">
             <button id="oex-xrdp-save">Save</button>
             <button class="oex-sub-cancel">Cancel</button>
+        </div>
+        <div class="oex-controls" id="oex-publish-close">
+            <button class="oex-sub-cancel">Close</button>
         </div>
     </div>
     

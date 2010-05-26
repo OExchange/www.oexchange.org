@@ -187,7 +187,7 @@ $(function(){
             $("#srvcs td").disableSelection();
             $('#no-services').hide();
             $('.srvcs').show();
-            //$('#foot-publish').show(); // until webfinger is sorted out
+            $('#foot-publish').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
             $('.srvcs').hide();
@@ -363,7 +363,7 @@ $(function(){
         }
     }
 
-    function xrdpSave(email, data) {
+    function xrdpSave(email, data, callback) {
         if (email && data && data instanceof Array) {
             $.ajax({
                 'url': '/tools/xrdp/xrdpproxy.php?acct='+encodeURIComponent(email),
@@ -371,13 +371,7 @@ $(function(){
                 'processData': false,
                 'data': JSON.stringify(data),
                 contentType: 'application/json',
-                success: function (data) { 
-                    if (!data) { 
-                        // success 
-                    } else {
-                        // error saving
-                    }
-                }
+                success: callback
             });
         }
     }
@@ -410,7 +404,18 @@ $(function(){
                 $('#oex-add-cancel').show();
                 $('#oex-add').slideDown(duration);
     });
-    $('.oex-publish').click(function () { $('#oex-info-why').hide(); $('#oex-publish').slideDown(duration);});
+    $('.oex-publish').click(function () { 
+        $('#oex-info-why').hide(); 
+        $('#oex-publish-error').hide();
+        $('#oex-publish-status').hide();
+        $('#oex-publish-success').hide();
+        $('#oex-publish-email').attr('disabled',false).val('').show();
+
+        $('#oex-publish-controls').show();
+        $('#oex-publish-close').hide();
+
+        $('#oex-publish').slideDown(duration);
+    });
     $('.oex-done').click(function () { 
         if (window.parent) {
             var message = 'oex=close' +
@@ -442,7 +447,19 @@ $(function(){
 
     $('#oex-xrdp-save').click(function () {
             var email = $('#oex-publish-email').val();
-            xrdpSave(email, serviceList);
+            $('#oex-publish-email').attr('disabled',true);
+            $('#oex-publish-status').show(); 
+            xrdpSave(email, serviceList, function (data) { 
+                $('#oex-publish-status').hide(); 
+                if (!data) {
+                    $('#oex-publish-success').show();
+                    $('#oex-publish-controls').hide();
+                    $('#oex-publish-close').show();
+                } else {
+                $('#oex-publish-email').attr('disabled',false);
+                    $('#oex-publish-error').show();
+                }
+            });
     });
     
     /* onload */
