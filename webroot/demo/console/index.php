@@ -32,7 +32,7 @@
     	<thead>
     		<tr>
     			<th><a href="#" id="oex-priority-sort">Pri</a></th>
-    			<th><a href="#" id="oex-services-sort">Service</a></th>
+    			<th><a href="#" id="oex-services-sort">Name</a></th>
     			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
     			<th>Remove</th>
     		</tr>
