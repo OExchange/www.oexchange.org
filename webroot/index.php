@@ -9,7 +9,7 @@ include 'pagetop-main.inc.php';
         
         <div class="col1">
             <h2 class="mb0">Service Providers</h3>
-            <p class="bigtext">Let your service receive more content by allowing anyone to integrate easily</p>
+            <p class="bigtext">Let your sharing service receive more content by allowing anyone to integrate easily</p>
         </div>
         <div class="col2">
             <h2 class="mb0">Publishers</h2>

@@ -32,9 +32,9 @@ include '../../pagetop-blog.inc.php';
         <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
-                These options can be personalized with new OExchange-enabled services automatically.<br/><br/>
+                These buttons can be personalized with new OExchange-enabled services.<br/><br/>
                 To see this in action, check out <a href="/demo/linkeater/?demo=true">LinkEater</a>, an example
-                service that supports OExchange. Or, select Personalize to add OExchange services directly.
+                sharing service that supports OExchange.
             </div>
             <div class="tt-tick"></div>
         </div>

@@ -30,15 +30,15 @@ require_once("../../pagetop-demo.inc.php");
             <p>
         		LinkEater is a service that can accept URLs via OExchange.  It doesn't do much with them, but hey, its just an example.  Imagine its a social network, a news submission service, a translation tool, whatever.      
         	</p>
+        	<p style="padding:10px 0 30px 0;">
+        		<a class="btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
+        	</p>	
           
         	<h3>Sending Links to LinkEater</h3>
         	<p>
         		It can accept links at a standard <a href="/spec/#offer">Offer</a> endpoint:
         	</p>
         	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
-        	<p style="padding:10px 0 30px 0;">
-        		<a class="btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
-        	</p>	
             
         	<h3>Discovering LinkEater</h3>
         	<p>
