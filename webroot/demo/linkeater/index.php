@@ -57,7 +57,6 @@ require_once("../../pagetop-demo.inc.php");
 		<div class="grid_3 omega">          
 		    <p style="padding:20px 0;">
 		        <a class="oexchange-btn oexchange-sharepoint" href="#" onclick="return false;" title="Save this Service"><span>Save this Service</span></a>
-                <!-- "oexchange-btn-saved" class when clicked, changes the style of the button to green -->
 		    </p>
 		</div>
 <? 
