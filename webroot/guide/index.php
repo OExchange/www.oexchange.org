@@ -14,7 +14,7 @@ include '../pagetop-main.inc.php';
         <ul class="bigtext">
             <li><a href="#services">Service Providers</a></li>
             <li><a href="#sites">Publishers</a></li>
-            <li><a href="#tools">Developers</a></li>
+            <li><a href="#tools">Tool Developers</a></li>
         </ul>
                 
         <hr/><br/>
@@ -104,7 +104,7 @@ include '../pagetop-main.inc.php';
         
         <a name="developers"></a>
         <a name="tools"></a>        
-        <h2>OExchange For Developers</h2>
+        <h2>OExchange For Tool Developers</h2>
         <p>
             Want to start leveraging OExchange to share content?  Things you need to know...
         </p>

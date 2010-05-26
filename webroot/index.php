@@ -9,15 +9,15 @@ include 'pagetop-main.inc.php';
         
         <div class="col1">
             <h2 class="mb0">Service Providers</h3>
-            <p class="bigtext">Let your service receive more content by allowing anyone to integrate easily</p>
+            <p class="bigtext">Your service can receive more content by allowing anyone to integrate easily</p>
         </div>
         <div class="col2">
             <h2 class="mb0">Publishers</h2>
-            <p class="bigtext">Have your content more widely distributed by a new generation of dynamic sharing tools</p>
+            <p class="bigtext">Your content can be more widely shared by a new generation of tools</p>
         </div>
         <div class="col3 omega">
             <h2 class="mb0">Tool Developers</h3>
-            <p class="bigtext">Integrate with more services than you ever thought possible, and personalize the experience</p>
+            <p class="bigtext">Your tool can integrate with any service on the web, dynamically</p>
         </div>
         <div class="clear"></div>
         <div class="mb10"></div>
@@ -39,7 +39,7 @@ include 'pagetop-main.inc.php';
             </p>
             
             <h3>The Solution</h3>
-            <p>OExchange makes it possible to share any URL-based content with any service on the web.  It makes things better by defining:</p>
+            <p>OExchange makes it possible to share any URL-based content with any service on the web.  It defines:</p>
             <ul>
                 <li>A common way for services to receive content, removing any and all service-specific integration requirements</li>
                 <li>A discovery feature so services can publish themselves and their endpoints, making it possible to integrate with services you didn't even know about at development time</li>
