@@ -33,7 +33,7 @@ a:hover {
     text-align: left;
 }
 .navbar a {
-    background: url(../images/logo_inverted_16.gif) no-repeat left;
+    background: url(../images/blog/logo_inverted_16.gif) no-repeat left;
     padding-left: 24px;
     color: #ccc;
 }
@@ -112,15 +112,6 @@ a:hover {
     padding: 25px 0 40px 0;
 }
 
-/* OExchange Enabled Badge 
-
-div.oexchange-enabled { height:32px; margin-top: 40px; line-height: 32px; font-family:arial,helvetica,tahoma,verdana,sans-serif; font-size:11px; color: #666; }
-div.oexchange-enabled a.oexchange-enabled-btn { display:block; background: url(../images/oexchange_savebtn.png) no-repeat; width:97px; height:32px; line-height:32px; overflow:hidden; text-indent: -9999px; margin-right:12px; }
-div.oexchange-enabled a.oexchange-enabled-btn:hover { background: url(../images/oexchange_savebtn.png) no-repeat; opacity: 0.8; }
-div.oexchange-enabled a { color: #464636; }
-div.oexchange-enabled a:hover { background: transparent; text-decoration: underline; color: #000; }
-div.oexchange-enabled p { display: block; margin-top: 0; }
-*/
 
 /* Custom Icons */
 
