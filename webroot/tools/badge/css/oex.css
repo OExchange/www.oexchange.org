@@ -77,7 +77,7 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 #oexchange-remember-dialog-inner {
     background: #fff;
     border: 1px solid #555;
-    height: 198px;
+    height: 380px;
     font-family: arial,helvetica,verdana,sans-serif;
     font-size: 12px;
     line-height: 1.5em;
