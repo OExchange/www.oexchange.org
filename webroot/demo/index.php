@@ -7,14 +7,14 @@ include ("../pagetop-main.inc.php");
     
     <hr/>
     
-    <div class="bannertext dgry mb20">The following demonstrates OExchange enabled service discovery, service personalization and management via WebFinger protocols.</div>
+    <div class="bannertext dgry mb20">OExchange in action...</div>
     
     <div class="grid_7 alpha">
-        <h3>Watch the demo video...</h3>
+        <h3>Watch the simple demo video</h3>
         <object width="540" height="328"><param name="movie" value="http://www.youtube.com/v/Be9ArGBUTco&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Be9ArGBUTco&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="540" height="328"></embed></object>
     </div>
     <div class="grid_3 omega">
-        <h3>Or, try the demo:</h3>
+        <h3>Or try it out!</h3>
         <div class="bluebox">
             <h3 class="smaller mb5">Step 1</h3>
             <a href="/demo/blog/">Start at a blog</a> that uses an OExchange-aware tool to show you some sharing options.
