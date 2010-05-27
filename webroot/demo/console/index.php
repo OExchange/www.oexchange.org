@@ -120,7 +120,7 @@
     <div class="oex-sub" id="oex-info-how" style="display:none">
         <h2>How are my sharing services stored?</h2>
         <p>
-        Your sharing services are stored in a local browser cookie. If you choose to Publish them, they will be publicly accessible via your Google Webfinger account and ....
+        Your sharing services are stored in a local browser cookie. If you choose to publish them, they will be publicly accessible via Webfinger.
         </p>
         <div class="oex-controls">
             <button class="oex-sub-cancel">Ok</button>
