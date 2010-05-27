@@ -311,17 +311,20 @@
     function renderSave(i, el, noadd) {
         var xrd = getXRD(),
             newService = !(serviceHash[xrd]);
-        if (newService || true) {
+        if (newService) {
             el.onclick = function () { 
                 openRememberDialog(); 
-                jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
-                el.onclick = function () {return false;};
-                return false;
+                saveService(this) 
             };
         } else {
-            jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn');
-            el.onclick = function () {return false;};
+            saveService(el);
         }
+    }
+
+    function saveService(el) {
+        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn').html('<span>Service Saved</span>');
+        el.onclick = function () {return false;};
+        return false;
     }
 
     function shareLink(el, xrd) {
