@@ -17,23 +17,34 @@ include ("../pagetop-main.inc.php");
         <h3>Or, try the demo:</h3>
         <div class="bluebox">
             <h3 class="smaller mb5">Step 1</h3>
-            <a href="/demo/blog/">Start at a blog</a> that uses an OExchange enabled sharing tool.
+            <a href="/demo/blog/">Start at a blog</a> that uses an OExchange-aware tool to show you some sharing options.
             
             <hr/>
             
             <h3 class="smaller mb5">Step 2</h3>
-            <a href="/demo/linkeater/?demo=true">Visit a service</a> that, via OExchange, can be discovered as a sharing destination. Save the service.
+            <a href="/demo/linkeater/?demo=true">Visit a service</a> that also happens to support OExchange. 'Save' the service.
             
             <hr/>
             
             <h3 class="smaller mb5">Step 3</h3>
-            <a href="/demo/blog/">Return to the blog</a>, and note that the new service has been added to the user's favorite sharing destinations. 
-            These saved services can be published to the user's WebFinger profile.
+            <a href="/demo/blog/">Go back to the blog</a>.  This (totally new) service now appears as an option.
         </div>
     </div>
     <div class="clear"></div>        
     
-    <br/><hr/>
+	<h4 class="mb0">Technically, how does this actually work?</h4>
+	<p>
+	This is just a simple case of some of the things that are possible when tools and services support the protocol.
+	<ul>
+		<li>A JavaScript sharing tool keeps track of a set of services in local HTML5 storage.  The services are defined by <a target="_blank" href="/spec/#discovery-targetxrd">Target XRD URIs</a></li>
+		<li>The <a target="_blank" href="blog/">example blog</a> embeds this sharing tool, which renders the sharing options onto the page; when you click, you're hitting its <a target="_blank" href="/spec/#offer">Offer endpoint</a></li>
+		<li>The sample link-accepting service, <a target="_blank" href="linkeater/">LinkEater</a>, includes the JavaScript badge and tells it the location of its own XRD</li>
+		<li>When you 'save' the service, the tool performs <a target="_blank" href="/spec/#discovery">discovery</a> and figures out how to share to the service, then stores that for future use</a></li>
+		<li>As an extra bonus, you can also edit the list of services the tool knows about manually, adding any host that supports OExchange</li>   
+	</ul>
+    </p>
+
+	<br/><hr/>
     
     <h3 class="mb0">Other Examples</h3>
     
