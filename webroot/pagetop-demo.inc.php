@@ -1,5 +1,5 @@
 <?
-$stylesheets = array("/styles/960.css","/styles/site.css");
+$stylesheets = array("960.css", "site.css");
 $scriptFiles = array("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
 $styleBlocks = array("body { background: #fff; padding: 0; } .container_12 { margin: 0 auto; }");
 include 'head.inc.php';

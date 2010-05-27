@@ -8,16 +8,16 @@ include '../pagetop-main.inc.php';
     
     
     <div class="grid_2 alpha center">
-        <br/><img src="/images/oexchange_128x128.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">128x128, PNG</p>
+        <br/><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange_128x128.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">128x128, PNG</p>
     </div>
     <div class="grid_2 center">
-        <br/><img src="/images/oexchange_48x48.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">48x48, PNG</p>
+        <br/><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange_48x48.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">48x48, PNG</p>
     </div>
     <div class="grid_1 omega center">
-        <br/><img src="/images/oexchange_16x16.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">16x16, PNG</p>
+        <br/><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange_16x16.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">16x16, PNG</p>
     </div>
     <div class="grid_3 prefix_2 center">
-        <a href="http://www.spreadshirt.com/oexchange"><img src="/images/oexchange-tshirt.jpg" border="0" alt="OExchange T-Shirt" /></a><p class="gry">Cool Swag.</p>
+        <a href="http://www.spreadshirt.com/oexchange"><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange-tshirt.jpg" border="0" alt="OExchange T-Shirt" /></a><p class="gry">Cool Swag.</p>
     </div>
     <div class="clear"></div>
     

@@ -167,10 +167,11 @@ if ($cmd == "getUserTargets") {
 			<ul>
 				<li><code>email</code>: The email address to look up via WebFinger.</li>
 			</ul>
+            
 			<h5>An example call</h5>
-			<blockquote>
+			<p class="greybox">
 				<a target="_blank" href="api.php?cmd=getUserTargets&jsonpcb=callback&email=will@willmeyer.com">api.php?cmd=getUserTargets&jsonpcb=callback&email=will@willmeyer.com</a>
-			</blockquote>
+			</p>
 
 			<a name="getHostTargets"></a>
 			<h4>getHostTargets</h4>
@@ -185,10 +186,11 @@ if ($cmd == "getUserTargets") {
 			<ul>
 				<li><code>host</code>: The host to look up.</li>
 			</ul>
+            
 			<h5>An example call</h5>
-			<blockquote>
+			<p class="greybox">
 				<a target="_blank" href="api.php?cmd=getHostTargets&jsonpcb=callback&host=oexchange.org">api.php?cmd=getHostTargets&jsonpcb=callback&host=oexchange.org</a>
-			</blockquote>
+			</p>
 
 			<a name="getTargetDetail"></a>
 			<h4>getTargetDetail</h4>
@@ -201,10 +203,11 @@ if ($cmd == "getUserTargets") {
 			<ul>
 				<li><code>xrd</code>: The URL of the targets XRD document.</li>
 			</ul>
+            
 			<h5>An example call</h5>
-			<blockquote>
+			<p class="greybox">
 				<a target="_blank" href="api.php?cmd=getTargetDetail&jsonpcb=callback&xrd=http://www.oexchange.org/demo/linkeater/oexchange.xrd">api.php?cmd=getTargetDetail&jsonpcb=callback&xrd=http://www.oexchange.org/demo/linkeater/oexchange.xrd</a>
-			</blockquote>
+			</p>
 
 			<a name="getCommonUserTargets"></a>
 			<h4>getCommonUserTargets</h4>
@@ -222,10 +225,11 @@ if ($cmd == "getUserTargets") {
 			<ul>
 				<li><code>to</code>: The email addresses of each recipient, comma-separated.</li>
 			</ul>
+            
 			<h5>An example call</h5>
-			<blockquote>
+			<p class="greybox">
 				<a target="_blank" href="api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com">api.php?cmd=getCommonUserTargets&jsonpcb=callback&from=will@willmeyer.com&to=charlie@ecece.com</a>
-			</blockquote>
+			</p>
 
 			</div>	
 		<?

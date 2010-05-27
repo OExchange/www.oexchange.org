@@ -1,0 +1,84 @@
+<project name="www.oexchange.org" default="help" basedir=".">
+    <description>Builds the www.oexchange.org site tree</description>
+
+	<!-- EDITABLE CONFIG -->
+	<property name="STATICASSETS_VER" value="1"/>
+
+	<!-- global props for build -->
+	<property name="srcWebroot" location="webroot"/>
+	<property name="stage" location="_staged"/>
+    
+    <target name="_loadProperties">
+    </target>
+    
+	<target name="_init" depends="_loadProperties" >
+	    <tstamp/>
+	    <mkdir dir="${stage}"/>
+	    <mkdir dir="${stage}/full"/>
+	    <mkdir dir="${stage}/static"/>
+	    <mkdir dir="${stage}/static/${STATICASSETS_VER}"/>
+	</target>
+
+    <target name="help" description="Help!" >
+		<echo>
+		Read the -projecthelp results!
+		</echo>
+    </target>
+
+    <target name="_moveFiles" depends="_init" >
+		<echo>Copying files into local static and main trees...</echo>
+		
+        <!-- copy all files -->
+		<copy todir="${stage}/full">
+            <!--
+			<fileset dir="${srcWebroot}" excludes="images/**,styles/**"/>
+			-->
+            <fileset dir="${srcWebroot}" excludes=""/>
+        </copy>
+        
+        <!-- copy static files -->
+		<copy todir="${stage}/static/${STATICASSETS_VER}">
+            <fileset dir="${srcWebroot}" includes="images/**,styles/**"/>
+        </copy>
+    </target>
+    
+	<target name="_versionBuild">
+		<!--
+		TODO
+		-->
+	</target>
+	
+	<target name="setup-localstage" depends="_moveFiles, _versionBuild" description="Sets up a localstage build, but doesn't do anything with the CDN" >
+	</target>
+
+	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build, including CDN static assets" >
+	</target>
+
+	<target name="deploy-static" depends="_moveFiles" description="Deploys staged static assets to the CDN, using the current version number" >
+
+		<!-- Confirm -->
+		<input
+	    	message="About to deploy to CDN, overwriting anything at http://s3.amazonaws.com/cache.oexchange.org/site/${STATICASSETS_VER}. You sure?"
+	    	validargs="y,n"
+	    	addproperty="do.delete"
+	  		/>
+	  	<condition property="do.abort">
+	    	<equals arg1="n" arg2="${do.delete}"/>
+	  	</condition>
+	  	<fail if="do.abort">Deploy aborted at your request</fail>
+	
+		<!-- Do the CDN deploy -->
+		<property name="deploy_s3" location="./deploy_s3.sh"/>
+		<exec executable="${deploy_s3}" failonerror="true">
+			<arg value="${STATICASSETS_VER}/"/>
+		</exec>
+	</target>
+
+	<target name="clean" description="cleans up any build artifacts" >
+        <delete includeemptydirs="true" failonerror="false">
+            <fileset dir="${stage}" includes="**/*"/>
+        </delete>
+		<delete dir="${stage}"/>
+	</target>
+
+</project>
