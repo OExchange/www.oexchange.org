@@ -33,7 +33,7 @@ a:hover {
     text-align: left;
 }
 .navbar a {
-    background: url(/images/logo_inverted_16.gif) no-repeat left;
+    background: url(../images/logo_inverted_16.gif) no-repeat left;
     padding-left: 24px;
     color: #ccc;
 }

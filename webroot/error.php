@@ -59,7 +59,7 @@ switch(getenv("REDIRECT_STATUS"))
 <title>Oops!</title>
 <style type="text/css">
 body {
-    background: #fff url(/images/bkg-404.png) no-repeat 0 0;
+    background: #fff url(<?= $CFG_IMAGESBASE_URL ?> . /bkg-404.png) no-repeat 0 0;
     padding: 0;
     margin: 0;
     font-family: arial,helvetica,lucida,verdana,sans-serif;

@@ -1,4 +1,14 @@
-<? 
+<?
+
+/**
+* Creates the HEAD of the page, for inclusion in every page.  Looks for variables to set up styles and such:
+* $stylesheets: array of relative css urls
+* $scriptFiles: array of abs-path js files
+* $styleBlocks: array of style blocks to include directly in the head
+*/
+
+include "config.inc.php";
+ 
 if (!isset($nav)) $nav = '';
 if (isset($page_title)) { 
     $ptitle = $page_title;
@@ -13,17 +23,17 @@ if (isset($page_title)) {
     <title><?= $ptitle?></title>
 	<meta property="og:title" content="<?= $ptitle?>"/>
 	<meta property="og:site_name" content="OExchange"/>
-	<meta property="og:image" content="/images/logo_128x128.png"/>
+	<meta property="og:image" content="<?= $CFG_IMAGEBASE_URL ?>/logo_128x128.png"/>
 	<meta name="robots" content="all" />
 	<meta http-equiv="keywords" content="OExchange, share, widget, oEmbed, OAuth, XRD, Host-Meta, LRDD, social, WebFinger, sharing" />
 	<meta http-equiv="description" content="<?= $ptitle?>" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<link rel="icon" type="image/png" href="/images/logo_16x16.png" />
+	<link rel="icon" type="image/png" href="<?= $CFG_IMAGEBASE_URL ?>/logo_16x16.png" />
 	<link rel="http://oexchange.org/spec/0.8/rel/related-target" type="application/xrd+xml" href="http://www.oexchange.org/demo/linkeater/oexchange.xrd">
 	<?
 		if ($stylesheets) {
 			foreach ($stylesheets as $stylesheet) {
-			    echo "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"" . $stylesheet . "\" />\n";
+			    echo "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"" . $CFG_CSSBASE_URL . "/" . $stylesheet . "\" />\n";
 			}
 		}
 		if ($scriptFiles) {

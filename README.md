@@ -15,20 +15,34 @@ The source for everything on www.oexchange.org, including:
 
 Other things are in other repos in the [OExchange account](http://github.com/OExchange).
 
-### Contributing ###
+### How to Contribute ###
 
 If you're interested in being a contributor, join [the discussion](http://groups.google.com/group/oexchange).
 
-### Running Locally ###
+### Development Setup ###
 
-The root of the site is /webroot.  To run it locally, just point an Apache/PHP setup to it (xampp for example).  
+The root of the site source is /webroot.  To run it locally, you just need a PHP and Apache environment:
 
-The site is self-contained and there are no complex or additional  dependencies.
+* set up a /etc/hosts to point www-local.oexchange.org to your dev machine
 
-### Deploying ###
+* set up a virtual host for www-local.oexchange.org to point to the webroot
 
-Dirt simple, if you have the approval:
+* access the site locally at www-local.oexchange.org
 
-`deploy.sh <username>`
+The site uses the hostname that you hit it with to determine the location of static assets, so don't use an alternate hostname or "localhost".
+
+### CDN, Deploying, and Site-Wide Configuration ###
+
+Once deployed, the site relies on static assets cached at http://cache.oexchange.org/site/VERSION/images, etc.  The common configuration script included in every page sets variables, based on requested hostname, for the root path from which to serve these static assets.
+
+The site builds/deploys, once your out of your local source tree, using Ant.  The build script has help.
+
+To deploy a version of the site to your local dev environment, but still have it reference the CDN assets, set up a "www-localstage" virtual host and /etc/host mapping, and use the deploy-localstage build target.
+
+Not that you can't deploy to production, either the main server or the CDN, without proper credentials.
+
+
+
+
 
 
