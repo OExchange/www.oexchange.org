@@ -169,7 +169,7 @@ $(function(){
                   .append($('<td />',{html:(xrdData.name?xrdData.name:'Unknown') + (xrdData.standard?' <span style="color:#999;font-size:11px">(default)</span>':''),
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
-                  .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
+                  /*.append($('<td />',{text:xrdData.offer?xrdData.offer:''}))*/
                   .append($('<td />',{html:(xrdData.standard?'n/a':'<a href="#" class="remove-button">X</a>'),
                                       'class':xrdData.standard?'remove-button-disabled':'snark'}));
                 tableBody.append(tr);

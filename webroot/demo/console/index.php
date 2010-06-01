@@ -28,12 +28,12 @@
     </div>
     <div class="srvcs" style="display:none">
     <table id="srvcs" cellspacing="0">
-        <colgroup><col width="5%"/><col width="10%"/><col width="75%"/><col width="10%"/></colgroup>
+        <colgroup><col width="5%"/><col width="85%"/><!--<col width="75%"/>--><col width="10%"/></colgroup>
     	<thead>
     		<tr>
     			<th>Pri</th>
-    			<th>Name</th>
-    			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
+    			<th>Name <span class="oex-note">Drag to reorder this list.</span></th>
+    			<!-- <th>URL</th> -->
     			<th>Remove</th>
     		</tr>
     	</thead>    
