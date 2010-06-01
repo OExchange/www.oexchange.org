@@ -19,9 +19,9 @@
 	    <mkdir dir="${stage}/static/${STATICASSETS_VER}"/>
 	</target>
 
-    <target name="help" description="Help!" >
+    <target name="help" description="" >
 		<echo>
-		Read the -projecthelp results!
+		Run 'ant -projecthelp'
 		</echo>
     </target>
 
@@ -48,13 +48,13 @@
 		-->
 	</target>
 	
-	<target name="setup-localstage" depends="_moveFiles, _versionBuild" description="Sets up a localstage build, but doesn't do anything with the CDN" >
+	<target name="setup-localstage" depends="_moveFiles, _versionBuild" description="Sets up a localstage build at _staged, but doesn't do anything with the CDN" >
 	</target>
 
-	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build, including CDN static assets" >
+	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build to _staged, including CDN static assets" >
 	</target>
 
-	<target name="deploy-public" depends="deploy-static" description="Deploys a localstage build, including CDN static assets" >
+	<target name="deploy-public" depends="deploy-static" description="Deploys to the public site and to the CDN" >
 
 		<!-- Confirm -->
 		<input
@@ -94,7 +94,7 @@
 		</exec>
 	</target>
 
-	<target name="clean" description="cleans up any build artifacts" >
+	<target name="clean" description="Cleans up any build artifacts" >
         <delete includeemptydirs="true" failonerror="false">
             <fileset dir="${stage}" includes="**/*"/>
         </delete>

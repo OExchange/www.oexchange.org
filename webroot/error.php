@@ -1,5 +1,7 @@
 <?php
 
+require_once 'config.inc.php';
+
 $page_redirected_from = $_SERVER['REQUEST_URI'];  
 $server_url = "http://" . $_SERVER["SERVER_NAME"] . "/";
 $redirect_url = $_SERVER["REDIRECT_URL"];
@@ -59,7 +61,7 @@ switch(getenv("REDIRECT_STATUS"))
 <title>Oops!</title>
 <style type="text/css">
 body {
-    background: #fff url(<?= $CFG_IMAGESBASE_URL ?> . /bkg-404.png) no-repeat 0 0;
+    background: #fff url(<?= $CFG_IMAGEBASE_URL ?>/bkg-404.png) no-repeat 0 0;
     padding: 0;
     margin: 0;
     font-family: arial,helvetica,lucida,verdana,sans-serif;
