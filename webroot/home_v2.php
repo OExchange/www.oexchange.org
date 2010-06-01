@@ -47,9 +47,7 @@ include 'pagetop-main.inc.php';
             </ul>
         </div>
         <div class="grid_3 omega">
-			<!--
-            <h5>The Players</h5>
-			-->
+            <h5> </h5>
             <a href="http://www.addtoany.com/">AddToAny</a><br/>
             <a href="http://www.clearspring.com/">Clearspring</a><br/>
             <a href="http://www.digg.com/">Digg</a><br/>
