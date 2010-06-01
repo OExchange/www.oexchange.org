@@ -310,7 +310,15 @@
 
     function renderSave(i, el, noadd) {
         var xrd = getXRD(),
-            newService = !(serviceHash[xrd]);
+            newService = true;
+
+        for (var i = 0; i < serviceList.length; i++) {
+            if (serviceList[i] == xrd) {
+                newService = false;
+                break;
+            }
+        }
+
         if (newService) {
             el.onclick = function () { 
                 openRememberDialog(); 
