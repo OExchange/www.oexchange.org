@@ -98,7 +98,7 @@ a:hover {
 	top: 50px;
 	left: 50%;
 	width: 375px;
-	margin-left: -190px;
+	margin-left: -188px;
 	z-index: 1001;	
 	background: #fff;
 	padding: 1px;
@@ -157,12 +157,11 @@ a:hover {
 	text-decoration: underline;
 	color: #faf9e0;
 }
-#srvcs tbody {
-}
 #srvcs tbody tr:hover {
     background-color: #fcfbea;
 }
 #srvcs tbody td {
+    cursor: 'all-scroll';
     background-color: #fff;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;

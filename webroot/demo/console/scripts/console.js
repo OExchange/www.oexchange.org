@@ -177,26 +177,6 @@ $(function(){
 
             if (serviceList.length > 1) {
                 $('.oex-note').show();
-                $("#srvcs tbody").sortable({
-                                            cursor: 'all-scroll',
-                                            update: function(e, ui) { 
-                                                var row = ui.item[0],
-                                                    rows = row.parentNode.children,
-                                                    tosort = [];
-                    
-                                                for (var i = 0; i < rows.length; i++) {
-                                                    tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
-                                                    rows[i].setAttribute('rel',i);
-                                                    jQuery([rows[i].firstChild]).html(i + 1);
-                                                }
-                                                tosort.sort(function (a, b) { return a.idx - b.idx; });
-                                                serviceList = [];
-                                                for (var i = 0; i < tosort.length; i++) {
-                                                    serviceList.push(tosort[i].xrd);
-                                                } 
-                                                storeData();
-                                            }
-                                       });
             } else {
                 $('.oex-note').hide();
             }
@@ -482,6 +462,26 @@ $(function(){
                     $('#oex-publish-error').show();
                 }
             });
+    });
+
+    $("#srvcs tbody").sortable({
+        update: function(e, ui) { 
+            var row = ui.item[0],
+                rows = row.parentNode.children,
+                tosort = [];
+
+            for (var i = 0; i < rows.length; i++) {
+                tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
+                rows[i].setAttribute('rel',i);
+                jQuery([rows[i].firstChild]).html(i + 1);
+            }
+            tosort.sort(function (a, b) { return a.idx - b.idx; });
+            serviceList = [];
+            for (var i = 0; i < tosort.length; i++) {
+                serviceList.push(tosort[i].xrd);
+            } 
+            storeData();
+        }
     });
     
     /* onload */
