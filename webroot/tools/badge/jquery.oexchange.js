@@ -5,7 +5,7 @@
     //var addUrl = '//www.oexchange.org/demo/console/', 
     var addUrl = '/demo/console/', 
         consoleUrl = addUrl +  (window.oex_demo ? '?demo=true' : ''),
-        shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href),
+        shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href)+'&title='+encodeURIComponent(document.title||''),
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
