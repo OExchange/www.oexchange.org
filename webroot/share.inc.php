@@ -12,6 +12,6 @@
         <a title="Share to Twitter" target="_blank" class="addthis_button_twitter"><img src="<?= $CFG_IMAGEBASE_URL ?>/twitter-16px.png" border="0" alt="Post to Twitter" /></a> 
         <a title="Post on Google Buzz" target="_blank" class="addthis_button_googlebuzz"><img src="<?= $CFG_IMAGEBASE_URL ?>/google-buzz-16px.png" border="0" alt="Post to Google Buzz" /></a>
         <span class="addthis_separator">|</span>
-        <a class="addthis_button_compact">Share</a>
+        <a class="addthis_button_compact">More</a>
     </div>
 </div>        
