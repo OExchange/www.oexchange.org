@@ -1,6 +1,7 @@
 $(function(){
     var defaultXrd = {
             facebook: {
+                standard: true,
                 vendor: 'Facebook',
                 title: 'Facebook',
                 name: 'Facebook',
@@ -11,6 +12,7 @@ $(function(){
                 xrd: 'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd'
             },
             twitter: {
+                standard: true,
                 vendor: 'Twitter',
                 title: 'Twitter',
                 name: 'Twitter',
@@ -21,6 +23,7 @@ $(function(){
                 xrd: 'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd'
             },
             delicious: {
+                standard: true,
                 vendor: 'Yahoo',
                 title: 'Delicious',
                 name: 'Delicious',
@@ -31,6 +34,7 @@ $(function(){
                 xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
             },
             digg: {
+                standard: true,
                 vendor: 'Digg',
                 title: 'Digg',
                 name: 'Digg',
@@ -41,6 +45,7 @@ $(function(){
                 xrd: 'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd'
             },
             buzz: {
+                standard: true,
                 vendor: 'Google',
                 title: 'Google Buzz',
                 name: 'Google Buzz',
@@ -52,7 +57,8 @@ $(function(){
             }
         },
         w = window,
-        serviceList = oex_defaultServices ? [defaultXrd.facebook.xrd, defaultXrd.buzz.xrd, defaultXrd.twitter.xrd, defaultXrd.digg.xrd, defaultXrd.delicious.xrd] : [], 
+        defaultServiceList = [defaultXrd.facebook.xrd, defaultXrd.buzz.xrd, defaultXrd.twitter.xrd, defaultXrd.digg.xrd, defaultXrd.delicious.xrd],
+        serviceList = oex_defaultServices ? defaultServiceList : [], 
         serviceHash,
         sericeToAdd,
         duration = 100,
@@ -145,7 +151,11 @@ $(function(){
         //log(serviceHash);
         var xrd,xrdCache,tr;
         var tableBody = $('#srvcs tbody').empty();
-        if (serviceList && serviceList.length > 0) {
+        // for current demo console, we always default
+        if (!serviceList || serviceList.length == 0) {
+            serviceList = defaultServiceList;
+        }
+        if (serviceList || serviceList.length > 0) {
             for (var i in serviceList) {
                 xrd = serviceList[i];
                 xrdData = serviceHash[xrd] || {};
@@ -155,7 +165,7 @@ $(function(){
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
                   .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
-                  .append($('<td />',{html:'<a href="#" class="remove-button">X</a>'}));
+                  .append($('<td />',{html:xrdData.standard?'<span style="font-size:11px">Default</span>':'<a href="#" class="remove-button">X</a>'}));
                 tableBody.append(tr);
             }
 
@@ -404,6 +414,8 @@ $(function(){
                 $('#oex-add-success').hide();
                 $('#oex-new-service').attr('disabled',false);
                 $('#oex-new-service').val('');
+                $('#oex-add-service').hide();
+                $('#oex-search-service').show();
                 $('#oex-add-cancel').show();
                 $('#oex-add').slideDown(duration);
     });
