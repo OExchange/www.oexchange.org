@@ -275,14 +275,8 @@ $(function(){
                 function () {
                     $('.oex-sub').slideUp(duration);
                     if (removeService(index)) {
-                        try {
-                            // ignore sortable bug
-                            displayTable();
-                        } catch (e) {
-                            //log(e);
-                        } finally {
-                            storeData();
-                        }
+                        displayTable();
+                        storeData();
                     }
                 }
         );

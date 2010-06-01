@@ -157,8 +157,26 @@ a:hover {
 	text-decoration: underline;
 	color: #faf9e0;
 }
+#srvcs tbody tr.drop-placeholder {
+    height: 2em; 
+    line-height: 2em;
+    border: 1px solid #fcefa1;
+    background: #ededed url(images/bkg-btn-grey.gif) repeat-x 0 0;
+}
 #srvcs tbody tr:hover {
     background-color: #fcfbea;
+}
+#srvcs tbody tr:hover td {
+    /* remove column */
+    width:50px;
+}
+#srvcs tbody tr:hover td.center{
+    /* first column */
+    width:40px;
+}
+#srvcs tbody tr:hover td.iconified{
+    /* second column */
+    width:300px;
 }
 #srvcs tbody td {
     cursor: 'all-scroll';
