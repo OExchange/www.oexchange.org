@@ -41,6 +41,7 @@ include ("../pagetop-main.inc.php");
 		<li>The sample link-accepting service, <a target="_blank" href="linkeater/">LinkEater</a>, includes the JavaScript badge and tells it the location of its own XRD</li>
 		<li>When you 'save' the service, the tool performs <a target="_blank" href="/spec/#discovery">discovery</a> and figures out how to share to the service, then stores that for future use</a></li>
 		<li>As an extra bonus, you can also edit the list of services the tool knows about manually, adding any host that supports OExchange</li>   
+		<li>Note that the tool has no knowledge at all of these services beforehand &mdash; all of this integration happens completely dynamically</li>   
 	</ul>
     </p>
 

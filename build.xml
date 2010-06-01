@@ -2,7 +2,7 @@
     <description>Builds the www.oexchange.org site tree</description>
 
 	<!-- EDITABLE CONFIG -->
-	<property name="STATICASSETS_VER" value="1"/>
+	<property name="STATICASSETS_VER" value="2"/>
 
 	<!-- global props for build -->
 	<property name="srcWebroot" location="webroot"/>
