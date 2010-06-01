@@ -67,12 +67,16 @@ $(function(){
     window.oex_defaultServices = !!window.oex_defaultServices;
     if (!window.JSON) window.JSON = {stringify : function () { return '' }};
 
-    // preload services with defaults
-    if (oex_defaultServices) {
+    var preloadServiceHash = function () {
         serviceHash = {};
         for (var k in defaultXrd) {
             serviceHash[defaultXrd[k].xrd] = defaultXrd[k];
         }
+    }
+
+    // preload services with defaults
+    if (oex_defaultServices) {
+        preloadServiceHash();
     }
     
     var log = function(msg) {
@@ -154,6 +158,7 @@ $(function(){
         // for current demo console, we always default
         if (!serviceList || serviceList.length == 0) {
             serviceList = defaultServiceList;
+            preloadServiceHash();
         }
         if (serviceList || serviceList.length > 0) {
             for (var i in serviceList) {
@@ -247,7 +252,7 @@ $(function(){
         if (services && services.length == 1) {
             if ($.inArray(services[0], serviceList || []) > -1) return false;
         }
-        serviceList = $.merge(serviceList || [],services);
+        serviceList = $.merge(services,serviceList || []);
         serviceHash = null;
         storeData();
         return true;
@@ -355,7 +360,7 @@ $(function(){
         if (!isInServiceList(service.xrd)) {
             if (service.target.endpoint) service.target.offer = service.target.endpoint;
             serviceHash[service.xrd] = service.target;
-            serviceList.push(service.xrd);
+            serviceList.unshift(service.xrd);
             storeData();
             displayTable();
         }
