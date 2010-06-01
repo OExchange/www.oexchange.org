@@ -166,11 +166,11 @@ $(function(){
                 xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
                 tr.append($('<td />',{text:parseInt(i)+1, 'class': 'center'}))
-                  .append($('<td />',{text:xrdData.name?xrdData.name:'Unknown',
+                  .append($('<td />',{html:(xrdData.name?xrdData.name:'Unknown') + (xrdData.standard?' <span style="color:#999;font-size:11px">(default)</span>':''),
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
                   .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
-                  .append($('<td />',{html:xrdData.standard?'<span style="font-size:11px">Default</span>':'<a href="#" class="remove-button">X</a>'}));
+                  .append($('<td />',{html:'<a href="#" class="remove-button'+(xrdData.standard?'-disabled':'')+'">X</a>'}));
                 tableBody.append(tr);
             }
 
@@ -286,6 +286,7 @@ $(function(){
         return false;
     });
     
+    $('#srvcs .remove-button-disabled').live('click',function(e){});
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
 
