@@ -14,5 +14,5 @@ then
 	MOREARGS=--dry-run
 fi		
 
-echo "Deploying as $1..."
-rsync -avrz $MOREARGS --chmod=g+w --delete webroot/ $1@pacer.dreamhost.com:$OEROOT/
+echo "Deploying to dreamhost as $1..."
+rsync -avrz $MOREARGS --chmod=g+w --delete _staged/full/ $1@pacer.dreamhost.com:$OEROOT/
