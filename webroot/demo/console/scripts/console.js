@@ -1,6 +1,6 @@
 $(function(){
     var defaultXrd = {
-            facebook: {
+            'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd' : {
                 standard: true,
                 vendor: 'Facebook',
                 title: 'Facebook',
@@ -11,7 +11,18 @@ $(function(){
                 offer: 'http://oexchange-facebook.appspot.com/offer',
                 xrd: 'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd'
             },
-            twitter: {
+            'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd' : {
+                standard: true,
+                vendor: 'Google',
+                title: 'Google Buzz',
+                name: 'Google Buzz',
+                prompt: 'Post to Buzz',
+                icon: 'http://oexchange-buzz.appspot.com/images/logo_16x16.gif',
+                icon32: 'http://oexchange-buzz.appspot.com/images/logo_32x32.png',
+                offer: 'http://www.google.com/buzz/post',
+                xrd: 'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd'
+            },
+            'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd' : {
                 standard: true,
                 vendor: 'Twitter',
                 title: 'Twitter',
@@ -22,18 +33,7 @@ $(function(){
                 offer: 'http://www.twitter.com/save',
                 xrd: 'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd'
             },
-            delicious: {
-                standard: true,
-                vendor: 'Yahoo',
-                title: 'Delicious',
-                name: 'Delicious',
-                prompt: 'Save on Delicious',
-                icon: 'http://delicious.com/favicon.ico',
-                icon32: 'http://oexchange-delicious.appspot.com/images/logo_32x32.png' ,
-                offer: 'http://www.delicious.com/save',
-                xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
-            },
-            digg: {
+            'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd' : {
                 standard: true,
                 vendor: 'Digg',
                 title: 'Digg',
@@ -44,27 +44,31 @@ $(function(){
                 offer: 'http://www.digg.com/submit',
                 xrd: 'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd'
             },
-            buzz: {
+            'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd' : {
                 standard: true,
-                vendor: 'Google',
-                title: 'Google Buzz',
-                name: 'Google Buzz',
-                prompt: 'Post to Buzz',
-                icon: 'http://oexchange-buzz.appspot.com/images/logo_16x16.gif',
-                icon32: 'http://oexchange-buzz.appspot.com/images/logo_32x32.png',
-                offer: 'http://www.google.com/buzz/post',
-                xrd: 'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd'
+                vendor: 'Yahoo',
+                title: 'Delicious',
+                name: 'Delicious',
+                prompt: 'Save on Delicious',
+                icon: 'http://delicious.com/favicon.ico',
+                icon32: 'http://oexchange-delicious.appspot.com/images/logo_32x32.png' ,
+                offer: 'http://www.delicious.com/save',
+                xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
             }
         },
         w = window,
-        defaultServiceList = [defaultXrd.facebook.xrd, defaultXrd.buzz.xrd, defaultXrd.twitter.xrd, defaultXrd.digg.xrd, defaultXrd.delicious.xrd],
-        serviceList = oex_defaultServices ? defaultServiceList : [], 
+        defaultServiceList = [],
+        serviceList,
         serviceHash,
         sericeToAdd,
         duration = 100,
         loadingServices = false;
 
     window.oex_defaultServices = !!window.oex_defaultServices;
+
+    for (var xrd in defaultXrd) defaultServiceList.push(xrd);
+    if (oex_defaultServices) serviceList = defaultServiceList; 
+
     if (!window.JSON) window.JSON = {stringify : function () { return '' }};
 
     var preloadServiceHash = function () {
@@ -153,7 +157,7 @@ $(function(){
     var displayTable = function(){
         //log(serviceList);
         //log(serviceHash);
-        var xrd,xrdCache,tr;
+        var xrd,xrdCache,tr,std = false;
         var tableBody = $('#srvcs tbody').empty();
         // for current demo console, we always default
         if (!serviceList || serviceList.length == 0) {
@@ -165,13 +169,14 @@ $(function(){
                 xrd = serviceList[i];
                 xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
+                std = xrdData.standard || (defaultXrd[xrd]||{}).standard;
                 tr.append($('<td />',{text:parseInt(i)+1, 'class': 'center'}))
-                  .append($('<td />',{html:(xrdData.name?xrdData.name:'Unknown') + (xrdData.standard?' <span style="color:#999;font-size:11px">(default)</span>':''),
+                  .append($('<td />',{html:(xrdData.name?xrdData.name:'Unknown') + (std?' <span style="color:#999;font-size:11px">(default)</span>':''),
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
                   /*.append($('<td />',{text:xrdData.offer?xrdData.offer:''}))*/
-                  .append($('<td />',{html:(xrdData.standard?'n/a':'<a href="#" class="remove-button">X</a>'),
-                                      'class':xrdData.standard?'remove-button-disabled':'snark'}));
+                  .append($('<td />',{html:(std?'n/a':'<a href="#" class="remove-button">X</a>'),
+                                      'class':std?'remove-button-disabled':''}));
                 tableBody.append(tr);
             }
 
