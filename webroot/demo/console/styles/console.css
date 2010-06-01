@@ -142,6 +142,7 @@ a:hover {
 	background: #666;
 	padding: 5px 2px;
 	text-align: left;
+    font-weight: normal;
 	color: #fff;
 }
 #srvcs thead th a {

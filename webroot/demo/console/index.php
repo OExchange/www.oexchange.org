@@ -31,8 +31,8 @@
         <colgroup><col width="5%"/><col width="10%"/><col width="75%"/><col width="10%"/></colgroup>
     	<thead>
     		<tr>
-    			<th><a href="#" id="oex-priority-sort">Pri</a></th>
-    			<th><a href="#" id="oex-services-sort">Name</a></th>
+    			<th>Pri</th>
+    			<th>Name</th>
     			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
     			<th>Remove</th>
     		</tr>
