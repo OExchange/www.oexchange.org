@@ -28,7 +28,7 @@
     </div>
     <div class="srvcs" style="display:none">
     <table id="srvcs" cellspacing="0">
-        <colgroup><col width="10%"/><col width="75%"/><!--<col width="75%"/>--><col width="10%"/></colgroup>
+        <colgroup><col width="15%"/><col width="65%"/><!--<col width="75%"/>--><col width="15%"/></colgroup>
     	<thead>
     		<tr>
     			<th>Priority</th>
