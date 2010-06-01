@@ -47,7 +47,10 @@ include 'pagetop-main.inc.php';
             </ul>
         </div>
         <div class="grid_3 omega">
+			<!--
             <h5>The Players</h5>
+			-->
+            <a href="http://www.addtoany.com/">AddToAny</a><br/>
             <a href="http://www.clearspring.com/">Clearspring</a><br/>
             <a href="http://www.digg.com/">Digg</a><br/>
             <a href="http://aboutecho.com/">Echo</a><br/>
@@ -59,6 +62,7 @@ include 'pagetop-main.inc.php';
             <a href="http://www.printfriendly.com/">PrintFriendly</a><br/>
             <a href="http://springpadit.com/">Springpad</a><br/>
             <a href="http://www.webs.com/">Webs.com</a><br/>
+            <a href="http://www.yiid.com/">yiid</a><br/>
             <a href="http://imageshack.us/">yfrog (Imageshack)</a><br/>
 			<br/>
 			Join <a href="http://groups.google.com/group/oexchange">the fun</a>!</br>
