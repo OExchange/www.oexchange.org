@@ -110,7 +110,7 @@ $(function(){
     
     var completeInit = function(){
         if (serviceList != null) {
-            $('#title').text('My Saved Sharing Services');
+            $('#title').text('My Sharing Services');
         }
         displayTable();
         hideLoading();

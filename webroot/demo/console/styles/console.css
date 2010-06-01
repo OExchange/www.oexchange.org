@@ -97,8 +97,8 @@ a:hover {
 	position: absolute;
 	top: 50px;
 	left: 50%;
-	width: 400px;
-	margin-left: -200px;
+	width: 375px;
+	margin-left: -190px;
 	z-index: 1001;	
 	background: #fff;
 	padding: 1px;
@@ -134,7 +134,7 @@ a:hover {
 
 .srvcs {    
     /* XXX */
-    height: 315px;
+    height: 265px;
     overflow-y: auto;
     overflow-x: hidden;
     /* border-left: 1px solid #ccc; */

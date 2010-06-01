@@ -163,7 +163,7 @@
            var s = ['',
                     '<div id="oexchange-dialog">',
                     '<div id="oexchange-dialog-inner">',
-                    '<iframe id="oexchange-console-dialog" src="'+consoleUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
+                    '<iframe id="oexchange-console-dialog" src="'+consoleUrl+'" frameborder="0" style="width:400px;height:350px;overflow:hidden">',
                     '</div>',
                     '</div>'].join('');
             jQuery('body').append(s);
