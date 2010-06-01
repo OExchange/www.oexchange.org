@@ -241,7 +241,16 @@ button:active {
 
 /* Common Styles */
 
-.remove-button { background: url(images/x.gif) no-repeat; display: block; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; margin: 0 auto; }
+.remove-button-disabled,
+.remove-button { 
+    background: url(images/x.gif) no-repeat; display: block; width: 16px; height: 16px; text-indent: -9999px; overflow: hidden; margin: 0 auto; 
+}
+.remove-button-disabled { 
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
 
 .oex-error {
     color:red;
