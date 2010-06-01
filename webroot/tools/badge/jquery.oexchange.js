@@ -311,12 +311,16 @@
     function renderSave(i, el, noadd) {
         var xrd = getXRD(),
             newService = true;
-
-        for (var i = 0; i < serviceList.length; i++) {
-            if (serviceList[i] == xrd) {
-                newService = false;
-                break;
+        
+        if (serviceList) {
+            for (var i = 0; i < serviceList.length; i++) {
+                if (serviceList[i] == xrd) {
+                    newService = false;
+                    break;
+                }
             }
+        } else {
+            newService = false;
         }
 
         if (newService) {
