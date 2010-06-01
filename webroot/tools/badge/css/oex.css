@@ -108,7 +108,7 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 }
 #oexchange-dialog-content,
 #oexchange-dialog-saved {
-    padding: 10px 15px;
+    padding: 5px 15px;
 }
 #oexchange-dialog-buttons,
 #oexchange-dialog-saved-button {
