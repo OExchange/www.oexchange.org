@@ -322,7 +322,7 @@
     }
 
     function saveService(el) {
-        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn').html('<span>Service Saved</span>');
+        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn').html('<span>Service Saved</span>').attr('title','Service Saved');
         el.onclick = function () {return false;};
         return false;
     }
@@ -426,7 +426,7 @@
     };
 
     // XXX just for demo
-    jQuery('head').append('<style type="text/css">@import "/tools/badge/css/oex.css";</style>');
+    jQuery('head').append('<link rel="stylesheet" href="/tools/badge/css/oex.css"/>');
 
     if (jQuery.browser.msie) { 
         window.attachEvent('onmessage', messageHandler);
