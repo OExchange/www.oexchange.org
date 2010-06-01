@@ -170,7 +170,8 @@ $(function(){
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
                   .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
-                  .append($('<td />',{html:'<a href="#" class="remove-button'+(xrdData.standard?'-disabled':'')+'">X</a>'}));
+                  .append($('<td />',{html:(xrdData.standard?'n/a':'<a href="#" class="remove-button">X</a>'),
+                                      'class':xrdData.standard?'remove-button-disabled':'snark'}));
                 tableBody.append(tr);
             }
 
