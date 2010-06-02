@@ -5,7 +5,7 @@
     //var addUrl = '//www.oexchange.org/demo/console/', 
     var addUrl = '/demo/console/', 
         consoleUrl = addUrl +  (window.oex_demo ? '?demo=true' : ''),
-        shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href),
+        shareUrl = 'http://oexchange-{service}.appspot.com/offer?url='+encodeURIComponent(document.location.href)+'&title='+encodeURIComponent(document.title||''),
         oexUrl = 'http://www.oexchange.org',
         supportStorage = window.Storage && window.localStorage,
         loaded = 0,
@@ -163,7 +163,7 @@
            var s = ['',
                     '<div id="oexchange-dialog">',
                     '<div id="oexchange-dialog-inner">',
-                    '<iframe id="oexchange-console-dialog" src="'+consoleUrl+'" frameborder="0" style="width:500px;height:400px;overflow:hidden">',
+                    '<iframe id="oexchange-console-dialog" src="'+consoleUrl+'" frameborder="0" style="width:400px;height:350px;overflow:hidden">',
                     '</div>',
                     '</div>'].join('');
             jQuery('body').append(s);
@@ -310,7 +310,19 @@
 
     function renderSave(i, el, noadd) {
         var xrd = getXRD(),
-            newService = !(serviceHash[xrd]);
+            newService = true;
+        
+        if (userServices) {
+            for (var i = 0; i < userServices.length; i++) {
+                if (userServices[i].xrd == xrd) {
+                    newService = false;
+                    break;
+                }
+            }
+        } else {
+            newService = false;
+        }
+
         if (newService) {
             el.onclick = function () { 
                 openRememberDialog(); 
@@ -322,7 +334,7 @@
     }
 
     function saveService(el) {
-        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn').html('<span>Service Saved</span>');
+        jQuery(el).addClass('oexchange-btn-saved').removeClass('oexchange-btn').html('<span>Service Saved</span>').attr('title','Service Saved');
         el.onclick = function () {return false;};
         return false;
     }
@@ -426,7 +438,7 @@
     };
 
     // XXX just for demo
-    jQuery('head').append('<style type="text/css">@import "/tools/badge/css/oex.css";</style>');
+    jQuery('head').append('<link rel="stylesheet" href="/tools/badge/css/oex.css"/>');
 
     if (jQuery.browser.msie) { 
         window.attachEvent('onmessage', messageHandler);

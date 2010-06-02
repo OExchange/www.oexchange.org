@@ -8,7 +8,7 @@
 
 <div id="header">
 	<h1 id="title">My OExchange Services</h1>
-    <a id="oex-main-whatisthis" href="#">What is this?</a>
+    <!--<a id="oex-main-whatisthis" href="#">What is this?</a>-->
     <button id="oex-main-add">Add</button>
 </div>
 <div id="content">
@@ -28,12 +28,12 @@
     </div>
     <div class="srvcs" style="display:none">
     <table id="srvcs" cellspacing="0">
-        <colgroup><col width="5%"/><col width="10%"/><col width="75%"/><col width="10%"/></colgroup>
+        <colgroup><col width="15%"/><col width="65%"/><!--<col width="75%"/>--><col width="15%"/></colgroup>
     	<thead>
     		<tr>
-    			<th><a href="#" id="oex-priority-sort">Pri</a></th>
-    			<th><a href="#" id="oex-services-sort">Name</a></th>
-    			<th>URL <span class="oex-note">Drag to reorder this list.</span></th>
+    			<th>Priority</th>
+    			<th>Name <span class="oex-note">Drag to reorder this list.</span></th>
+    			<!-- <th>URL</th> -->
     			<th>Remove</th>
     		</tr>
     	</thead>    

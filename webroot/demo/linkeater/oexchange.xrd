@@ -19,7 +19,7 @@
     <!-- 
         A set of Property elements define OExchange-specific attributes of this Target.
     -->
-    <Property type="http://www.oexchange.org/spec/0.8/prop/vendor">Will Meyer</Property>
+    <Property type="http://www.oexchange.org/spec/0.8/prop/vendor">OExchange.org</Property>
     <Property type="http://www.oexchange.org/spec/0.8/prop/title">A Service that Eats Links</Property>
     <Property type="http://www.oexchange.org/spec/0.8/prop/name">LinkEater</Property>
     <Property type="http://www.oexchange.org/spec/0.8/prop/prompt">Send to LinkEater</Property>

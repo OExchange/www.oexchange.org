@@ -55,10 +55,10 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
     overflow:hidden;
     top: 50%;
     left: 50%;
-    width: 500px;
-    height: 400px;
-    margin-top: -250px;
-    margin-left: -250px;
+    width: 400px;
+    height: 350px;
+    margin-top: -200px;
+    margin-left: -200px;
     z-index: 10002;
     background: url(/images/t.png);
     /*background: rgba(0,0,0,.4);*/
@@ -77,7 +77,7 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 #oexchange-remember-dialog-inner {
     background: #fff;
     border: 1px solid #555;
-    height: 380px;
+    height: 330px;
     font-family: arial,helvetica,verdana,sans-serif;
     font-size: 12px;
     line-height: 1.5em;
@@ -108,7 +108,7 @@ a.oexchange-enabled:hover { text-decoration: underline; color: #000; }
 }
 #oexchange-dialog-content,
 #oexchange-dialog-saved {
-    padding: 10px 15px;
+    padding: 5px 15px;
 }
 #oexchange-dialog-buttons,
 #oexchange-dialog-saved-button {

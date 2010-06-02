@@ -32,9 +32,8 @@ include '../../pagetop-blog.inc.php';
         <div id="tt1" class="tt" style="position:absolute;top:145px;left:25px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
-                These buttons can be personalized with new OExchange-enabled services.<br/><br/>
-                To see this in action, check out the <a href="/demo/linkeater/?demo=true">LinkEater</a> demo, an example
-                sharing service that supports OExchange.
+                These buttons give you choices for acting on this blog post. You can update them with new OExchange-enabled services.<br/><br/>
+                To see it in action, browse to <a href="/demo/linkeater/?demo=true">LinkEater</a>, an example of a new service that happens to support OExchange.
             </div>
             <div class="tt-tick"></div>
         </div>
@@ -67,7 +66,6 @@ include '../../pagetop-blog.inc.php';
     <div class="footer">&copy; 2010 MyBlog</div>
 </div>
 
-<script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
 <script type="text/javascript">
 var oex_demo = true;
 $(document).ready(
@@ -78,6 +76,7 @@ $(document).ready(
 );
 setTimeout("$('#tt1').fadeIn();",1000)
 </script>
+<script type="text/javascript" src="/tools/badge/jquery.oexchange.js"></script>
 <?
 require_once($_SERVER['DOCUMENT_ROOT'] . "/ga.inc.php");
 ?>

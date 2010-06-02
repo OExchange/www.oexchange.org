@@ -1,6 +1,7 @@
 $(function(){
     var defaultXrd = {
-            facebook: {
+            'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd' : {
+                standard: true,
                 vendor: 'Facebook',
                 title: 'Facebook',
                 name: 'Facebook',
@@ -10,7 +11,19 @@ $(function(){
                 offer: 'http://oexchange-facebook.appspot.com/offer',
                 xrd: 'http://oexchange-facebook.appspot.com/oexchange/oexchange.xrd'
             },
-            twitter: {
+            'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd' : {
+                standard: true,
+                vendor: 'Google',
+                title: 'Google Buzz',
+                name: 'Google Buzz',
+                prompt: 'Post to Buzz',
+                icon: 'http://oexchange-buzz.appspot.com/images/logo_16x16.gif',
+                icon32: 'http://oexchange-buzz.appspot.com/images/logo_32x32.png',
+                offer: 'http://www.google.com/buzz/post',
+                xrd: 'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd'
+            },
+            'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd' : {
+                standard: true,
                 vendor: 'Twitter',
                 title: 'Twitter',
                 name: 'Twitter',
@@ -20,17 +33,8 @@ $(function(){
                 offer: 'http://www.twitter.com/save',
                 xrd: 'http://oexchange-twitter.appspot.com/oexchange/oexchange.xrd'
             },
-            delicious: {
-                vendor: 'Yahoo',
-                title: 'Delicious',
-                name: 'Delicious',
-                prompt: 'Save on Delicious',
-                icon: 'http://delicious.com/favicon.ico',
-                icon32: 'http://oexchange-delicious.appspot.com/images/logo_32x32.png' ,
-                offer: 'http://www.delicious.com/save',
-                xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
-            },
-            digg: {
+            'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd' : {
+                standard: true,
                 vendor: 'Digg',
                 title: 'Digg',
                 name: 'Digg',
@@ -40,33 +44,43 @@ $(function(){
                 offer: 'http://www.digg.com/submit',
                 xrd: 'http://oexchange-digg.appspot.com/oexchange/oexchange.xrd'
             },
-            buzz: {
-                vendor: 'Google',
-                title: 'Google Buzz',
-                name: 'Google Buzz',
-                prompt: 'Post to Buzz',
-                icon: 'http://oexchange-buzz.appspot.com/images/logo_16x16.gif',
-                icon32: 'http://oexchange-buzz.appspot.com/images/logo_32x32.png',
-                offer: 'http://www.google.com/buzz/post',
-                xrd: 'http://oexchange-buzz.appspot.com/buzz/oexchange.xrd'
+            'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd' : {
+                standard: true,
+                vendor: 'Yahoo',
+                title: 'Delicious',
+                name: 'Delicious',
+                prompt: 'Save on Delicious',
+                icon: 'http://delicious.com/favicon.ico',
+                icon32: 'http://oexchange-delicious.appspot.com/images/logo_32x32.png' ,
+                offer: 'http://www.delicious.com/save',
+                xrd: 'http://oexchange-delicious.appspot.com/oexchange/oexchange.xrd'
             }
         },
         w = window,
-        serviceList = oex_defaultServices ? [defaultXrd.facebook.xrd, defaultXrd.buzz.xrd, defaultXrd.twitter.xrd, defaultXrd.digg.xrd, defaultXrd.delicious.xrd] : [], 
+        defaultServiceList = [],
+        serviceList,
         serviceHash,
         sericeToAdd,
         duration = 100,
         loadingServices = false;
 
     window.oex_defaultServices = !!window.oex_defaultServices;
+
+    for (var xrd in defaultXrd) defaultServiceList.push(xrd);
+    if (oex_defaultServices) serviceList = defaultServiceList; 
+
     if (!window.JSON) window.JSON = {stringify : function () { return '' }};
 
-    // preload services with defaults
-    if (oex_defaultServices) {
+    var preloadServiceHash = function () {
         serviceHash = {};
         for (var k in defaultXrd) {
             serviceHash[defaultXrd[k].xrd] = defaultXrd[k];
         }
+    }
+
+    // preload services with defaults
+    if (oex_defaultServices) {
+        preloadServiceHash();
     }
     
     var log = function(msg) {
@@ -100,7 +114,7 @@ $(function(){
     
     var completeInit = function(){
         if (serviceList != null) {
-            $('#title').text('My Saved Sharing Services');
+            $('#title').text('My Sharing Services');
         }
         displayTable();
         hideLoading();
@@ -143,55 +157,42 @@ $(function(){
     var displayTable = function(){
         //log(serviceList);
         //log(serviceHash);
-        var xrd,xrdCache,tr;
+        var xrd,xrdCache,tr,std = false;
         var tableBody = $('#srvcs tbody').empty();
-        if (serviceList && serviceList.length > 0) {
+        // for current demo console, we always default
+        if (!serviceList || serviceList.length == 0) {
+            serviceList = defaultServiceList;
+            preloadServiceHash();
+        }
+        if (serviceList || serviceList.length > 0) {
             for (var i in serviceList) {
                 xrd = serviceList[i];
                 xrdData = serviceHash[xrd] || {};
                 tr = $('<tr />',{rel:i});
+                std = xrdData.standard || (defaultXrd[xrd]||{}).standard;
                 tr.append($('<td />',{text:parseInt(i)+1, 'class': 'center'}))
-                  .append($('<td />',{text:xrdData.name?xrdData.name:'Unknown',
+                  .append($('<td />',{html:(xrdData.name?xrdData.name:'Unknown') + (std?' <span style="color:#999;font-size:11px">(default)</span>':''),
                                       'class':'iconified',
                                       style: xrdData.icon?'background-image:url('+xrdData.icon+')':'' }))
-                  .append($('<td />',{text:xrdData.offer?xrdData.offer:''}))
-                  .append($('<td />',{html:'<a href="#" class="remove-button">X</a>'}));
+                  /*.append($('<td />',{text:xrdData.offer?xrdData.offer:''}))*/
+                  .append($('<td />',{html:(std?'n/a':'<a href="#" class="remove-button">X</a>'),
+                                      'class':std?'remove-button-disabled':''}));
                 tableBody.append(tr);
             }
 
             if (serviceList.length > 1) {
                 $('.oex-note').show();
-                $("#srvcs tbody").sortable({
-                                            cursor: 'all-scroll',
-                                            update: function(e, ui) { 
-                                                var row = ui.item[0],
-                                                    rows = row.parentNode.children,
-                                                    tosort = [];
-                    
-                                                for (var i = 0; i < rows.length; i++) {
-                                                    tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
-                                                    rows[i].setAttribute('rel',i);
-                                                    jQuery([rows[i].firstChild]).html(i + 1);
-                                                }
-                                                tosort.sort(function (a, b) { return a.idx - b.idx; });
-                                                serviceList = [];
-                                                for (var i = 0; i < tosort.length; i++) {
-                                                    serviceList.push(tosort[i].xrd);
-                                                } 
-                                                storeData();
-                                            }
-                                       });
             } else {
                 $('.oex-note').hide();
             }
             $("#srvcs td").disableSelection();
             $('#no-services').hide();
             $('.srvcs').show();
-            $('#foot-publish').show();
+            //$('#foot-publish').show();
         } else {
             tableBody.append($('<tr><td colspan="5">You have no saved sharing services.</td></tr>'));
             $('.srvcs').hide();
-            $('#foot-publish').hide();
+            //$('#foot-publish').hide();
             $('#no-services').show();
         }
     };
@@ -237,7 +238,7 @@ $(function(){
         if (services && services.length == 1) {
             if ($.inArray(services[0], serviceList || []) > -1) return false;
         }
-        serviceList = $.merge(serviceList || [],services);
+        serviceList = $.merge(services,serviceList || []);
         serviceHash = null;
         storeData();
         return true;
@@ -271,21 +272,17 @@ $(function(){
         return false;
     });
     
+    $('#srvcs .remove-button-disabled').live('click',function(e){});
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
 
-        $('#oex-remove-service').live('click',
+        $('#oex-remove-service').unbind('click');
+        $('#oex-remove-service').click(
                 function () {
                     $('.oex-sub').slideUp(duration);
                     if (removeService(index)) {
-                        try {
-                            // ignore sortable bug
-                            displayTable();
-                        } catch (e) {
-                            //log(e);
-                        } finally {
-                            storeData();
-                        }
+                        displayTable();
+                        storeData();
                     }
                 }
         );
@@ -345,7 +342,7 @@ $(function(){
         if (!isInServiceList(service.xrd)) {
             if (service.target.endpoint) service.target.offer = service.target.endpoint;
             serviceHash[service.xrd] = service.target;
-            serviceList.push(service.xrd);
+            serviceList.unshift(service.xrd);
             storeData();
             displayTable();
         }
@@ -400,10 +397,12 @@ $(function(){
     $('#oex-publish-why').click(function () { $('#oex-publish').slideUp(duration);$('#oex-info-why').slideDown(duration);});
     $('#oex-main-add').click(function () {
                 $('#oex-feedback').hide();
-                $('#oex-error').hide();
+                $('.oex-error').hide();
                 $('#oex-add-success').hide();
                 $('#oex-new-service').attr('disabled',false);
                 $('#oex-new-service').val('');
+                $('#oex-add-service').hide();
+                $('#oex-search-service').show();
                 $('#oex-add-cancel').show();
                 $('#oex-add').slideDown(duration);
     });
@@ -463,6 +462,26 @@ $(function(){
                     $('#oex-publish-error').show();
                 }
             });
+    });
+
+    $("#srvcs tbody").sortable({
+        update: function(e, ui) { 
+            var row = ui.item[0],
+                rows = row.parentNode.children,
+                tosort = [];
+
+            for (var i = 0; i < rows.length; i++) {
+                tosort.push({idx: i, xrd: serviceList[rows[i].getAttribute('rel')]});
+                rows[i].setAttribute('rel',i);
+                jQuery([rows[i].firstChild]).html(i + 1);
+            }
+            tosort.sort(function (a, b) { return a.idx - b.idx; });
+            serviceList = [];
+            for (var i = 0; i < tosort.length; i++) {
+                serviceList.push(tosort[i].xrd);
+            } 
+            storeData();
+        }
     });
     
     /* onload */

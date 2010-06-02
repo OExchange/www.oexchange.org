@@ -7,7 +7,7 @@ include 'head.inc.php';
 <body>
 <div class="navbar">
     <div class="navbar-inner">
-        <a href="/demo">Back to OExchange Demos</a>
+        <a href="/demo/">Back to OExchange Demos</a>
     </div>
 </div>
 	

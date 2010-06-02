@@ -37,7 +37,7 @@ require_once("../../pagetop-demo.inc.php");
         	</p>
         	<pre>http://www.oexchange.org/demo/linkeater/offer.php</pre>	
         	<p style="padding:10px 0 30px 0;">
-        		<a class="oexchange-btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>.
+        		<a class="oexchange-btn" href="offer.php?url=http://www.example.com" title="Send it a URL!">Send it a URL!</a>
         	</p>	     
         	<h3>Discovering LinkEater</h3>
         	<p>
@@ -69,8 +69,8 @@ require_once("../../pagetop-demo.inc.php");
         <div id="tt1" class="tt" style="position:absolute;top:140px;right:-20px;display:none;">
             <div class="tt-x" title="Close" onclick="$('#tt1').fadeOut();"></div>
             <div class="tt-inner">
-                Because LinkEater supports OExchange, it can be dynamically added as a preferred sharing service.<br/><br/>
-                Add it here, then check out <a href="/demo/blog/">the blog</a> to see LinkEater as a new option!
+                Because LinkEater supports OExchange, you can automatically add it to your list of services (and sharing tools can dynamically support it).<br/><br/>
+                Save it, then check out <a href="/demo/blog/">the blog</a> to see LinkEater as a new option!
             </div>
             <div class="tt-tick" style="left:215px;"></div>
         </div>

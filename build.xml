@@ -2,7 +2,7 @@
     <description>Builds the www.oexchange.org site tree</description>
 
 	<!-- EDITABLE CONFIG -->
-	<property name="STATICASSETS_VER" value="1"/>
+	<property name="STATICASSETS_VER" value="2"/>
 
 	<!-- global props for build -->
 	<property name="srcWebroot" location="webroot"/>
@@ -19,9 +19,9 @@
 	    <mkdir dir="${stage}/static/${STATICASSETS_VER}"/>
 	</target>
 
-    <target name="help" description="Help!" >
+    <target name="help" description="" >
 		<echo>
-		Read the -projecthelp results!
+		Run 'ant -projecthelp'
 		</echo>
     </target>
 
@@ -48,10 +48,30 @@
 		-->
 	</target>
 	
-	<target name="setup-localstage" depends="_moveFiles, _versionBuild" description="Sets up a localstage build, but doesn't do anything with the CDN" >
+	<target name="setup-localstage" depends="_moveFiles, _versionBuild" description="Sets up a localstage build at _staged, but doesn't do anything with the CDN" >
 	</target>
 
-	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build, including CDN static assets" >
+	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build to _staged, including CDN static assets" >
+	</target>
+
+	<target name="deploy-public" depends="deploy-static" description="Deploys to the public site and to the CDN" >
+
+		<!-- Confirm -->
+		<input
+	    	message="About to deploy to public server, overwriting anything at http://www.oexchange.org. You sure?"
+	    	validargs="y,n"
+	    	addproperty="do.delete"
+	  		/>
+	  	<condition property="do.abort">
+	    	<equals arg1="n" arg2="${do.delete}"/>
+	  	</condition>
+	  	<fail if="do.abort">Deploy aborted at your request</fail>
+	
+		<!-- Do the public deploy -->
+		<property name="deploy_dreamhost" location="./deploy_dreamhost.sh"/>
+		<exec executable="${deploy_dreamhost}" failonerror="true">
+			<arg value="willmeyer"/>
+		</exec>
 	</target>
 
 	<target name="deploy-static" depends="_moveFiles" description="Deploys staged static assets to the CDN, using the current version number" >
@@ -70,11 +90,11 @@
 		<!-- Do the CDN deploy -->
 		<property name="deploy_s3" location="./deploy_s3.sh"/>
 		<exec executable="${deploy_s3}" failonerror="true">
-			<arg value="${STATICASSETS_VER}/"/>
+			<arg value="${STATICASSETS_VER}"/>
 		</exec>
 	</target>
 
-	<target name="clean" description="cleans up any build artifacts" >
+	<target name="clean" description="Cleans up any build artifacts" >
         <delete includeemptydirs="true" failonerror="false">
             <fileset dir="${stage}" includes="**/*"/>
         </delete>
