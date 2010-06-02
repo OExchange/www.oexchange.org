@@ -276,7 +276,8 @@ $(function(){
     $('#srvcs .remove-button').live('click',function(e){
         var index = $(this).parent().parent().attr('rel');
 
-        $('#oex-remove-service').live('click',
+        $('#oex-remove-service').unbind('click');
+        $('#oex-remove-service').click(
                 function () {
                     $('.oex-sub').slideUp(duration);
                     if (removeService(index)) {
