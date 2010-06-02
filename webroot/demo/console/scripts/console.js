@@ -397,7 +397,7 @@ $(function(){
     $('#oex-publish-why').click(function () { $('#oex-publish').slideUp(duration);$('#oex-info-why').slideDown(duration);});
     $('#oex-main-add').click(function () {
                 $('#oex-feedback').hide();
-                $('#oex-error').hide();
+                $('.oex-error').hide();
                 $('#oex-add-success').hide();
                 $('#oex-new-service').attr('disabled',false);
                 $('#oex-new-service').val('');
