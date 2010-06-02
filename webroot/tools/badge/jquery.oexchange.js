@@ -312,9 +312,9 @@
         var xrd = getXRD(),
             newService = true;
         
-        if (serviceList) {
-            for (var i = 0; i < serviceList.length; i++) {
-                if (serviceList[i] == xrd) {
+        if (userServices) {
+            for (var i = 0; i < userServices.length; i++) {
+                if (userServices[i].xrd == xrd) {
                     newService = false;
                     break;
                 }
