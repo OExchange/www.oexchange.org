@@ -8,10 +8,10 @@
     }
     </script>
     <div class="addthis_toolbox addthis_default_style">
+        <a class="addthis_button_facebook_like"></a>
         <a title="Share to Facebook" target="_blank" class="addthis_button_facebook"><img src="<?= $CFG_IMAGEBASE_URL ?>/facebook-16px.png" border="0" alt="Share on Facebook" /></a> 
         <a title="Share to Twitter" target="_blank" class="addthis_button_twitter"><img src="<?= $CFG_IMAGEBASE_URL ?>/twitter-16px.png" border="0" alt="Post to Twitter" /></a> 
-        <a title="Post on Google Buzz" target="_blank" class="addthis_button_googlebuzz"><img src="<?= $CFG_IMAGEBASE_URL ?>/google-buzz-16px.png" border="0" alt="Post to Google Buzz" /></a>
-        <span class="addthis_separator">|</span>
+        <a title="Post on Google Buzz" target="_blank" class="addthis_button_googlebuzz"><img src="<?= $CFG_IMAGEBASE_URL ?>/google-buzz-16px.png" border="0" alt="Post to Google Buzz" /></a>        
         <a class="addthis_button_compact">More</a>
     </div>
 </div>        

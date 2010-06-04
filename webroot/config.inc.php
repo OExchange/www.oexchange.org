@@ -5,8 +5,8 @@
 */
 
 // Manually-editable config
-$CFG_HOMEPAGE_VER = 1;
-$CFG_DEMOPAGE_VER = 2;
+$CFG_HOMEPAGE_VER = 2;
+$CFG_DEMOPAGE_VER = 1;
 
 // Processed during build-time, $STATICFILES_VER is set to the correct version of our static files tree
 $CFG_STATICFILES_VER = 2;
