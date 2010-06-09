@@ -153,7 +153,7 @@
         </p>
         <pre>http://{host}/{arbitrary offer endpoint name}?url={URI}&ctype={type}&{type-specific arguments}</pre>
         <p>
-            It defines one required parameter, <code>url</code>, which represents the url to be offered.  There are a small number of additional parameters, such as <code>title</code>, that apply at this level.  
+            It defines one required parameter, <code>url</code>, which represents the URL to be offered.  There are a small number of additional parameters, such as <code>title</code>, that apply at this level.  
             There is also an optional parameter, <code>ctype</code>, which indicates additional optional detail about the type of content to share.  The presence and value of this parameter specifies additional optional parameters, specific to this type.
         </p>
         <p>
@@ -161,7 +161,7 @@
         </p>
         <pre>http://www.example.com/services/oexchange/offer</pre>
         <p>
-            Alternatively, a site could implement an endpoint at a url like this instead:
+            Alternatively, a site could implement an endpoint at a URL like this instead:
         </p>
         <pre>http://www.example.com/offer.php?url={URI}</pre>
         <p>
@@ -222,8 +222,8 @@
         </p>
         <p> 
             For example, a user might be on a photo site and want to copy an image to an online web-clipping service they use.  
-            The URL will most likely be of the photo site's photo page, and the actual image data would be specified through an image ctype and related parameters (such as the URL of the actual image).  Similarly, a video page (the primary url) and an associated flash video player (the url of the SWF, and some additional attributes) could be shared.  
-           If the target chooses to look for and take special action on the video player, such as embedding it into a user feed, it may, but targets that only absorb urls are unaffected and will still offer a reasonable experience. 
+            The URL will most likely be of the photo site's photo page, and the actual image data would be specified through an image ctype and related parameters (such as the URL of the actual image).  Similarly, a video page (the primary URL) and an associated flash video player (the URL of the SWF, and some additional attributes) could be shared.  
+           If the target chooses to look for and take special action on the video player, such as embedding it into a user feed, it may, but targets that only absorb URLs are unaffected and will still offer a reasonable experience. 
         </p> 
         <p> 
             It is key that it is always possible to conduct a simplest-case transaction between any OExchange compliant entities, regardless of whatever rich type-specific logic they may support.  
