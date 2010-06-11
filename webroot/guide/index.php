@@ -41,7 +41,7 @@ include '../pagetop-main.inc.php';
             The <a target="_blank" href="/spec/#offer">Offer spec</a> has all the extra details on the endpoint.
         </p>
         <p>
-        	<strong>TIP:</strong> Use the <a href="/tools/sourceharness/">Offer Test Harness</a> to test your endpoint.
+        	<strong>TIP:</strong> Take a look at our <a href="/tools/bestpractices/">Best Practices</a> and use the <a href="/tools/sourceharness/">Offer Test Harness</a> to test your endpoint.
         </p>
         
         <h4>2. Make your service discoverable</h4>

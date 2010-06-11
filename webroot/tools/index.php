@@ -38,7 +38,7 @@ include '../pagetop-main.inc.php';
         <h3 class="bigger mb5"><a href="/tools/discoveryharness/">Discovery Test Harness</a></h3>
         A test harness to check OExchange Discovery for a service.
     </div>    
-    <div class="grid_5 alpha">
+    <div class="grid_5 omega">
         <h3 class="bigger mb5"><a href="bestpractices/">OExchange Best Practices</a></h3>
         Best practices for OExchange service providers.
     </div>
