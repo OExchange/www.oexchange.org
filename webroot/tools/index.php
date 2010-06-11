@@ -6,7 +6,7 @@ include '../pagetop-main.inc.php';
 
 ?>
     
-    <h2 class="pagetitle">Dev &amp; Test Tools</h2>
+    <h2 class="pagetitle">Tools &amp; Docs</h2>
 
     <hr/>
     
@@ -38,6 +38,10 @@ include '../pagetop-main.inc.php';
         <h3 class="bigger mb5"><a href="/tools/discoveryharness/">Discovery Test Harness</a></h3>
         A test harness to check OExchange Discovery for a service.
     </div>    
+    <div class="grid_5 alpha">
+        <h3 class="bigger mb5"><a href="bestpractices/">OExchange Best Practices</a></h3>
+        Best practices for OExchange service providers.
+    </div>
     <div class="clear"></div>
     
 <?
