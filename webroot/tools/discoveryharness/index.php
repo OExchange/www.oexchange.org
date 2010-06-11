@@ -39,7 +39,7 @@ $cmd = getDfltArg("cmd", "none");
 
 	<h3>Host Discovery</h2>
 	<p>
-		Does a host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up so, that anyone can locate the service on that host automatically?
+		Does a host have <a target="_blank" href="/spec/#discovery-host">host-meta discovery</a> set up, so that anyone can locate the service on that host automatically?
 	</p>
 	<p>
 	<form action="/tools/discoveryharness/" method="POST">

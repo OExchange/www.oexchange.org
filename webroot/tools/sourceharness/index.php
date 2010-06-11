@@ -2,11 +2,14 @@
 $page_title = "OExchange Offer Test Harness";
 $nav = "tools";
 include '../../pagetop-main.inc.php';
+include_once '../../lib-oexchange/utils.php';
 
 $dfltTarget = $_REQUEST["target"];
 if (empty($dfltTarget)) {
     $dfltTarget = "http://www.oexchange.org/demo/linkeater/offer.php";
 }
+$url = getDfltArg("url", "http://www.example.com");
+
 
 ?>
 
@@ -76,7 +79,7 @@ if (empty($dfltTarget)) {
     <form name="commonForm" action="javascript:void(0);">
     <table cellpadding="4">
     <colgroup><col width="15%"/><col width="85%"/></colgroup>
-        <tr><td><code>url:</code></td><td><input name="url" type="text" size="70" value="http://www.example.com" /></td></tr>
+        <tr><td><code>url:</code></td><td><input name="url" type="text" size="70" value="<?= $url ?>" /></td></tr>
         <tr><td><code>title:</code></td><td><input name="title" type="text" size="70" value="" /></td></tr>
         <tr><td><code>description:</code></td><td><input name="description" type="text" size="70" value="" /></td></tr>
         <tr><td></td><td><input class="btn" type="submit" value="Share (without a ctype)" onclick="shareLink();" /></td></tr>

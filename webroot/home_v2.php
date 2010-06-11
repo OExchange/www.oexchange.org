@@ -8,7 +8,7 @@ include 'pagetop-main.inc.php';
         <hr/>
         
         <div class="col1">
-            <h2 class="mb0">Service Providers</h3>
+            <h2 class="mb0">Service Providers</h2>
             <p class="bigtext">Your service can receive more content by allowing anyone to integrate easily</p>
         </div>
         <div class="col2">
@@ -16,7 +16,7 @@ include 'pagetop-main.inc.php';
             <p class="bigtext">Your content can be more widely shared by a new generation of tools</p>
         </div>
         <div class="col3 omega">
-            <h2 class="mb0">Tool Developers</h3>
+            <h2 class="mb0">Tool Developers</h2>
             <p class="bigtext">Your tool can integrate with any service on the web, dynamically</p>
         </div>
         <div class="clear"></div>
