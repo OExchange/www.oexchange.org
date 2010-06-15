@@ -62,7 +62,7 @@ $cmd = getDfltArg("cmd", "none");
 		if (sizeof($targetXrdUrls) == 0) {
 			?>
 			<p>
-				No target XRD URLs were found.  Are you sure there is a resource at <a href="<?= $hostname?>/.well-known/host-meta"><?= $hostname?>/.well-known/host-meta</a> with at least one <code>resident-target</code> relation?  
+				No target XRD URLs were found.  Are you sure there is a resource at <a href="http://<?= $hostname?>/.well-known/host-meta">http://<?= $hostname?>/.well-known/host-meta</a> with at least one <code>resident-target</code> relation?  
 			</p>
 			<p>
 				If you need help generating one, try <a href="/tools/discoverygen">this tool</a>. 
