@@ -39,8 +39,8 @@ include '../pagetop-main.inc.php';
         A test harness to check OExchange Discovery for a service.
     </div>    
     <div class="grid_5 omega">
-        <h3 class="bigger mb5"><a href="bestpractices/">OExchange Best Practices</a></h3>
-        Best practices for OExchange service providers.
+        <h3 class="bigger mb5"><a href="bestpractices/">Target Best Practices Guide</a></h3>
+        A set of best practices for OExchange Target implementors.
     </div>
     <div class="clear"></div>
     
