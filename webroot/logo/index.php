@@ -17,7 +17,7 @@ include '../pagetop-main.inc.php';
         <br/><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange_16x16.png" border="0" alt="OExchange Logo (128x128)" /><p class="gry">16x16, PNG</p>
     </div>
     <div class="grid_3 prefix_2 center">
-        <a href="http://www.spreadshirt.com/oexchange"><img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange-tshirt.jpg" border="0" alt="OExchange T-Shirt" /></a><p class="gry">Cool Swag.</p>
+        <img src="<?= $CFG_IMAGEBASE_URL ?>/oexchange-tshirt.jpg" border="0" alt="OExchange T-Shirt" /><p class="gry"><a href="http://addthis.spreadshirt.com/men-s-aa-tee-A6176766/customize/color/2">Black</a> <span class="pipe">or</span> <a href="http://addthis.spreadshirt.com/men-s-aa-tee-A6176765/customize/color/1">White</a></p>
     </div>
     <div class="clear"></div>
     
