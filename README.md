@@ -39,7 +39,7 @@ The site builds/deploys, once your out of your local source tree, using Ant.  Th
 
 To deploy a version of the site to your local dev environment, but still have it reference the CDN assets, set up a "www-localstage" virtual host and /etc/host mapping, and use the deploy-localstage build target.
 
-Not that you can't deploy to production, either the main server or the CDN, without proper credentials.
+Note that you can't deploy to production, either the main server or the CDN, without proper credentials.
 
 
 
