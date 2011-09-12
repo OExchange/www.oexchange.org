@@ -6,17 +6,17 @@
 </head>
 <body>
 
+
 	<script>
     	attachEventListener(window, "load", function(e) {
 			if (intent.data) {
 				var url = intent.data;
 				var offerUrl = "http://www.oexchange.org/demo/linkeater/offer.php?url=" + url;
-				window.open(offerUrl);
-				document.createElement
+				window.location.href = offerUrl;
 			} else {
 				alert("WTF, bad intent!");
 			}
-			intent.postResult(intent.data);
+			intent.postResult("Thanks, your link has been shared!");
 		});
 	</script>
 	
