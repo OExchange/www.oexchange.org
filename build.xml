@@ -54,7 +54,16 @@
 	<target name="deploy-localstage" depends="clean, setup-localstage, deploy-static" description="Deploys a localstage build to _staged, including CDN static assets" >
 	</target>
 
-	<target name="deploy-public" depends="deploy-static" description="Deploys to the public site and to the CDN" >
+	<target name="deploy-dynamic" depends="_moveFiles" description="Deploys to the public site, but leaves the CDN alone" >
+
+		<!-- Do the non-static deploy -->
+		<property name="deploy_dreamhost" location="./deploy_dreamhost.sh"/>
+		<exec executable="${deploy_dreamhost}" failonerror="true">
+			<arg value="willmeyer"/>
+		</exec>
+	</target>	
+
+	<target name="deploy-public" depends="deploy-static" description="Deploys to the public site and to the CDN both" >
 
 		<!-- Confirm -->
 		<input
@@ -67,7 +76,7 @@
 	  	</condition>
 	  	<fail if="do.abort">Deploy aborted at your request</fail>
 	
-		<!-- Do the public deploy -->
+		<!-- Do the non-static deploy -->
 		<property name="deploy_dreamhost" location="./deploy_dreamhost.sh"/>
 		<exec executable="${deploy_dreamhost}" failonerror="true">
 			<arg value="willmeyer"/>

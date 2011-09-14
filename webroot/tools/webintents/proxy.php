@@ -23,15 +23,15 @@ if ($offerUrl == "") {
 	</p>
 
 	<?php
+
 	// TODO add GA tracking to this page in this case
 	include '../../pagebottom.inc.php';
 
 } else {
 	?>
 	
-	<script src="http://examples.webintents.org/lib/webintents.js"></script>
-	<script src="http://examples.webintents.org/lib/events.js"></script>
-	<script src="http://examples.webintents.org/lib/common.js"></script>
+	<script src="http://webintents.org/webintents.js"></script>
+	<script src="/lib/utils.js"></script>
 	<script>
     	attachEventListener(window, "load", function(e) {
 			if (intent.data) {

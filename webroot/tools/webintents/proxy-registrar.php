@@ -25,11 +25,11 @@ $cmd = getDfltArg("cmd", "none");
 
 ?>
 
-	<script src="http://examples.webintents.org/lib/webintents.js"></script>
+	<script src="http://webintents.org/webintents.js"></script>
     
     <h2 class="pagetitle">WebIntents Proxy Registrar</h2>
     <div class="bannertext">
-        Registers OExchange services as <a href="http://www.webintents.org">Share Intent Intent</a> handlers
+        Registers OExchange services as <a href="http://webintents.org">Share Intent</a> handlers
     </div>
 
     <hr/>
@@ -82,7 +82,11 @@ $cmd = getDfltArg("cmd", "none");
 			echo $intentTag;
 			?>
 			<p>
-				Check out the <a href="sender.php">sender tool</a> to share to it...
+				Now try initiating a link share with it!
+				<br/> 
+				<form action="initiator.php" method="GET">
+					<p><input class="btn" type="submit" value="Use the client harness" /></p>
+				</form>
 			</p>
 			<?php   
 		} else {
