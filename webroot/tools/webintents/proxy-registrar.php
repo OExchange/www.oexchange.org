@@ -57,7 +57,7 @@ $cmd = getDfltArg("cmd", "none");
 			// Whats the right intent?
 			$action = "http://webintents.org/share";
 			$type = "text/uri-list";
-			$disposition = "text/uri-list";
+			$disposition = "window";
 			$title = $target->prompt . " (via " . $target->name . ")";
 			$href = "proxy.php?offerpoint=" . urlencode($target->endpoint);
 			
